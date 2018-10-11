@@ -1,0 +1,9 @@
+<map id="ImageByteMap.hpp" name="ImageByteMap.hpp">
+<area shape="rect" id="node2" href="$_addr_8hpp.html" title="Class gtirb::Addr and related functions. " alt="" coords="574,162,677,189"/>
+<area shape="rect" id="node6" href="$_byte_map_8hpp.html" title="Class gtirb::ByteMap. " alt="" coords="421,80,550,107"/>
+<area shape="rect" id="node14" href="$_node_8hpp.html" title="Class gtirb::Node. " alt="" coords="877,80,985,107"/>
+<area shape="rect" id="node3" href="$_export_8hpp.html" title="gtirb/Export.hpp" alt="" coords="624,244,739,271"/>
+<area shape="rect" id="node15" href="$_casting_8hpp.html" title="The various casting and type checking operations that apply to gtirb::Node subclasses. " alt="" coords="1035,162,1157,189"/>
+<area shape="rect" id="node18" href="$_context_8hpp.html" title="Class gtirb::Context and related operators. " alt="" coords="888,162,1011,189"/>
+<area shape="rect" id="node19" href="$_allocator_8hpp.html" title="gtirb/Allocator.hpp" alt="" coords="834,244,961,271"/>
+</map>

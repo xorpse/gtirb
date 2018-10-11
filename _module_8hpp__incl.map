@@ -1,0 +1,16 @@
+<map id="Module.hpp" name="Module.hpp">
+<area shape="rect" id="node2" href="$_addr_8hpp.html" title="Class gtirb::Addr and related functions. " alt="" coords="1700,401,1803,427"/>
+<area shape="rect" id="node3" href="$_export_8hpp.html" title="gtirb/Export.hpp" alt="" coords="1694,483,1809,509"/>
+<area shape="rect" id="node6" href="$_c_f_g_8hpp.html" title="Types and operations for interprocedural control flow graphs (CFGs). " alt="" coords="1902,319,2006,345"/>
+<area shape="rect" id="node22" href="$_data_object_8hpp.html" title="Class gtirb::DataObject. " alt="" coords="1852,244,1995,271"/>
+<area shape="rect" id="node23" href="$_node_8hpp.html" title="Class gtirb::Node. " alt="" coords="1220,319,1328,345"/>
+<area shape="rect" id="node27" href="$_image_byte_map_8hpp.html" title="Class gtirb::ImageByteMap and related functions. " alt="" coords="654,244,818,271"/>
+<area shape="rect" id="node36" href="$_section_8hpp.html" title="Class gtirb::Section. " alt="" coords="2172,244,2292,271"/>
+<area shape="rect" id="node37" href="$_symbol_8hpp.html" title="Class gtirb::Symbol. " alt="" coords="1309,169,1429,196"/>
+<area shape="rect" id="node41" href="$_symbolic_expression_8hpp.html" title="Types and operations for symbolic expressions. " alt="" coords="1717,87,1912,114"/>
+<area shape="rect" id="node7" href="$_context_8hpp.html" title="Class gtirb::Context and related operators. " alt="" coords="1401,401,1524,427"/>
+<area shape="rect" id="node8" href="$_allocator_8hpp.html" title="gtirb/Allocator.hpp" alt="" coords="1283,483,1410,509"/>
+<area shape="rect" id="node24" href="$_casting_8hpp.html" title="The various casting and type checking operations that apply to gtirb::Node subclasses. " alt="" coords="1154,401,1275,427"/>
+<area shape="rect" id="node28" href="$_byte_map_8hpp.html" title="Class gtirb::ByteMap. " alt="" coords="620,319,750,345"/>
+<area shape="rect" id="node38" href="$_block_8hpp.html" title="Classes gtirb::Block and gtirb::InstructionRef. " alt="" coords="1506,244,1616,271"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="gtirb::SymStackConst" name="gtirb::SymStackConst">
+<area shape="rect" id="node2" href="$classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR. " alt="" coords="31,81,130,108"/>
+<area shape="rect" id="node3" href="$classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy. " alt="" coords="37,5,124,32"/>
+</map>

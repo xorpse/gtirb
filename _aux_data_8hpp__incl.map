@@ -1,0 +1,10 @@
+<map id="AuxData.hpp" name="AuxData.hpp">
+<area shape="rect" id="node2" href="$_addr_8hpp.html" title="Class gtirb::Addr and related functions. " alt="" coords="32,237,134,263"/>
+<area shape="rect" id="node6" href="$_block_8hpp.html" title="Classes gtirb::Block and gtirb::InstructionRef. " alt="" coords="721,80,832,107"/>
+<area shape="rect" id="node23" href="$_node_8hpp.html" title="Class gtirb::Node. " alt="" coords="993,155,1101,181"/>
+<area shape="rect" id="node3" href="$_export_8hpp.html" title="gtirb/Export.hpp" alt="" coords="639,319,754,345"/>
+<area shape="rect" id="node7" href="$_c_f_g_8hpp.html" title="Types and operations for interprocedural control flow graphs (CFGs). " alt="" coords="575,155,679,181"/>
+<area shape="rect" id="node8" href="$_context_8hpp.html" title="Class gtirb::Context and related operators. " alt="" coords="986,237,1108,263"/>
+<area shape="rect" id="node9" href="$_allocator_8hpp.html" title="gtirb/Allocator.hpp" alt="" coords="778,319,905,345"/>
+<area shape="rect" id="node24" href="$_casting_8hpp.html" title="The various casting and type checking operations that apply to gtirb::Node subclasses. " alt="" coords="1133,237,1254,263"/>
+</map>
