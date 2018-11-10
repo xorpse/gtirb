@@ -1,6 +1,6 @@
 <map id="Addr.hpp" name="Addr.hpp">
 <area shape="rect" id="node2" href="$_aux_data_8hpp.html" title="Types and operations for auxiliar data. " alt="" coords="93,304,192,331"/>
-<area shape="rect" id="node3" href="$gtirb_8hpp.html" title="#include this file to include all GT&#45;IRB API headers. " alt="" coords="393,453,465,480"/>
+<area shape="rect" id="node3" href="$gtirb_8hpp.html" title="#include this file to include all GTIRB API headers. " alt="" coords="393,453,465,480"/>
 <area shape="rect" id="node4" href="$_i_r_8hpp.html" title="Class gtirb::IR. " alt="" coords="181,379,243,405"/>
 <area shape="rect" id="node5" href="$_block_8hpp.html" title="Classes gtirb::Block and gtirb::InstructionRef. " alt="" coords="52,80,132,107"/>
 <area shape="rect" id="node6" href="$_symbol_8hpp.html" title="Class gtirb::Symbol. " alt="" coords="257,155,348,181"/>

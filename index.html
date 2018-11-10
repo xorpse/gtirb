@@ -112,7 +112,7 @@ IR        -----Data---Bytes
 </ul>
 <h3>Populating the IR</h3>
 <p><a class="anchor" id="populating-the-ir"></a></p>
-<p>GT-IRB objects are created within a <code>Context</code> object. Freeing the <code>Context</code> will also destroy all the objects within it.</p>
+<p>GTIRB objects are created within a <code>Context</code> object. Freeing the <code>Context</code> will also destroy all the objects within it.</p>
 <div class="fragment"><div class="line">Context C;</div><div class="line">IR&amp; ir = *IR::Create(C);</div></div><!-- fragment --><p>Every IR holds a set of modules.</p>
 <div class="fragment"><div class="line">ir.addModule(Module::Create(C));</div><div class="line">Module&amp; module = ir.modules()[0];</div></div><!-- fragment --><p>Addresses are represented by a distinct type which can be explicitly converted to and from <code>uint64_t</code>.</p>
 <div class="fragment"><div class="line">Addr textSectionAddress(1328);</div></div><!-- fragment --><p>Create some sections: </p><div class="fragment"><div class="line">module.addSection(Section::Create(C, <span class="stringliteral">&quot;.text&quot;</span>, textSectionAddress, 466));</div><div class="line">module.addSection(</div><div class="line">    Section::Create(C, <span class="stringliteral">&quot;.data&quot;</span>, textSectionAddress + 466, 2048));</div></div><!-- fragment --><p>Create some data objects. These only define the layout and do not directly store any data.</p>
