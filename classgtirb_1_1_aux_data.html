@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: gtirb::AuxData Class Reference</title>
+<title>GTIRB: gtirb::AuxData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -98,6 +98,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0862331ee87c22ae01ee8055659e7c05"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data.html#a0862331ee87c22ae01ee8055659e7c05">operator=</a> (T &amp;&amp;Value)</td></tr>
 <tr class="memdesc:a0862331ee87c22ae01ee8055659e7c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a new value, destroying the previous contents.  <a href="#a0862331ee87c22ae01ee8055659e7c05">More...</a><br /></td></tr>
 <tr class="separator:a0862331ee87c22ae01ee8055659e7c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17a4437ddca5c7ea2310ee5af1fd1504"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data.html#a17a4437ddca5c7ea2310ee5af1fd1504">typeName</a> () const</td></tr>
+<tr class="memdesc:a17a4437ddca5c7ea2310ee5af1fd1504"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string representation of the type of the stored data.  <a href="#a17a4437ddca5c7ea2310ee5af1fd1504">More...</a><br /></td></tr>
+<tr class="separator:a17a4437ddca5c7ea2310ee5af1fd1504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -245,6 +248,34 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a17a4437ddca5c7ea2310ee5af1fd1504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17a4437ddca5c7ea2310ee5af1fd1504">&#9670;&nbsp;</a></span>typeName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string gtirb::AuxData::typeName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A string representation of the type of the stored data. </p>
+<dl class="section return"><dt>Returns</dt><dd>The type name, or an empty string if no value is stored. </dd></dl>
 
 </div>
 </div>

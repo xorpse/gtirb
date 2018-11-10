@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: GTIRB</title>
+<title>GTIRB: GTIRB</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -84,28 +84,32 @@ IR        -----Data---Bytes
          \-----ImageByteMap
           -----ICFG
                /  \
-          Blocks  Edges
-             |
-        Instructions---Bytes
+           Edges  Blocks
 </pre><h3>IR</h3>
 <p><a class="anchor" id="ir"></a></p>
-<p>An instance of GTIRB may include multiple <code>module</code>s which represent loadable objects such as executables or libraries. Each <code>module</code> holds information such as <code>symbol</code>s, <code>data</code>, and an inter-procedural control flow graph (<code>ICFG</code>). The <code>ICFG</code> consists of basic <code>block</code>s and control flow edges between these <code>block</code>s. Each <code>block</code> holds some number of <code>instruction</code>s. Each <code>datum</code> and <code>instruction</code> holds both a pointer to a range of bytes in the <code>ImageByteMap</code> and <code>symbolic</code> information coverage that range.</p>
+<p>An instance of GTIRB may include multiple <code>module</code>s which represent loadable objects such as executables or libraries. Each <code>module</code> holds information such as <code>symbol</code>s, <code>data</code>, and an inter-procedural control flow graph (<code>ICFG</code>). The <code>ICFG</code> consists of basic <code>block</code>s and control flow edges between these <code>block</code>s. Each <code>datum</code> and <code>block</code> holds both a pointer to a range of bytes in the <code>ImageByteMap</code> and <code>symbolic</code> information coverage that range.</p>
 <h3>Instructions</h3>
 <p><a class="anchor" id="instructions"></a></p>
 <p>GTIRB explicitly does NOT represent instructions but does provide symbolic operand information and access to the bytes. There are many options for representation of single instructions (e.g., <a href="https://github.com/BinaryAnalysisPlatform/bap">BAP</a>'s <a href="https://github.com/BinaryAnalysisPlatform/bil/releases/download/v0.1/bil.pdf">BIL</a>, or <a href="http://angr.io">Angr</a>'s <a href="https://github.com/angr/pyvex">Vex</a>). Instruction bytes may easily be decoded/encoded using the popular <a href="https://www.capstone-engine.org">Capstone</a>/<a href="https://www.keystone-engine.org">Keystone</a> disassembler/assembler.</p>
 <h3>Auxiliary Data</h3>
 <p><a class="anchor" id="auxiliary-data"></a></p>
-<p>Additional arbitrary information, e.g. analysis results, may be added to GTIRB in the form of <code>AuxData</code> object. These can store maps and vectors of basic GTIRB types in a portable way. This repository will describe the anticipated structure for very common auxiliary data.</p>
+<p>Additional arbitrary information, e.g. analysis results, may be added to GTIRB in the form of <code>AuxData</code> objects. These can store maps and vectors of basic GTIRB types in a portable way. This repository will describe the anticipated structure for very common types of auxiliary data such as function boundary information.</p>
 <h3>UUIDs</h3>
 <p><a class="anchor" id="uuids"></a></p>
-<p>Every element of GTIRB (namely: modules (<code>Module</code>), symbols (<code>Symbol</code>), globals, blocks (<code>Block</code>), and instructions (<code>InstructionRef</code>) has a unique associated ID.</p>
+<p>Every element of GTIRB (namely: modules (<code>Module</code>), symbols (<code>Symbol</code>), globals, blocks (<code>Block</code>), and instructions (<code>InstructionRef</code>) has a universally unique identifier (UUID).</p>
 <h2>Building</h2>
 <p><a class="anchor" id="building"></a></p>
 <p>GTIRB should successfully build in 64-bits with GCC, Clang, and Visual Studio compilers supporting at least C++17. GTIRB uses CMake which must be installed.</p>
-<div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ../path/to/gtirb</div><div class="line">make -j</div><div class="line"># Run the test suite.</div><div class="line">&lt;a name=&quot;run-the-test-suite.&quot; id=&quot;run-the-test-suite.&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">./bin/TestGTIRB</div></div><!-- fragment --><h2>Usage</h2>
+<div class="fragment"><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake ../path/to/gtirb</div><div class="line">make -j</div><div class="line"># Run the test suite.</div><div class="line">&lt;a name=&quot;run-the-test-suite.&quot; id=&quot;run-the-test-suite.&quot;&gt;&lt;/a&gt;</div><div class="line"></div><div class="line">./bin/TestGTIRB</div></div><!-- fragment --><p>The gtirb library will be located in <code>lib/libgtirb.so</code> in the build directory.</p>
+<h2>Usage</h2>
 <p><a class="anchor" id="usage"></a></p>
-<p>GTIRB is designed to be serialized using <a href="https://developers.google.com/protocol-buffers/">Google's protocol Buffers</a> (i.e., <a href="https://github.com/google/protobuf/wiki">protobuf</a>) and eventually JSON through protobuf's JSON output, enabling easy use from any programming language. GTIRB may also be used as a C++ library implementing an efficient data structure suitable for use by binary analysis and rewriting applications.</p>
-<p>This repository defines the GTIRB data structure and C++ library.</p>
+<p>GTIRB is designed to be serialized using <a href="https://developers.google.com/protocol-buffers/">Google's protocol Buffers</a> (i.e., <a href="https://github.com/google/protobuf/wiki">protobuf</a>) and using JSON through protobuf's JSON output. These two options should enable easy and efficient use of GTIRB from any programming language. GTIRB may also be used as a C++ library implementing an efficient data structure suitable for use by binary analysis and rewriting applications.</p>
+<p>This repository defines the GTIRB data structure and C++ library API. The remainder of this section provides examples walking through common tasks using the GTIRB C++ library API.</p>
+<ul>
+<li><a href="#populating-the-ir">Populating the IR</a></li>
+<li><a href="#querying-the-ir">Querying the IR</a></li>
+<li><a href="#serialization">Serialization</a></li>
+</ul>
 <h3>Populating the IR</h3>
 <p><a class="anchor" id="populating-the-ir"></a></p>
 <p>GT-IRB objects are created within a <code>Context</code> object. Freeing the <code>Context</code> will also destroy all the objects within it.</p>

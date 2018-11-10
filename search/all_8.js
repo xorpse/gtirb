@@ -13,5 +13,6 @@ var searchData=
   ['isa',['isa',['../_casting_8hpp.html#a49f3e34cd9882c06d9f9a1ef83b7ab60',1,'Casting.hpp']]],
   ['isaid',['ISAID',['../namespacegtirb.html#abee9f4d7995674b960de3890a8c4ee00',1,'gtirb']]],
   ['ispowerof2_5f64',['isPowerOf2_64',['../_allocator_8hpp.html#ab37080b5ed61f1c6c06797b787a96212',1,'Allocator.hpp']]],
+  ['isrelocated',['isRelocated',['../classgtirb_1_1_module.html#a791b02c8b80a3e9d08c583217dc3a9ef',1,'gtirb::Module']]],
   ['iterator',['iterator',['../classgtirb_1_1_i_r.html#ab6eacbdd45303272b8da9b0914e53d19',1,'gtirb::IR']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['toprotobuf',['toProtobuf',['../classgtirb_1_1_aux_data.html#a63d60a6fdeb01201ac1689830ed640fc',1,'gtirb::AuxData']]]
+  ['setnodeuuidfrombytes',['setNodeUUIDFromBytes',['../classgtirb_1_1_node.html#abdb4f3f5b00994955a6fdca8024b6190',1,'gtirb::Node']]],
+  ['specificbumpptrallocator',['SpecificBumpPtrAllocator',['../class_bump_ptr_allocator_impl.html#a8c5ed7ab075c43b64daa213617d97dc9',1,'BumpPtrAllocatorImpl']]]
 ];

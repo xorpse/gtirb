@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: Class Hierarchy</title>
+<title>GTIRB: Class Hierarchy</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -89,9 +89,18 @@ This inheritance list is sorted roughly, but not completely, alphabetically:</di
 <tr id="row_8_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classgtirb_1_1_module.html" target="_self">gtirb::Module</a></td><td class="desc">Represents a single binary (library or executable) </td></tr>
 <tr id="row_8_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classgtirb_1_1_section.html" target="_self">gtirb::Section</a></td><td class="desc">Represents a named section of the binary </td></tr>
 <tr id="row_8_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classgtirb_1_1_symbol.html" target="_self">gtirb::Symbol</a></td><td class="desc">Represents a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR. ">Symbol</a>, which maps a name to an object in the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> </td></tr>
-<tr id="row_9_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgtirb_1_1_sym_addr_addr.html" target="_self">gtirb::SymAddrAddr</a></td><td class="desc">Represents a <a class="el" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html">symbolic operand</a> of the form "(Sym1 - Sym2) / Scale + Offset" </td></tr>
-<tr id="row_10_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgtirb_1_1_sym_addr_const.html" target="_self">gtirb::SymAddrConst</a></td><td class="desc">Represents a <a class="el" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html">symbolic operand</a> of the form "Sym + Offset" </td></tr>
-<tr id="row_11_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgtirb_1_1_sym_stack_const.html" target="_self">gtirb::SymStackConst</a></td><td class="desc">Represents a <a class="el" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html">symbolic operand</a> of the form "Sym + Offset", representing an offset from a stack variable </td></tr>
+<tr id="row_9_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; T &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_10_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::Block &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_11_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::DataObject &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_12_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::ImageByteMap &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_13_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::IR &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_14_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::Module &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_15_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::Node &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_16_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::Section &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_17_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_specific_bump_ptr_allocator.html" target="_self">SpecificBumpPtrAllocator&lt; gtirb::Symbol &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_18_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgtirb_1_1_sym_addr_addr.html" target="_self">gtirb::SymAddrAddr</a></td><td class="desc">Represents a <a class="el" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html">symbolic operand</a> of the form "(Sym1 - Sym2) / Scale + Offset" </td></tr>
+<tr id="row_19_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgtirb_1_1_sym_addr_const.html" target="_self">gtirb::SymAddrConst</a></td><td class="desc">Represents a <a class="el" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html">symbolic operand</a> of the form "Sym + Offset" </td></tr>
+<tr id="row_20_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structgtirb_1_1_sym_stack_const.html" target="_self">gtirb::SymStackConst</a></td><td class="desc">Represents a <a class="el" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html">symbolic operand</a> of the form "Sym + Offset", representing an offset from a stack variable </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

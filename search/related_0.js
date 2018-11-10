@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fromprotobuf',['fromProtobuf',['../classgtirb_1_1_aux_data.html#a74026ab233178319ccadfafab39f6893',1,'gtirb::AuxData']]]
+  ['context',['Context',['../classgtirb_1_1_block.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::Block::Context()'],['../classgtirb_1_1_data_object.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::DataObject::Context()'],['../classgtirb_1_1_image_byte_map.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::ImageByteMap::Context()'],['../classgtirb_1_1_i_r.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::IR::Context()'],['../classgtirb_1_1_module.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::Module::Context()'],['../classgtirb_1_1_node.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::Node::Context()'],['../classgtirb_1_1_section.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::Section::Context()'],['../classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b',1,'gtirb::Symbol::Context()']]]
 ];

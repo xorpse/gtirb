@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: SymbolicExpression.hpp Source File</title>
+<title>GTIRB: SymbolicExpression.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -80,13 +80,13 @@ $(function() {
 <div class="ttc" id="group___c_f_g___g_r_o_u_p_html_gaf7e4354a9d80d0e2a6a4d5bffbc3529f"><div class="ttname"><a href="group___c_f_g___g_r_o_u_p.html#gaf7e4354a9d80d0e2a6a4d5bffbc3529f">gtirb::fromProtobuf</a></div><div class="ttdeci">GTIRB_EXPORT_API void fromProtobuf(Context &amp;C, CFG &amp;Result, const proto::CFG &amp;Message)</div><div class="ttdoc">Initialize a CFG from a protobuf message. </div></div>
 <div class="ttc" id="structgtirb_1_1_sym_stack_const_html_add0779985661665ca4f0e8abd3c20131"><div class="ttname"><a href="structgtirb_1_1_sym_stack_const.html#add0779985661665ca4f0e8abd3c20131">gtirb::SymStackConst::Offset</a></div><div class="ttdeci">int Offset</div><div class="ttdoc">Constant offset. </div><div class="ttdef"><b>Definition:</b> SymbolicExpression.hpp:45</div></div>
 <div class="ttc" id="structgtirb_1_1_sym_addr_addr_html_a86f17d7146a369d39f9514e1a7484388"><div class="ttname"><a href="structgtirb_1_1_sym_addr_addr.html#a86f17d7146a369d39f9514e1a7484388">gtirb::SymAddrAddr::Offset</a></div><div class="ttdeci">int64_t Offset</div><div class="ttdoc">Constant offset. </div><div class="ttdef"><b>Definition:</b> SymbolicExpression.hpp:62</div></div>
-<div class="ttc" id="namespaceproto_html"><div class="ttname"><a href="namespaceproto.html">proto</a></div><div class="ttdef"><b>Definition:</b> AuxData.hpp:35</div></div>
+<div class="ttc" id="namespaceproto_html"><div class="ttname"><a href="namespaceproto.html">proto</a></div><div class="ttdef"><b>Definition:</b> AuxData.hpp:36</div></div>
 <div class="ttc" id="_addr_8hpp_html"><div class="ttname"><a href="_addr_8hpp.html">Addr.hpp</a></div><div class="ttdoc">Class gtirb::Addr and related functions. </div></div>
 <div class="ttc" id="classgtirb_1_1_symbol_html"><div class="ttname"><a href="classgtirb_1_1_symbol.html">gtirb::Symbol</a></div><div class="ttdoc">Represents a Symbol, which maps a name to an object in the IR. </div><div class="ttdef"><b>Definition:</b> Symbol.hpp:34</div></div>
 <div class="ttc" id="group___c_f_g___g_r_o_u_p_html_gacc7b0d61ff741d567c6eba83415e4dd0"><div class="ttname"><a href="group___c_f_g___g_r_o_u_p.html#gacc7b0d61ff741d567c6eba83415e4dd0">gtirb::toProtobuf</a></div><div class="ttdeci">GTIRB_EXPORT_API proto::CFG toProtobuf(const CFG &amp;Cfg)</div><div class="ttdoc">Serialize a CFG into a protobuf message. </div></div>
 <div class="ttc" id="structgtirb_1_1_sym_stack_const_html"><div class="ttname"><a href="structgtirb_1_1_sym_stack_const.html">gtirb::SymStackConst</a></div><div class="ttdoc">Represents a symbolic operand of the form &quot;Sym + Offset&quot;, representing an offset from a stack variabl...</div><div class="ttdef"><b>Definition:</b> SymbolicExpression.hpp:44</div></div>
 <div class="ttc" id="_export_8hpp_html_a54b10f85bcd66580e3756cef113b74d1"><div class="ttname"><a href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a></div><div class="ttdeci">#define GTIRB_EXPORT_API</div><div class="ttdoc">This macro controls the visibility of exported symbols (i.e. classes) in shared libraries. When producing the library, selects symbols to export, and when consuming the library, selects symbols to import. </div><div class="ttdef"><b>Definition:</b> Export.hpp:44</div></div>
-<div class="ttc" id="classgtirb_1_1_context_html"><div class="ttname"><a href="classgtirb_1_1_context.html">gtirb::Context</a></div><div class="ttdoc">The context under which GTIRB operations occur. </div><div class="ttdef"><b>Definition:</b> Context.hpp:52</div></div>
+<div class="ttc" id="classgtirb_1_1_context_html"><div class="ttname"><a href="classgtirb_1_1_context.html">gtirb::Context</a></div><div class="ttdoc">The context under which GTIRB operations occur. </div><div class="ttdef"><b>Definition:</b> Context.hpp:59</div></div>
 <div class="ttc" id="structgtirb_1_1_sym_addr_const_html_a9a634d924eef258e5e5de53cee3d99e6"><div class="ttname"><a href="structgtirb_1_1_sym_addr_const.html#a9a634d924eef258e5e5de53cee3d99e6">gtirb::SymAddrConst::Sym</a></div><div class="ttdeci">Symbol * Sym</div><div class="ttdoc">Symbol representing an address. </div><div class="ttdef"><b>Definition:</b> SymbolicExpression.hpp:54</div></div>
 <div class="ttc" id="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p_html_ga76c75a30283841464ab659824167b1b8"><div class="ttname"><a href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html#ga76c75a30283841464ab659824167b1b8">gtirb::SymbolicExpression</a></div><div class="ttdeci">std::variant&lt; SymStackConst, SymAddrConst, SymAddrAddr &gt; SymbolicExpression</div><div class="ttdoc">A symbolic expression. </div><div class="ttdef"><b>Definition:</b> SymbolicExpression.hpp:69</div></div>
 <div class="ttc" id="structgtirb_1_1_sym_stack_const_html_af95a1fb6520496ee3b4474a644d5617d"><div class="ttname"><a href="structgtirb_1_1_sym_stack_const.html#af95a1fb6520496ee3b4474a644d5617d">gtirb::SymStackConst::Sym</a></div><div class="ttdeci">Symbol * Sym</div><div class="ttdoc">Symbol representing a stack variable. </div><div class="ttdef"><b>Definition:</b> SymbolicExpression.hpp:46</div></div>

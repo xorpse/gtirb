@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: gtirb::Symbol Class Reference</title>
+<title>GTIRB: gtirb::Symbol Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -72,6 +72,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classgtirb_1_1_symbol-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gtirb::Symbol Class Reference</div>  </div>
@@ -189,6 +190,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">getByUUID</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">UUID</a> &amp;Uuid)</td></tr>
 <tr class="memdesc:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a node by its UUID.  <a href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">More...</a><br /></td></tr>
 <tr class="separator:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac26c806e60ca4a0547680edb68f6e39b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a></td></tr>
+<tr class="separator:ac26c806e60ca4a0547680edb68f6e39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR. ">Symbol</a>, which maps a name to an object in the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a>. </p>
@@ -878,7 +884,30 @@ template&lt;typename Callable &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The common type of each of the return types in the <code>Callable</code> overload set. Notionally returns: std::common_type_t&lt;Overload1(Ty1), Overload2(Ty2), ...&gt; which can be void.</dd></dl>
 <p>For example:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span>Visitor {</div><div class="line">  <span class="keywordtype">int</span> operator()(Block*) { <span class="keywordflow">return</span> 0; }</div><div class="line">  <span class="keywordtype">long</span> operator()(DataObject*) { <span class="keywordflow">return</span> 1; }</div><div class="line">};</div><div class="line"></div><div class="line">Context Ctx;</div><div class="line">Symbol* SymB = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, Addr(0), <span class="stringliteral">&quot;&quot;</span>, <a class="code" href="classgtirb_1_1_block.html#a74c999ea551bac7e2a127e7aa44c380f">Block::Create</a>(Ctx));</div><div class="line">Symbol* SymD = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, Addr(0), <span class="stringliteral">&quot;&quot;</span>, <a class="code" href="classgtirb_1_1_data_object.html#a1a4c33f9f32ffd736035ff32423b2fde">DataObject::Create</a>(Ctx));</div><div class="line">Symbol* SymN = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx);</div><div class="line"></div><div class="line">SymB-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(Block*);</span></div><div class="line">SymD-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(DataObject*);</span></div><div class="line">SymN-&gt;visit(Visitor{}); <span class="comment">// Will not call either overload</span></div></div><!-- fragment --> 
+<div class="fragment"><div class="line"><span class="keyword">struct </span>Visitor {</div><div class="line">  <span class="keywordtype">int</span> operator()(Block*) { <span class="keywordflow">return</span> 0; }</div><div class="line">  <span class="keywordtype">long</span> operator()(DataObject*) { <span class="keywordflow">return</span> 1; }</div><div class="line">};</div><div class="line"></div><div class="line"><a class="code" href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a> Ctx;</div><div class="line">Symbol* SymB = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, Addr(0), <span class="stringliteral">&quot;&quot;</span>, <a class="code" href="classgtirb_1_1_block.html#a74c999ea551bac7e2a127e7aa44c380f">Block::Create</a>(Ctx));</div><div class="line">Symbol* SymD = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, Addr(0), <span class="stringliteral">&quot;&quot;</span>, <a class="code" href="classgtirb_1_1_data_object.html#a1a4c33f9f32ffd736035ff32423b2fde">DataObject::Create</a>(Ctx));</div><div class="line">Symbol* SymN = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx);</div><div class="line"></div><div class="line">SymB-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(Block*);</span></div><div class="line">SymD-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(DataObject*);</span></div><div class="line">SymN-&gt;visit(Visitor{}); <span class="comment">// Will not call either overload</span></div></div><!-- fragment --> 
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac26c806e60ca4a0547680edb68f6e39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26c806e60ca4a0547680edb68f6e39b">&#9670;&nbsp;</a></span>Context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classgtirb_1_1_context.html">Context</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

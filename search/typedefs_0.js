@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['block_5fiterator',['block_iterator',['../group___c_f_g___g_r_o_u_p.html#ga94709513148b43050d64814dabbe9601',1,'gtirb']]],
-  ['bumpptrallocator',['BumpPtrAllocator',['../_allocator_8hpp.html#aab2b06b77c79565c5c9879c6aa791496',1,'Allocator.hpp']]]
+  ['aux_5fdata_5fiterator',['aux_data_iterator',['../classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab',1,'gtirb::IR']]],
+  ['aux_5fdata_5frange',['aux_data_range',['../classgtirb_1_1_i_r.html#ad173236e7e784cb33e9994ce6dca5c8e',1,'gtirb::IR']]]
 ];

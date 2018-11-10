@@ -11,6 +11,9 @@ var searchData=
   ['addsymbolicexpression',['addSymbolicExpression',['../classgtirb_1_1_module.html#a24d00cd6faf735a59818c4e2f9aa3078',1,'gtirb::Module']]],
   ['alignaddr',['alignAddr',['../_allocator_8hpp.html#a89af0728d24894f19dd9bd8024f2eeb5',1,'Allocator.hpp']]],
   ['alignmentadjustment',['alignmentAdjustment',['../_allocator_8hpp.html#a5d8ef330f0b08b70e784a80fcd80317a',1,'Allocator.hpp']]],
-  ['allocate',['Allocate',['../class_bump_ptr_allocator_impl.html#aa32970944dbbabe4d1fbd3379c4e5fc2',1,'BumpPtrAllocatorImpl::Allocate()'],['../classgtirb_1_1_context.html#af8607772ea28345472250870bc06d2e9',1,'gtirb::Context::Allocate()']]],
+  ['allocate',['Allocate',['../class_bump_ptr_allocator_impl.html#aa32970944dbbabe4d1fbd3379c4e5fc2',1,'BumpPtrAllocatorImpl::Allocate(size_t Size, size_t Alignment)'],['../class_bump_ptr_allocator_impl.html#a6b53b6e38bd37e0bc9b3b872f9db75ee',1,'BumpPtrAllocatorImpl::Allocate(size_t Num=1)'],['../class_specific_bump_ptr_allocator.html#a6fdd189936477d34f492fd3828169d6d',1,'SpecificBumpPtrAllocator::Allocate()']]],
+  ['aux_5fdata',['aux_data',['../classgtirb_1_1_i_r.html#abd1b49b14d75281a15c373de2d078a78',1,'gtirb::IR::aux_data()'],['../classgtirb_1_1_i_r.html#a9572addfc9918d9609fd319111c2c9d4',1,'gtirb::IR::aux_data() const']]],
+  ['aux_5fdata_5fbegin',['aux_data_begin',['../classgtirb_1_1_i_r.html#abf6c0b059fd9120b5acd9bc5426faee5',1,'gtirb::IR::aux_data_begin()'],['../classgtirb_1_1_i_r.html#ad6511723e823e384537e238f37f25824',1,'gtirb::IR::aux_data_begin() const']]],
+  ['aux_5fdata_5fend',['aux_data_end',['../classgtirb_1_1_i_r.html#acfe8b55f4332b191dec74372cc3b63fb',1,'gtirb::IR::aux_data_end()'],['../classgtirb_1_1_i_r.html#a1d374a073f6fb39a30dabb9f40d7a269',1,'gtirb::IR::aux_data_end() const']]],
   ['auxdata',['AuxData',['../classgtirb_1_1_aux_data.html#a719e3271ea26e588b36b4e9ad3cb6e38',1,'gtirb::AuxData::AuxData()=default'],['../classgtirb_1_1_aux_data.html#aa644eed2aefc2248e12648bbfb5777ca',1,'gtirb::AuxData::AuxData(T &amp;&amp;Value)']]]
 ];

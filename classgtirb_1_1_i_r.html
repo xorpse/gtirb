@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: gtirb::IR Class Reference</title>
+<title>GTIRB: gtirb::IR Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -71,6 +71,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classgtirb_1_1_i_r-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gtirb::IR Class Reference</div>  </div>
@@ -155,33 +156,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a43c5d09c434695e0f557cb296bc5d2fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">An explicitly defaulted move assignment operator is required because we have a user-provided copy constructor.  <a href="#a43c5d09c434695e0f557cb296bc5d2fc">More...</a><br /></td></tr>
 <tr class="separator:a43c5d09c434695e0f557cb296bc5d2fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae54cca7a6a35b6bc820209e239618c0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#ae54cca7a6a35b6bc820209e239618c0c">save</a> (std::ostream &amp;Out) const</td></tr>
-<tr class="memdesc:ae54cca7a6a35b6bc820209e239618c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize to an output stream.  <a href="#ae54cca7a6a35b6bc820209e239618c0c">More...</a><br /></td></tr>
+<tr class="memdesc:ae54cca7a6a35b6bc820209e239618c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize to an output stream in binary format.  <a href="#ae54cca7a6a35b6bc820209e239618c0c">More...</a><br /></td></tr>
 <tr class="separator:ae54cca7a6a35b6bc820209e239618c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad97deffc86e22ad360dd6307cea0abf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#aad97deffc86e22ad360dd6307cea0abf">saveJSON</a> (std::ostream &amp;Out) const</td></tr>
+<tr class="memdesc:aad97deffc86e22ad360dd6307cea0abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize to an output stream in JSON format.  <a href="#aad97deffc86e22ad360dd6307cea0abf">More...</a><br /></td></tr>
+<tr class="separator:aad97deffc86e22ad360dd6307cea0abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e597d4251077cfb0348ae619df9f00b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#a8e597d4251077cfb0348ae619df9f00b">toProtobuf</a> (<a class="el" href="classgtirb_1_1_i_r.html#a048081d4c5e7fe67917faeb479dbeca0">MessageType</a> *Message) const</td></tr>
 <tr class="memdesc:a8e597d4251077cfb0348ae619df9f00b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize into a protobuf message.  <a href="#a8e597d4251077cfb0348ae619df9f00b">More...</a><br /></td></tr>
 <tr class="separator:a8e597d4251077cfb0348ae619df9f00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">AuxData Properties</div></td></tr>
-<tr class="memitem:ga55b5145a4e2d6e3a73b43c1361844480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga55b5145a4e2d6e3a73b43c1361844480">addAuxData</a> (const std::string &amp;Name, <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&amp;X)</td></tr>
-<tr class="memdesc:ga55b5145a4e2d6e3a73b43c1361844480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>, transferring ownership.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga55b5145a4e2d6e3a73b43c1361844480">More...</a><br /></td></tr>
-<tr class="separator:ga55b5145a4e2d6e3a73b43c1361844480"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f66417ca2d9e41d413dfce65e4730c7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga0f66417ca2d9e41d413dfce65e4730c7">getAuxData</a> (const std::string &amp;X) const</td></tr>
-<tr class="memdesc:ga0f66417ca2d9e41d413dfce65e4730c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga0f66417ca2d9e41d413dfce65e4730c7">More...</a><br /></td></tr>
-<tr class="separator:ga0f66417ca2d9e41d413dfce65e4730c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaaa6a0dead680d24345e8f3dd418289a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#gaaaa6a0dead680d24345e8f3dd418289a">getAuxData</a> (const std::string &amp;X)</td></tr>
-<tr class="memdesc:gaaaa6a0dead680d24345e8f3dd418289a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#gaaaa6a0dead680d24345e8f3dd418289a">More...</a><br /></td></tr>
-<tr class="separator:gaaaa6a0dead680d24345e8f3dd418289a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c993a06d946c672672bc3d7d9f6756a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga7c993a06d946c672672bc3d7d9f6756a">removeAuxData</a> (const std::string &amp;X)</td></tr>
-<tr class="memdesc:ga7c993a06d946c672672bc3d7d9f6756a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga7c993a06d946c672672bc3d7d9f6756a">More...</a><br /></td></tr>
-<tr class="separator:ga7c993a06d946c672672bc3d7d9f6756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3309e3b56d0ed9ef58b1de44de308da7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga3309e3b56d0ed9ef58b1de44de308da7">getAuxDataSize</a> () const</td></tr>
-<tr class="memdesc:ga3309e3b56d0ed9ef58b1de44de308da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a>.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga3309e3b56d0ed9ef58b1de44de308da7">More...</a><br /></td></tr>
-<tr class="separator:ga3309e3b56d0ed9ef58b1de44de308da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8c345d41537bda2b4fc365659c4a60e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga8c345d41537bda2b4fc365659c4a60e6">getAuxDataEmpty</a> () const</td></tr>
-<tr class="memdesc:ga8c345d41537bda2b4fc365659c4a60e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check: Is the number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> zero?  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga8c345d41537bda2b4fc365659c4a60e6">More...</a><br /></td></tr>
-<tr class="separator:ga8c345d41537bda2b4fc365659c4a60e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2075ec67d1b3738d297520c642ca6e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga2075ec67d1b3738d297520c642ca6e4a">clearAuxData</a> ()</td></tr>
-<tr class="memdesc:ga2075ec67d1b3738d297520c642ca6e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> from the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a>.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga2075ec67d1b3738d297520c642ca6e4a">More...</a><br /></td></tr>
-<tr class="separator:ga2075ec67d1b3738d297520c642ca6e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgtirb_1_1_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgtirb_1_1_node')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td></tr>
 <tr class="memitem:a2198c2f14d4b1bc01dfe50b0c10bdfed inherit pub_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#a2198c2f14d4b1bc01dfe50b0c10bdfed">~Node</a> () noexcept</td></tr>
 <tr class="memdesc:a2198c2f14d4b1bc01dfe50b0c10bdfed inherit pub_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up resources no longer needed by the <a class="el" href="classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy. ">Node</a> object.  <a href="classgtirb_1_1_node.html#a2198c2f14d4b1bc01dfe50b0c10bdfed">More...</a><br /></td></tr>
@@ -199,8 +181,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a79b30d673858f3ea0b326f67d9da534c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> from a protobuf message.  <a href="#a79b30d673858f3ea0b326f67d9da534c">More...</a><br /></td></tr>
 <tr class="separator:a79b30d673858f3ea0b326f67d9da534c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6e4950f04b44e841b6fa150bbd5944d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_i_r.html">IR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#ad6e4950f04b44e841b6fa150bbd5944d">load</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, std::istream &amp;In)</td></tr>
-<tr class="memdesc:ad6e4950f04b44e841b6fa150bbd5944d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize from an input stream.  <a href="#ad6e4950f04b44e841b6fa150bbd5944d">More...</a><br /></td></tr>
+<tr class="memdesc:ad6e4950f04b44e841b6fa150bbd5944d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize binary format from an input stream.  <a href="#ad6e4950f04b44e841b6fa150bbd5944d">More...</a><br /></td></tr>
 <tr class="separator:ad6e4950f04b44e841b6fa150bbd5944d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb5731f25823c9a5c326178ca3b58e77"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_i_r.html">IR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#adb5731f25823c9a5c326178ca3b58e77">loadJSON</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, std::istream &amp;In)</td></tr>
+<tr class="memdesc:adb5731f25823c9a5c326178ca3b58e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize JSON format from an input stream.  <a href="#adb5731f25823c9a5c326178ca3b58e77">More...</a><br /></td></tr>
+<tr class="separator:adb5731f25823c9a5c326178ca3b58e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classgtirb_1_1_node"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgtirb_1_1_node')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td></tr>
 <tr class="memitem:ab34e75309d3cdbae6ae783483152bf1c inherit pub_static_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C)</td></tr>
 <tr class="memdesc:ab34e75309d3cdbae6ae783483152bf1c inherit pub_static_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy. ">Node</a> object in its default state.  <a href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">More...</a><br /></td></tr>
@@ -208,6 +193,61 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">getByUUID</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">UUID</a> &amp;Uuid)</td></tr>
 <tr class="memdesc:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a node by its UUID.  <a href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">More...</a><br /></td></tr>
 <tr class="separator:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac26c806e60ca4a0547680edb68f6e39b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a></td></tr>
+<tr class="separator:ac26c806e60ca4a0547680edb68f6e39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+AuxData Properties</h2></td></tr>
+<tr class="memitem:ac57bb0d147817e831e077fab9f7522ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a> = AuxDataSet::iterator</td></tr>
+<tr class="separator:ac57bb0d147817e831e077fab9f7522ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad173236e7e784cb33e9994ce6dca5c8e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#ad173236e7e784cb33e9994ce6dca5c8e">aux_data_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a> &gt;</td></tr>
+<tr class="separator:ad173236e7e784cb33e9994ce6dca5c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825f151cd31c5dd4b27f90d9913f4491"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a> = AuxDataSet::const_iterator</td></tr>
+<tr class="separator:a825f151cd31c5dd4b27f90d9913f4491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ffc7381f8bc088b522858fccc1ff88"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#aa9ffc7381f8bc088b522858fccc1ff88">const_aux_data_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a> &gt;</td></tr>
+<tr class="separator:aa9ffc7381f8bc088b522858fccc1ff88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55b5145a4e2d6e3a73b43c1361844480"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga55b5145a4e2d6e3a73b43c1361844480">addAuxData</a> (const std::string &amp;Name, <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&amp;X)</td></tr>
+<tr class="memdesc:ga55b5145a4e2d6e3a73b43c1361844480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>, transferring ownership.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga55b5145a4e2d6e3a73b43c1361844480">More...</a><br /></td></tr>
+<tr class="separator:ga55b5145a4e2d6e3a73b43c1361844480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f66417ca2d9e41d413dfce65e4730c7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga0f66417ca2d9e41d413dfce65e4730c7">getAuxData</a> (const std::string &amp;X) const</td></tr>
+<tr class="memdesc:ga0f66417ca2d9e41d413dfce65e4730c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga0f66417ca2d9e41d413dfce65e4730c7">More...</a><br /></td></tr>
+<tr class="separator:ga0f66417ca2d9e41d413dfce65e4730c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaaa6a0dead680d24345e8f3dd418289a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#gaaaa6a0dead680d24345e8f3dd418289a">getAuxData</a> (const std::string &amp;X)</td></tr>
+<tr class="memdesc:gaaaa6a0dead680d24345e8f3dd418289a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#gaaaa6a0dead680d24345e8f3dd418289a">More...</a><br /></td></tr>
+<tr class="separator:gaaaa6a0dead680d24345e8f3dd418289a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c993a06d946c672672bc3d7d9f6756a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga7c993a06d946c672672bc3d7d9f6756a">removeAuxData</a> (const std::string &amp;X)</td></tr>
+<tr class="memdesc:ga7c993a06d946c672672bc3d7d9f6756a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga7c993a06d946c672672bc3d7d9f6756a">More...</a><br /></td></tr>
+<tr class="separator:ga7c993a06d946c672672bc3d7d9f6756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6c0b059fd9120b5acd9bc5426faee5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#abf6c0b059fd9120b5acd9bc5426faee5">aux_data_begin</a> ()</td></tr>
+<tr class="memdesc:abf6c0b059fd9120b5acd9bc5426faee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>.  <a href="#abf6c0b059fd9120b5acd9bc5426faee5">More...</a><br /></td></tr>
+<tr class="separator:abf6c0b059fd9120b5acd9bc5426faee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6511723e823e384537e238f37f25824"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#ad6511723e823e384537e238f37f25824">aux_data_begin</a> () const</td></tr>
+<tr class="memdesc:ad6511723e823e384537e238f37f25824"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>.  <a href="#ad6511723e823e384537e238f37f25824">More...</a><br /></td></tr>
+<tr class="separator:ad6511723e823e384537e238f37f25824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe8b55f4332b191dec74372cc3b63fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#acfe8b55f4332b191dec74372cc3b63fb">aux_data_end</a> ()</td></tr>
+<tr class="memdesc:acfe8b55f4332b191dec74372cc3b63fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>.  <a href="#acfe8b55f4332b191dec74372cc3b63fb">More...</a><br /></td></tr>
+<tr class="separator:acfe8b55f4332b191dec74372cc3b63fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d374a073f6fb39a30dabb9f40d7a269"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#a1d374a073f6fb39a30dabb9f40d7a269">aux_data_end</a> () const</td></tr>
+<tr class="memdesc:a1d374a073f6fb39a30dabb9f40d7a269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>.  <a href="#a1d374a073f6fb39a30dabb9f40d7a269">More...</a><br /></td></tr>
+<tr class="separator:a1d374a073f6fb39a30dabb9f40d7a269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1b49b14d75281a15c373de2d078a78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_i_r.html#ad173236e7e784cb33e9994ce6dca5c8e">aux_data_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#abd1b49b14d75281a15c373de2d078a78">aux_data</a> ()</td></tr>
+<tr class="memdesc:abd1b49b14d75281a15c373de2d078a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>).  <a href="#abd1b49b14d75281a15c373de2d078a78">More...</a><br /></td></tr>
+<tr class="separator:abd1b49b14d75281a15c373de2d078a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9572addfc9918d9609fd319111c2c9d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_i_r.html#aa9ffc7381f8bc088b522858fccc1ff88">const_aux_data_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html#a9572addfc9918d9609fd319111c2c9d4">aux_data</a> () const</td></tr>
+<tr class="memdesc:a9572addfc9918d9609fd319111c2c9d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>).  <a href="#a9572addfc9918d9609fd319111c2c9d4">More...</a><br /></td></tr>
+<tr class="separator:a9572addfc9918d9609fd319111c2c9d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3309e3b56d0ed9ef58b1de44de308da7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga3309e3b56d0ed9ef58b1de44de308da7">getAuxDataSize</a> () const</td></tr>
+<tr class="memdesc:ga3309e3b56d0ed9ef58b1de44de308da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a>.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga3309e3b56d0ed9ef58b1de44de308da7">More...</a><br /></td></tr>
+<tr class="separator:ga3309e3b56d0ed9ef58b1de44de308da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c345d41537bda2b4fc365659c4a60e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga8c345d41537bda2b4fc365659c4a60e6">getAuxDataEmpty</a> () const</td></tr>
+<tr class="memdesc:ga8c345d41537bda2b4fc365659c4a60e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check: Is the number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> zero?  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga8c345d41537bda2b4fc365659c4a60e6">More...</a><br /></td></tr>
+<tr class="separator:ga8c345d41537bda2b4fc365659c4a60e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2075ec67d1b3738d297520c642ca6e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga2075ec67d1b3738d297520c642ca6e4a">clearAuxData</a> ()</td></tr>
+<tr class="memdesc:ga2075ec67d1b3738d297520c642ca6e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> from the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a>.  <a href="group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga2075ec67d1b3738d297520c642ca6e4a">More...</a><br /></td></tr>
+<tr class="separator:ga2075ec67d1b3738d297520c642ca6e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A complete internal representation consisting of Modules (<a class="el" href="classgtirb_1_1_module.html">Module</a>). </p>
@@ -226,6 +266,62 @@ Static Public Member Functions</h2></td></tr>
 </map>
 </div>
  </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ac57bb0d147817e831e077fab9f7522ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57bb0d147817e831e077fab9f7522ab">&#9670;&nbsp;</a></span>aux_data_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">gtirb::IR::aux_data_iterator</a> =  AuxDataSet::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad173236e7e784cb33e9994ce6dca5c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad173236e7e784cb33e9994ce6dca5c8e">&#9670;&nbsp;</a></span>aux_data_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_i_r.html#ad173236e7e784cb33e9994ce6dca5c8e">gtirb::IR::aux_data_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a825f151cd31c5dd4b27f90d9913f4491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825f151cd31c5dd4b27f90d9913f4491">&#9670;&nbsp;</a></span>const_aux_data_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">gtirb::IR::const_aux_data_iterator</a> =  AuxDataSet::const_iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9ffc7381f8bc088b522858fccc1ff88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ffc7381f8bc088b522858fccc1ff88">&#9670;&nbsp;</a></span>const_aux_data_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_i_r.html#aa9ffc7381f8bc088b522858fccc1ff88">gtirb::IR::const_aux_data_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afff50c447ef855d72a8c8cd767032652"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afff50c447ef855d72a8c8cd767032652">&#9670;&nbsp;</a></span>const_iterator</h2>
 
@@ -431,6 +527,168 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="abd1b49b14d75281a15c373de2d078a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd1b49b14d75281a15c373de2d078a78">&#9670;&nbsp;</a></span>aux_data() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgtirb_1_1_i_r.html#ad173236e7e784cb33e9994ce6dca5c8e">aux_data_range</a> gtirb::IR::aux_data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>). </p>
+
+</div>
+</div>
+<a id="a9572addfc9918d9609fd319111c2c9d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9572addfc9918d9609fd319111c2c9d4">&#9670;&nbsp;</a></span>aux_data() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgtirb_1_1_i_r.html#aa9ffc7381f8bc088b522858fccc1ff88">const_aux_data_range</a> gtirb::IR::aux_data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a constant range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>). </p>
+
+</div>
+</div>
+<a id="abf6c0b059fd9120b5acd9bc5426faee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6c0b059fd9120b5acd9bc5426faee5">&#9670;&nbsp;</a></span>aux_data_begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a> gtirb::IR::aux_data_begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return an iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>. </p>
+
+</div>
+</div>
+<a id="ad6511723e823e384537e238f37f25824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6511723e823e384537e238f37f25824">&#9670;&nbsp;</a></span>aux_data_begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a> gtirb::IR::aux_data_begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a constant iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>. </p>
+
+</div>
+</div>
+<a id="acfe8b55f4332b191dec74372cc3b63fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe8b55f4332b191dec74372cc3b63fb">&#9670;&nbsp;</a></span>aux_data_end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgtirb_1_1_i_r.html#ac57bb0d147817e831e077fab9f7522ab">aux_data_iterator</a> gtirb::IR::aux_data_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return an iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>. </p>
+
+</div>
+</div>
+<a id="a1d374a073f6fb39a30dabb9f40d7a269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d374a073f6fb39a30dabb9f40d7a269">&#9670;&nbsp;</a></span>aux_data_end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491">const_aux_data_iterator</a> gtirb::IR::aux_data_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a constant iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data. ">AuxData</a>. </p>
 
 </div>
 </div>
@@ -657,7 +915,53 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Deserialize from an input stream. </p>
+<p>Deserialize binary format from an input stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur. ">Context</a> in which this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> will be loaded. </td></tr>
+    <tr><td class="paramname">In</td><td>The input stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The deserialized <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="adb5731f25823c9a5c326178ca3b58e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5731f25823c9a5c326178ca3b58e77">&#9670;&nbsp;</a></span>loadJSON()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classgtirb_1_1_i_r.html">IR</a>* gtirb::IR::loadJSON </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>In</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserialize JSON format from an input stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur. ">Context</a> in which this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module). ">IR</a> will be loaded. </td></tr>
@@ -795,7 +1099,34 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Serialize to an output stream. </p>
+<p>Serialize to an output stream in binary format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Out</td><td>The output stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a id="aad97deffc86e22ad360dd6307cea0abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad97deffc86e22ad360dd6307cea0abf">&#9670;&nbsp;</a></span>saveJSON()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtirb::IR::saveJSON </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>Out</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize to an output stream in JSON format. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Out</td><td>The output stream.</td></tr>
@@ -830,6 +1161,29 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac26c806e60ca4a0547680edb68f6e39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26c806e60ca4a0547680edb68f6e39b">&#9670;&nbsp;</a></span>Context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classgtirb_1_1_context.html">Context</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

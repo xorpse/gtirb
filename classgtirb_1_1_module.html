@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GT-IRB: gtirb::Module Class Reference</title>
+<title>GTIRB: gtirb::Module Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">GT-IRB
+   <div id="projectname">GTIRB
    &#160;<span id="projectnumber">v0.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
@@ -72,6 +72,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classgtirb_1_1_module-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gtirb::Module Class Reference</div>  </div>
@@ -137,6 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adb892a0a25fd438c2d57492c8ee3c116"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#adb892a0a25fd438c2d57492c8ee3c116">getRebaseDelta</a> () const</td></tr>
 <tr class="memdesc:adb892a0a25fd438c2d57492c8ee3c116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the difference between this module's <a class="el" href="classgtirb_1_1_module.html#ab6eebd611a067dfb846989a2aa0c827e">preferred address</a> and the address where it was actually loaded.  <a href="#adb892a0a25fd438c2d57492c8ee3c116">More...</a><br /></td></tr>
 <tr class="separator:adb892a0a25fd438c2d57492c8ee3c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791b02c8b80a3e9d08c583217dc3a9ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a791b02c8b80a3e9d08c583217dc3a9ef">isRelocated</a> () const</td></tr>
+<tr class="memdesc:a791b02c8b80a3e9d08c583217dc3a9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Has the image been loaded somewhere other than its preferred address?  <a href="#a791b02c8b80a3e9d08c583217dc3a9ef">More...</a><br /></td></tr>
+<tr class="separator:a791b02c8b80a3e9d08c583217dc3a9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76e5906fc583064ba565863a0a23ec26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a76e5906fc583064ba565863a0a23ec26">setBinaryPath</a> (const std::string &amp;X)</td></tr>
 <tr class="memdesc:a76e5906fc583064ba565863a0a23ec26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the location of the corresponding binary on disk.  <a href="#a76e5906fc583064ba565863a0a23ec26">More...</a><br /></td></tr>
 <tr class="separator:a76e5906fc583064ba565863a0a23ec26"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +185,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">getByUUID</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">UUID</a> &amp;Uuid)</td></tr>
 <tr class="memdesc:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a node by its UUID.  <a href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">More...</a><br /></td></tr>
 <tr class="separator:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac26c806e60ca4a0547680edb68f6e39b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a></td></tr>
+<tr class="separator:ac26c806e60ca4a0547680edb68f6e39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Symbol-Related Public Types and Functions</h2></td></tr>
@@ -1832,6 +1841,37 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a791b02c8b80a3e9d08c583217dc3a9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791b02c8b80a3e9d08c583217dc3a9ef">&#9670;&nbsp;</a></span>isRelocated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gtirb::Module::isRelocated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Has the image been loaded somewhere other than its preferred address? </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the loaded image has been relocated, <code>false</code> otherwise.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classgtirb_1_1_module.html#a0e90b919f1ada89d37fdbc41972474e2" title="Get the preferred address for loading this module. ">getPreferredAddr</a> </dd>
+<dd>
+<a class="el" href="classgtirb_1_1_module.html#adb892a0a25fd438c2d57492c8ee3c116" title="Get the difference between this module&#39;s preferred address and the address where it was actually load...">getRebaseDelta</a> </dd></dl>
+
+</div>
+</div>
 <a id="a92777eb6be45f05ea3ac0adae7be937b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a92777eb6be45f05ea3ac0adae7be937b">&#9670;&nbsp;</a></span>section_begin() <span class="overload">[1/2]</span></h2>
 
@@ -2551,6 +2591,29 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ac26c806e60ca4a0547680edb68f6e39b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26c806e60ca4a0547680edb68f6e39b">&#9670;&nbsp;</a></span>Context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classgtirb_1_1_context.html">Context</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
