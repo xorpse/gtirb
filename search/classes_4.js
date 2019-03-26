@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['imagebytemap',['ImageByteMap',['../classgtirb_1_1_image_byte_map.html',1,'gtirb']]],
-  ['instructionref',['InstructionRef',['../structgtirb_1_1_instruction_ref.html',1,'gtirb']]],
-  ['ir',['IR',['../classgtirb_1_1_i_r.html',1,'gtirb']]],
-  ['is_5fmapping',['is_mapping',['../structgtirb_1_1is__mapping.html',1,'gtirb']]],
-  ['is_5fsequence',['is_sequence',['../structgtirb_1_1is__sequence.html',1,'gtirb']]]
+  ['hash_3c_20gtirb_3a_3asymaddraddr_20_3e',['hash&lt; gtirb::SymAddrAddr &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html',1,'std']]],
+  ['hash_3c_20gtirb_3a_3asymaddrconst_20_3e',['hash&lt; gtirb::SymAddrConst &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html',1,'std']]],
+  ['hash_3c_20gtirb_3a_3asymstackconst_20_3e',['hash&lt; gtirb::SymStackConst &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html',1,'std']]]
 ];

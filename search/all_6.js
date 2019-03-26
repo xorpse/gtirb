@@ -3,6 +3,7 @@ var searchData=
   ['get',['get',['../classgtirb_1_1_aux_data.html#aafcafbb7b0f86e14ea401eec64f87d98',1,'gtirb::AuxData']]],
   ['getaddress',['getAddress',['../classgtirb_1_1_block.html#abb8535fa1bc0d20b2778abfacca39ae2',1,'gtirb::Block::getAddress()'],['../classgtirb_1_1_data_object.html#a4dfe099bdcee4fb2cc8973e8e25bfaa0',1,'gtirb::DataObject::getAddress()'],['../classgtirb_1_1_section.html#afc77b6762cacb8710d9edd38f943f8e2',1,'gtirb::Section::getAddress()'],['../classgtirb_1_1_symbol.html#ad5dae57099dda87c8588543740d0fc2f',1,'gtirb::Symbol::getAddress()']]],
   ['getaddrminmax',['getAddrMinMax',['../classgtirb_1_1_image_byte_map.html#a82289f9ad21a2ce4a447d167a9733402',1,'gtirb::ImageByteMap']]],
+  ['getaddrsforsymbolicexpression',['getAddrsForSymbolicExpression',['../classgtirb_1_1_module.html#ac9fe514766a2ec285113dcccd433a255',1,'gtirb::Module']]],
   ['getauxdata',['getAuxData',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga0f66417ca2d9e41d413dfce65e4730c7',1,'gtirb::IR::getAuxData(const std::string &amp;X) const'],['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#gaaaa6a0dead680d24345e8f3dd418289a',1,'gtirb::IR::getAuxData(const std::string &amp;X)']]],
   ['getauxdataempty',['getAuxDataEmpty',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga8c345d41537bda2b4fc365659c4a60e6',1,'gtirb::IR']]],
   ['getauxdatasize',['getAuxDataSize',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga3309e3b56d0ed9ef58b1de44de308da7',1,'gtirb::IR']]],

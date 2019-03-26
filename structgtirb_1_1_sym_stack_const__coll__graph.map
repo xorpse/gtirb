@@ -1,4 +1,5 @@
 <map id="gtirb::SymStackConst" name="gtirb::SymStackConst">
-<area shape="rect" id="node2" href="$classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR. " alt="" coords="31,81,130,108"/>
-<area shape="rect" id="node3" href="$classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy. " alt="" coords="37,5,124,32"/>
+<area shape="rect" id="node1" title="Represents a symbolic operand of the form &quot;Sym + Offset&quot;, representing an offset from a stack variabl..." alt="" coords="5,171,156,197"/>
+<area shape="rect" id="node2" href="$classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR." alt="" coords="31,81,130,108"/>
+<area shape="rect" id="node3" href="$classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy." alt="" coords="37,5,124,32"/>
 </map>

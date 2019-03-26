@@ -1,3 +1,4 @@
 <map id="gtirb::IR" name="gtirb::IR">
-<area shape="rect" id="node2" href="$classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy. " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node1" title="A complete internal representation consisting of Modules (Module)." alt="" coords="14,80,83,107"/>
+<area shape="rect" id="node2" href="$classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy." alt="" coords="5,5,92,32"/>
 </map>

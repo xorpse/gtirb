@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node',['Node',['../classgtirb_1_1_node.html',1,'gtirb']]]
+  ['module',['Module',['../classgtirb_1_1_module.html',1,'gtirb']]]
 ];
