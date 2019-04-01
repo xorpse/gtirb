@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['standard_20auxdata_20schemata',['Standard AuxData Schemata',['../md__aux_data.html',1,'']]],
   ['save',['save',['../classgtirb_1_1_i_r.html#ae54cca7a6a35b6bc820209e239618c0c',1,'gtirb::IR']]],
   ['savejson',['saveJSON',['../classgtirb_1_1_i_r.html#aad97deffc86e22ad360dd6307cea0abf',1,'gtirb::IR']]],
   ['scale',['Scale',['../structgtirb_1_1_sym_addr_addr.html#ae2ad181340ed1a4ad67cb05bd352665c',1,'gtirb::SymAddrAddr']]],

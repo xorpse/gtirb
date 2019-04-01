@@ -272,28 +272,28 @@ Symbol-Related Public Types and Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 DataObject-Related Public Types and Functions</h2></td></tr>
-<tr class="memitem:a141fbf878e8dc8af87a585d5457e598c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a> = boost::transform_iterator&lt; SymSetTransform&lt; DataSet::iterator &gt;, DataSet::iterator, <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a> &amp; &gt;</td></tr>
-<tr class="memdesc:a141fbf878e8dc8af87a585d5457e598c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over data objects (<a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>).  <a href="#a141fbf878e8dc8af87a585d5457e598c">More...</a><br /></td></tr>
-<tr class="separator:a141fbf878e8dc8af87a585d5457e598c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6752aba3703b9eda3340cb3817b43c69"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">data_object_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a> &gt;</td></tr>
+<tr class="memitem:a71ef5d9f73b2b1486018375f2cef3f14"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a> = boost::indirect_iterator&lt; DataSet::iterator &gt;</td></tr>
+<tr class="memdesc:a71ef5d9f73b2b1486018375f2cef3f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over data objects (<a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>).  <a href="#a71ef5d9f73b2b1486018375f2cef3f14">More...</a><br /></td></tr>
+<tr class="separator:a71ef5d9f73b2b1486018375f2cef3f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6752aba3703b9eda3340cb3817b43c69"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">data_object_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a> &gt;</td></tr>
 <tr class="memdesc:a6752aba3703b9eda3340cb3817b43c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Range of data objects (<a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>).  <a href="#a6752aba3703b9eda3340cb3817b43c69">More...</a><br /></td></tr>
 <tr class="separator:a6752aba3703b9eda3340cb3817b43c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387ab2703c6451c5305559bc7f1f3f69"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a> = boost::transform_iterator&lt; SymSetTransform&lt; DataSet::const_iterator &gt;, DataSet::const_iterator, const <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a> &amp; &gt;</td></tr>
-<tr class="memdesc:a387ab2703c6451c5305559bc7f1f3f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant iterator over data objects (<a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>).  <a href="#a387ab2703c6451c5305559bc7f1f3f69">More...</a><br /></td></tr>
-<tr class="separator:a387ab2703c6451c5305559bc7f1f3f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5af6670cb9e1a53e60de1e8186bad599"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599">const_data_object_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a> &gt;</td></tr>
+<tr class="memitem:a7bcde8a3aeb6757379b075d5fd343450"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a> = boost::indirect_iterator&lt; DataSet::const_iterator &gt;</td></tr>
+<tr class="memdesc:a7bcde8a3aeb6757379b075d5fd343450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant iterator over data objects (<a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>).  <a href="#a7bcde8a3aeb6757379b075d5fd343450">More...</a><br /></td></tr>
+<tr class="separator:a7bcde8a3aeb6757379b075d5fd343450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5af6670cb9e1a53e60de1e8186bad599"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599">const_data_object_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a> &gt;</td></tr>
 <tr class="memdesc:a5af6670cb9e1a53e60de1e8186bad599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant range of data objects (<a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>).  <a href="#a5af6670cb9e1a53e60de1e8186bad599">More...</a><br /></td></tr>
 <tr class="separator:a5af6670cb9e1a53e60de1e8186bad599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14f8bdabe0fbe01d37b153a763ce696a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a14f8bdabe0fbe01d37b153a763ce696a">data_begin</a> ()</td></tr>
+<tr class="memitem:a14f8bdabe0fbe01d37b153a763ce696a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a14f8bdabe0fbe01d37b153a763ce696a">data_begin</a> ()</td></tr>
 <tr class="memdesc:a14f8bdabe0fbe01d37b153a763ce696a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the first <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a>.  <a href="#a14f8bdabe0fbe01d37b153a763ce696a">More...</a><br /></td></tr>
 <tr class="separator:a14f8bdabe0fbe01d37b153a763ce696a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c633e42eadd5e2a7b6241fbf4dfa763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a4c633e42eadd5e2a7b6241fbf4dfa763">data_begin</a> () const</td></tr>
+<tr class="memitem:a4c633e42eadd5e2a7b6241fbf4dfa763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a4c633e42eadd5e2a7b6241fbf4dfa763">data_begin</a> () const</td></tr>
 <tr class="memdesc:a4c633e42eadd5e2a7b6241fbf4dfa763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the first <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a>.  <a href="#a4c633e42eadd5e2a7b6241fbf4dfa763">More...</a><br /></td></tr>
 <tr class="separator:a4c633e42eadd5e2a7b6241fbf4dfa763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcf8af5c6d21427f1e8d9bcb797c6fa0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#afcf8af5c6d21427f1e8d9bcb797c6fa0">data_end</a> ()</td></tr>
+<tr class="memitem:afcf8af5c6d21427f1e8d9bcb797c6fa0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#afcf8af5c6d21427f1e8d9bcb797c6fa0">data_end</a> ()</td></tr>
 <tr class="memdesc:afcf8af5c6d21427f1e8d9bcb797c6fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the element following the last <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a>.  <a href="#afcf8af5c6d21427f1e8d9bcb797c6fa0">More...</a><br /></td></tr>
 <tr class="separator:afcf8af5c6d21427f1e8d9bcb797c6fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad50aae91d6cc0c1b64183970df88eb31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#ad50aae91d6cc0c1b64183970df88eb31">data_end</a> () const</td></tr>
+<tr class="memitem:ad50aae91d6cc0c1b64183970df88eb31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#ad50aae91d6cc0c1b64183970df88eb31">data_end</a> () const</td></tr>
 <tr class="memdesc:ad50aae91d6cc0c1b64183970df88eb31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the element following the last <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a>.  <a href="#ad50aae91d6cc0c1b64183970df88eb31">More...</a><br /></td></tr>
 <tr class="separator:ad50aae91d6cc0c1b64183970df88eb31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748fc5d7f9ebb964b2a226fe202f41e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">data_object_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a748fc5d7f9ebb964b2a226fe202f41e8">data</a> ()</td></tr>
@@ -308,12 +308,12 @@ DataObject-Related Public Types and Functions</h2></td></tr>
 <tr class="memitem:afb0edd2c8b19bba83578b86078b0818b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#afb0edd2c8b19bba83578b86078b0818b">addData</a> (std::initializer_list&lt; <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a> * &gt; Ds)</td></tr>
 <tr class="memdesc:afb0edd2c8b19bba83578b86078b0818b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add one or more data objects to the module.  <a href="#afb0edd2c8b19bba83578b86078b0818b">More...</a><br /></td></tr>
 <tr class="separator:afb0edd2c8b19bba83578b86078b0818b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93c134e740e87189cc0b9d82055f6adb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a93c134e740e87189cc0b9d82055f6adb">findData</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> X)</td></tr>
-<tr class="memdesc:a93c134e740e87189cc0b9d82055f6adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a> by address.  <a href="#a93c134e740e87189cc0b9d82055f6adb">More...</a><br /></td></tr>
-<tr class="separator:a93c134e740e87189cc0b9d82055f6adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7c1cfad87fe5dbde7b5f5995ac6c3af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#aa7c1cfad87fe5dbde7b5f5995ac6c3af">findData</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> X) const</td></tr>
-<tr class="memdesc:aa7c1cfad87fe5dbde7b5f5995ac6c3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a> by address.  <a href="#aa7c1cfad87fe5dbde7b5f5995ac6c3af">More...</a><br /></td></tr>
-<tr class="separator:aa7c1cfad87fe5dbde7b5f5995ac6c3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df4bf8217eae09d14281da1692eb586"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">data_object_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a2df4bf8217eae09d14281da1692eb586">findData</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> X)</td></tr>
+<tr class="memdesc:a2df4bf8217eae09d14281da1692eb586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a> by address.  <a href="#a2df4bf8217eae09d14281da1692eb586">More...</a><br /></td></tr>
+<tr class="separator:a2df4bf8217eae09d14281da1692eb586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935eb261fe93a614457e4494d6df6102"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599">const_data_object_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_module.html#a935eb261fe93a614457e4494d6df6102">findData</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> X) const</td></tr>
+<tr class="memdesc:a935eb261fe93a614457e4494d6df6102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a <a class="el" href="classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic.">DataObject</a> by address.  <a href="#a935eb261fe93a614457e4494d6df6102">More...</a><br /></td></tr>
+<tr class="separator:a935eb261fe93a614457e4494d6df6102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Section-Related Public Types and Functions</h2></td></tr>
@@ -420,14 +420,14 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a single binary (library or executable). </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a387ab2703c6451c5305559bc7f1f3f69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a387ab2703c6451c5305559bc7f1f3f69">&#9670;&nbsp;</a></span>const_data_object_iterator</h2>
+<a id="a7bcde8a3aeb6757379b075d5fd343450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bcde8a3aeb6757379b075d5fd343450">&#9670;&nbsp;</a></span>const_data_object_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">gtirb::Module::const_data_object_iterator</a> =  boost::transform_iterator&lt;SymSetTransform&lt;DataSet::const_iterator&gt;, DataSet::const_iterator, const <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>&amp;&gt;</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">gtirb::Module::const_data_object_iterator</a> =  boost::indirect_iterator&lt;DataSet::const_iterator&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -443,7 +443,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599">gtirb::Module::const_data_object_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599">gtirb::Module::const_data_object_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -612,14 +612,14 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a141fbf878e8dc8af87a585d5457e598c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a141fbf878e8dc8af87a585d5457e598c">&#9670;&nbsp;</a></span>data_object_iterator</h2>
+<a id="a71ef5d9f73b2b1486018375f2cef3f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71ef5d9f73b2b1486018375f2cef3f14">&#9670;&nbsp;</a></span>data_object_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">gtirb::Module::data_object_iterator</a> =  boost::transform_iterator&lt;SymSetTransform&lt;DataSet::iterator&gt;, DataSet::iterator, <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>&amp;&gt;</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">gtirb::Module::data_object_iterator</a> =  boost::indirect_iterator&lt;DataSet::iterator&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -635,7 +635,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">gtirb::Module::data_object_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">gtirb::Module::data_object_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1144,7 +1144,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a> gtirb::Module::data_begin </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a> gtirb::Module::data_begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1171,7 +1171,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a> gtirb::Module::data_begin </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a> gtirb::Module::data_begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1198,7 +1198,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a> gtirb::Module::data_end </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a71ef5d9f73b2b1486018375f2cef3f14">data_object_iterator</a> gtirb::Module::data_end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1225,7 +1225,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a> gtirb::Module::data_end </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450">const_data_object_iterator</a> gtirb::Module::data_end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1242,8 +1242,8 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a93c134e740e87189cc0b9d82055f6adb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93c134e740e87189cc0b9d82055f6adb">&#9670;&nbsp;</a></span>findData() <span class="overload">[1/2]</span></h2>
+<a id="a2df4bf8217eae09d14281da1692eb586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df4bf8217eae09d14281da1692eb586">&#9670;&nbsp;</a></span>findData() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1252,7 +1252,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a141fbf878e8dc8af87a585d5457e598c">data_object_iterator</a> gtirb::Module::findData </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a6752aba3703b9eda3340cb3817b43c69">data_object_range</a> gtirb::Module::findData </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classgtirb_1_1_addr.html">Addr</a>&#160;</td>
           <td class="paramname"><em>X</em></td><td>)</td>
@@ -1277,8 +1277,8 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa7c1cfad87fe5dbde7b5f5995ac6c3af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7c1cfad87fe5dbde7b5f5995ac6c3af">&#9670;&nbsp;</a></span>findData() <span class="overload">[2/2]</span></h2>
+<a id="a935eb261fe93a614457e4494d6df6102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935eb261fe93a614457e4494d6df6102">&#9670;&nbsp;</a></span>findData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1287,7 +1287,7 @@ SymbolicExpression-Related Public Types and Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69">const_data_object_iterator</a> gtirb::Module::findData </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599">const_data_object_range</a> gtirb::Module::findData </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classgtirb_1_1_addr.html">Addr</a>&#160;</td>
           <td class="paramname"><em>X</em></td><td>)</td>

@@ -4,7 +4,7 @@ var searchData=
   ['const_5faux_5fdata_5fiterator',['const_aux_data_iterator',['../classgtirb_1_1_i_r.html#a825f151cd31c5dd4b27f90d9913f4491',1,'gtirb::IR']]],
   ['const_5faux_5fdata_5frange',['const_aux_data_range',['../classgtirb_1_1_i_r.html#aa9ffc7381f8bc088b522858fccc1ff88',1,'gtirb::IR']]],
   ['const_5fblock_5fiterator',['const_block_iterator',['../group___c_f_g___g_r_o_u_p.html#gaf1790e685a85817ae5c1a3465ebf5598',1,'gtirb']]],
-  ['const_5fdata_5fobject_5fiterator',['const_data_object_iterator',['../classgtirb_1_1_module.html#a387ab2703c6451c5305559bc7f1f3f69',1,'gtirb::Module']]],
+  ['const_5fdata_5fobject_5fiterator',['const_data_object_iterator',['../classgtirb_1_1_module.html#a7bcde8a3aeb6757379b075d5fd343450',1,'gtirb::Module']]],
   ['const_5fdata_5fobject_5frange',['const_data_object_range',['../classgtirb_1_1_module.html#a5af6670cb9e1a53e60de1e8186bad599',1,'gtirb::Module']]],
   ['const_5fiterator',['const_iterator',['../classgtirb_1_1_i_r.html#afff50c447ef855d72a8c8cd767032652',1,'gtirb::IR']]],
   ['const_5frange',['const_range',['../classgtirb_1_1_byte_map.html#a99a8d581ae30651157df97a8261e1b7e',1,'gtirb::ByteMap::const_range()'],['../classgtirb_1_1_image_byte_map.html#ae0df3f50fbfee44a777d56918d51aa52',1,'gtirb::ImageByteMap::const_range()'],['../classgtirb_1_1_i_r.html#a09ebe40fd83cbeec5758282b64068b4d',1,'gtirb::IR::const_range()']]],

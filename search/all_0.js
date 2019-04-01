@@ -23,6 +23,7 @@ var searchData=
   ['aux_5fdata_5frange',['aux_data_range',['../classgtirb_1_1_i_r.html#ad173236e7e784cb33e9994ce6dca5c8e',1,'gtirb::IR']]],
   ['auxdata',['AuxData',['../classgtirb_1_1_aux_data.html',1,'gtirb::AuxData'],['../classgtirb_1_1_aux_data.html#a719e3271ea26e588b36b4e9ad3cb6e38',1,'gtirb::AuxData::AuxData()=default'],['../classgtirb_1_1_aux_data.html#aa644eed2aefc2248e12648bbfb5777ca',1,'gtirb::AuxData::AuxData(T &amp;&amp;Value)']]],
   ['auxdata_2ehpp',['AuxData.hpp',['../_aux_data_8hpp.html',1,'']]],
+  ['auxdata_2emd',['AuxData.md',['../_aux_data_8md.html',1,'']]],
   ['auxdata',['AuxData',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html',1,'']]],
   ['auxdata_5ftraits',['auxdata_traits',['../structgtirb_1_1auxdata__traits.html',1,'gtirb']]],
   ['advice_20on_20when_20to_20place_20icfg_20edges',['Advice on when to Place ICFG Edges',['../md__c_f_g-_edges.html',1,'']]]
