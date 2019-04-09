@@ -66,6 +66,7 @@ $(function() {
   <div class="summary">
 <a href="#files">Files</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Control Flow Graphs (CFGs)</div>  </div>
@@ -83,56 +84,101 @@ Files</h2></td></tr>
 <tr class="memitem:_c_f_g_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a></td></tr>
 <tr class="memdesc:_c_f_g_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types and operations for interprocedural control flow graphs (CFGs). <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:_cfg_node_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cfg_node_8hpp.html">CfgNode.hpp</a></td></tr>
+<tr class="memdesc:_cfg_node_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for nodes of the CFG. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:_proxy_block_8hpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_proxy_block_8hpp.html">ProxyBlock.hpp</a></td></tr>
+<tr class="memdesc:_proxy_block_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class <a class="el" href="classgtirb_1_1_proxy_block.html" title="A placeholder to serve as the endpoint of a CFG edge.">gtirb::ProxyBlock</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga94709513148b43050d64814dabbe9601"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga94709513148b43050d64814dabbe9601">gtirb::block_iterator</a> = block_iter_base&lt; <a class="el" href="classgtirb_1_1_block.html">Block</a>, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &gt;</td></tr>
-<tr class="memdesc:ga94709513148b43050d64814dabbe9601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over blocks (<a class="el" href="classgtirb_1_1_block.html">Block</a>).  <a href="group___c_f_g___g_r_o_u_p.html#ga94709513148b43050d64814dabbe9601">More...</a><br /></td></tr>
-<tr class="separator:ga94709513148b43050d64814dabbe9601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf43f66aa43ac51d8c23a8a566ef5a3f5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">gtirb::CFG</a> = boost::adjacency_list&lt; boost::listS, boost::vecS, boost::bidirectionalS, <a class="el" href="classgtirb_1_1_block.html">Block</a> *, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaa4fcfa679c1777d86d7faaba83cdc19d">EdgeLabel</a> &gt;</td></tr>
-<tr class="memdesc:gaf43f66aa43ac51d8c23a8a566ef5a3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interprocedural <a class="el" href="group___c_f_g___g_r_o_u_p.html">control flow graph</a>, with vertices of type <a class="el" href="classgtirb_1_1_block.html">Block</a>.  <a href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">More...</a><br /></td></tr>
-<tr class="separator:gaf43f66aa43ac51d8c23a8a566ef5a3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1790e685a85817ae5c1a3465ebf5598"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf1790e685a85817ae5c1a3465ebf5598">gtirb::const_block_iterator</a> = block_iter_base&lt; const <a class="el" href="classgtirb_1_1_block.html">Block</a>, const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &gt;</td></tr>
-<tr class="memdesc:gaf1790e685a85817ae5c1a3465ebf5598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant iterator over blocks (<a class="el" href="classgtirb_1_1_block.html">Block</a>).  <a href="group___c_f_g___g_r_o_u_p.html#gaf1790e685a85817ae5c1a3465ebf5598">More...</a><br /></td></tr>
-<tr class="separator:gaf1790e685a85817ae5c1a3465ebf5598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4fcfa679c1777d86d7faaba83cdc19d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaa4fcfa679c1777d86d7faaba83cdc19d">gtirb::EdgeLabel</a> = std::variant&lt; std::monostate, bool, uint64_t &gt;</td></tr>
-<tr class="memdesc:gaa4fcfa679c1777d86d7faaba83cdc19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label on a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> edge.  <a href="group___c_f_g___g_r_o_u_p.html#gaa4fcfa679c1777d86d7faaba83cdc19d">More...</a><br /></td></tr>
-<tr class="separator:gaa4fcfa679c1777d86d7faaba83cdc19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdc5df020dc6a0445463b6591c0b3705"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gacdc5df020dc6a0445463b6591c0b3705">gtirb::block_iterator</a> = cfg_node_cast_iter&lt; <a class="el" href="classgtirb_1_1_block.html">Block</a> &gt;</td></tr>
+<tr class="memdesc:gacdc5df020dc6a0445463b6591c0b3705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over blocks (<a class="el" href="classgtirb_1_1_block.html">Block</a>).  <a href="group___c_f_g___g_r_o_u_p.html#gacdc5df020dc6a0445463b6591c0b3705">More...</a><br /></td></tr>
+<tr class="separator:gacdc5df020dc6a0445463b6591c0b3705"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba7635ba6380ea0e7306f9cc78fd8268"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">gtirb::CFG</a> = CfgBuilder&lt; boost::listS, boost::vecS, boost::bidirectionalS &gt;::type</td></tr>
+<tr class="memdesc:gaba7635ba6380ea0e7306f9cc78fd8268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interprocedural <a class="el" href="group___c_f_g___g_r_o_u_p.html">control flow graph</a>, with vertices of type <a class="el" href="classgtirb_1_1_block.html">Block</a>.  <a href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">More...</a><br /></td></tr>
+<tr class="separator:gaba7635ba6380ea0e7306f9cc78fd8268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffefa370de62d4fb03aaf46df16a5d0c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaffefa370de62d4fb03aaf46df16a5d0c">gtirb::cfg_iterator</a> = boost::indirect_iterator&lt; cfg_node_iter_base &gt;</td></tr>
+<tr class="memdesc:gaffefa370de62d4fb03aaf46df16a5d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over CfgNodes (CfgNode).  <a href="group___c_f_g___g_r_o_u_p.html#gaffefa370de62d4fb03aaf46df16a5d0c">More...</a><br /></td></tr>
+<tr class="separator:gaffefa370de62d4fb03aaf46df16a5d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb7b24a57b1a129790627e51c9cd1a94"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gacb7b24a57b1a129790627e51c9cd1a94">gtirb::const_block_iterator</a> = cfg_node_cast_iter&lt; const <a class="el" href="classgtirb_1_1_block.html">Block</a> &gt;</td></tr>
+<tr class="memdesc:gacb7b24a57b1a129790627e51c9cd1a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant iterator over blocks (<a class="el" href="classgtirb_1_1_block.html">Block</a>).  <a href="group___c_f_g___g_r_o_u_p.html#gacb7b24a57b1a129790627e51c9cd1a94">More...</a><br /></td></tr>
+<tr class="separator:gacb7b24a57b1a129790627e51c9cd1a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2db32369fb14f7f7f70c843f9ff0adbb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga2db32369fb14f7f7f70c843f9ff0adbb">gtirb::const_cfg_iterator</a> = boost::indirect_iterator&lt; cfg_node_iter_base, const CfgNode &gt;</td></tr>
+<tr class="memdesc:ga2db32369fb14f7f7f70c843f9ff0adbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Const iterator over CfgNodes (CfgNode).  <a href="group___c_f_g___g_r_o_u_p.html#ga2db32369fb14f7f7f70c843f9ff0adbb">More...</a><br /></td></tr>
+<tr class="separator:ga2db32369fb14f7f7f70c843f9ff0adbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24ce3790aa278f182deb4b43fe499c78"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga24ce3790aa278f182deb4b43fe499c78">gtirb::EdgeLabel</a> = std::tuple&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#gae81a540637128cef60bdd90806d28063">ConditionalEdge</a>, <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga0d810e653d6ebffa07b66e0d16b7ffd1">DirectEdge</a>, <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga5f75f57b6145b26ece90283a7b524b9d">EdgeType</a> &gt;</td></tr>
+<tr class="memdesc:ga24ce3790aa278f182deb4b43fe499c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label on a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> edge.  <a href="group___c_f_g___g_r_o_u_p.html#ga24ce3790aa278f182deb4b43fe499c78">More...</a><br /></td></tr>
+<tr class="separator:ga24ce3790aa278f182deb4b43fe499c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gae81a540637128cef60bdd90806d28063"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gae81a540637128cef60bdd90806d28063">gtirb::ConditionalEdge</a> : bool { <a class="el" href="group___c_f_g___g_r_o_u_p.html#ggae81a540637128cef60bdd90806d28063a285401ebb613b552d7f7fdce68472211">gtirb::ConditionalEdge::OnFalse</a>, 
+<a class="el" href="group___c_f_g___g_r_o_u_p.html#ggae81a540637128cef60bdd90806d28063a9afa03f04e93fb31bfaab23cbeaa452d">gtirb::ConditionalEdge::OnTrue</a>
+ }</td></tr>
+<tr class="memdesc:gae81a540637128cef60bdd90806d28063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether an edge is conditional on true.  <a href="group___c_f_g___g_r_o_u_p.html#gae81a540637128cef60bdd90806d28063">More...</a><br /></td></tr>
+<tr class="separator:gae81a540637128cef60bdd90806d28063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d810e653d6ebffa07b66e0d16b7ffd1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga0d810e653d6ebffa07b66e0d16b7ffd1">gtirb::DirectEdge</a> : bool { <a class="el" href="group___c_f_g___g_r_o_u_p.html#gga0d810e653d6ebffa07b66e0d16b7ffd1ad100ba83d130bef5ceb9ef2946b79a42">gtirb::DirectEdge::IsIndirect</a>, 
+<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga0d810e653d6ebffa07b66e0d16b7ffd1a944cb3659575565b21c0a3bbdde5eb5a">gtirb::DirectEdge::IsDirect</a>
+ }</td></tr>
+<tr class="memdesc:ga0d810e653d6ebffa07b66e0d16b7ffd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether an edge represents indirect control flow.  <a href="group___c_f_g___g_r_o_u_p.html#ga0d810e653d6ebffa07b66e0d16b7ffd1">More...</a><br /></td></tr>
+<tr class="separator:ga0d810e653d6ebffa07b66e0d16b7ffd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f75f57b6145b26ece90283a7b524b9d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga5f75f57b6145b26ece90283a7b524b9d">gtirb::EdgeType</a> { <br />
+&#160;&#160;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9dadacdb83ade6c4e8878717e206175dfd8">gtirb::EdgeType::Branch</a>, 
+<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9dac3755e61202abd74da5885d2e9c9160e">gtirb::EdgeType::Call</a>, 
+<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9da5d562a226f723ccf02b8c640f15f354b">gtirb::EdgeType::Fallthrough</a>, 
+<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9da988fd738de9c6d177440c5dcf69e73ce">gtirb::EdgeType::Return</a>, 
+<br />
+&#160;&#160;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9dafa134174b69ee5732119fc6740225c27">gtirb::EdgeType::Syscall</a>, 
+<a class="el" href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9dadec3d8fd19c8e79b9acc0048aecbaa79">gtirb::EdgeType::Sysret</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga5f75f57b6145b26ece90283a7b524b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates the type of control flow transfer indicated by this edge.  <a href="group___c_f_g___g_r_o_u_p.html#ga5f75f57b6145b26ece90283a7b524b9d">More...</a><br /></td></tr>
+<tr class="separator:ga5f75f57b6145b26ece90283a7b524b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga56e99c21240af7b2c50af87bc730c74a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> CFG::edge_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga56e99c21240af7b2c50af87bc730c74a">gtirb::addEdge</a> (const <a class="el" href="classgtirb_1_1_block.html">Block</a> *From, const <a class="el" href="classgtirb_1_1_block.html">Block</a> *To, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;Cfg)</td></tr>
-<tr class="memdesc:ga56e99c21240af7b2c50af87bc730c74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new edge between two blocks.  <a href="group___c_f_g___g_r_o_u_p.html#ga56e99c21240af7b2c50af87bc730c74a">More...</a><br /></td></tr>
-<tr class="separator:ga56e99c21240af7b2c50af87bc730c74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5039337a49b78d1fe67d47a61f8fcba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga94709513148b43050d64814dabbe9601">block_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga5039337a49b78d1fe67d47a61f8fcba9">gtirb::blocks</a> (<a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;Cfg)</td></tr>
-<tr class="memdesc:ga5039337a49b78d1fe67d47a61f8fcba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range of the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga5039337a49b78d1fe67d47a61f8fcba9">More...</a><br /></td></tr>
+<tr class="memitem:ga8a20702c5f700c156869681cecb40e61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> std::optional&lt; CFG::edge_descriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga8a20702c5f700c156869681cecb40e61">gtirb::addEdge</a> (const CfgNode *From, const CfgNode *To, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:ga8a20702c5f700c156869681cecb40e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new edge between two CFG nodes if they exist in the graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga8a20702c5f700c156869681cecb40e61">More...</a><br /></td></tr>
+<tr class="separator:ga8a20702c5f700c156869681cecb40e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab10aaeb0a362541494e5f2a8159d7ffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> CFG::vertex_descriptor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gab10aaeb0a362541494e5f2a8159d7ffc">gtirb::addVertex</a> (CfgNode *B, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:gab10aaeb0a362541494e5f2a8159d7ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a node to the CFG.  <a href="group___c_f_g___g_r_o_u_p.html#gab10aaeb0a362541494e5f2a8159d7ffc">More...</a><br /></td></tr>
+<tr class="separator:gab10aaeb0a362541494e5f2a8159d7ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5039337a49b78d1fe67d47a61f8fcba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#gacdc5df020dc6a0445463b6591c0b3705">block_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga5039337a49b78d1fe67d47a61f8fcba9">gtirb::blocks</a> (<a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:ga5039337a49b78d1fe67d47a61f8fcba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range of just the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga5039337a49b78d1fe67d47a61f8fcba9">More...</a><br /></td></tr>
 <tr class="separator:ga5039337a49b78d1fe67d47a61f8fcba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ab72e20169310283e52d911a7e8a447"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf1790e685a85817ae5c1a3465ebf5598">const_block_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga1ab72e20169310283e52d911a7e8a447">gtirb::blocks</a> (const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;Cfg)</td></tr>
-<tr class="memdesc:ga1ab72e20169310283e52d911a7e8a447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a constant range of the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga1ab72e20169310283e52d911a7e8a447">More...</a><br /></td></tr>
+<tr class="memitem:ga1ab72e20169310283e52d911a7e8a447"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#gacb7b24a57b1a129790627e51c9cd1a94">const_block_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga1ab72e20169310283e52d911a7e8a447">gtirb::blocks</a> (const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:ga1ab72e20169310283e52d911a7e8a447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a constant range of just the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga1ab72e20169310283e52d911a7e8a447">More...</a><br /></td></tr>
 <tr class="separator:ga1ab72e20169310283e52d911a7e8a447"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga81d9eddcc97ebdb8e4ccb8c011c7e3c2"><td class="memTemplParams" colspan="2">template&lt;class... Ts&gt; </td></tr>
-<tr class="memitem:ga81d9eddcc97ebdb8e4ccb8c011c7e3c2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_block.html">Block</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga81d9eddcc97ebdb8e4ccb8c011c7e3c2">gtirb::emplaceBlock</a> (<a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;Cfg, <a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, Ts &amp;&amp;... Args)</td></tr>
-<tr class="memdesc:ga81d9eddcc97ebdb8e4ccb8c011c7e3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new basic block and add it to the control-flow graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga81d9eddcc97ebdb8e4ccb8c011c7e3c2">More...</a><br /></td></tr>
-<tr class="separator:ga81d9eddcc97ebdb8e4ccb8c011c7e3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7e4354a9d80d0e2a6a4d5bffbc3529f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf7e4354a9d80d0e2a6a4d5bffbc3529f">gtirb::fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;Result, const proto::CFG &amp;Message)</td></tr>
-<tr class="memdesc:gaf7e4354a9d80d0e2a6a4d5bffbc3529f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> from a protobuf message.  <a href="group___c_f_g___g_r_o_u_p.html#gaf7e4354a9d80d0e2a6a4d5bffbc3529f">More...</a><br /></td></tr>
+<tr class="memitem:gaf7e4354a9d80d0e2a6a4d5bffbc3529f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf7e4354a9d80d0e2a6a4d5bffbc3529f">gtirb::fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Result, const proto::CFG &amp;Message)</td></tr>
+<tr class="memdesc:gaf7e4354a9d80d0e2a6a4d5bffbc3529f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> from a protobuf message.  <a href="group___c_f_g___g_r_o_u_p.html#gaf7e4354a9d80d0e2a6a4d5bffbc3529f">More...</a><br /></td></tr>
 <tr class="separator:gaf7e4354a9d80d0e2a6a4d5bffbc3529f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacc7b0d61ff741d567c6eba83415e4dd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> proto::CFG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gacc7b0d61ff741d567c6eba83415e4dd0">gtirb::toProtobuf</a> (const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;Cfg)</td></tr>
-<tr class="memdesc:gacc7b0d61ff741d567c6eba83415e4dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> into a protobuf message.  <a href="group___c_f_g___g_r_o_u_p.html#gacc7b0d61ff741d567c6eba83415e4dd0">More...</a><br /></td></tr>
+<tr class="memitem:ga4c9fe2e2a58dcd46130c6ae15df7578e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> std::optional&lt; CFG::vertex_descriptor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga4c9fe2e2a58dcd46130c6ae15df7578e">gtirb::getVertex</a> (const CfgNode *N, const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:ga4c9fe2e2a58dcd46130c6ae15df7578e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boost::graph vertex descriptor for a CfgNode if it is in the graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga4c9fe2e2a58dcd46130c6ae15df7578e">More...</a><br /></td></tr>
+<tr class="separator:ga4c9fe2e2a58dcd46130c6ae15df7578e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ddb48e391dc9e66bbc04c2fb1efa3b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaffefa370de62d4fb03aaf46df16a5d0c">cfg_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#ga1ddb48e391dc9e66bbc04c2fb1efa3b7">gtirb::nodes</a> (<a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:ga1ddb48e391dc9e66bbc04c2fb1efa3b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range of the CfgNode elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga1ddb48e391dc9e66bbc04c2fb1efa3b7">More...</a><br /></td></tr>
+<tr class="separator:ga1ddb48e391dc9e66bbc04c2fb1efa3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6b3315d77e438da3f4f6a53c89df6a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt; <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga2db32369fb14f7f7f70c843f9ff0adbb">const_cfg_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaa6b3315d77e438da3f4f6a53c89df6a0">gtirb::nodes</a> (const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:gaa6b3315d77e438da3f4f6a53c89df6a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a constant range of the CfgNode elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#gaa6b3315d77e438da3f4f6a53c89df6a0">More...</a><br /></td></tr>
+<tr class="separator:gaa6b3315d77e438da3f4f6a53c89df6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc7b0d61ff741d567c6eba83415e4dd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> proto::CFG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gacc7b0d61ff741d567c6eba83415e4dd0">gtirb::toProtobuf</a> (const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;Cfg)</td></tr>
+<tr class="memdesc:gacc7b0d61ff741d567c6eba83415e4dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> into a protobuf message.  <a href="group___c_f_g___g_r_o_u_p.html#gacc7b0d61ff741d567c6eba83415e4dd0">More...</a><br /></td></tr>
 <tr class="separator:gacc7b0d61ff741d567c6eba83415e4dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Interprocedural control flow graph, with vertices of type <a class="el" href="classgtirb_1_1_block.html">Block</a>. </p>
 <p>See also <a class="el" href="md__c_f_g-_edges.html">Advice on when to Place ICFG Edges</a>. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga94709513148b43050d64814dabbe9601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga94709513148b43050d64814dabbe9601">&#9670;&nbsp;</a></span>block_iterator</h2>
+<a id="gacdc5df020dc6a0445463b6591c0b3705"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacdc5df020dc6a0445463b6591c0b3705">&#9670;&nbsp;</a></span>block_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga94709513148b43050d64814dabbe9601">gtirb::block_iterator</a> = typedef block_iter_base&lt;<a class="el" href="classgtirb_1_1_block.html">Block</a>, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a>&gt;</td>
+          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gacdc5df020dc6a0445463b6591c0b3705">gtirb::block_iterator</a> = typedef cfg_node_cast_iter&lt;<a class="el" href="classgtirb_1_1_block.html">Block</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -143,14 +189,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf43f66aa43ac51d8c23a8a566ef5a3f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf43f66aa43ac51d8c23a8a566ef5a3f5">&#9670;&nbsp;</a></span>CFG</h2>
+<a id="gaba7635ba6380ea0e7306f9cc78fd8268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba7635ba6380ea0e7306f9cc78fd8268">&#9670;&nbsp;</a></span>CFG</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">gtirb::CFG</a> = typedef boost::adjacency_list&lt;boost::listS, boost::vecS, boost::bidirectionalS, <a class="el" href="classgtirb_1_1_block.html">Block</a>*, <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaa4fcfa679c1777d86d7faaba83cdc19d">EdgeLabel</a>&gt;</td>
+          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">gtirb::CFG</a> = typedef CfgBuilder&lt;boost::listS, boost::vecS, boost::bidirectionalS &gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -161,14 +207,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaf1790e685a85817ae5c1a3465ebf5598"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf1790e685a85817ae5c1a3465ebf5598">&#9670;&nbsp;</a></span>const_block_iterator</h2>
+<a id="gaffefa370de62d4fb03aaf46df16a5d0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffefa370de62d4fb03aaf46df16a5d0c">&#9670;&nbsp;</a></span>cfg_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf1790e685a85817ae5c1a3465ebf5598">gtirb::const_block_iterator</a> = typedef block_iter_base&lt;const <a class="el" href="classgtirb_1_1_block.html">Block</a>, const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a>&gt;</td>
+          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaffefa370de62d4fb03aaf46df16a5d0c">gtirb::cfg_iterator</a> = typedef boost::indirect_iterator&lt;cfg_node_iter_base&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Iterator over CfgNodes (CfgNode). </p>
+
+</div>
+</div>
+<a id="gacb7b24a57b1a129790627e51c9cd1a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb7b24a57b1a129790627e51c9cd1a94">&#9670;&nbsp;</a></span>const_block_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gacb7b24a57b1a129790627e51c9cd1a94">gtirb::const_block_iterator</a> = typedef cfg_node_cast_iter&lt;const <a class="el" href="classgtirb_1_1_block.html">Block</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -179,49 +243,160 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaa4fcfa679c1777d86d7faaba83cdc19d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa4fcfa679c1777d86d7faaba83cdc19d">&#9670;&nbsp;</a></span>EdgeLabel</h2>
+<a id="ga2db32369fb14f7f7f70c843f9ff0adbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2db32369fb14f7f7f70c843f9ff0adbb">&#9670;&nbsp;</a></span>const_cfg_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaa4fcfa679c1777d86d7faaba83cdc19d">gtirb::EdgeLabel</a> = typedef std::variant&lt;std::monostate, bool, uint64_t&gt;</td>
+          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga2db32369fb14f7f7f70c843f9ff0adbb">gtirb::const_cfg_iterator</a> = typedef boost::indirect_iterator&lt;cfg_node_iter_base, const CfgNode&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
 
-<p>A label on a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> edge. </p>
-<p>Boolean labels are used in the case of a conditional branch or call. A true label designates the non-local edge (e.g. when the condition is true), while a false label designates the fallthrough edge.</p>
-<p>Integer labels are used for indirect branches. </p>
+<p>Const iterator over CfgNodes (CfgNode). </p>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga56e99c21240af7b2c50af87bc730c74a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga56e99c21240af7b2c50af87bc730c74a">&#9670;&nbsp;</a></span>addEdge()</h2>
+<a id="ga24ce3790aa278f182deb4b43fe499c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24ce3790aa278f182deb4b43fe499c78">&#9670;&nbsp;</a></span>EdgeLabel</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> CFG::edge_descriptor gtirb::addEdge </td>
+          <td class="memname">using <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga24ce3790aa278f182deb4b43fe499c78">gtirb::EdgeLabel</a> = typedef std::tuple&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gae81a540637128cef60bdd90806d28063">ConditionalEdge</a>, <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga0d810e653d6ebffa07b66e0d16b7ffd1">DirectEdge</a>, <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga5f75f57b6145b26ece90283a7b524b9d">EdgeType</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>A label on a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> edge. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gae81a540637128cef60bdd90806d28063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae81a540637128cef60bdd90806d28063">&#9670;&nbsp;</a></span>ConditionalEdge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___c_f_g___g_r_o_u_p.html#gae81a540637128cef60bdd90806d28063">gtirb::ConditionalEdge</a> : bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Indicates whether an edge is conditional on true. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggae81a540637128cef60bdd90806d28063a285401ebb613b552d7f7fdce68472211"></a>OnFalse&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggae81a540637128cef60bdd90806d28063a9afa03f04e93fb31bfaab23cbeaa452d"></a>OnTrue&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga0d810e653d6ebffa07b66e0d16b7ffd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d810e653d6ebffa07b66e0d16b7ffd1">&#9670;&nbsp;</a></span>DirectEdge</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga0d810e653d6ebffa07b66e0d16b7ffd1">gtirb::DirectEdge</a> : bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Indicates whether an edge represents indirect control flow. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga0d810e653d6ebffa07b66e0d16b7ffd1ad100ba83d130bef5ceb9ef2946b79a42"></a>IsIndirect&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0d810e653d6ebffa07b66e0d16b7ffd1a944cb3659575565b21c0a3bbdde5eb5a"></a>IsDirect&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ga5f75f57b6145b26ece90283a7b524b9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f75f57b6145b26ece90283a7b524b9d">&#9670;&nbsp;</a></span>EdgeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga5f75f57b6145b26ece90283a7b524b9d">gtirb::EdgeType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Indicates the type of control flow transfer indicated by this edge. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga5f75f57b6145b26ece90283a7b524b9dadacdb83ade6c4e8878717e206175dfd8"></a>Branch&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5f75f57b6145b26ece90283a7b524b9dac3755e61202abd74da5885d2e9c9160e"></a>Call&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5f75f57b6145b26ece90283a7b524b9da5d562a226f723ccf02b8c640f15f354b"></a>Fallthrough&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5f75f57b6145b26ece90283a7b524b9da988fd738de9c6d177440c5dcf69e73ce"></a>Return&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5f75f57b6145b26ece90283a7b524b9dafa134174b69ee5732119fc6740225c27"></a>Syscall&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga5f75f57b6145b26ece90283a7b524b9dadec3d8fd19c8e79b9acc0048aecbaa79"></a>Sysret&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga8a20702c5f700c156869681cecb40e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a20702c5f700c156869681cecb40e61">&#9670;&nbsp;</a></span>addEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> std::optional&lt;CFG::edge_descriptor&gt; gtirb::addEdge </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classgtirb_1_1_block.html">Block</a> *&#160;</td>
+          <td class="paramtype">const CfgNode *&#160;</td>
           <td class="paramname"><em>From</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classgtirb_1_1_block.html">Block</a> *&#160;</td>
+          <td class="paramtype">const CfgNode *&#160;</td>
           <td class="paramname"><em>To</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
           <td class="paramname"><em>Cfg</em>&#160;</td>
         </tr>
         <tr>
@@ -234,16 +409,58 @@ Functions</h2></td></tr>
 
 <p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
 
-<p>Create a new edge between two blocks. </p>
+<p>Create a new edge between two CFG nodes if they exist in the graph. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Cfg</td><td>The graph to modify. </td></tr>
-    <tr><td class="paramname">From</td><td>The source block. </td></tr>
-    <tr><td class="paramname">To</td><td>The target block.</td></tr>
+    <tr><td class="paramname">From</td><td>The source node. </td></tr>
+    <tr><td class="paramname">To</td><td>The target node.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A descriptor which can be used to retrieve the edge from the graph or assign a label. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A descriptor which can be used to retrieve the edge from the graph or assign a label. If either CFG node is not present in the graph, returns <code>std::nullopt</code> instead. </dd></dl>
+
+</div>
+</div>
+<a id="gab10aaeb0a362541494e5f2a8159d7ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab10aaeb0a362541494e5f2a8159d7ffc">&#9670;&nbsp;</a></span>addVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> CFG::vertex_descriptor gtirb::addVertex </td>
+          <td>(</td>
+          <td class="paramtype">CfgNode *&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
+          <td class="paramname"><em>Cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Add a node to the CFG. </p>
+<p>If the graph already contains the node, it is not modified.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This is a relatively low-level interface. For most purposes, prefer <a class="el" href="classgtirb_1_1_module.html#a2adef9fd18b7f29a497fc73a2c19adf9" title="Add a single CFG node to the module.">Module::addCfgNode</a>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>The CFG node to add. </td></tr>
+    <tr><td class="paramname">Cfg</td><td>The graph to modify.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A descriptor which can be used to retrieve the node from the graph. </dd></dl>
 
 </div>
 </div>
@@ -254,9 +471,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#ga94709513148b43050d64814dabbe9601">block_iterator</a>&gt; gtirb::blocks </td>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gacdc5df020dc6a0445463b6591c0b3705">block_iterator</a>&gt; gtirb::blocks </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
           <td class="paramname"><em>Cfg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -265,15 +482,16 @@ Functions</h2></td></tr>
 
 <p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
 
-<p>Get a range of the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph. </p>
+<p>Get a range of just the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph. </p>
+<p>The returned range will not include any ProxyBlocks. To retrieve those as well, use <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga1ddb48e391dc9e66bbc04c2fb1efa3b7">nodes(CFG&amp;)</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Cfg</td><td>The graph to be iterated over.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A range over <code>Cfg</code> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="cfg-paths_8cpp-example.html#a6">cfg-paths.cpp</a>, <a class="el" href="functions_8cpp-example.html#a4">functions.cpp</a>, and <a class="el" href="jumps_8cpp-example.html#a5">jumps.cpp</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>A range over the Blocks in the <code>Cfg</code> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="functions_8cpp-example.html#a4">functions.cpp</a>, and <a class="el" href="jumps_8cpp-example.html#a5">jumps.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -285,9 +503,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf1790e685a85817ae5c1a3465ebf5598">const_block_iterator</a>&gt; gtirb::blocks </td>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gacb7b24a57b1a129790627e51c9cd1a94">const_block_iterator</a>&gt; gtirb::blocks </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
           <td class="paramname"><em>Cfg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -296,69 +514,15 @@ Functions</h2></td></tr>
 
 <p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
 
-<p>Get a constant range of the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph. </p>
+<p>Get a constant range of just the <a class="el" href="classgtirb_1_1_block.html">Block</a> elements in the specified graph. </p>
+<p>The returned range will not include any ProxyBlocks. To retrieve those as well, use <a class="el" href="group___c_f_g___g_r_o_u_p.html#ga1ddb48e391dc9e66bbc04c2fb1efa3b7">nodes(CFG&amp;)</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Cfg</td><td>The graph to be iterated over.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A range over <code>Cfg</code> </dd></dl>
-
-</div>
-</div>
-<a id="ga81d9eddcc97ebdb8e4ccb8c011c7e3c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga81d9eddcc97ebdb8e4ccb8c011c7e3c2">&#9670;&nbsp;</a></span>emplaceBlock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class... Ts&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_block.html">Block</a>* gtirb::emplaceBlock </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;&#160;</td>
-          <td class="paramname"><em>Cfg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>Args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="_block_8hpp.html">Block.hpp</a>&gt;</code></p>
-
-<p>Create a new basic block and add it to the control-flow graph. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Ts</td><td>Types of forwarded arguments.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Cfg</td><td>The control-flow graph to modify </td></tr>
-    <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which the <a class="el" href="classgtirb_1_1_block.html" title="A basic block.">Block</a> will be held. </td></tr>
-    <tr><td class="paramname">Args</td><td>Forwarded to <a class="el" href="classgtirb_1_1_block.html#a74c999ea551bac7e2a127e7aa44c380f" title="Create a Block object.">Block::Create()</a></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A descriptor which can be used to retrieve the <a class="el" href="classgtirb_1_1_block.html">Block</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A range over the Blocks in the <code>Cfg</code> </dd></dl>
 
 </div>
 </div>
@@ -377,7 +541,7 @@ template&lt;class... Ts&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
           <td class="paramname"><em>Result</em>, </td>
         </tr>
         <tr>
@@ -396,7 +560,7 @@ template&lt;class... Ts&gt; </div>
 
 <p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
 
-<p>Initialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> from a protobuf message. </p>
+<p>Initialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> from a protobuf message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir"></td><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which the deserialized CFG will be held. </td></tr>
@@ -409,6 +573,106 @@ template&lt;class... Ts&gt; </div>
 
 </div>
 </div>
+<a id="ga4c9fe2e2a58dcd46130c6ae15df7578e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c9fe2e2a58dcd46130c6ae15df7578e">&#9670;&nbsp;</a></span>getVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> std::optional&lt;CFG::vertex_descriptor&gt; gtirb::getVertex </td>
+          <td>(</td>
+          <td class="paramtype">const CfgNode *&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
+          <td class="paramname"><em>Cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Get the boost::graph vertex descriptor for a CfgNode if it is in the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">N</td><td>The node to query. </td></tr>
+    <tr><td class="paramname">Cfg</td><td>The graph to query.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A descriptor which can be used to retrieve the node from the graph. </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="cfg-paths_8cpp-example.html#a2">cfg-paths.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="ga1ddb48e391dc9e66bbc04c2fb1efa3b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ddb48e391dc9e66bbc04c2fb1efa3b7">&#9670;&nbsp;</a></span>nodes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#gaffefa370de62d4fb03aaf46df16a5d0c">cfg_iterator</a>&gt; gtirb::nodes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
+          <td class="paramname"><em>Cfg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Get a range of the CfgNode elements in the specified graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Cfg</td><td>The graph to be iterated over.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a range over the <code>Cfg</code>. </dd></dl>
+
+</div>
+</div>
+<a id="gaa6b3315d77e438da3f4f6a53c89df6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6b3315d77e438da3f4f6a53c89df6a0">&#9670;&nbsp;</a></span>nodes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> boost::iterator_range&lt;<a class="el" href="group___c_f_g___g_r_o_u_p.html#ga2db32369fb14f7f7f70c843f9ff0adbb">const_cfg_iterator</a>&gt; gtirb::nodes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
+          <td class="paramname"><em>Cfg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
+
+<p>Get a constant range of the CfgNode elements in the specified graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Cfg</td><td>The graph to be iterated over.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A range over teh <code>Cfg</code>. </dd></dl>
+
+</div>
+</div>
 <a id="gacc7b0d61ff741d567c6eba83415e4dd0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gacc7b0d61ff741d567c6eba83415e4dd0">&#9670;&nbsp;</a></span>toProtobuf()</h2>
 
@@ -418,7 +682,7 @@ template&lt;class... Ts&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> proto::CFG gtirb::toProtobuf </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> &amp;&#160;</td>
           <td class="paramname"><em>Cfg</em></td><td>)</td>
           <td></td>
         </tr>
@@ -427,14 +691,14 @@ template&lt;class... Ts&gt; </div>
 
 <p><code>#include &lt;<a class="el" href="_c_f_g_8hpp.html">CFG.hpp</a>&gt;</code></p>
 
-<p>Serialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> into a protobuf message. </p>
+<p>Serialize a <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> into a protobuf message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Cfg</td><td>The CFG to serialize.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A protobuf message representing the <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaf43f66aa43ac51d8c23a8a566ef5a3f5">CFG</a> and its component blocks (<a class="el" href="classgtirb_1_1_block.html">Block</a>). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A protobuf message representing the <a class="el" href="group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268">CFG</a> and its component blocks (<a class="el" href="classgtirb_1_1_block.html">Block</a>). </dd></dl>
 
 </div>
 </div>

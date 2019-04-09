@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exit',['Exit',['../classgtirb_1_1_block.html#a5fa085b053ef267cb361b401654ceb92',1,'gtirb::Block']]]
+  ['conditionaledge',['ConditionalEdge',['../group___c_f_g___g_r_o_u_p.html#gae81a540637128cef60bdd90806d28063',1,'gtirb']]]
 ];

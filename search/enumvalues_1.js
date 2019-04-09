@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['branch',['Branch',['../classgtirb_1_1_block.html#a5fa085b053ef267cb361b401654ceb92adacdb83ade6c4e8878717e206175dfd8',1,'gtirb::Block']]]
+  ['branch',['Branch',['../group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9dadacdb83ade6c4e8878717e206175dfd8',1,'gtirb']]]
 ];

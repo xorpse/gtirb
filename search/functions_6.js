@@ -4,9 +4,6 @@ var searchData=
   ['getaddress',['getAddress',['../classgtirb_1_1_block.html#abb8535fa1bc0d20b2778abfacca39ae2',1,'gtirb::Block::getAddress()'],['../classgtirb_1_1_data_object.html#a4dfe099bdcee4fb2cc8973e8e25bfaa0',1,'gtirb::DataObject::getAddress()'],['../classgtirb_1_1_section.html#afc77b6762cacb8710d9edd38f943f8e2',1,'gtirb::Section::getAddress()'],['../classgtirb_1_1_symbol.html#ad5dae57099dda87c8588543740d0fc2f',1,'gtirb::Symbol::getAddress()']]],
   ['getaddrminmax',['getAddrMinMax',['../classgtirb_1_1_image_byte_map.html#a82289f9ad21a2ce4a447d167a9733402',1,'gtirb::ImageByteMap']]],
   ['getaddrsforsymbolicexpression',['getAddrsForSymbolicExpression',['../classgtirb_1_1_module.html#ac9fe514766a2ec285113dcccd433a255',1,'gtirb::Module']]],
-  ['getauxdata',['getAuxData',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga0f66417ca2d9e41d413dfce65e4730c7',1,'gtirb::IR::getAuxData(const std::string &amp;X) const'],['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#gaaaa6a0dead680d24345e8f3dd418289a',1,'gtirb::IR::getAuxData(const std::string &amp;X)']]],
-  ['getauxdataempty',['getAuxDataEmpty',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga8c345d41537bda2b4fc365659c4a60e6',1,'gtirb::IR']]],
-  ['getauxdatasize',['getAuxDataSize',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga3309e3b56d0ed9ef58b1de44de308da7',1,'gtirb::IR']]],
   ['getbaseaddress',['getBaseAddress',['../classgtirb_1_1_image_byte_map.html#a741bc952f39ea8816246502026d32648',1,'gtirb::ImageByteMap']]],
   ['getbinarypath',['getBinaryPath',['../classgtirb_1_1_module.html#a59227668a9fe5f11a5389c8cd4c804c5',1,'gtirb::Module']]],
   ['getbyteorder',['getByteOrder',['../classgtirb_1_1_image_byte_map.html#ab88539320895446a8471ef1f63a6343e',1,'gtirb::ImageByteMap']]],
@@ -17,7 +14,6 @@ var searchData=
   ['getdata',['getData',['../classgtirb_1_1_image_byte_map.html#ab51d0dccd1f8498ab72d1c82ecb249d8',1,'gtirb::ImageByteMap::getData(Addr A)'],['../classgtirb_1_1_image_byte_map.html#af256915baee56644a4f65711961258ab',1,'gtirb::ImageByteMap::getData(Addr A)']]],
   ['getdecodemode',['getDecodeMode',['../classgtirb_1_1_block.html#a28fe26d3aa7a841d8216d5f1c684d93a',1,'gtirb::Block']]],
   ['getentrypointaddress',['getEntryPointAddress',['../classgtirb_1_1_image_byte_map.html#a666d54fa0c6d19f25d3f0120fa4f032a',1,'gtirb::ImageByteMap']]],
-  ['getexitkind',['getExitKind',['../classgtirb_1_1_block.html#a3d52256526fa246667cafac37ef2d973',1,'gtirb::Block']]],
   ['getfileformat',['getFileFormat',['../classgtirb_1_1_module.html#a67c4a378733ec59ad39e37718ea1b090',1,'gtirb::Module']]],
   ['getimagebytemap',['getImageByteMap',['../classgtirb_1_1_module.html#a260fd01eefef2a5085eaf55ea55fe2a4',1,'gtirb::Module::getImageByteMap()'],['../classgtirb_1_1_module.html#ac0be2bcd4eaafdae0c83f0011f650811',1,'gtirb::Module::getImageByteMap() const']]],
   ['getisaid',['getISAID',['../classgtirb_1_1_module.html#a85080737cc070ad7f791f6d3ac2f4fce',1,'gtirb::Module']]],
@@ -30,5 +26,5 @@ var searchData=
   ['getstoragekind',['getStorageKind',['../classgtirb_1_1_symbol.html#a41f6b61227dbc8f66edd38bbe30ca0e6',1,'gtirb::Symbol']]],
   ['gettotalmemory',['getTotalMemory',['../class_bump_ptr_allocator_impl.html#ad8330626cbbb32249b9a693696085871',1,'BumpPtrAllocatorImpl']]],
   ['getuuid',['getUUID',['../classgtirb_1_1_node.html#a05c1f7fbac43e778445e6a710a401700',1,'gtirb::Node']]],
-  ['getvertex',['getVertex',['../classgtirb_1_1_block.html#a33664d72f89ed830dc8e432357b025aa',1,'gtirb::Block']]]
+  ['getvertex',['getVertex',['../group___c_f_g___g_r_o_u_p.html#ga4c9fe2e2a58dcd46130c6ae15df7578e',1,'gtirb']]]
 ];

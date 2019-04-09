@@ -1,10 +1,7 @@
 <map id="gtirb::Node" name="gtirb::Node">
-<area shape="rect" id="node1" title="Represents the base of the Node class hierarchy." alt="" coords="5,157,92,184"/>
-<area shape="rect" id="node2" href="$classgtirb_1_1_block.html" title="A basic block." alt="" coords="167,5,255,32"/>
-<area shape="rect" id="node3" href="$classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic." alt="" coords="151,56,272,83"/>
-<area shape="rect" id="node4" href="$classgtirb_1_1_image_byte_map.html" title="Contains the loaded raw image data for the module (binary)." alt="" coords="140,107,283,133"/>
-<area shape="rect" id="node5" href="$classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module)." alt="" coords="177,157,246,184"/>
-<area shape="rect" id="node6" href="$classgtirb_1_1_module.html" title="Represents a single binary (library or executable)." alt="" coords="163,208,260,235"/>
-<area shape="rect" id="node7" href="$classgtirb_1_1_section.html" title="Represents a named section of the binary." alt="" coords="162,259,261,285"/>
-<area shape="rect" id="node8" href="$classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR." alt="" coords="162,309,261,336"/>
+<area shape="rect" id="node1" title="Represents the base of the Node class hierarchy." alt="" coords="251,5,337,32"/>
+<area shape="rect" id="node2" href="$classgtirb_1_1_data_object.html" title="Represents a data object, possibly symbolic." alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node3" href="$classgtirb_1_1_image_byte_map.html" title="Contains the loaded raw image data for the module (binary)." alt="" coords="151,80,293,107"/>
+<area shape="rect" id="node4" href="$classgtirb_1_1_section.html" title="Represents a named section of the binary." alt="" coords="318,80,417,107"/>
+<area shape="rect" id="node5" href="$classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR." alt="" coords="441,80,539,107"/>
 </map>

@@ -119,9 +119,9 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ab376ad7b7a216e73b54565187b7d95ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates how a symbol is stored and where it is accessible.  <a href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ff">More...</a><br /></td></tr>
 <tr class="separator:ab376ad7b7a216e73b54565187b7d95ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0a91a80732b2573e55e0cab919fac40"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#ae0a91a80732b2573e55e0cab919fac40">supported_referent_types</a> = TypeList&lt; <a class="el" href="classgtirb_1_1_block.html">Block</a>, <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a> &gt;</td></tr>
-<tr class="memdesc:ae0a91a80732b2573e55e0cab919fac40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of supported referent types.  <a href="#ae0a91a80732b2573e55e0cab919fac40">More...</a><br /></td></tr>
-<tr class="separator:ae0a91a80732b2573e55e0cab919fac40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9412961cb64c039472c76b5f02035e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a3a9412961cb64c039472c76b5f02035e">supported_referent_types</a> = TypeList&lt; <a class="el" href="classgtirb_1_1_block.html">Block</a>, <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>, <a class="el" href="classgtirb_1_1_proxy_block.html">ProxyBlock</a> &gt;</td></tr>
+<tr class="memdesc:a3a9412961cb64c039472c76b5f02035e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of supported referent types.  <a href="#a3a9412961cb64c039472c76b5f02035e">More...</a><br /></td></tr>
+<tr class="separator:a3a9412961cb64c039472c76b5f02035e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -243,14 +243,14 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae0a91a80732b2573e55e0cab919fac40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0a91a80732b2573e55e0cab919fac40">&#9670;&nbsp;</a></span>supported_referent_types</h2>
+<a id="a3a9412961cb64c039472c76b5f02035e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a9412961cb64c039472c76b5f02035e">&#9670;&nbsp;</a></span>supported_referent_types</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_symbol.html#ae0a91a80732b2573e55e0cab919fac40">gtirb::Symbol::supported_referent_types</a> =  TypeList&lt;<a class="el" href="classgtirb_1_1_block.html">Block</a>, <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_symbol.html#a3a9412961cb64c039472c76b5f02035e">gtirb::Symbol::supported_referent_types</a> =  TypeList&lt;<a class="el" href="classgtirb_1_1_block.html">Block</a>, <a class="el" href="classgtirb_1_1_data_object.html">DataObject</a>, <a class="el" href="classgtirb_1_1_proxy_block.html">ProxyBlock</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -848,7 +848,7 @@ template&lt;typename Callable &gt; </div>
 <p>Visits the symbol's referent, if one is present, by concrete referent type. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Callable</td><td>A callable function type. This type must be able to be called with a pointer to all of the types listed in <a class="el" href="classgtirb_1_1_symbol.html#ae0a91a80732b2573e55e0cab919fac40">supported_referent_types</a>. All overloaded functions must have a common, compatible return type.</td></tr>
+    <tr><td class="paramname">Callable</td><td>A callable function type. This type must be able to be called with a pointer to all of the types listed in <a class="el" href="classgtirb_1_1_symbol.html#a3a9412961cb64c039472c76b5f02035e">supported_referent_types</a>. All overloaded functions must have a common, compatible return type.</td></tr>
   </table>
   </dd>
 </dl>
@@ -860,7 +860,7 @@ template&lt;typename Callable &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The common type of each of the return types in the <code>Callable</code> overload set. Notionally returns: std::common_type_t&lt;Overload1(Ty1), Overload2(Ty2), ...&gt; which can be void.</dd></dl>
 <p>For example:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span>Visitor {</div><div class="line">  <span class="keywordtype">int</span> operator()(Block*) { <span class="keywordflow">return</span> 0; }</div><div class="line">  <span class="keywordtype">long</span> operator()(DataObject*) { <span class="keywordflow">return</span> 1; }</div><div class="line">};</div><div class="line"></div><div class="line"><a class="code" href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a> Ctx;</div><div class="line">Symbol* SymB = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, <a class="code" href="classgtirb_1_1_block.html#a74c999ea551bac7e2a127e7aa44c380f">Block::Create</a>(Ctx), <span class="stringliteral">&quot;&quot;</span>);</div><div class="line">Symbol* SymD = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, <a class="code" href="classgtirb_1_1_data_object.html#a1a4c33f9f32ffd736035ff32423b2fde">DataObject::Create</a>(Ctx), <span class="stringliteral">&quot;&quot;</span>);</div><div class="line">Symbol* SymX = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, Addr(42), <span class="stringliteral">&quot;&quot;</span>);</div><div class="line">Symbol* SymN = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx);</div><div class="line"></div><div class="line">SymB-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(Block*);</span></div><div class="line">SymD-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(DataObject*);</span></div><div class="line">SymX-&gt;visit(Visitor{}); <span class="comment">// Will not call any overload</span></div><div class="line">SymN-&gt;visit(Visitor{}); <span class="comment">// Will not call any overload</span></div></div><!-- fragment --> 
+<div class="fragment"><div class="line"><span class="keyword">struct </span>Visitor {</div><div class="line">  <span class="keywordtype">int</span> operator()(CfgNode*) { <span class="keywordflow">return</span> 0; }</div><div class="line">  <span class="keywordtype">long</span> operator()(DataObject*) { <span class="keywordflow">return</span> 1; }</div><div class="line">};</div><div class="line"></div><div class="line"><a class="code" href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a> Ctx;</div><div class="line">Symbol* SymB = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, <a class="code" href="classgtirb_1_1_block.html#a0fd77d7afdecdca2c6a4f4aab04c1c6b">Block::Create</a>(Ctx), <span class="stringliteral">&quot;&quot;</span>);</div><div class="line">Symbol* SymD = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, <a class="code" href="classgtirb_1_1_data_object.html#a1a4c33f9f32ffd736035ff32423b2fde">DataObject::Create</a>(Ctx), <span class="stringliteral">&quot;&quot;</span>);</div><div class="line">Symbol* SymX = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx, Addr(42), <span class="stringliteral">&quot;&quot;</span>);</div><div class="line">Symbol* SymN = <a class="code" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Symbol::Create</a>(Ctx);</div><div class="line"></div><div class="line">SymB-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(CfgNode*);</span></div><div class="line">SymD-&gt;visit(Visitor{}); <span class="comment">// Will call Visitor::operator()(DataObject*);</span></div><div class="line">SymX-&gt;visit(Visitor{}); <span class="comment">// Will not call any overload</span></div><div class="line">SymN-&gt;visit(Visitor{}); <span class="comment">// Will not call any overload</span></div></div><!-- fragment --> 
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>

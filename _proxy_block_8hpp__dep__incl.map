@@ -1,0 +1,8 @@
+<map id="ProxyBlock.hpp" name="ProxyBlock.hpp">
+<area shape="rect" id="node1" title="Class gtirb::ProxyBlock." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="$_symbol_8hpp.html" title="Class gtirb::Symbol." alt="" coords="17,80,108,107"/>
+<area shape="rect" id="node3" href="$gtirb_8hpp.html" title="#include this file to include all GTIRB API headers." alt="" coords="53,379,125,405"/>
+<area shape="rect" id="node4" href="$_module_8hpp.html" title="Class gtirb::Module and related functions and types." alt="" coords="54,229,143,256"/>
+<area shape="rect" id="node6" href="$_symbolic_expression_8hpp.html" title="Types and operations for symbolic expressions." alt="" coords="101,155,267,181"/>
+<area shape="rect" id="node5" href="$_i_r_8hpp.html" title="Class gtirb::IR." alt="" coords="93,304,155,331"/>
+</map>

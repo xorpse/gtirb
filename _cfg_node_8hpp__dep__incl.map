@@ -1,0 +1,12 @@
+<map id="CfgNode.hpp" name="CfgNode.hpp">
+<area shape="rect" id="node1" title="Base class for nodes of the CFG." alt="" coords="184,5,283,32"/>
+<area shape="rect" id="node2" href="$_block_8hpp.html" title="Classes gtirb::Block and gtirb::InstructionRef." alt="" coords="133,80,213,107"/>
+<area shape="rect" id="node10" href="$_proxy_block_8hpp.html" title="Class gtirb::ProxyBlock." alt="" coords="264,80,379,107"/>
+<area shape="rect" id="node3" href="$_aux_data_8hpp.html" title="Types and operations for auxiliar data." alt="" coords="71,155,169,181"/>
+<area shape="rect" id="node6" href="$gtirb_8hpp.html" title="#include this file to include all GTIRB API headers." alt="" coords="231,453,303,480"/>
+<area shape="rect" id="node8" href="$_symbol_8hpp.html" title="Class gtirb::Symbol." alt="" coords="291,155,381,181"/>
+<area shape="rect" id="node4" href="$_aux_data_container_8hpp.html" title="Class gtirb::AuxDataContainer." alt="" coords="145,229,298,256"/>
+<area shape="rect" id="node5" href="$_i_r_8hpp.html" title="Class gtirb::IR." alt="" coords="195,379,256,405"/>
+<area shape="rect" id="node7" href="$_module_8hpp.html" title="Class gtirb::Module and related functions and types." alt="" coords="259,304,349,331"/>
+<area shape="rect" id="node9" href="$_symbolic_expression_8hpp.html" title="Types and operations for symbolic expressions." alt="" coords="374,229,541,256"/>
+</map>
