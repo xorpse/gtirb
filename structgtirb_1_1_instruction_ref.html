@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -68,8 +68,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structgtirb_1_1_instruction_ref-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -82,21 +80,6 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_block_8hpp_source.html">Block.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a6aa1a9f0e70aa6f0702e8acd4e11b701"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1_instruction_ref.html#a6aa1a9f0e70aa6f0702e8acd4e11b701">MessageType</a> = proto::InstructionRef</td></tr>
-<tr class="memdesc:a6aa1a9f0e70aa6f0702e8acd4e11b701"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protobuf message type used for serializing <a class="el" href="structgtirb_1_1_instruction_ref.html" title="Describes the location of an instruction.">InstructionRef</a>.  <a href="#a6aa1a9f0e70aa6f0702e8acd4e11b701">More...</a><br /></td></tr>
-<tr class="separator:a6aa1a9f0e70aa6f0702e8acd4e11b701"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:acc7361a0653e0fea5a2051c37ea4a8a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1_instruction_ref.html#acc7361a0653e0fea5a2051c37ea4a8a0">fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="structgtirb_1_1_instruction_ref.html#a6aa1a9f0e70aa6f0702e8acd4e11b701">MessageType</a> &amp;Message)</td></tr>
-<tr class="memdesc:acc7361a0653e0fea5a2051c37ea4a8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="structgtirb_1_1_instruction_ref.html" title="Describes the location of an instruction.">InstructionRef</a> from a protobuf message.  <a href="#acc7361a0653e0fea5a2051c37ea4a8a0">More...</a><br /></td></tr>
-<tr class="separator:acc7361a0653e0fea5a2051c37ea4a8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269b39c44f6537e1df2d2d7ebad51916"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1_instruction_ref.html#a269b39c44f6537e1df2d2d7ebad51916">toProtobuf</a> (<a class="el" href="structgtirb_1_1_instruction_ref.html#a6aa1a9f0e70aa6f0702e8acd4e11b701">MessageType</a> *Message) const</td></tr>
-<tr class="memdesc:a269b39c44f6537e1df2d2d7ebad51916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize into a protobuf message.  <a href="#a269b39c44f6537e1df2d2d7ebad51916">More...</a><br /></td></tr>
-<tr class="separator:a269b39c44f6537e1df2d2d7ebad51916"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a318c3903331019734358bb853a0539a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">UUID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1_instruction_ref.html#a318c3903331019734358bb853a0539a9">BlockId</a></td></tr>
@@ -108,90 +91,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Describes the location of an instruction. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a6aa1a9f0e70aa6f0702e8acd4e11b701"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6aa1a9f0e70aa6f0702e8acd4e11b701">&#9670;&nbsp;</a></span>MessageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="structgtirb_1_1_instruction_ref.html#a6aa1a9f0e70aa6f0702e8acd4e11b701">gtirb::InstructionRef::MessageType</a> =  proto::InstructionRef</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The protobuf message type used for serializing <a class="el" href="structgtirb_1_1_instruction_ref.html" title="Describes the location of an instruction.">InstructionRef</a>. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="acc7361a0653e0fea5a2051c37ea4a8a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc7361a0653e0fea5a2051c37ea4a8a0">&#9670;&nbsp;</a></span>fromProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::InstructionRef::fromProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structgtirb_1_1_instruction_ref.html#a6aa1a9f0e70aa6f0702e8acd4e11b701">MessageType</a> &amp;&#160;</td>
-          <td class="paramname"><em>Message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Construct a <a class="el" href="structgtirb_1_1_instruction_ref.html" title="Describes the location of an instruction.">InstructionRef</a> from a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which the deserialized <a class="el" href="structgtirb_1_1_instruction_ref.html" title="Describes the location of an instruction.">InstructionRef</a> will be held. </td></tr>
-    <tr><td class="paramname">Message</td><td>The protobuf message from which to deserialize.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The deserialized <a class="el" href="structgtirb_1_1_instruction_ref.html" title="Describes the location of an instruction.">InstructionRef</a> object, or null on failure. </dd></dl>
-
-</div>
-</div>
-<a id="a269b39c44f6537e1df2d2d7ebad51916"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a269b39c44f6537e1df2d2d7ebad51916">&#9670;&nbsp;</a></span>toProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::InstructionRef::toProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structgtirb_1_1_instruction_ref.html#a6aa1a9f0e70aa6f0702e8acd4e11b701">MessageType</a> *&#160;</td>
-          <td class="paramname"><em>Message</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Serialize into a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">Message</td><td>Serialize into this message.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a318c3903331019734358bb853a0539a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a318c3903331019734358bb853a0539a9">&#9670;&nbsp;</a></span>BlockId</h2>
 

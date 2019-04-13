@@ -2,6 +2,8 @@ var searchData=
 [
   ['cfg',['CFG',['../group___c_f_g___g_r_o_u_p.html#gaba7635ba6380ea0e7306f9cc78fd8268',1,'gtirb']]],
   ['cfg_5fiterator',['cfg_iterator',['../group___c_f_g___g_r_o_u_p.html#gaffefa370de62d4fb03aaf46df16a5d0c',1,'gtirb']]],
+  ['const_5faux_5fdata_5fiterator',['const_aux_data_iterator',['../classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c',1,'gtirb::AuxDataContainer']]],
+  ['const_5faux_5fdata_5frange',['const_aux_data_range',['../classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d',1,'gtirb::AuxDataContainer']]],
   ['const_5fblock_5fiterator',['const_block_iterator',['../classgtirb_1_1_module.html#a91217bf78511200bcb6883adab643a86',1,'gtirb::Module::const_block_iterator()'],['../group___c_f_g___g_r_o_u_p.html#gacb7b24a57b1a129790627e51c9cd1a94',1,'gtirb::const_block_iterator()']]],
   ['const_5fblock_5frange',['const_block_range',['../classgtirb_1_1_module.html#a1770f16ba8268473b8f1787342b053c6',1,'gtirb::Module']]],
   ['const_5fblock_5fsubrange',['const_block_subrange',['../classgtirb_1_1_module.html#a226add6008898250493b724f9c20425d',1,'gtirb::Module']]],

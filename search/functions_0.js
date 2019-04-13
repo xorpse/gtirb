@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['addauxdata',['addAuxData',['../classgtirb_1_1_aux_data_container.html#a927f150e62da611723be548c12a4bb48',1,'gtirb::AuxDataContainer']]],
   ['addblock',['addBlock',['../classgtirb_1_1_module.html#aac5b1de3f5e2b1be704edfa0bbd43116',1,'gtirb::Module']]],
   ['addblocks',['addBlocks',['../classgtirb_1_1_module.html#a4119ae39b2e905231ad58e32e52362d9',1,'gtirb::Module']]],
   ['addcfgnode',['addCfgNode',['../classgtirb_1_1_module.html#a2adef9fd18b7f29a497fc73a2c19adf9',1,'gtirb::Module']]],
@@ -16,5 +17,8 @@ var searchData=
   ['alignaddr',['alignAddr',['../_allocator_8hpp.html#a89af0728d24894f19dd9bd8024f2eeb5',1,'Allocator.hpp']]],
   ['alignmentadjustment',['alignmentAdjustment',['../_allocator_8hpp.html#a5d8ef330f0b08b70e784a80fcd80317a',1,'Allocator.hpp']]],
   ['allocate',['Allocate',['../class_bump_ptr_allocator_impl.html#aa32970944dbbabe4d1fbd3379c4e5fc2',1,'BumpPtrAllocatorImpl::Allocate(size_t Size, size_t Alignment)'],['../class_bump_ptr_allocator_impl.html#a6b53b6e38bd37e0bc9b3b872f9db75ee',1,'BumpPtrAllocatorImpl::Allocate(size_t Num=1)'],['../class_specific_bump_ptr_allocator.html#a6fdd189936477d34f492fd3828169d6d',1,'SpecificBumpPtrAllocator::Allocate()']]],
+  ['aux_5fdata',['aux_data',['../classgtirb_1_1_aux_data_container.html#adaab10ffafbb29b95b7a02a97dcdaa91',1,'gtirb::AuxDataContainer::aux_data()'],['../classgtirb_1_1_aux_data_container.html#a1a53231b4cf9d6e389d1716ec04035c5',1,'gtirb::AuxDataContainer::aux_data() const']]],
+  ['aux_5fdata_5fbegin',['aux_data_begin',['../classgtirb_1_1_aux_data_container.html#a2a1dbdbe8bb140fe48d23c638e259b61',1,'gtirb::AuxDataContainer::aux_data_begin()'],['../classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2',1,'gtirb::AuxDataContainer::aux_data_begin() const']]],
+  ['aux_5fdata_5fend',['aux_data_end',['../classgtirb_1_1_aux_data_container.html#a2e24e26492849cb799e1d6589ca229bf',1,'gtirb::AuxDataContainer::aux_data_end()'],['../classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d',1,'gtirb::AuxDataContainer::aux_data_end() const']]],
   ['auxdata',['AuxData',['../classgtirb_1_1_aux_data.html#a719e3271ea26e588b36b4e9ad3cb6e38',1,'gtirb::AuxData::AuxData()=default'],['../classgtirb_1_1_aux_data.html#aa644eed2aefc2248e12648bbfb5777ca',1,'gtirb::AuxData::AuxData(T &amp;&amp;Value)']]]
 ];

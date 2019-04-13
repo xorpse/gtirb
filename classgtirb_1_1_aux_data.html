@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -69,7 +69,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classgtirb_1_1_aux_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">gtirb::AuxData Class Reference<div class="ingroups"><a class="el" href="group___a_u_x_d_a_t_a___g_r_o_u_p.html">AuxData</a></div></div>  </div>
@@ -101,15 +100,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a17a4437ddca5c7ea2310ee5af1fd1504"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data.html#a17a4437ddca5c7ea2310ee5af1fd1504">typeName</a> () const</td></tr>
 <tr class="memdesc:a17a4437ddca5c7ea2310ee5af1fd1504"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string representation of the type of the stored data.  <a href="#a17a4437ddca5c7ea2310ee5af1fd1504">More...</a><br /></td></tr>
 <tr class="separator:a17a4437ddca5c7ea2310ee5af1fd1504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a74026ab233178319ccadfafab39f6893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> friend void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data.html#a74026ab233178319ccadfafab39f6893">fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;, <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;Result, const proto::AuxData &amp;Message)</td></tr>
-<tr class="memdesc:a74026ab233178319ccadfafab39f6893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> from a protobuf message.  <a href="#a74026ab233178319ccadfafab39f6893">More...</a><br /></td></tr>
-<tr class="separator:a74026ab233178319ccadfafab39f6893"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63d60a6fdeb01201ac1689830ed640fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> friend proto::AuxData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data.html#a63d60a6fdeb01201ac1689830ed640fc">toProtobuf</a> (const <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;)</td></tr>
-<tr class="memdesc:a63d60a6fdeb01201ac1689830ed640fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize into a protobuf message.  <a href="#a63d60a6fdeb01201ac1689830ed640fc">More...</a><br /></td></tr>
-<tr class="separator:a63d60a6fdeb01201ac1689830ed640fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A generic object for storing additional client-specific data. </p>
@@ -276,94 +266,6 @@ template&lt;typename T &gt; </div>
 
 <p>A string representation of the type of the stored data. </p>
 <dl class="section return"><dt>Returns</dt><dd>The type name, or an empty string if no value is stored. </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a74026ab233178319ccadfafab39f6893"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74026ab233178319ccadfafab39f6893">&#9670;&nbsp;</a></span>fromProtobuf</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> friend void fromProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&#160;</td>
-          <td class="paramname"><em>Result</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const proto::AuxData &amp;&#160;</td>
-          <td class="paramname"><em>Message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize an <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> from a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">&lt;unnamed&gt;</td><td>Not used. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">Message</td><td>The protobuf message from which to deserialize. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">Result</td><td>The <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> to initialize. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a63d60a6fdeb01201ac1689830ed640fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63d60a6fdeb01201ac1689830ed640fc">&#9670;&nbsp;</a></span>toProtobuf</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a> friend proto::AuxData toProtobuf </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Serialize into a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">&lt;unnamed&gt;</td><td>The <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> to serialize.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A protobuf message representing the <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>. </dd></dl>
 
 </div>
 </div>

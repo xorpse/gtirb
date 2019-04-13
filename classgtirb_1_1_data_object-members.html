@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -77,14 +77,11 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#ac26c806e60ca4a0547680edb68f6e39b">Context</a> class</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a1a4c33f9f32ffd736035ff32423b2fde">Create</a>(Context &amp;C)</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#ab6a631ec8ad6e55d99900c9a75a9b454">Create</a>(Context &amp;C, Addr Address, uint64_t Size)</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a8e804a85cc14945058d1182991da254c">fromProtobuf</a>(Context &amp;C, const MessageType &amp;Message)</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a4dfe099bdcee4fb2cc8973e8e25bfaa0">getAddress</a>() const</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">getByUUID</a>(Context &amp;C, const UUID &amp;Uuid)</td><td class="entry"><a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a58006ae98ed1be867c7509cd2252cdb5">getSize</a>() const</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classgtirb_1_1_node.html#a05c1f7fbac43e778445e6a710a401700">getUUID</a>() const</td><td class="entry"><a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a0ae474768d8f8747873c5d9c478a16b0">MessageType</a> typedef</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a814593ea440cd76beab0f9d1f1971974">toProtobuf</a>(MessageType *Message) const</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_node.html#a2198c2f14d4b1bc01dfe50b0c10bdfed">~Node</a>() noexcept</td><td class="entry"><a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a4dfe099bdcee4fb2cc8973e8e25bfaa0">getAddress</a>() const</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">getByUUID</a>(Context &amp;C, const UUID &amp;Uuid)</td><td class="entry"><a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html#a58006ae98ed1be867c7509cd2252cdb5">getSize</a>() const</td><td class="entry"><a class="el" href="classgtirb_1_1_data_object.html">gtirb::DataObject</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgtirb_1_1_node.html#a05c1f7fbac43e778445e6a710a401700">getUUID</a>() const</td><td class="entry"><a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classgtirb_1_1_node.html#a2198c2f14d4b1bc01dfe50b0c10bdfed">~Node</a>() noexcept</td><td class="entry"><a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

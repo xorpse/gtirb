@@ -1,11 +1,10 @@
 <map id="CfgNode.hpp" name="CfgNode.hpp">
-<area shape="rect" id="node1" title="Base class for nodes of the CFG." alt="" coords="614,5,713,32"/>
-<area shape="rect" id="node2" href="$_node_8hpp.html" title="Class gtirb::Node." alt="" coords="609,80,717,107"/>
+<area shape="rect" id="node1" title="Base class for nodes of the CFG." alt="" coords="565,5,663,32"/>
+<area shape="rect" id="node2" href="$_node_8hpp.html" title="Class gtirb::Node." alt="" coords="560,80,668,107"/>
 <area shape="rect" id="node3" href="$_casting_8hpp.html" title="The various casting and type checking operations that apply to gtirb::Node subclasses." alt="" coords="151,155,272,181"/>
 <area shape="rect" id="node6" href="$_context_8hpp.html" title="Class gtirb::Context and related operators." alt="" coords="503,155,626,181"/>
 <area shape="rect" id="node15" href="$_export_8hpp.html" title=" " alt="" coords="727,229,842,256"/>
-<area shape="rect" id="node18" title=" " alt="" coords="701,155,761,181"/>
-<area shape="rect" id="node19" title=" " alt="" coords="785,155,840,181"/>
+<area shape="rect" id="node18" title=" " alt="" coords="701,155,756,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,304,71,331"/>
 <area shape="rect" id="node5" title=" " alt="" coords="170,229,253,256"/>
 <area shape="rect" id="node7" href="$_allocator_8hpp.html" title=" " alt="" coords="295,229,421,256"/>

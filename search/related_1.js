@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fromprotobuf',['fromProtobuf',['../classgtirb_1_1_aux_data.html#a74026ab233178319ccadfafab39f6893',1,'gtirb::AuxData']]]
+  ['imagebytemap',['ImageByteMap',['../classgtirb_1_1_byte_map.html#a02dc8653e0175a03d434c6f5c71db3a4',1,'gtirb::ByteMap']]]
 ];

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -87,24 +87,16 @@ Public Types</h2></td></tr>
 <tr class="memitem:a99a8d581ae30651157df97a8261e1b7e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#a99a8d581ae30651157df97a8261e1b7e">const_range</a> = boost::iterator_range&lt; std::vector&lt; std::byte &gt;::const_iterator &gt;</td></tr>
 <tr class="memdesc:a99a8d581ae30651157df97a8261e1b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constant range of bytes.  <a href="#a99a8d581ae30651157df97a8261e1b7e">More...</a><br /></td></tr>
 <tr class="separator:a99a8d581ae30651157df97a8261e1b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83ef1915f75300b97ce5d398b03c438d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#a83ef1915f75300b97ce5d398b03c438d">MessageType</a> = proto::ByteMap</td></tr>
-<tr class="memdesc:a83ef1915f75300b97ce5d398b03c438d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protobuf message type used for serializing <a class="el" href="classgtirb_1_1_byte_map.html" title="Holds the bytes of the loaded image of the binary.">ByteMap</a>.  <a href="#a83ef1915f75300b97ce5d398b03c438d">More...</a><br /></td></tr>
-<tr class="separator:a83ef1915f75300b97ce5d398b03c438d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a220dbeb27677585854663874b1467c81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_byte_map.html#a99a8d581ae30651157df97a8261e1b7e">const_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#a220dbeb27677585854663874b1467c81">data</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> A, size_t Bytes) const</td></tr>
 <tr class="memdesc:a220dbeb27677585854663874b1467c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the data at the specified address.  <a href="#a220dbeb27677585854663874b1467c81">More...</a><br /></td></tr>
 <tr class="separator:a220dbeb27677585854663874b1467c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66844dc159f69197ffb69d1e3220c05f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#a66844dc159f69197ffb69d1e3220c05f">fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="classgtirb_1_1_byte_map.html#a83ef1915f75300b97ce5d398b03c438d">MessageType</a> &amp;Message)</td></tr>
-<tr class="memdesc:a66844dc159f69197ffb69d1e3220c05f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classgtirb_1_1_byte_map.html" title="Holds the bytes of the loaded image of the binary.">ByteMap</a> from a protobuf message.  <a href="#a66844dc159f69197ffb69d1e3220c05f">More...</a><br /></td></tr>
-<tr class="separator:a66844dc159f69197ffb69d1e3220c05f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a461997f3faf71b7644252b2670bd710f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#a461997f3faf71b7644252b2670bd710f">setData</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> A, gsl::span&lt; const std::byte &gt; Data)</td></tr>
-<tr class="memdesc:a461997f3faf71b7644252b2670bd710f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the byte map at the specified address.  <a href="#a461997f3faf71b7644252b2670bd710f">More...</a><br /></td></tr>
-<tr class="separator:a461997f3faf71b7644252b2670bd710f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeedcdde1097de230adeeeba8dc70a802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#aeedcdde1097de230adeeeba8dc70a802">toProtobuf</a> (<a class="el" href="classgtirb_1_1_byte_map.html#a83ef1915f75300b97ce5d398b03c438d">MessageType</a> *Message) const</td></tr>
-<tr class="memdesc:aeedcdde1097de230adeeeba8dc70a802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize into a protobuf message.  <a href="#aeedcdde1097de230adeeeba8dc70a802">More...</a><br /></td></tr>
-<tr class="separator:aeedcdde1097de230adeeeba8dc70a802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7319e761effd24b757c89dee37673f43"><td class="memTemplParams" colspan="2">template&lt;class It , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;                          decltype(*std::declval&lt;It&gt;()), std::byte&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a7319e761effd24b757c89dee37673f43"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_map.html#a7319e761effd24b757c89dee37673f43">setData</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> A, boost::iterator_range&lt; It &gt; Data)</td></tr>
+<tr class="memdesc:a7319e761effd24b757c89dee37673f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the byte map at the specified address.  <a href="#a7319e761effd24b757c89dee37673f43">More...</a><br /></td></tr>
+<tr class="separator:a7319e761effd24b757c89dee37673f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -128,22 +120,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A constant range of bytes. </p>
-
-</div>
-</div>
-<a id="a83ef1915f75300b97ce5d398b03c438d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83ef1915f75300b97ce5d398b03c438d">&#9670;&nbsp;</a></span>MessageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_byte_map.html#a83ef1915f75300b97ce5d398b03c438d">gtirb::ByteMap::MessageType</a> =  proto::ByteMap</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The protobuf message type used for serializing <a class="el" href="classgtirb_1_1_byte_map.html" title="Holds the bytes of the loaded image of the binary.">ByteMap</a>. </p>
 
 </div>
 </div>
@@ -187,49 +163,16 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a66844dc159f69197ffb69d1e3220c05f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66844dc159f69197ffb69d1e3220c05f">&#9670;&nbsp;</a></span>fromProtobuf()</h2>
+<a id="a7319e761effd24b757c89dee37673f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7319e761effd24b757c89dee37673f43">&#9670;&nbsp;</a></span>setData()</h2>
 
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::ByteMap::fromProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classgtirb_1_1_byte_map.html#a83ef1915f75300b97ce5d398b03c438d">MessageType</a> &amp;&#160;</td>
-          <td class="paramname"><em>Message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Construct a <a class="el" href="classgtirb_1_1_byte_map.html" title="Holds the bytes of the loaded image of the binary.">ByteMap</a> from a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which the deserialized <a class="el" href="classgtirb_1_1_byte_map.html" title="Holds the bytes of the loaded image of the binary.">ByteMap</a> will be held. </td></tr>
-    <tr><td class="paramname">Message</td><td>The protobuf message from which to deserialize.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The deserialized <a class="el" href="classgtirb_1_1_byte_map.html" title="Holds the bytes of the loaded image of the binary.">ByteMap</a> object, or null on failure. </dd></dl>
-
-</div>
-</div>
-<a id="a461997f3faf71b7644252b2670bd710f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a461997f3faf71b7644252b2670bd710f">&#9670;&nbsp;</a></span>setData()</h2>
-
-<div class="memitem">
-<div class="memproto">
+<div class="memtemplate">
+template&lt;class It , typename  = std::enable_if_t&lt;std::is_convertible_v&lt;                          decltype(*std::declval&lt;It&gt;()), std::byte&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool gtirb::ByteMap::setData </td>
@@ -240,7 +183,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">gsl::span&lt; const std::byte &gt;&#160;</td>
+          <td class="paramtype">boost::iterator_range&lt; It &gt;&#160;</td>
           <td class="paramname"><em>Data</em>&#160;</td>
         </tr>
         <tr>
@@ -249,6 +192,11 @@ Friends</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Set the byte map at the specified address. </p>
@@ -260,33 +208,6 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Will return <code>true</code> if the data can be assigned at the given Address, or <code>false</code> otherwise. The data passed in at the given address cannot overlap another memory region (overlays are not supported). </dd></dl>
-
-</div>
-</div>
-<a id="aeedcdde1097de230adeeeba8dc70a802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeedcdde1097de230adeeeba8dc70a802">&#9670;&nbsp;</a></span>toProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::ByteMap::toProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_byte_map.html#a83ef1915f75300b97ce5d398b03c438d">MessageType</a> *&#160;</td>
-          <td class="paramname"><em>Message</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Serialize into a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">Message</td><td>Serialize into this message.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

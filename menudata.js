@@ -83,13 +83,11 @@ var menudata={children:[
 {text:"Enumerations",url:"functions_enum.html"},
 {text:"Related Functions",url:"functions_rela.html",children:[
 {text:"c",url:"functions_rela.html#index_c"},
-{text:"f",url:"functions_rela.html#index_f"},
 {text:"i",url:"functions_rela.html#index_i"},
 {text:"n",url:"functions_rela.html#index_n"},
 {text:"o",url:"functions_rela.html#index_o"},
 {text:"r",url:"functions_rela.html#index_r"},
-{text:"s",url:"functions_rela.html#index_s"},
-{text:"t",url:"functions_rela.html#index_t"}]}]},
+{text:"s",url:"functions_rela.html#index_s"}]}]},
 {text:"Modules",url:"modules.html"}]},
 {text:"Namespaces",url:"namespaces.html",children:[
 {text:"Namespace List",url:"namespaces.html"},

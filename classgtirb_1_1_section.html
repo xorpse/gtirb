@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -68,7 +68,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -101,12 +100,6 @@ Collaboration diagram for gtirb::Section:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a5863c7c68a63adc26215cc6fee24120d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html#a5863c7c68a63adc26215cc6fee24120d">MessageType</a> = proto::Section</td></tr>
-<tr class="memdesc:a5863c7c68a63adc26215cc6fee24120d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protobuf message type used for serializing <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a>.  <a href="#a5863c7c68a63adc26215cc6fee24120d">More...</a><br /></td></tr>
-<tr class="separator:a5863c7c68a63adc26215cc6fee24120d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afc77b6762cacb8710d9edd38f943f8e2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgtirb_1_1_addr.html">Addr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html#afc77b6762cacb8710d9edd38f943f8e2">getAddress</a> () const</td></tr>
@@ -124,9 +117,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b9d236589f6ad99aa2e66d7cef162b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html#a5b9d236589f6ad99aa2e66d7cef162b8">operator==</a> (const <a class="el" href="classgtirb_1_1_section.html">Section</a> &amp;Other) const</td></tr>
 <tr class="memdesc:a5b9d236589f6ad99aa2e66d7cef162b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator overload.  <a href="#a5b9d236589f6ad99aa2e66d7cef162b8">More...</a><br /></td></tr>
 <tr class="separator:a5b9d236589f6ad99aa2e66d7cef162b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc782d96c311f705de84d0534deb07f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html#accc782d96c311f705de84d0534deb07f">toProtobuf</a> (<a class="el" href="classgtirb_1_1_section.html#a5863c7c68a63adc26215cc6fee24120d">MessageType</a> *Message) const</td></tr>
-<tr class="memdesc:accc782d96c311f705de84d0534deb07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize into a protobuf message.  <a href="#accc782d96c311f705de84d0534deb07f">More...</a><br /></td></tr>
-<tr class="separator:accc782d96c311f705de84d0534deb07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classgtirb_1_1_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classgtirb_1_1_node')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td></tr>
 <tr class="memitem:a2198c2f14d4b1bc01dfe50b0c10bdfed inherit pub_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#a2198c2f14d4b1bc01dfe50b0c10bdfed">~Node</a> () noexcept</td></tr>
 <tr class="memdesc:a2198c2f14d4b1bc01dfe50b0c10bdfed inherit pub_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up resources no longer needed by the <a class="el" href="classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy.">Node</a> object.  <a href="classgtirb_1_1_node.html#a2198c2f14d4b1bc01dfe50b0c10bdfed">More...</a><br /></td></tr>
@@ -143,9 +133,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad96e56c3a4b0ce7ab86c66a6652d7c42"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_section.html">Section</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html#ad96e56c3a4b0ce7ab86c66a6652d7c42">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const std::string &amp;Name, <a class="el" href="classgtirb_1_1_addr.html">Addr</a> Address, uint64_t Size)</td></tr>
 <tr class="memdesc:ad96e56c3a4b0ce7ab86c66a6652d7c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a> object.  <a href="#ad96e56c3a4b0ce7ab86c66a6652d7c42">More...</a><br /></td></tr>
 <tr class="separator:ad96e56c3a4b0ce7ab86c66a6652d7c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac2d11749c47b47642ed7452abbcdca0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_section.html">Section</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html#aac2d11749c47b47642ed7452abbcdca0">fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="classgtirb_1_1_section.html#a5863c7c68a63adc26215cc6fee24120d">MessageType</a> &amp;Message)</td></tr>
-<tr class="memdesc:aac2d11749c47b47642ed7452abbcdca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a> from a protobuf message.  <a href="#aac2d11749c47b47642ed7452abbcdca0">More...</a><br /></td></tr>
-<tr class="separator:aac2d11749c47b47642ed7452abbcdca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classgtirb_1_1_node"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgtirb_1_1_node')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgtirb_1_1_node.html">gtirb::Node</a></td></tr>
 <tr class="memitem:ab34e75309d3cdbae6ae783483152bf1c inherit pub_static_methods_classgtirb_1_1_node"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C)</td></tr>
 <tr class="memdesc:ab34e75309d3cdbae6ae783483152bf1c inherit pub_static_methods_classgtirb_1_1_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy.">Node</a> object in its default state.  <a href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">More...</a><br /></td></tr>
@@ -162,24 +149,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a named section of the binary. </p>
 <p>Does not directly store the contents of the section, which are kept in <a class="el" href="classgtirb_1_1_image_byte_map.html">ImageByteMap</a>. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a5863c7c68a63adc26215cc6fee24120d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5863c7c68a63adc26215cc6fee24120d">&#9670;&nbsp;</a></span>MessageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_section.html#a5863c7c68a63adc26215cc6fee24120d">gtirb::Section::MessageType</a> =  proto::Section</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The protobuf message type used for serializing <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a>. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab409db7dccee9aac92c00eb4a1a3b50d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab409db7dccee9aac92c00eb4a1a3b50d">&#9670;&nbsp;</a></span>Create() <span class="overload">[1/2]</span></h2>
 
@@ -272,52 +242,6 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The newly created object. </dd></dl>
-
-</div>
-</div>
-<a id="aac2d11749c47b47642ed7452abbcdca0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac2d11749c47b47642ed7452abbcdca0">&#9670;&nbsp;</a></span>fromProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classgtirb_1_1_section.html">Section</a>* gtirb::Section::fromProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classgtirb_1_1_section.html#a5863c7c68a63adc26215cc6fee24120d">MessageType</a> &amp;&#160;</td>
-          <td class="paramname"><em>Message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a> from a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which the deserialized <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a> will be held. </td></tr>
-    <tr><td class="paramname">Message</td><td>The protobuf message from which to deserialize.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The deserialized <a class="el" href="classgtirb_1_1_section.html" title="Represents a named section of the binary.">Section</a> object, or null on failure. </dd></dl>
 
 </div>
 </div>
@@ -442,33 +366,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Equality operator overload. </p>
-
-</div>
-</div>
-<a id="accc782d96c311f705de84d0534deb07f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accc782d96c311f705de84d0534deb07f">&#9670;&nbsp;</a></span>toProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::Section::toProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_section.html#a5863c7c68a63adc26215cc6fee24120d">MessageType</a> *&#160;</td>
-          <td class="paramname"><em>Message</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Serialize into a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">Message</td><td>Serialize into this message.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>

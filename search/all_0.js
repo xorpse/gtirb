@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['addauxdata',['addAuxData',['../classgtirb_1_1_aux_data_container.html#a927f150e62da611723be548c12a4bb48',1,'gtirb::AuxDataContainer']]],
   ['addblock',['addBlock',['../classgtirb_1_1_module.html#aac5b1de3f5e2b1be704edfa0bbd43116',1,'gtirb::Module']]],
   ['addblocks',['addBlocks',['../classgtirb_1_1_module.html#a4119ae39b2e905231ad58e32e52362d9',1,'gtirb::Module']]],
   ['addcfgnode',['addCfgNode',['../classgtirb_1_1_module.html#a2adef9fd18b7f29a497fc73a2c19adf9',1,'gtirb::Module']]],
@@ -20,11 +21,17 @@ var searchData=
   ['allocator_2ehpp',['Allocator.hpp',['../_allocator_8hpp.html',1,'']]],
   ['argument_5ftype',['argument_type',['../structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html#a98dac394fc1d8cd40cf91673f1628b1c',1,'std::hash&lt; gtirb::SymStackConst &gt;::argument_type()'],['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html#ade0762e4f16027bb70c5a4a9ac3b6a6b',1,'std::hash&lt; gtirb::SymAddrConst &gt;::argument_type()'],['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html#ac0a78fc7ce63ee85e9eec3fb72282a6c',1,'std::hash&lt; gtirb::SymAddrAddr &gt;::argument_type()']]],
   ['arm',['ARM',['../namespacegtirb.html#abee9f4d7995674b960de3890a8c4ee00a47f45e65244c17ec9fa8771a5c6d60e1',1,'gtirb']]],
+  ['aux_5fdata',['aux_data',['../classgtirb_1_1_aux_data_container.html#adaab10ffafbb29b95b7a02a97dcdaa91',1,'gtirb::AuxDataContainer::aux_data()'],['../classgtirb_1_1_aux_data_container.html#a1a53231b4cf9d6e389d1716ec04035c5',1,'gtirb::AuxDataContainer::aux_data() const']]],
+  ['aux_5fdata_5fbegin',['aux_data_begin',['../classgtirb_1_1_aux_data_container.html#a2a1dbdbe8bb140fe48d23c638e259b61',1,'gtirb::AuxDataContainer::aux_data_begin()'],['../classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2',1,'gtirb::AuxDataContainer::aux_data_begin() const']]],
+  ['aux_5fdata_5fend',['aux_data_end',['../classgtirb_1_1_aux_data_container.html#a2e24e26492849cb799e1d6589ca229bf',1,'gtirb::AuxDataContainer::aux_data_end()'],['../classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d',1,'gtirb::AuxDataContainer::aux_data_end() const']]],
+  ['aux_5fdata_5fiterator',['aux_data_iterator',['../classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323',1,'gtirb::AuxDataContainer']]],
+  ['aux_5fdata_5frange',['aux_data_range',['../classgtirb_1_1_aux_data_container.html#a2bca4ae95c9b6f4946dbe7c812be82d0',1,'gtirb::AuxDataContainer']]],
   ['auxdata',['AuxData',['../classgtirb_1_1_aux_data.html',1,'gtirb::AuxData'],['../classgtirb_1_1_aux_data.html#a719e3271ea26e588b36b4e9ad3cb6e38',1,'gtirb::AuxData::AuxData()=default'],['../classgtirb_1_1_aux_data.html#aa644eed2aefc2248e12648bbfb5777ca',1,'gtirb::AuxData::AuxData(T &amp;&amp;Value)']]],
   ['auxdata_2ehpp',['AuxData.hpp',['../_aux_data_8hpp.html',1,'']]],
   ['auxdata_2emd',['AuxData.md',['../_aux_data_8md.html',1,'']]],
   ['auxdata',['AuxData',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html',1,'']]],
   ['auxdata_5ftraits',['auxdata_traits',['../structgtirb_1_1auxdata__traits.html',1,'gtirb']]],
+  ['auxdatacontainer',['AuxDataContainer',['../classgtirb_1_1_aux_data_container.html',1,'gtirb']]],
   ['auxdatacontainer_2ehpp',['AuxDataContainer.hpp',['../_aux_data_container_8hpp.html',1,'']]],
   ['advice_20on_20when_20to_20place_20icfg_20edges',['Advice on when to Place ICFG Edges',['../md__c_f_g-_edges.html',1,'']]]
 ];

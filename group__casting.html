@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -118,7 +118,7 @@ cast&lt;Ty&gt;</h2>
 <li><a class="el" href="_casting_8hpp.html#a8f1ebeef393dc6e8cb12e19651f75453">cast&lt;Ty&gt;(Y&amp; Val)</a></li>
 <li><a class="el" href="_casting_8hpp.html#a8a8f5dd47b4d860090c67dedf9f3f898">cast&lt;Ty&gt;(const Y&amp; Val)</a></li>
 </ul>
-<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> f(gsl::not_null&lt;Node *&gt; N) { <span class="keyword">auto</span> *B = cast&lt;Block&gt;(N); }</div></div><!-- fragment --><h2><a class="anchor" id="CAST_OR_NULL"></a>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> f(Node * N) { <span class="keyword">auto</span> *B = cast&lt;Block&gt;(N); }</div></div><!-- fragment --><h2><a class="anchor" id="CAST_OR_NULL"></a>
 cast_or_null&lt;Ty&gt;</h2>
 <p>Cast to the specified type; the argument can be null.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -148,7 +148,7 @@ dyn_cast&lt;Ty&gt;</h2>
 <li><a class="el" href="_casting_8hpp.html#a6f43c489a35e1b44bbb97a9ce54d7185">dyn_cast&lt;Ty&gt;(Y&amp; Val)</a></li>
 <li><a class="el" href="_casting_8hpp.html#a634eb43173624ae38028be214513292f">dyn_cast&lt;Ty&gt;(const Y&amp; Val)</a></li>
 </ul>
-<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> f(gsl::not_null&lt;Node *&gt; N) { <span class="keyword">auto</span> *B = dyn_cast&lt;Block&gt;(N); }</div></div><!-- fragment --><h2><a class="anchor" id="DYN_CAST_OR_NULL"></a>
+<p>Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> f(Node * N) { <span class="keyword">auto</span> *B = dyn_cast&lt;Block&gt;(N); }</div></div><!-- fragment --><h2><a class="anchor" id="DYN_CAST_OR_NULL"></a>
 dyn_cast_or_null&lt;Ty&gt;</h2>
 <p>Cast to the specified type; the argument can be null.</p>
 <dl class="params"><dt>Parameters</dt><dd>

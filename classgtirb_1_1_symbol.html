@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.0</span>
+   &#160;<span id="projectnumber">v0.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -105,9 +105,6 @@ Collaboration diagram for gtirb::Symbol:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a19677f9644e2c8a9219939455da93590"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a19677f9644e2c8a9219939455da93590">MessageType</a> = proto::Symbol</td></tr>
-<tr class="memdesc:a19677f9644e2c8a9219939455da93590"><td class="mdescLeft">&#160;</td><td class="mdescRight">The protobuf message type used for serializing <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a>.  <a href="#a19677f9644e2c8a9219939455da93590">More...</a><br /></td></tr>
-<tr class="separator:a19677f9644e2c8a9219939455da93590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab376ad7b7a216e73b54565187b7d95ff"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ff">StorageKind</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ffaec0fc0100c4fc1ce4eea230c3dc10360">StorageKind::Undefined</a> = proto::Storage_Undefined, 
 <a class="el" href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ffa960b44c579bc2f6818d2daaf9e4c16f0">StorageKind::Normal</a> = proto::Storage_Normal, 
@@ -148,9 +145,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ed4226b7d8a1360fa53fdc0e0650228"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a2ed4226b7d8a1360fa53fdc0e0650228">setStorageKind</a> (<a class="el" href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ff">Symbol::StorageKind</a> X)</td></tr>
 <tr class="memdesc:a2ed4226b7d8a1360fa53fdc0e0650228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the storage kind.  <a href="#a2ed4226b7d8a1360fa53fdc0e0650228">More...</a><br /></td></tr>
 <tr class="separator:a2ed4226b7d8a1360fa53fdc0e0650228"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad42ae5e1a875d2e2e82b6e0904faab5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#ad42ae5e1a875d2e2e82b6e0904faab5c">toProtobuf</a> (<a class="el" href="classgtirb_1_1_symbol.html#a19677f9644e2c8a9219939455da93590">MessageType</a> *Message) const</td></tr>
-<tr class="memdesc:ad42ae5e1a875d2e2e82b6e0904faab5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize into a protobuf message.  <a href="#ad42ae5e1a875d2e2e82b6e0904faab5c">More...</a><br /></td></tr>
-<tr class="separator:ad42ae5e1a875d2e2e82b6e0904faab5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9505885a77c2b2b2ff0a909b4a3634c"><td class="memTemplParams" colspan="2">template&lt;typename Callable &gt; </td></tr>
 <tr class="memitem:af9505885a77c2b2b2ff0a909b4a3634c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#af9505885a77c2b2b2ff0a909b4a3634c">visit</a> (Callable &amp;&amp;Visitor) const</td></tr>
 <tr class="memdesc:af9505885a77c2b2b2ff0a909b4a3634c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visits the symbol's referent, if one is present, by concrete referent type.  <a href="#af9505885a77c2b2b2ff0a909b4a3634c">More...</a><br /></td></tr>
@@ -178,9 +172,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acc4bf356cd686761796d804542d55d61"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#acc4bf356cd686761796d804542d55d61">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, NodeTy *Referent, const std::string &amp;Name, <a class="el" href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ff">StorageKind</a> Kind=<a class="el" href="classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ffa498ab78ee0b25ce33c83714c1a453831">StorageKind::Extern</a>)</td></tr>
 <tr class="memdesc:acc4bf356cd686761796d804542d55d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="#acc4bf356cd686761796d804542d55d61">More...</a><br /></td></tr>
 <tr class="separator:acc4bf356cd686761796d804542d55d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4da8344303e48284e34eea7aaf773c05"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a4da8344303e48284e34eea7aaf773c05">fromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const <a class="el" href="classgtirb_1_1_symbol.html#a19677f9644e2c8a9219939455da93590">MessageType</a> &amp;Message)</td></tr>
-<tr class="memdesc:a4da8344303e48284e34eea7aaf773c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> from a protobuf message.  <a href="#a4da8344303e48284e34eea7aaf773c05">More...</a><br /></td></tr>
-<tr class="separator:a4da8344303e48284e34eea7aaf773c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f21c64e8ec0901a10aed2a5dbe7739"><td class="memTemplParams" colspan="2">template&lt;typename NodeTy &gt; </td></tr>
 <tr class="memitem:aa1f21c64e8ec0901a10aed2a5dbe7739"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aa1f21c64e8ec0901a10aed2a5dbe7739">is_supported_type</a> ()</td></tr>
 <tr class="separator:aa1f21c64e8ec0901a10aed2a5dbe7739"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,22 +218,6 @@ Related Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a>, which maps a name to an object in the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a19677f9644e2c8a9219939455da93590"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19677f9644e2c8a9219939455da93590">&#9670;&nbsp;</a></span>MessageType</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_symbol.html#a19677f9644e2c8a9219939455da93590">gtirb::Symbol::MessageType</a> =  proto::Symbol</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The protobuf message type used for serializing <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a>. </p>
-
-</div>
-</div>
 <a id="a3a9412961cb64c039472c76b5f02035e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a9412961cb64c039472c76b5f02035e">&#9670;&nbsp;</a></span>supported_referent_types</h2>
 
@@ -500,52 +475,6 @@ template&lt;typename NodeTy &gt; </div>
 
 </div>
 </div>
-<a id="a4da8344303e48284e34eea7aaf773c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4da8344303e48284e34eea7aaf773c05">&#9670;&nbsp;</a></span>fromProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a>* gtirb::Symbol::fromProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;&#160;</td>
-          <td class="paramname"><em>C</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classgtirb_1_1_symbol.html#a19677f9644e2c8a9219939455da93590">MessageType</a> &amp;&#160;</td>
-          <td class="paramname"><em>Message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> from a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which the deserialized <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> will be held. </td></tr>
-    <tr><td class="paramname">Message</td><td>The protobuf message from which to deserialize.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The deserialized <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object, or null on failure. </dd></dl>
-
-</div>
-</div>
 <a id="ad5dae57099dda87c8588543740d0fc2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad5dae57099dda87c8588543740d0fc2f">&#9670;&nbsp;</a></span>getAddress()</h2>
 
@@ -785,33 +714,6 @@ template&lt;typename NodeTy &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">X</td><td>The storage kind to use.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<a id="ad42ae5e1a875d2e2e82b6e0904faab5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad42ae5e1a875d2e2e82b6e0904faab5c">&#9670;&nbsp;</a></span>toProtobuf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::Symbol::toProtobuf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_symbol.html#a19677f9644e2c8a9219939455da93590">MessageType</a> *&#160;</td>
-          <td class="paramname"><em>Message</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Serialize into a protobuf message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">Message</td><td>Serialize into this message.</td></tr>
   </table>
   </dd>
 </dl>
