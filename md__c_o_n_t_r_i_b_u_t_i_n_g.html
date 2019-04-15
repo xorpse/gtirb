@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.1.0</span>
+   &#160;<span id="projectnumber">v0.1.1</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -68,20 +68,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="contributing"></a></p>
-<h2>Branches And Pull Requests </h2>
-<p><a class="anchor" id="branches-and-pull-requests"></a></p>
-<p>We use Gitflow as our branch management system. Please read up on it <a href="https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow">here</a>. The main points you should know are:</p>
+<h2>Code of Conduct</h2>
+<p><a class="anchor" id="code-of-conduct"></a></p>
+<p>Please read the GTIRB Code of Conduct.</p>
+<h2>Code Requirements</h2>
+<p><a class="anchor" id="code-requirements"></a></p>
 <ul>
-<li>All feature branches should be based on <code>develop</code> and have the format <code>feature/branch_name</code>.</li>
-<li>The branch name is the exact name of the corresponding issue in GitLab (Yes. Create an issue if you don't have one. It will be given a number. <code>#1234</code> is your branch name.)</li>
-<li>Minor bug fixes should be based on <code>master</code> and have the format <code>hotfix/branch_name</code>.</li>
-<li>All pull requests should involve a single change. Pull Requests that involve multiple changes (it is our discretion what precisely this means) will be rejected with a reason.</li>
-<li>All commits should involve logical units. Please do not put all changed code in one commit, unless it is a very minor change.</li>
-<li>Work in progress pull requests should have <code>[WIP]</code> in front of the Pull Request title.</li>
-<li>Please document all code written. Write Doxygen style comments for methods in the header files, and use inline code comments where it makes sense, i.e. for non-obvious code chunks.</li>
-<li>All commit messages should be client ready. That is, they should all be brief, instructive, and professional.</li>
+<li>All code shall be formatted with clang-format. A <code>.clang-format</code> is provided in the root directory for the project.</li>
+<li>Code should generally follow the C++ Core Guidelines recommendations.</li>
+<li>Code should generally allow for thread safety.<ul>
+<li>No static variables.</li>
+<li>No globals</li>
+<li>Free functions should not maintain state.</li>
+<li>Use caution when using iterators to guard against invalidation.</li>
 </ul>
-<h2>Testing Development </h2>
+</li>
+<li>Code should be tested on Linux using GCC and Clang and on Windows using Visual Studio.</li>
+<li>Maintain const-correctness.</li>
+<li>Use UpperCamelCase for type names.</li>
+<li>Use UpperCamelCase for enum members.</li>
+<li>Use UpperCamelCase for variable and class members.</li>
+<li>Use lowerCamelCase for function and method names.</li>
+<li>Avoid <code>using namespace std</code></li>
+<li>Use <code>auto</code> when the deduced type is explicitly spelled out in the initialization or if the deduced type is an abstract type alias. Always explicitly specify type qualifiers, pointers, and references. E.g., <div class="fragment"><div class="line">{c++}</div><div class="line"> const auto *Ptr = dynamic_cast&lt;const Foo *&gt;(SomePtr);</div><div class="line"> auto Val = static_cast&lt;unsigned&gt;(SomeValue);</div><div class="line"> for (auto Iter = SomeContainer.begin(), End = SomeContainer.end(); Iter != End; ++Iter) {}</div></div><!-- fragment --></li>
+<li>Use <code>auto</code> to make code more readable, but prefer <code>auto &amp;</code> or <code>auto *</code> to avoid unexpected copies.</li>
+<li><code>#include</code> as little as possible to reduce compile times. Use forward declarations of classes when possible to avoid including their definitions.</li>
+</ul>
+<h2>Testing Development</h2>
 <p><a class="anchor" id="testing-development"></a></p>
 <ul>
 <li>All code you care about should be tested.</li>
@@ -90,7 +103,7 @@ $(function() {
 <li>Test names are prefixed with the type of test they are (<code>Unit_</code>, <code>System_</code>, <code>Integration_</code>).</li>
 <li>No unit test should take more than 0.5 seconds.</li>
 </ul>
-<h2>Documentation </h2>
+<h2>Documentation</h2>
 <p><a class="anchor" id="documentation"></a></p>
 <p>The GTIRB documentation consists of complete documentation for all components of the GTIRB API, along with examples and other usage information.</p>
 <h3>Building Documentation</h3>
@@ -132,29 +145,7 @@ build&gt; cmake --build . --target doc
 <li>Example: <code>dot -Tpng gtirbScope.dot &gt; gtirbScope.png</code></li>
 </ul>
 </li>
-<li>Use the <code>arial</code> font.</li>
-</ul>
-<h2>Code Requirements </h2>
-<p><a class="anchor" id="code-requirements"></a></p>
-<ul>
-<li>All code shall be formatted with clang-format. A '.clang-format' is provided in the root directory for the project.</li>
-<li>Code should generally follow the C++ Core Guidelines recommendations.</li>
-<li>Code should generally allow for thread safety.<ul>
-<li>No static variables.</li>
-<li>No globals</li>
-<li>Free functions should not maintain state.</li>
-<li>Use caution when using iterators to guard against invalidation.</li>
-</ul>
-</li>
-<li>Code should be tested on Linux using GCC and Clang and on Windows using Visual Studio.</li>
-<li>Maintain const-correctness.</li>
-<li>Use UpperCamelCase for type names.</li>
-<li>Use UpperCamelCase for enum members.</li>
-<li>Use UpperCamelCase for variable and class members.</li>
-<li>Use lowerCamelCase for function and method names.</li>
-<li>Avoid <code>using namespace std</code></li>
-<li>Use <code>auto</code> to make code more readable, but prefer <code>auto &amp;</code> or <code>auto *</code> to avoid unexpected copies.</li>
-<li><code>#include</code> as little as possible to reduce compile times. Use forward declarations of classes when possible to avoid including their definitions. </li>
+<li>Use the <code>arial</code> font. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

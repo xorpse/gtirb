@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v0.1.0</span>
+   &#160;<span id="projectnumber">v0.1.1</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -70,12 +70,18 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="frequently-asked-questions"></a></p>
 <ul>
 <li><a href="#compiler-errors">I get compiler errors when I try to compile programs using GTIRB. How can I make them go away?</a></li>
+<li><a href="#linking-error-with-undefined-reference-to-gtirb">Linking error with "undefined reference" to gtirb::</a></li>
 </ul>
 <h4>Compiler Errors</h4>
 <p><a class="anchor" id="compiler-errors"></a></p>
 <p><b>Q: I get compiler errors when I try to compile programs using GTIRB. How can I make them go away?</b></p>
 <p>A: GTIRB requires C++17, including the C++17 standard library. If your compiler does not use C++17 by default, you will need to explicitly specify it when compiling programs that use GTIRB.</p>
-<p>For example: </p><div class="fragment"><div class="line">g++ --std=c++17 my_gtirb_program.cpp -lgtirb -o my_gtirb_program</div></div><!-- fragment --> </div></div><!-- PageDoc -->
+<p>For example: </p><div class="fragment"><div class="line">g++ --std=c++17 my_gtirb_program.cpp -lgtirb -o my_gtirb_program</div></div><!-- fragment --><h4>Linking error with "undefined reference" to gtirb</h4>
+<p>&lt;a name="linking-error-with-"undefined-reference"-to-gtirb" id="linking-error-with-"undefined-reference"-to-gtirb"&gt;</p>
+<p><b>Q: I get linker errors when I try to compile and link programs using GTIRB. How can I make them go away?</b></p>
+<p>A: This isn't GTIRB specific, but if you place the <code>-lgtirb</code> on your compilation line <em>before</em> the source file the linker will sometimes throw away the symbols from the GTIRB library which it doesn't think it needs (and if it hasn't read your source yet it won't think it needs much). So if for example,</p>
+<div class="fragment"><div class="line">g++ --std=c++17 -lgtirb my_gtirb_program.cpp</div></div><!-- fragment --><p>doesn't work for you, then try this instead.</p>
+<div class="fragment"><div class="line">g++ --std=c++17 my_gtirb_program.cpp -lgtirb</div></div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
