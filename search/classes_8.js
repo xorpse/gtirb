@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['proxyblock',['ProxyBlock',['../classgtirb_1_1_proxy_block.html',1,'gtirb']]]
+  ['offset_500',['Offset',['../../html/cpp/structgtirb_1_1_offset.html',1,'gtirb']]]
 ];

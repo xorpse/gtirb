@@ -1,5 +1,0 @@
-<map id="gtirb::ProxyBlock" name="gtirb::ProxyBlock">
-<area shape="rect" id="node1" title="A placeholder to serve as the endpoint of a CFG edge." alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node2" href="$classgtirb_1_1_cfg_node.html" title="Represents the base of types that can be inserted into the CFG." alt="" coords="13,80,120,107"/>
-<area shape="rect" id="node3" href="$classgtirb_1_1_node.html" title="Represents the base of the Node class hierarchy." alt="" coords="23,5,110,32"/>
-</map>

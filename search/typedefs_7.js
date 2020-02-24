@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['range',['range',['../classgtirb_1_1_i_r.html#a0ae6bfac056efbf5387569f43419f2b6',1,'gtirb::IR']]],
-  ['result_5ftype',['result_type',['../structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html#ae613dee1d38f2fbeb2127023adbada8c',1,'std::hash&lt; gtirb::SymStackConst &gt;::result_type()'],['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html#aaad722ca058502e93cfc69870cfa6ea4',1,'std::hash&lt; gtirb::SymAddrConst &gt;::result_type()'],['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html#a0199d8d58a34a2af21ff93480ed25b48',1,'std::hash&lt; gtirb::SymAddrAddr &gt;::result_type()']]]
+  ['proxy_5fblock_5fiterator_837',['proxy_block_iterator',['../../html/cpp/classgtirb_1_1_i_r.html#a8a8d6532048bc6788c39cd1c64bb6abd',1,'gtirb::IR::proxy_block_iterator()'],['../../html/cpp/classgtirb_1_1_module.html#a1b3e43ddaf0b967662bdaa5000d31ea7',1,'gtirb::Module::proxy_block_iterator()']]],
+  ['proxy_5fblock_5frange_838',['proxy_block_range',['../../html/cpp/classgtirb_1_1_i_r.html#aa7114878572d9941069128c7323d5f62',1,'gtirb::IR::proxy_block_range()'],['../../html/cpp/classgtirb_1_1_module.html#a6d505cbb28282382f5096bf96077da6d',1,'gtirb::Module::proxy_block_range()']]]
 ];

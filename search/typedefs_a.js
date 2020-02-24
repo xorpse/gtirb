@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['value_5ftype',['value_type',['../classgtirb_1_1_addr.html#a2623c36f59c3e831ee1383fddb980103',1,'gtirb::Addr']]]
+  ['t_859',['T',['../../html/cpp/structgtirb_1_1auxdata__traits_3_01std_1_1set_3_01_args_8_8_8_01_4_01_4.html#a6b0617dd3409ceb2dd061098ae5637cf',1,'gtirb::auxdata_traits&lt; std::set&lt; Args... &gt; &gt;']]],
+  ['type_860',['type',['../../html/cpp/structgtirb_1_1details_1_1remove__pointer__ref__quals.html#aede4155ae9221ce6fce647fd799e6ff8',1,'gtirb::details::remove_pointer_ref_quals']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['storagekind',['StorageKind',['../classgtirb_1_1_symbol.html#ab376ad7b7a216e73b54565187b7d95ff',1,'gtirb::Symbol']]]
+  ['sectionflag_868',['SectionFlag',['../../html/cpp/namespacegtirb.html#abcbde83fd8333cc5d219967b53e574bc',1,'gtirb']]]
 ];

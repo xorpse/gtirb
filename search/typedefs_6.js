@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['messagetype',['MessageType',['../classgtirb_1_1_i_r.html#a048081d4c5e7fe67917faeb479dbeca0',1,'gtirb::IR']]]
+  ['module_5fiterator_835',['module_iterator',['../../html/cpp/classgtirb_1_1_i_r.html#a710dce0c7aa4b80b8fcab3a52b286ee3',1,'gtirb::IR']]],
+  ['module_5frange_836',['module_range',['../../html/cpp/classgtirb_1_1_i_r.html#a68e04c198d64bb9d1d3ff6df47164e2d',1,'gtirb::IR']]]
 ];

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['hash_3c_20gtirb_3a_3asymaddraddr_20_3e',['hash&lt; gtirb::SymAddrAddr &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html',1,'std']]],
-  ['hash_3c_20gtirb_3a_3asymaddrconst_20_3e',['hash&lt; gtirb::SymAddrConst &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html',1,'std']]],
-  ['hash_3c_20gtirb_3a_3asymstackconst_20_3e',['hash&lt; gtirb::SymStackConst &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html',1,'std']]],
-  ['haspreferredaddr',['hasPreferredAddr',['../classgtirb_1_1_addr.html#a6e7f6201759f04ed2198ef334f5bc697',1,'gtirb::Addr']]],
-  ['hasreferent',['hasReferent',['../classgtirb_1_1_symbol.html#a34ac03b381acdd95fdff0fd1e4a87284',1,'gtirb::Symbol']]]
+  ['hash_3c_20gtirb_3a_3aoffset_20_3e_247',['hash&lt; gtirb::Offset &gt;',['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_offset_01_4.html',1,'std']]],
+  ['hash_3c_20gtirb_3a_3asymaddraddr_20_3e_248',['hash&lt; gtirb::SymAddrAddr &gt;',['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html',1,'std']]],
+  ['hash_3c_20gtirb_3a_3asymaddrconst_20_3e_249',['hash&lt; gtirb::SymAddrConst &gt;',['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html',1,'std']]],
+  ['hash_3c_20gtirb_3a_3asymstackconst_20_3e_250',['hash&lt; gtirb::SymStackConst &gt;',['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html',1,'std']]],
+  ['hash_3c_3a_3agtirb_3a_3auuid_20_3e_251',['hash&lt;::gtirb::UUID &gt;',['../../html/cpp/structstd_1_1hash_3_1_1gtirb_1_1_u_u_i_d_01_4.html',1,'std']]],
+  ['hasreferent_252',['hasReferent',['../../html/cpp/classgtirb_1_1_symbol.html#a34ac03b381acdd95fdff0fd1e4a87284',1,'gtirb::Symbol']]]
 ];

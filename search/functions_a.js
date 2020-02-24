@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['modules',['modules',['../classgtirb_1_1_i_r.html#ae14782cfe75d1f9aad47fb50acc24579',1,'gtirb::IR::modules()'],['../classgtirb_1_1_i_r.html#a91cd514249f401abfe8863a445dcf849',1,'gtirb::IR::modules() const']]]
+  ['load_684',['load',['../../html/cpp/classgtirb_1_1_i_r.html#ad6e4950f04b44e841b6fa150bbd5944d',1,'gtirb::IR']]],
+  ['loadjson_685',['loadJSON',['../../html/cpp/classgtirb_1_1_i_r.html#adb5731f25823c9a5c326178ca3b58e77',1,'gtirb::IR']]]
 ];

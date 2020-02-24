@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['x64',['X64',['../namespacegtirb.html#abee9f4d7995674b960de3890a8c4ee00af0851da0e02bf22830828822f578dc8f',1,'gtirb']]],
-  ['xcoff',['XCOFF',['../namespacegtirb.html#a7e4c1ed3a95c05b68d4b4f6b5d4282b0a323b09f7d35f62a86b12c4ba7e4d3baa',1,'gtirb']]]
+  ['version_450',['Version',['../md__version.html',1,'']]],
+  ['validbutunsupported_451',['ValidButUnsupported',['../../html/cpp/namespacegtirb.html#a3a3936a9fcf87b0ae27bca9ac7b91b85a8f44e1d37e1dcd093eac1ca1e86a7d43',1,'gtirb']]],
+  ['value_5ftype_452',['value_type',['../../html/cpp/classgtirb_1_1_addr.html#a2623c36f59c3e831ee1383fddb980103',1,'gtirb::Addr']]],
+  ['version_2eh_453',['version.h',['../../html/cpp/version_8h.html.html',1,'']]],
+  ['version_2emd_454',['Version.md',['../_version_8md.html',1,'']]],
+  ['visit_455',['visit',['../../html/cpp/classgtirb_1_1_symbol.html#af9505885a77c2b2b2ff0a909b4a3634c',1,'gtirb::Symbol']]]
 ];

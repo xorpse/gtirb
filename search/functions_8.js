@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['ir',['IR',['../classgtirb_1_1_i_r.html#ac8c502ab6146dd313507cdf477fe318a',1,'gtirb::IR::IR(const IR &amp;)=delete'],['../classgtirb_1_1_i_r.html#a97d9b3eba750c52fdb14398fe854692e',1,'gtirb::IR::IR(IR &amp;&amp;)=default']]],
-  ['is_5fsupported_5ftype',['is_supported_type',['../classgtirb_1_1_symbol.html#aa1f21c64e8ec0901a10aed2a5dbe7739',1,'gtirb::Symbol']]],
-  ['isa',['isa',['../_casting_8hpp.html#a49f3e34cd9882c06d9f9a1ef83b7ab60',1,'Casting.hpp']]],
-  ['ispowerof2_5f64',['isPowerOf2_64',['../_allocator_8hpp.html#ab37080b5ed61f1c6c06797b787a96212',1,'Allocator.hpp']]],
-  ['isrelocated',['isRelocated',['../classgtirb_1_1_module.html#a791b02c8b80a3e9d08c583217dc3a9ef',1,'gtirb::Module']]]
+  ['initcontainer_678',['initContainer',['../../html/cpp/namespacegtirb.html#a920596e8a746f909f296b3e22b47d589',1,'gtirb::initContainer(google::protobuf::RepeatedField&lt; T &gt; *Container, size_t Size)'],['../../html/cpp/namespacegtirb.html#a7f6a0ffbd8d74cff72490a08d313b4a8',1,'gtirb::initContainer(google::protobuf::RepeatedPtrField&lt; T &gt; *Container, size_t Size)'],['../../html/cpp/namespacegtirb.html#a9c79f463bbd209842f86123fa95a20d1',1,'gtirb::initContainer(std::vector&lt; T &gt; &amp;Container, size_t Size)'],['../../html/cpp/namespacegtirb.html#aa8fb23c84cd17dd3408b0fb8b13d6dc2',1,'gtirb::initContainer(T &amp;Container, size_t)'],['../../html/cpp/namespacegtirb.html#aadc7b898e4a56ffea634bb9064c8c365',1,'gtirb::initContainer(T *Container, size_t)']]],
+  ['insertbytes_679',['insertBytes',['../../html/cpp/classgtirb_1_1_byte_interval.html#af14cae5f422a97c9929b6ea987073033',1,'gtirb::ByteInterval::insertBytes(const const_bytes_iterator&lt; T &gt; Pos, const T &amp;X, boost::endian::order VectorOrder=boost::endian::order::native, boost::endian::order ElementOrder=boost::endian::order::native)'],['../../html/cpp/classgtirb_1_1_byte_interval.html#aa3fbbc478943346627462b73664e6ecb',1,'gtirb::ByteInterval::insertBytes(const const_bytes_iterator&lt; T &gt; Pos, InputIterator Begin, InputIterator End, boost::endian::order VectorOrder=boost::endian::order::native, boost::endian::order ElementsOrder=boost::endian::order::native)']]],
+  ['is_5fsupported_5ftype_680',['is_supported_type',['../../html/cpp/classgtirb_1_1_symbol.html#aa1f21c64e8ec0901a10aed2a5dbe7739',1,'gtirb::Symbol']]],
+  ['isflagset_681',['isFlagSet',['../../html/cpp/classgtirb_1_1_section.html#a46396715d011fdd94e11b136258eb803',1,'gtirb::Section']]],
+  ['isrelocated_682',['isRelocated',['../../html/cpp/classgtirb_1_1_module.html#a791b02c8b80a3e9d08c583217dc3a9ef',1,'gtirb::Module']]]
 ];

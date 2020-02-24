@@ -1,14 +1,5 @@
 var searchData=
 [
-  ['section_5fiterator',['section_iterator',['../classgtirb_1_1_module.html#af8014808d51b7756ae3f45f83092e17f',1,'gtirb::Module']]],
-  ['section_5fname_5fiterator',['section_name_iterator',['../classgtirb_1_1_module.html#a7fef5c1f332a59969840054dafba209d',1,'gtirb::Module']]],
-  ['section_5fname_5frange',['section_name_range',['../classgtirb_1_1_module.html#a946a2b312363484302a8291ddaadc454',1,'gtirb::Module']]],
-  ['section_5frange',['section_range',['../classgtirb_1_1_module.html#a6cf1d78df54bfea6db7fab18f19a6311',1,'gtirb::Module']]],
-  ['section_5fsubrange',['section_subrange',['../classgtirb_1_1_module.html#a4696fa9369ee758a70e6f8529b46a5f4',1,'gtirb::Module']]],
-  ['supported_5freferent_5ftypes',['supported_referent_types',['../classgtirb_1_1_symbol.html#a3a9412961cb64c039472c76b5f02035e',1,'gtirb::Symbol']]],
-  ['symbol_5faddr_5fiterator',['symbol_addr_iterator',['../classgtirb_1_1_module.html#a970e988b328187691d74e57b1dc9c3c5',1,'gtirb::Module']]],
-  ['symbol_5faddr_5frange',['symbol_addr_range',['../classgtirb_1_1_module.html#aa0a49279d620c95bd1606ab07db32323',1,'gtirb::Module']]],
-  ['symbol_5fiterator',['symbol_iterator',['../classgtirb_1_1_module.html#af2cb6b0b6229e9cbf9bf354ef2293e38',1,'gtirb::Module']]],
-  ['symbol_5frange',['symbol_range',['../classgtirb_1_1_module.html#a90188edd62902843aace2988a8d96533',1,'gtirb::Module']]],
-  ['symbolicexpression',['SymbolicExpression',['../group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html#ga76c75a30283841464ab659824167b1b8',1,'gtirb']]]
+  ['remove_5fpointer_5fref_5fquals_5ft_839',['remove_pointer_ref_quals_t',['../../html/cpp/namespacegtirb_1_1details.html#a6463cf8b21951a3208678fe515943cca',1,'gtirb::details']]],
+  ['result_5ftype_840',['result_type',['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html#a0199d8d58a34a2af21ff93480ed25b48',1,'std::hash&lt; gtirb::SymAddrAddr &gt;::result_type()'],['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html#aaad722ca058502e93cfc69870cfa6ea4',1,'std::hash&lt; gtirb::SymAddrConst &gt;::result_type()'],['../../html/cpp/structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html#ae613dee1d38f2fbeb2127023adbada8c',1,'std::hash&lt; gtirb::SymStackConst &gt;::result_type()']]]
 ];
