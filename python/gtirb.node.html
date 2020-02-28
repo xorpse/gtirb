@@ -7,11 +7,11 @@
     <title>gtirb.node module &#8212; gtirb  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="gtirb.offset module" href="gtirb.offset.html" />
@@ -85,7 +85,7 @@ equality.</p>
 or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no such <code class="docutils literal notranslate"><span class="pre">Node</span></code> exists.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>uuid</strong> (<em>UUID</em>) – The UUID to look up.</p>
+<dd class="field-odd"><p><strong>uuid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>) – The UUID to look up.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><strong>TypeError</strong> – if the Node is not of the requested type.
@@ -95,7 +95,7 @@ function from the desired subclass. For example, calling
 <a class="reference internal" href="gtirb.html#gtirb.CodeBlock" title="gtirb.CodeBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.CodeBlock</span></code></a> or raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>typing.Optional[<a class="reference internal" href="gtirb.html#gtirb.Node" title="gtirb.Node">Node</a>]</p>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -166,7 +166,7 @@ function from the desired subclass. For example, calling
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -183,7 +183,7 @@ function from the desired subclass. For example, calling
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

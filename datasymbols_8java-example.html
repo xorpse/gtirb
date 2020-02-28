@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v1.1.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -131,7 +131,7 @@ $(function() {
 <div class="line">        IR ir = IR.getDefaultInstance();</div>
 <div class="line">        DataObject data_obj;</div>
 <div class="line"> </div>
-<div class="line">        <span class="keywordflow">if</span> (args.length &lt; 1){</div>
+<div class="line">        <span class="keywordflow">if</span> (args.length &lt; 1) {</div>
 <div class="line">            System.err.println(<span class="stringliteral">&quot;No GTIRB file specified.&quot;</span>);</div>
 <div class="line">            System.exit(-1);</div>
 <div class="line">        }</div>
@@ -147,7 +147,6 @@ $(function() {
 <div class="line">            System.exit(-1);</div>
 <div class="line">        }</div>
 <div class="line"> </div>
-<div class="line"> </div>
 <div class="line">        <span class="keywordflow">for</span> (Module m : ir.getModulesList()) {</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Print the name of each Module.</span></div>
@@ -155,20 +154,21 @@ $(function() {
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Make a map uuid-&gt;DataObject for the Module.</span></div>
 <div class="line">            Map&lt;Long, DataObject&gt; datamap = m.getDataMap();</div>
-<div class="line">            Map&lt;ByteString, DataObject&gt; data_objects = <span class="keyword">new</span> HashMap&lt;ByteString,DataObject&gt;();</div>
-<div class="line">            <span class="keywordflow">for</span> (DataObject d : datamap.values()){</div>
-<div class="line">            data_objects.put(d.getUuid(), d);</div>
+<div class="line">            Map&lt;ByteString, DataObject&gt; data_objects =</div>
+<div class="line">                <span class="keyword">new</span> HashMap&lt;ByteString, DataObject&gt;();</div>
+<div class="line">            <span class="keywordflow">for</span> (DataObject d : datamap.values()) {</div>
+<div class="line">                data_objects.put(d.getUuid(), d);</div>
 <div class="line">            }</div>
 <div class="line"> </div>
 <div class="line">            <span class="comment">// Examine all symbols in the module</span></div>
 <div class="line">            <span class="keywordflow">for</span> (Symbol sym : m.getSymbolsList()) {</div>
 <div class="line">                data_obj = data_objects.get(sym.getReferentUuid());</div>
-<div class="line">                <span class="keywordflow">if</span> (data_obj!=<span class="keyword">null</span>){</div>
-<div class="line">                    <span class="comment">// If the symbol refers to data, print some information about it</span></div>
-<div class="line">                    System.out.println(String.format(<span class="stringliteral">&quot;%s:\t0x%08X\t %d bytes&quot;</span>,</div>
-<div class="line">                                                     sym.getName(),</div>
-<div class="line">                                                     data_obj.getAddress(),</div>
-<div class="line">                                                     data_obj.getSize()));</div>
+<div class="line">                <span class="keywordflow">if</span> (data_obj != <span class="keyword">null</span>) {</div>
+<div class="line">                    <span class="comment">// If the symbol refers to data, print some information</span></div>
+<div class="line">                    <span class="comment">// about it</span></div>
+<div class="line">                    System.out.println(String.format(</div>
+<div class="line">                        <span class="stringliteral">&quot;%s:\t0x%08X\t %d bytes&quot;</span>, sym.getName(),</div>
+<div class="line">                        data_obj.getAddress(), data_obj.getSize()));</div>
 <div class="line">                }</div>
 <div class="line">            }</div>
 <div class="line">        }</div>

@@ -31,6 +31,7 @@ var menudata={children:[
 {text:"Contributing",url:"md__c_o_n_t_r_i_b_u_t_i_n_g.html"}]},
 {text:"GTIRB Tools",url:"usergroup1.html",children:[
 {text:"Disassembler (ddisasm)",url:"https://github.com/GrammaTech/ddisasm"},
+{text:"Ghidra Plugin (gtirb-ghidra-plugin)",url:"https://github.com/GrammaTech/gtirb-ghidra-plugin"},
 {text:"Pretty Printer (gtirb-pprinter)",url:"https://github.com/GrammaTech/gtirb-pprinter"}]},
 {text:"API Components",url:"md__c_o_m_p_o_n_e_n_t_s.html"},
 {text:"API Implementations",url:"usergroup2.html",children:[

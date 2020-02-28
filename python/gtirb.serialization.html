@@ -7,11 +7,11 @@
     <title>gtirb.serialization module &#8212; gtirb  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="gtirb.symbol module" href="gtirb.symbol.html" />
@@ -291,7 +291,7 @@ encoding and decoding of AuxData values via
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">gtirb.Serialization.codecs</span></code>. To do this, create a new subclass of
 <a class="reference internal" href="#gtirb.serialization.Codec" title="gtirb.serialization.Codec"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.serialization.Codec</span></code></a> and add it to
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">gtirb.Serialization.codecs</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gtirb</span><span class="o">.</span><span class="n">AuxData</span><span class="o">.</span><span class="n">serializer</span><span class="o">.</span><span class="n">codecs</span><span class="p">[</span><span class="s1">&#39;my_custom_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">MyCustomCodec</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gtirb</span><span class="o">.</span><span class="n">AuxData</span><span class="o">.</span><span class="n">serializer</span><span class="o">.</span><span class="n">codecs</span><span class="p">[</span><span class="s1">&#39;my_custom_type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">MyCustomCodec</span>
 </pre></div>
 </div>
 <p>This example registers a new type name, <code class="docutils literal notranslate"><span class="pre">my_custom_type</span></code>, and associate
@@ -445,7 +445,7 @@ A <code class="docutils literal notranslate"><span class="pre">SubtypeTree</span
 the name of the type and a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> of type parameters
 (which are also <code class="docutils literal notranslate"><span class="pre">SubtypeTree</span></code>s). For example, the following are all
 valid <code class="docutils literal notranslate"><span class="pre">SubtypeTree</span></code>s:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="p">())</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="p">())</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span> <span class="p">((</span><span class="s1">&#39;UUID&#39;</span><span class="p">,()),))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s1">&#39;mapping&#39;</span><span class="p">,</span> <span class="p">((</span><span class="s1">&#39;string&#39;</span><span class="p">,</span> <span class="p">()),(</span><span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="p">((</span><span class="s1">&#39;UUID&#39;</span><span class="p">,</span> <span class="p">()),))))</span>
 </pre></div>
@@ -699,7 +699,7 @@ the name of an unknown codec. Use only at the top level of an auxdata.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -716,7 +716,7 @@ the name of an unknown codec. Use only at the top level of an auxdata.</p>
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

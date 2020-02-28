@@ -57,18 +57,17 @@ and consume GTIRB.  See the following for more information on GTIRB:
 Hopefully, eventually, it will be possible to install everything by
 (1) installing
 <a href="https://developers.google.com/protocol-buffers/">Protobuf</a>, version
-3.0.0 or later, and then (2) installing this Common Lisp GTIRB library
+3.7.0 or later, and then (2) installing this Common Lisp GTIRB library
 with QuickLisp <code>(ql:quickload :gtirb)</code>.
 </p>
 <p>
 We're a ways away from that currently.  So after you've installed
 Protobuf, you should clone and install the Common Lisp <code>PROTOBUF</code>
-package according to the instructions at
-<a href="https://github.com/brown/protobuf">https://github.com/brown/protobuf</a>.
-(<em>Note</em>: currently you need my patched version of this library at
-<a href="https://github.com/eschulte/protobuf/tree/updates-enabling-build-and-install">updates-enabling-build-and-install branch of
-github/eschulte/protobuf</a>.
-An upstream merge request is pending.)
+package manually according to the instructions at
+<a href="https://github.com/brown/protobuf">https://github.com/brown/protobuf</a>
+ensuring that the <code>protoc-gen-lisp</code> executable has been built and is
+on your path.  At that point you should be able to load the GTIRB
+package.
 </p>
 
 <h2>Usage</h2>

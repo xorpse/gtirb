@@ -7,11 +7,11 @@
     <title>gtirb.ir module &#8212; gtirb  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="gtirb.module module" href="gtirb.module.html" />
@@ -36,11 +36,11 @@
 <span id="gtirb-ir-module"></span><h1>gtirb.ir module<a class="headerlink" href="#module-gtirb.ir" title="Permalink to this headline">¶</a></h1>
 <p>The IR is the core class for reading and writing GTIRB files.</p>
 <p>You can open a GTIRB Protobuf file and load it into an IR instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span> <span class="o">=</span> <span class="n">IR</span><span class="o">.</span><span class="n">load_protobuf</span><span class="p">(</span><span class="s1">&#39;filename.gtirb&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span> <span class="o">=</span> <span class="n">IR</span><span class="o">.</span><span class="n">load_protobuf</span><span class="p">(</span><span class="s1">&#39;filename.gtirb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>And then you can write the IR instance as a Protobuf file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span><span class="o">.</span><span class="n">save_protobuf</span><span class="p">(</span><span class="s1">&#39;filename.gtirb&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span><span class="o">.</span><span class="n">save_protobuf</span><span class="p">(</span><span class="s1">&#39;filename.gtirb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="class">
@@ -520,7 +520,7 @@ symbolic expression in the range.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -537,7 +537,7 @@ symbolic expression in the range.</p>
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
