@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['details_477',['details',['../namespacegtirb_1_1details.html',1,'gtirb']]],
-  ['gtirb_478',['gtirb',['../namespacegtirb.html',1,'']]]
+  ['gtirb_457',['gtirb',['../namespacegtirb.html',1,'']]],
+  ['schema_458',['schema',['../namespacegtirb_1_1schema.html',1,'gtirb']]]
 ];

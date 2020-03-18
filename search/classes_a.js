@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['remove_5fpointer_5fref_5fquals_502',['remove_pointer_ref_quals',['../../html/cpp/structgtirb_1_1details_1_1remove__pointer__ref__quals.html',1,'gtirb::details']]]
+  ['padding_479',['Padding',['../../html/cpp/structgtirb_1_1schema_1_1_padding.html',1,'gtirb::schema']]],
+  ['proxyblock_480',['ProxyBlock',['../../html/cpp/classgtirb_1_1_proxy_block.html',1,'gtirb']]]
 ];

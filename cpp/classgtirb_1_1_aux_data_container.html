@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -68,6 +68,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classgtirb_1_1_aux_data_container-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -75,7 +76,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Contains the <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> Tables and serves as a base class.  
+<p>Contains the AuxData Tables and serves as a base class.  
  <a href="classgtirb_1_1_aux_data_container.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_aux_data_container_8hpp_source.html">AuxDataContainer.hpp</a>&gt;</code></p>
@@ -100,6 +101,12 @@ Collaboration diagram for gtirb::AuxDataContainer:</div>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1_aux_data_container_1_1_aux_data_raw.html">AuxDataRaw</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An interface for accessing the serialized form of an AuxData instance.  <a href="structgtirb_1_1_aux_data_container_1_1_aux_data_raw.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a79e689b17870612b0f4132cab35360eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a79e689b17870612b0f4132cab35360eb">AuxDataContainer</a> (<a class="el" href="classgtirb_1_1_aux_data_container.html">AuxDataContainer</a> &amp;&amp;)=default</td></tr>
@@ -124,65 +131,49 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 AuxData Properties</h2></td></tr>
-<tr class="memitem:a0807c7e433c5b88656f14277a2874323"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a> = AuxDataSet::iterator</td></tr>
-<tr class="memdesc:a0807c7e433c5b88656f14277a2874323"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>.  <a href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">More...</a><br /></td></tr>
-<tr class="separator:a0807c7e433c5b88656f14277a2874323"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bca4ae95c9b6f4946dbe7c812be82d0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a2bca4ae95c9b6f4946dbe7c812be82d0">aux_data_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a> &gt;</td></tr>
-<tr class="memdesc:a2bca4ae95c9b6f4946dbe7c812be82d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A range over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>.  <a href="classgtirb_1_1_aux_data_container.html#a2bca4ae95c9b6f4946dbe7c812be82d0">More...</a><br /></td></tr>
-<tr class="separator:a2bca4ae95c9b6f4946dbe7c812be82d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adad9ef97f284b491f58448e14078903c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a> = AuxDataSet::const_iterator</td></tr>
-<tr class="memdesc:adad9ef97f284b491f58448e14078903c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const iterator over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>.  <a href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">More...</a><br /></td></tr>
-<tr class="separator:adad9ef97f284b491f58448e14078903c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd5090f7ca023f0f81fc23deaf00336d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d">const_aux_data_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a> &gt;</td></tr>
-<tr class="memdesc:afd5090f7ca023f0f81fc23deaf00336d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A const range over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>.  <a href="classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d">More...</a><br /></td></tr>
+<tr class="memitem:a7b35fa8fb38160d49846f7bc972853aa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a> = boost::transform_iterator&lt; AccessRawData, AuxDataSet::const_iterator &gt;</td></tr>
+<tr class="memdesc:a7b35fa8fb38160d49846f7bc972853aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">An iterator type for traversing the AuxData in this container.  <a href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">More...</a><br /></td></tr>
+<tr class="separator:a7b35fa8fb38160d49846f7bc972853aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5090f7ca023f0f81fc23deaf00336d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d">const_aux_data_range</a> = boost::iterator_range&lt; <a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a> &gt;</td></tr>
 <tr class="separator:afd5090f7ca023f0f81fc23deaf00336d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a927f150e62da611723be548c12a4bb48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a927f150e62da611723be548c12a4bb48">addAuxData</a> (const std::string &amp;Name, <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&amp;X)</td></tr>
-<tr class="memdesc:a927f150e62da611723be548c12a4bb48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>, transferring ownership.  <a href="classgtirb_1_1_aux_data_container.html#a927f150e62da611723be548c12a4bb48">More...</a><br /></td></tr>
-<tr class="separator:a927f150e62da611723be548c12a4bb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a218fc06768552a3d636a878ce3ac60a7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a218fc06768552a3d636a878ce3ac60a7"><td class="memTemplItemLeft" align="right" valign="top">const T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a218fc06768552a3d636a878ce3ac60a7">getAuxData</a> (const std::string &amp;X) const</td></tr>
-<tr class="memdesc:a218fc06768552a3d636a878ce3ac60a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the underlying type stored in the <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="classgtirb_1_1_aux_data_container.html#a218fc06768552a3d636a878ce3ac60a7">More...</a><br /></td></tr>
-<tr class="separator:a218fc06768552a3d636a878ce3ac60a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf469c1b0fe656535ac0aeef70f327e5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#acf469c1b0fe656535ac0aeef70f327e5">getAuxData</a> (const std::string &amp;X) const</td></tr>
-<tr class="memdesc:acf469c1b0fe656535ac0aeef70f327e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="classgtirb_1_1_aux_data_container.html#acf469c1b0fe656535ac0aeef70f327e5">More...</a><br /></td></tr>
-<tr class="separator:acf469c1b0fe656535ac0aeef70f327e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a423b0494bda12324ab8789ecc338ae68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a423b0494bda12324ab8789ecc338ae68">getAuxData</a> (const std::string &amp;X)</td></tr>
-<tr class="memdesc:a423b0494bda12324ab8789ecc338ae68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="classgtirb_1_1_aux_data_container.html#a423b0494bda12324ab8789ecc338ae68">More...</a><br /></td></tr>
-<tr class="separator:a423b0494bda12324ab8789ecc338ae68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f78d21c3faf0af2ca9c2652c2b8c26"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a67f78d21c3faf0af2ca9c2652c2b8c26"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a67f78d21c3faf0af2ca9c2652c2b8c26">getAuxData</a> (const std::string &amp;X)</td></tr>
-<tr class="memdesc:a67f78d21c3faf0af2ca9c2652c2b8c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the underlying type stored in the <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="classgtirb_1_1_aux_data_container.html#a67f78d21c3faf0af2ca9c2652c2b8c26">More...</a><br /></td></tr>
-<tr class="separator:a67f78d21c3faf0af2ca9c2652c2b8c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a273e3268b60fe2c53e29b69b6858d1d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a273e3268b60fe2c53e29b69b6858d1d2">removeAuxData</a> (const std::string &amp;X)</td></tr>
-<tr class="memdesc:a273e3268b60fe2c53e29b69b6858d1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name.  <a href="classgtirb_1_1_aux_data_container.html#a273e3268b60fe2c53e29b69b6858d1d2">More...</a><br /></td></tr>
-<tr class="separator:a273e3268b60fe2c53e29b69b6858d1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a1dbdbe8bb140fe48d23c638e259b61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a2a1dbdbe8bb140fe48d23c638e259b61">aux_data_begin</a> ()</td></tr>
-<tr class="memdesc:a2a1dbdbe8bb140fe48d23c638e259b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>.  <a href="classgtirb_1_1_aux_data_container.html#a2a1dbdbe8bb140fe48d23c638e259b61">More...</a><br /></td></tr>
-<tr class="separator:a2a1dbdbe8bb140fe48d23c638e259b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65215721181fc149d02e5dc2cc0d72b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2">aux_data_begin</a> () const</td></tr>
-<tr class="memdesc:a65215721181fc149d02e5dc2cc0d72b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>.  <a href="classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2">More...</a><br /></td></tr>
+<tr class="memitem:ade11a028eac4d13cd2414bdb4b7e10e2"><td class="memTemplParams" colspan="2">template&lt;typename Schema &gt; </td></tr>
+<tr class="memitem:ade11a028eac4d13cd2414bdb4b7e10e2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#ade11a028eac4d13cd2414bdb4b7e10e2">addAuxData</a> (typename Schema::Type &amp;&amp;X)</td></tr>
+<tr class="memdesc:ade11a028eac4d13cd2414bdb4b7e10e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new AuxData, transferring ownership.  <a href="classgtirb_1_1_aux_data_container.html#ade11a028eac4d13cd2414bdb4b7e10e2">More...</a><br /></td></tr>
+<tr class="separator:ade11a028eac4d13cd2414bdb4b7e10e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a9629d62988105c88b5fcdbd8f48c3"><td class="memTemplParams" colspan="2">template&lt;typename Schema &gt; </td></tr>
+<tr class="memitem:a43a9629d62988105c88b5fcdbd8f48c3"><td class="memTemplItemLeft" align="right" valign="top">Schema::Type *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a43a9629d62988105c88b5fcdbd8f48c3">getAuxData</a> ()</td></tr>
+<tr class="memdesc:a43a9629d62988105c88b5fcdbd8f48c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the underlying type stored in the AuxData by name.  <a href="classgtirb_1_1_aux_data_container.html#a43a9629d62988105c88b5fcdbd8f48c3">More...</a><br /></td></tr>
+<tr class="separator:a43a9629d62988105c88b5fcdbd8f48c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69bdb5d84c3de28f549135edc175c1d3"><td class="memTemplParams" colspan="2">template&lt;typename Schema &gt; </td></tr>
+<tr class="memitem:a69bdb5d84c3de28f549135edc175c1d3"><td class="memTemplItemLeft" align="right" valign="top">const Schema::Type *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a69bdb5d84c3de28f549135edc175c1d3">getAuxData</a> () const</td></tr>
+<tr class="memdesc:a69bdb5d84c3de28f549135edc175c1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the underlying type stored in the AuxData by name.  <a href="classgtirb_1_1_aux_data_container.html#a69bdb5d84c3de28f549135edc175c1d3">More...</a><br /></td></tr>
+<tr class="separator:a69bdb5d84c3de28f549135edc175c1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4565f08561ac1340241210675afb0cad"><td class="memTemplParams" colspan="2">template&lt;typename Schema &gt; </td></tr>
+<tr class="memitem:a4565f08561ac1340241210675afb0cad"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a4565f08561ac1340241210675afb0cad">removeAuxData</a> ()</td></tr>
+<tr class="memdesc:a4565f08561ac1340241210675afb0cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove an AuxData by name.  <a href="classgtirb_1_1_aux_data_container.html#a4565f08561ac1340241210675afb0cad">More...</a><br /></td></tr>
+<tr class="separator:a4565f08561ac1340241210675afb0cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65215721181fc149d02e5dc2cc0d72b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2">aux_data_begin</a> () const</td></tr>
+<tr class="memdesc:a65215721181fc149d02e5dc2cc0d72b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the first AuxData.  <a href="classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2">More...</a><br /></td></tr>
 <tr class="separator:a65215721181fc149d02e5dc2cc0d72b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e24e26492849cb799e1d6589ca229bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a2e24e26492849cb799e1d6589ca229bf">aux_data_end</a> ()</td></tr>
-<tr class="memdesc:a2e24e26492849cb799e1d6589ca229bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>.  <a href="classgtirb_1_1_aux_data_container.html#a2e24e26492849cb799e1d6589ca229bf">More...</a><br /></td></tr>
-<tr class="separator:a2e24e26492849cb799e1d6589ca229bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b633a98ed3139d5e63d9a9d87d2728d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d">aux_data_end</a> () const</td></tr>
-<tr class="memdesc:a3b633a98ed3139d5e63d9a9d87d2728d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>.  <a href="classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d">More...</a><br /></td></tr>
+<tr class="memitem:a3b633a98ed3139d5e63d9a9d87d2728d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d">aux_data_end</a> () const</td></tr>
+<tr class="memdesc:a3b633a98ed3139d5e63d9a9d87d2728d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant iterator to the element following the last AuxData.  <a href="classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d">More...</a><br /></td></tr>
 <tr class="separator:a3b633a98ed3139d5e63d9a9d87d2728d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaab10ffafbb29b95b7a02a97dcdaa91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#a2bca4ae95c9b6f4946dbe7c812be82d0">aux_data_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#adaab10ffafbb29b95b7a02a97dcdaa91">aux_data</a> ()</td></tr>
-<tr class="memdesc:adaab10ffafbb29b95b7a02a97dcdaa91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>).  <a href="classgtirb_1_1_aux_data_container.html#adaab10ffafbb29b95b7a02a97dcdaa91">More...</a><br /></td></tr>
-<tr class="separator:adaab10ffafbb29b95b7a02a97dcdaa91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a53231b4cf9d6e389d1716ec04035c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d">const_aux_data_range</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a1a53231b4cf9d6e389d1716ec04035c5">aux_data</a> () const</td></tr>
-<tr class="memdesc:a1a53231b4cf9d6e389d1716ec04035c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>).  <a href="classgtirb_1_1_aux_data_container.html#a1a53231b4cf9d6e389d1716ec04035c5">More...</a><br /></td></tr>
+<tr class="memdesc:a1a53231b4cf9d6e389d1716ec04035c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a constant range of the auxiliary data (AuxData).  <a href="classgtirb_1_1_aux_data_container.html#a1a53231b4cf9d6e389d1716ec04035c5">More...</a><br /></td></tr>
 <tr class="separator:a1a53231b4cf9d6e389d1716ec04035c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6bd89d69da929002d2b1caf803851fa"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#ab6bd89d69da929002d2b1caf803851fa">getAuxDataSize</a> () const</td></tr>
-<tr class="memdesc:ab6bd89d69da929002d2b1caf803851fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>.  <a href="classgtirb_1_1_aux_data_container.html#ab6bd89d69da929002d2b1caf803851fa">More...</a><br /></td></tr>
+<tr class="memdesc:ab6bd89d69da929002d2b1caf803851fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of AuxData objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>.  <a href="classgtirb_1_1_aux_data_container.html#ab6bd89d69da929002d2b1caf803851fa">More...</a><br /></td></tr>
 <tr class="separator:ab6bd89d69da929002d2b1caf803851fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fdc0fb6fe0cb0ebaff658b2fc28a5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a70fdc0fb6fe0cb0ebaff658b2fc28a5f">getAuxDataEmpty</a> () const</td></tr>
-<tr class="memdesc:a70fdc0fb6fe0cb0ebaff658b2fc28a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check: Is the number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a> zero?  <a href="classgtirb_1_1_aux_data_container.html#a70fdc0fb6fe0cb0ebaff658b2fc28a5f">More...</a><br /></td></tr>
+<tr class="memdesc:a70fdc0fb6fe0cb0ebaff658b2fc28a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check: Is the number of AuxData objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a> zero?  <a href="classgtirb_1_1_aux_data_container.html#a70fdc0fb6fe0cb0ebaff658b2fc28a5f">More...</a><br /></td></tr>
 <tr class="separator:a70fdc0fb6fe0cb0ebaff658b2fc28a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ab7ddd5808ad2b2f0f58fda340df91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#a34ab7ddd5808ad2b2f0f58fda340df91">clearAuxData</a> ()</td></tr>
-<tr class="memdesc:a34ab7ddd5808ad2b2f0f58fda340df91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> from the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>.  <a href="classgtirb_1_1_aux_data_container.html#a34ab7ddd5808ad2b2f0f58fda340df91">More...</a><br /></td></tr>
+<tr class="memdesc:a34ab7ddd5808ad2b2f0f58fda340df91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all AuxData from the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>.  <a href="classgtirb_1_1_aux_data_container.html#a34ab7ddd5808ad2b2f0f58fda340df91">More...</a><br /></td></tr>
 <tr class="separator:a34ab7ddd5808ad2b2f0f58fda340df91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefaa8c48532146cd01af19553873945"><td class="memTemplParams" colspan="2">template&lt;typename Schema &gt; </td></tr>
+<tr class="memitem:aaefaa8c48532146cd01af19553873945"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html#aaefaa8c48532146cd01af19553873945">registerAuxDataType</a> ()</td></tr>
+<tr class="memdesc:aaefaa8c48532146cd01af19553873945"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a type to be used with AuxData of the given name.  <a href="classgtirb_1_1_aux_data_container.html#aaefaa8c48532146cd01af19553873945">More...</a><br /></td></tr>
+<tr class="separator:aaefaa8c48532146cd01af19553873945"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -198,60 +189,22 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:abea06820c30b4b70b97b317877e86d17 inherit pub_static_methods_classgtirb_1_1_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Contains the <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> Tables and serves as a base class. </p>
+<div class="textblock"><p>Contains the AuxData Tables and serves as a base class. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a0807c7e433c5b88656f14277a2874323"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0807c7e433c5b88656f14277a2874323">&#9670;&nbsp;</a></span>aux_data_iterator</h2>
+<a id="a7b35fa8fb38160d49846f7bc972853aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b35fa8fb38160d49846f7bc972853aa">&#9670;&nbsp;</a></span>const_aux_data_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">gtirb::AuxDataContainer::aux_data_iterator</a> =  AuxDataSet::iterator</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">gtirb::AuxDataContainer::const_aux_data_iterator</a> =  boost::transform_iterator&lt;AccessRawData, AuxDataSet::const_iterator&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>An iterator over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>. </p>
-<p>Values are of type std::pair&lt;std::string, gtirb::AuxData&gt;&amp;, representing a name-AuxData pair.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classgtirb_1_1_aux_data_container.html#adaab10ffafbb29b95b7a02a97dcdaa91" title="Return a range of the auxiliary data (AuxData).">aux_data()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a2bca4ae95c9b6f4946dbe7c812be82d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bca4ae95c9b6f4946dbe7c812be82d0">&#9670;&nbsp;</a></span>aux_data_range</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_aux_data_container.html#a2bca4ae95c9b6f4946dbe7c812be82d0">gtirb::AuxDataContainer::aux_data_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A range over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>. </p>
-<p>Values are of type std::pair&lt;std::string, gtirb::AuxData&gt;&amp;, representing a name-AuxData pair.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classgtirb_1_1_aux_data_container.html#adaab10ffafbb29b95b7a02a97dcdaa91" title="Return a range of the auxiliary data (AuxData).">aux_data()</a> <br  />
- </dd></dl>
-
-</div>
-</div>
-<a id="adad9ef97f284b491f58448e14078903c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adad9ef97f284b491f58448e14078903c">&#9670;&nbsp;</a></span>const_aux_data_iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">gtirb::AuxDataContainer::const_aux_data_iterator</a> =  AuxDataSet::const_iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>A const iterator over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>. </p>
-<p>Values are of type const std::pair&lt;std::string, gtirb::AuxData&gt;&amp;, representing a name-AuxData pair.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classgtirb_1_1_aux_data_container.html#a65215721181fc149d02e5dc2cc0d72b2" title="Return a constant iterator to the first AuxData.">aux_data_begin() const</a>, <a class="el" href="classgtirb_1_1_aux_data_container.html#a3b633a98ed3139d5e63d9a9d87d2728d" title="Return a constant iterator to the element following the last AuxData.">aux_data_end() const </a> </dd></dl>
+<p>An iterator type for traversing the AuxData in this container. </p>
+<p>The value type for this iterator is <a class="el" href="structgtirb_1_1_aux_data_container_1_1_aux_data_raw.html" title="An interface for accessing the serialized form of an AuxData instance.">AuxDataRaw</a>. The iterator provides access to the serialized form of all AuxData in this container (regardless of whether or not the AuxData's type is registered.) Note that the content is only valid with respect to the most recent unserialization operation. Entries for new or modified AuxData entities will contain empty or stale content. </p>
 
 </div>
 </div>
@@ -262,14 +215,10 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d">gtirb::AuxDataContainer::const_aux_data_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classgtirb_1_1_aux_data_container.html#afd5090f7ca023f0f81fc23deaf00336d">gtirb::AuxDataContainer::const_aux_data_range</a> =  boost::iterator_range&lt;<a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>A const range over the set of <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> in an <a class="el" href="classgtirb_1_1_aux_data_container.html" title="Contains the AuxData Tables and serves as a base class.">AuxDataContainer</a>. </p>
-<p>Values are of type const std::pair&lt;std::string, gtirb::AuxData&gt;&amp;, representing a name-AuxData pair.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classgtirb_1_1_aux_data_container.html#a1a53231b4cf9d6e389d1716ec04035c5" title="Return a constant range of the auxiliary data (AuxData).">aux_data() const </a> </dd></dl>
 
 </div>
 </div>
@@ -331,57 +280,22 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a927f150e62da611723be548c12a4bb48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a927f150e62da611723be548c12a4bb48">&#9670;&nbsp;</a></span>addAuxData()</h2>
+<a id="ade11a028eac4d13cd2414bdb4b7e10e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade11a028eac4d13cd2414bdb4b7e10e2">&#9670;&nbsp;</a></span>addAuxData()</h2>
 
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void gtirb::AuxDataContainer::addAuxData </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>Name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>X</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add a new <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>, transferring ownership. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Name</td><td>The name to assign to the data so it can be found later. </td></tr>
-    <tr><td class="paramname">X</td><td>The data itself.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<a id="adaab10ffafbb29b95b7a02a97dcdaa91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adaab10ffafbb29b95b7a02a97dcdaa91">&#9670;&nbsp;</a></span>aux_data() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Schema &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#a2bca4ae95c9b6f4946dbe7c812be82d0">aux_data_range</a> gtirb::AuxDataContainer::aux_data </td>
+          <td class="memname">void gtirb::AuxDataContainer::addAuxData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">typename Schema::Type &amp;&amp;&#160;</td>
+          <td class="paramname"><em>X</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -392,12 +306,19 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>). </p>
+<p>Add a new AuxData, transferring ownership. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">X</td><td>The data itself.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
 <a id="a1a53231b4cf9d6e389d1716ec04035c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a53231b4cf9d6e389d1716ec04035c5">&#9670;&nbsp;</a></span>aux_data() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a53231b4cf9d6e389d1716ec04035c5">&#9670;&nbsp;</a></span>aux_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,39 +340,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a constant range of the auxiliary data (<a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>). </p>
-
-</div>
-</div>
-<a id="a2a1dbdbe8bb140fe48d23c638e259b61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a1dbdbe8bb140fe48d23c638e259b61">&#9670;&nbsp;</a></span>aux_data_begin() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a> gtirb::AuxDataContainer::aux_data_begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return an iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>. </p>
+<p>Return a constant range of the auxiliary data (AuxData). </p>
 
 </div>
 </div>
 <a id="a65215721181fc149d02e5dc2cc0d72b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65215721181fc149d02e5dc2cc0d72b2">&#9670;&nbsp;</a></span>aux_data_begin() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a65215721181fc149d02e5dc2cc0d72b2">&#9670;&nbsp;</a></span>aux_data_begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -460,7 +354,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a> gtirb::AuxDataContainer::aux_data_begin </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a> gtirb::AuxDataContainer::aux_data_begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -473,39 +367,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a constant iterator to the first <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>. </p>
-
-</div>
-</div>
-<a id="a2e24e26492849cb799e1d6589ca229bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e24e26492849cb799e1d6589ca229bf">&#9670;&nbsp;</a></span>aux_data_end() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#a0807c7e433c5b88656f14277a2874323">aux_data_iterator</a> gtirb::AuxDataContainer::aux_data_end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return an iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>. </p>
+<p>Return a constant iterator to the first AuxData. </p>
 
 </div>
 </div>
 <a id="a3b633a98ed3139d5e63d9a9d87d2728d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b633a98ed3139d5e63d9a9d87d2728d">&#9670;&nbsp;</a></span>aux_data_end() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b633a98ed3139d5e63d9a9d87d2728d">&#9670;&nbsp;</a></span>aux_data_end()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -514,7 +381,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#adad9ef97f284b491f58448e14078903c">const_aux_data_iterator</a> gtirb::AuxDataContainer::aux_data_end </td>
+          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data_container.html#a7b35fa8fb38160d49846f7bc972853aa">const_aux_data_iterator</a> gtirb::AuxDataContainer::aux_data_end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -527,7 +394,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a constant iterator to the element following the last <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a>. </p>
+<p>Return a constant iterator to the element following the last AuxData. </p>
 
 </div>
 </div>
@@ -554,54 +421,26 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Clear all <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> from the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>. </p>
+<p>Clear all AuxData from the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a id="a423b0494bda12324ab8789ecc338ae68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a423b0494bda12324ab8789ecc338ae68">&#9670;&nbsp;</a></span>getAuxData() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a>* gtirb::AuxDataContainer::getAuxData </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">X</td><td>The name of the data to search for.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A non-owning pointer to the data if found, <code>nullptr</code> otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="a67f78d21c3faf0af2ca9c2652c2b8c26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67f78d21c3faf0af2ca9c2652c2b8c26">&#9670;&nbsp;</a></span>getAuxData() <span class="overload">[2/4]</span></h2>
+<a id="a43a9629d62988105c88b5fcdbd8f48c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a9629d62988105c88b5fcdbd8f48c3">&#9670;&nbsp;</a></span>getAuxData() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename Schema &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* gtirb::AuxDataContainer::getAuxData </td>
+          <td class="memname">Schema::Type* gtirb::AuxDataContainer::getAuxData </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -612,33 +451,27 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get a reference to the underlying type stored in the <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">X</td><td>The name of the data to search for.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A non-owning pointer to the data if found, <code>nullptr</code> otherwise. </dd></dl>
+<p>Get a reference to the underlying type stored in the AuxData by name. </p>
+<dl class="section return"><dt>Returns</dt><dd>A non-owning pointer to the data if found, <code>nullptr</code> otherwise.</dd></dl>
+<p>Note that this function can only be used for AuxData for which a type has been registered with <a class="el" href="classgtirb_1_1_aux_data_container.html#aaefaa8c48532146cd01af19553873945" title="Register a type to be used with AuxData of the given name.">registerAuxDataType()</a>. </p>
 
 </div>
 </div>
-<a id="a218fc06768552a3d636a878ce3ac60a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a218fc06768552a3d636a878ce3ac60a7">&#9670;&nbsp;</a></span>getAuxData() <span class="overload">[3/4]</span></h2>
+<a id="a69bdb5d84c3de28f549135edc175c1d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69bdb5d84c3de28f549135edc175c1d3">&#9670;&nbsp;</a></span>getAuxData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename Schema &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const T* gtirb::AuxDataContainer::getAuxData </td>
+          <td class="memname">const Schema::Type* gtirb::AuxDataContainer::getAuxData </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -649,41 +482,9 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get a reference to the underlying type stored in the <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">X</td><td>The name of the data to search for.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A non-owning pointer to the data if found, <code>nullptr</code> otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="acf469c1b0fe656535ac0aeef70f327e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf469c1b0fe656535ac0aeef70f327e5">&#9670;&nbsp;</a></span>getAuxData() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classgtirb_1_1_aux_data.html">gtirb::AuxData</a>* gtirb::AuxDataContainer::getAuxData </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">X</td><td>The name of the data to search for.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A non-owning pointer to the data if found, <code>nullptr</code> otherwise. </dd></dl>
+<p>Get a reference to the underlying type stored in the AuxData by name. </p>
+<dl class="section return"><dt>Returns</dt><dd>A non-owning pointer to the data if found, <code>nullptr</code> otherwise.</dd></dl>
+<p>Note that this function can only be used for AuxData for which a type has been registered with <a class="el" href="classgtirb_1_1_aux_data_container.html#aaefaa8c48532146cd01af19553873945" title="Register a type to be used with AuxData of the given name.">registerAuxDataType()</a>. </p>
 
 </div>
 </div>
@@ -710,8 +511,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Check: Is the number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a> zero? </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a> does not contain any <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>, otherwise <code>false</code> </dd></dl>
+<p>Check: Is the number of AuxData objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a> zero? </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a> does not contain any AuxData, otherwise <code>false</code> </dd></dl>
 
 </div>
 </div>
@@ -738,8 +539,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the total number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The total number of <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> objects. </dd></dl>
+<p>Get the total number of AuxData objects in this <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The total number of AuxData objects. </dd></dl>
 
 </div>
 </div>
@@ -799,31 +600,64 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a273e3268b60fe2c53e29b69b6858d1d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a273e3268b60fe2c53e29b69b6858d1d2">&#9670;&nbsp;</a></span>removeAuxData()</h2>
+<a id="aaefaa8c48532146cd01af19553873945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefaa8c48532146cd01af19553873945">&#9670;&nbsp;</a></span>registerAuxDataType()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename Schema &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gtirb::AuxDataContainer::registerAuxDataType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register a type to be used with AuxData of the given name. </p>
+
+</div>
+</div>
+<a id="a4565f08561ac1340241210675afb0cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4565f08561ac1340241210675afb0cad">&#9670;&nbsp;</a></span>removeAuxData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Schema &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool gtirb::AuxDataContainer::removeAuxData </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>X</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Remove an <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a> by name. </p>
+<p>Remove an AuxData by name. </p>
 <p>This will invalidate any pointers that may have been held externally.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">X</td><td>The name of the data to search for. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, <code>false</code> otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> on success, <code>false</code> otherwise.</dd></dl>
+<p>Note that this function can only be used for AuxData for which a type has been registered with <a class="el" href="classgtirb_1_1_aux_data_container.html#aaefaa8c48532146cd01af19553873945" title="Register a type to be used with AuxData of the given name.">registerAuxDataType()</a>. </p>
 
 </div>
 </div>

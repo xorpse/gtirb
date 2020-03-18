@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -68,9 +68,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Serialization.hpp File Reference</div>  </div>
@@ -132,24 +130,11 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="_serialization_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1details_1_1remove__pointer__ref__quals.html">gtirb::details::remove_pointer_ref_quals&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacegtirb"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegtirb.html">gtirb</a></td></tr>
 <tr class="memdesc:namespacegtirb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main namespace for the GTIRB API. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespacegtirb_1_1details"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegtirb_1_1details.html">gtirb::details</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a6463cf8b21951a3208678fe515943cca"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6463cf8b21951a3208678fe515943cca"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb_1_1details.html#a6463cf8b21951a3208678fe515943cca">gtirb::details::remove_pointer_ref_quals_t</a> = typename remove_pointer_ref_quals&lt; T &gt;::type</td></tr>
-<tr class="separator:a6463cf8b21951a3208678fe515943cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -183,6 +168,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a65e47156162cdb08106ab05229fd290f"><td class="memTemplParams" colspan="2">template&lt;typename ContainerT , typename MessageT &gt; </td></tr>
 <tr class="memitem:a65e47156162cdb08106ab05229fd290f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a65e47156162cdb08106ab05229fd290f">gtirb::containerToProtobuf</a> (const ContainerT &amp;Values, MessageT *Message)</td></tr>
 <tr class="separator:a65e47156162cdb08106ab05229fd290f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc2b888dc3664c6567beb3c0ae29ae4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8fc2b888dc3664c6567beb3c0ae29ae4"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a8fc2b888dc3664c6567beb3c0ae29ae4">gtirb::deref_if_ptr</a> (const std::unique_ptr&lt; T &gt; &amp;V)</td></tr>
+<tr class="separator:a8fc2b888dc3664c6567beb3c0ae29ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16089da0780f2a0273a62976b61b2d17"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a16089da0780f2a0273a62976b61b2d17"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a16089da0780f2a0273a62976b61b2d17">gtirb::deref_if_ptr</a> (const T &amp;V)</td></tr>
 <tr class="separator:a16089da0780f2a0273a62976b61b2d17"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#autotoc_md27">Standard AuxData Schemata</a><ul><li class="level2"><a href="#autotoc_md28">Sanctioned AuxData Tables</a><ul><li class="level3"><a href="#autotoc_md29">functionBlocks</a></li>
 <li class="level3"><a href="#autotoc_md30">functionEntries</a></li>
-<li class="level3"><a href="#autotoc_md31">functionName</a></li>
+<li class="level3"><a href="#autotoc_md31">functionNames</a></li>
 <li class="level3"><a href="#autotoc_md32">types</a></li>
 <li class="level3"><a href="#autotoc_md33">alignment</a></li>
 <li class="level3"><a href="#autotoc_md34">comments</a></li>
@@ -87,7 +87,7 @@ $(function() {
 Standard AuxData Schemata</h1>
 <p><a class="anchor" id="standard-auxdata-schemata"></a></p>
 <p>The <a class="elRef" href="../html/cpp/group___a_u_x_d_a_t_a___g_r_o_u_p.html">AuxData</a> class provides generic storage for application-specific data.</p>
-<p>We specify a small number of standard <a class="elRef" href="../html/cpp/classgtirb_1_1_aux_data.html">gtirb::AuxData</a> schemata to support interoperability. These are listed below, in two sets:</p>
+<p>We specify a small number of standard gtirb::AuxData schemata to support interoperability. These are listed below, in two sets:</p>
 <ul>
 <li><a href="#sanctioned-auxdata-tables">Sanctioned</a> Recommended for GTIRB users. Individual schemata are unlikely to change in future, although the set of Sanctioned schemata may grow.</li>
 <li><a href="#provisional-auxdata-tables">Provisional</a> Under consideration for 'sanctioned' status.</li>
@@ -123,7 +123,7 @@ Sanctioned AuxData Tables</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="#functionentries"><code>"functionEntries"</code></a> </td><td class="markdownTableBodyNone"><code>std::map&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>, std::set&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>&gt;&gt;</code>  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="#functionname"><code>"functionName"</code></a> </td><td class="markdownTableBodyNone"><code>std::map&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>, <a class="elRef" href="../html/cpp/classgtirb_1_1_symbol.html">gtirb::Symbol</a>&gt;</code>  </td></tr>
+<td class="markdownTableBodyNone"><a href="#functionnames"><code>"functionNames"</code></a> </td><td class="markdownTableBodyNone"><code>std::map&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>, <a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>&gt;</code>  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="#types"><code>"types"</code></a> </td><td class="markdownTableBodyNone"><code>std::map&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>, std::string&gt;</code>  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -166,19 +166,19 @@ functionEntries</h3>
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The set of UUIDs of all the block (gtirb::Block) entry points for the function.  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md31"></a>
-functionName</h3>
-<p><a class="anchor" id="functionname"></a></p>
+functionNames</h3>
+<p><a class="anchor" id="functionnames"></a></p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone"></th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Label </td><td class="markdownTableBodyNone"><code>"functionName"</code>  </td></tr>
+<td class="markdownTableBodyNone">Label </td><td class="markdownTableBodyNone"><code>"functionNames"</code>  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Type </td><td class="markdownTableBodyNone"><code>std::map&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>, <a class="elRef" href="../html/cpp/classgtirb_1_1_symbol.html">gtirb::Symbol</a>&gt;</code>  </td></tr>
+<td class="markdownTableBodyNone">Type </td><td class="markdownTableBodyNone"><code>std::map&lt;<a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>, <a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a>&gt;</code>  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">Function UUID.  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">A Symbol whose <code>name</code> field contains the name of the function.  </td></tr>
+<td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The UUID of a Symbol whose <code>name</code> field contains the name of the function.  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md32"></a>
 types</h3>

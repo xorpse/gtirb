@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -68,8 +68,7 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">gtirb Namespace Reference</div>  </div>
 </div><!--header-->
@@ -80,7 +79,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacegtirb_1_1details"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegtirb_1_1details.html">details</a></td></tr>
+<tr class="memitem:namespacegtirb_1_1schema"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegtirb_1_1schema.html">schema</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -88,34 +87,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_addr.html">Addr</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A special class to store an Effective Address.  <a href="classgtirb_1_1_addr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A generic object for storing additional client-specific data.  <a href="classgtirb_1_1_aux_data.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits.html">auxdata_traits</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides type information and serialization functions for types which can be stored in <a class="el" href="classgtirb_1_1_aux_data.html">AuxData</a>.  <a href="structgtirb_1_1auxdata__traits.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_addr_01_4.html">auxdata_traits&lt; Addr &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_offset_01_4.html">auxdata_traits&lt; Offset &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01std_1_1byte_01_4.html">auxdata_traits&lt; std::byte &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01std_1_1set_3_01_args_8_8_8_01_4_01_4.html">auxdata_traits&lt; std::set&lt; Args... &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01std_1_1string_01_4.html">auxdata_traits&lt; std::string &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_t_00_01typename_01std_1_1enable__if__t_3_01is__mapping_3_01_t_01_4_1_1value_01_4_01_4.html">auxdata_traits&lt; T, typename std::enable_if_t&lt; is_mapping&lt; T &gt;::value &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_t_00_01typename_01std_1_1enable__if__t_3_01is__sequence_3_01_t_01_4_1_1value_01_4_01_4.html">auxdata_traits&lt; T, typename std::enable_if_t&lt; is_sequence&lt; T &gt;::value &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_t_00_01typename_01std_1_1enable__if__t_3_01std_1_1is__integr0e17a2fe23707f85d9b7ee37006d43d0.html">auxdata_traits&lt; T, typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &amp;&amp;std::is_signed&lt; T &gt;::value &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_t_00_01typename_01std_1_1enable__if__t_3_01std_1_1is__integr6c91c3697cd76f9e2f07ffcf93881722.html">auxdata_traits&lt; T, typename std::enable_if_t&lt; std::is_integral&lt; T &gt;::value &amp;&amp;std::is_unsigned&lt; T &gt;::value &gt; &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1auxdata__traits_3_01_u_u_i_d_01_4.html">auxdata_traits&lt; UUID &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides type information and serialization functions for types which can be stored in AuxData.  <a href="structgtirb_1_1auxdata__traits.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_aux_data_container.html">AuxDataContainer</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the <a class="el" href="classgtirb_1_1_aux_data.html" title="A generic object for storing additional client-specific data.">AuxData</a> Tables and serves as a base class.  <a href="classgtirb_1_1_aux_data_container.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the AuxData Tables and serves as a base class.  <a href="classgtirb_1_1_aux_data_container.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_byte_interval.html">ByteInterval</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A contiguous region of bytes in a binary.  <a href="classgtirb_1_1_byte_interval.html#details">More...</a><br /></td></tr>
@@ -131,10 +107,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_data_block.html">DataBlock</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a data object, possibly symbolic.  <a href="classgtirb_1_1_data_block.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1default__serialization.html">default_serialization</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgtirb_1_1default__serialization_3_01_t_00_01typename_01std_1_1enable__if__t_3_01is__endian4f5c4fb55a0c747862fc298dd807a706.html">default_serialization&lt; T, typename std::enable_if_t&lt; is_endian_type&lt; T &gt;::value &gt; &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_i_r.html">IR</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A complete internal representation consisting of Modules (<a class="el" href="classgtirb_1_1_module.html">Module</a>).  <a href="classgtirb_1_1_i_r.html#details">More...</a><br /></td></tr>
@@ -155,7 +127,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes a location inside a block or data object.  <a href="structgtirb_1_1_offset.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_proxy_block.html">ProxyBlock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A placeholder to serve as the endpoint of a CFG edge.  <a href="classgtirb_1_1_proxy_block.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A placeholder that serves as the endpoint (source or target) of a CFG edge.  <a href="classgtirb_1_1_proxy_block.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_section.html">Section</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a named section of the binary.  <a href="classgtirb_1_1_section.html#details">More...</a><br /></td></tr>
@@ -309,10 +281,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga1ab72e20169310283e52d911a7e8a447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a constant range of just the Block elements in the specified graph.  <a href="group___c_f_g___g_r_o_u_p.html#ga1ab72e20169310283e52d911a7e8a447">More...</a><br /></td></tr>
 <tr class="separator:ga1ab72e20169310283e52d911a7e8a447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87a5f07ffdef92530afd6b3b6ca6be36"><td class="memTemplParams" colspan="2">template&lt;typename ContainerT , typename MessageT &gt; </td></tr>
-<tr class="memitem:a87a5f07ffdef92530afd6b3b6ca6be36"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a87a5f07ffdef92530afd6b3b6ca6be36">containerFromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, ContainerT &amp;Values, MessageT &amp;Message, std::enable_if_t&lt; !std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, <a class="el" href="namespacegtirb_1_1details.html#a6463cf8b21951a3208678fe515943cca">details::remove_pointer_ref_quals_t</a>&lt; typename ContainerT::value_type &gt;&gt;&gt; *=nullptr)</td></tr>
+<tr class="memitem:a87a5f07ffdef92530afd6b3b6ca6be36"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a87a5f07ffdef92530afd6b3b6ca6be36">containerFromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, ContainerT &amp;Values, MessageT &amp;Message, std::enable_if_t&lt; !std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, details::remove_pointer_ref_quals_t&lt; typename ContainerT::value_type &gt;&gt;&gt; *=nullptr)</td></tr>
 <tr class="separator:a87a5f07ffdef92530afd6b3b6ca6be36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a857b690635da980ab7b424ada4a7c972"><td class="memTemplParams" colspan="2">template&lt;typename ContainerT , typename MessageT &gt; </td></tr>
-<tr class="memitem:a857b690635da980ab7b424ada4a7c972"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a857b690635da980ab7b424ada4a7c972">containerFromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, ContainerT &amp;Values, MessageT &amp;Message, std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, <a class="el" href="namespacegtirb_1_1details.html#a6463cf8b21951a3208678fe515943cca">details::remove_pointer_ref_quals_t</a>&lt; typename ContainerT::value_type &gt;&gt;&gt; *=nullptr)</td></tr>
+<tr class="memitem:a857b690635da980ab7b424ada4a7c972"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a857b690635da980ab7b424ada4a7c972">containerFromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, ContainerT &amp;Values, MessageT &amp;Message, std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, details::remove_pointer_ref_quals_t&lt; typename ContainerT::value_type &gt;&gt;&gt; *=nullptr)</td></tr>
 <tr class="separator:a857b690635da980ab7b424ada4a7c972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a27b3ef060b27aa365f9b35c4d8df05"><td class="memTemplParams" colspan="2">template&lt;typename KeyType , typename ValueType , typename MessageT &gt; </td></tr>
 <tr class="memitem:a0a27b3ef060b27aa365f9b35c4d8df05"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a0a27b3ef060b27aa365f9b35c4d8df05">containerFromProtobuf</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, std::map&lt; KeyType, ValueType &gt; &amp;Values, MessageT &amp;Message)</td></tr>
@@ -320,6 +292,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a65e47156162cdb08106ab05229fd290f"><td class="memTemplParams" colspan="2">template&lt;typename ContainerT , typename MessageT &gt; </td></tr>
 <tr class="memitem:a65e47156162cdb08106ab05229fd290f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a65e47156162cdb08106ab05229fd290f">containerToProtobuf</a> (const ContainerT &amp;Values, MessageT *Message)</td></tr>
 <tr class="separator:a65e47156162cdb08106ab05229fd290f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc2b888dc3664c6567beb3c0ae29ae4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8fc2b888dc3664c6567beb3c0ae29ae4"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a8fc2b888dc3664c6567beb3c0ae29ae4">deref_if_ptr</a> (const std::unique_ptr&lt; T &gt; &amp;V)</td></tr>
+<tr class="separator:a8fc2b888dc3664c6567beb3c0ae29ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16089da0780f2a0273a62976b61b2d17"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a16089da0780f2a0273a62976b61b2d17"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a16089da0780f2a0273a62976b61b2d17">deref_if_ptr</a> (const T &amp;V)</td></tr>
 <tr class="separator:a16089da0780f2a0273a62976b61b2d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -405,11 +380,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a7684b2ba14176bc198e5ec32e609f22a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#a7684b2ba14176bc198e5ec32e609f22a">uuidToBytes</a> (<a class="el" href="namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">UUID</a> Uuid, std::string &amp;Bytes)</td></tr>
 <tr class="memdesc:a7684b2ba14176bc198e5ec32e609f22a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy raw bytes of UUID into a string.  <a href="namespacegtirb.html#a7684b2ba14176bc198e5ec32e609f22a">More...</a><br /></td></tr>
 <tr class="separator:a7684b2ba14176bc198e5ec32e609f22a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab672fe5d54ea8faee60a779546aa710a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_byte_interval.html">gtirb::ByteInterval</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegtirb.html#ab672fe5d54ea8faee60a779546aa710a">AuxDataContainer</a></td></tr>
-<tr class="separator:ab672fe5d54ea8faee60a779546aa710a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Main namespace for the GTIRB API. </p>
@@ -860,7 +830,7 @@ template&lt;typename ContainerT , typename MessageT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::enable_if_t&lt; !std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, <a class="el" href="namespacegtirb_1_1details.html#a6463cf8b21951a3208678fe515943cca">details::remove_pointer_ref_quals_t</a>&lt; typename ContainerT::value_type &gt;&gt;&gt; *&#160;</td>
+          <td class="paramtype">std::enable_if_t&lt; !std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, details::remove_pointer_ref_quals_t&lt; typename ContainerT::value_type &gt;&gt;&gt; *&#160;</td>
           <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -902,7 +872,7 @@ template&lt;typename ContainerT , typename MessageT &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, <a class="el" href="namespacegtirb_1_1details.html#a6463cf8b21951a3208678fe515943cca">details::remove_pointer_ref_quals_t</a>&lt; typename ContainerT::value_type &gt;&gt;&gt; *&#160;</td>
+          <td class="paramtype">std::enable_if_t&lt; std::is_base_of_v&lt; <a class="el" href="classgtirb_1_1_node.html">Node</a>, details::remove_pointer_ref_quals_t&lt; typename ContainerT::value_type &gt;&gt;&gt; *&#160;</td>
           <td class="paramname"> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -981,8 +951,28 @@ template&lt;typename ContainerT , typename MessageT &gt; </div>
 
 </div>
 </div>
+<a id="a8fc2b888dc3664c6567beb3c0ae29ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc2b888dc3664c6567beb3c0ae29ae4">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; gtirb::deref_if_ptr </td>
+          <td>(</td>
+          <td class="paramtype">const std::unique_ptr&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>V</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a16089da0780f2a0273a62976b61b2d17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16089da0780f2a0273a62976b61b2d17">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a16089da0780f2a0273a62976b61b2d17">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1002,7 +992,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a0ba19ac3070b1c06507f76cf0efa4368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ba19ac3070b1c06507f76cf0efa4368">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba19ac3070b1c06507f76cf0efa4368">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1022,7 +1012,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="ade277ff3834f2a97b12639ffd65c64c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade277ff3834f2a97b12639ffd65c64c0">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ade277ff3834f2a97b12639ffd65c64c0">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1042,7 +1032,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a9acb2b7750784f37bd5c13ed312e0d7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9acb2b7750784f37bd5c13ed312e0d7b">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9acb2b7750784f37bd5c13ed312e0d7b">&#9670;&nbsp;</a></span>deref_if_ptr() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1729,21 +1719,6 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab672fe5d54ea8faee60a779546aa710a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab672fe5d54ea8faee60a779546aa710a">&#9670;&nbsp;</a></span>AuxDataContainer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classgtirb_1_1_byte_interval.html">gtirb::ByteInterval</a> <a class="el" href="classgtirb_1_1_aux_data_container.html">gtirb::AuxDataContainer</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

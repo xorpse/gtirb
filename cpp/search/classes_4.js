@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['hash_3c_20gtirb_3a_3aoffset_20_3e_449',['hash&lt; gtirb::Offset &gt;',['../structstd_1_1hash_3_01gtirb_1_1_offset_01_4.html',1,'std']]],
-  ['hash_3c_20gtirb_3a_3asymaddraddr_20_3e_450',['hash&lt; gtirb::SymAddrAddr &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_addr_01_4.html',1,'std']]],
-  ['hash_3c_20gtirb_3a_3asymaddrconst_20_3e_451',['hash&lt; gtirb::SymAddrConst &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_addr_const_01_4.html',1,'std']]],
-  ['hash_3c_20gtirb_3a_3asymstackconst_20_3e_452',['hash&lt; gtirb::SymStackConst &gt;',['../structstd_1_1hash_3_01gtirb_1_1_sym_stack_const_01_4.html',1,'std']]],
-  ['hash_3c_3a_3agtirb_3a_3auuid_20_3e_453',['hash&lt;::gtirb::UUID &gt;',['../structstd_1_1hash_3_1_1gtirb_1_1_u_u_i_d_01_4.html',1,'std']]]
+  ['functionblocks_424',['FunctionBlocks',['../structgtirb_1_1schema_1_1_function_blocks.html',1,'gtirb::schema']]],
+  ['functionentries_425',['FunctionEntries',['../structgtirb_1_1schema_1_1_function_entries.html',1,'gtirb::schema']]],
+  ['functionnames_426',['FunctionNames',['../structgtirb_1_1schema_1_1_function_names.html',1,'gtirb::schema']]]
 ];

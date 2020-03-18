@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -92,21 +92,22 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_addr_8hpp.html">gtirb/Addr.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_aux_data_8hpp.html">gtirb/AuxData.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_byte_interval_8hpp.html">gtirb/ByteInterval.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_c_f_g_8hpp.html">gtirb/CFG.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_code_block_8hpp.html">gtirb/CodeBlock.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_data_block_8hpp.html">gtirb/DataBlock.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_export_8hpp.html">gtirb/Export.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_r_8hpp.html">gtirb/IR.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_module_8hpp.html">gtirb/Module.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_node_8hpp.html">gtirb/Node.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_section_8hpp.html">gtirb/Section.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_symbol_8hpp.html">gtirb/Symbol.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_symbolic_expression_8hpp.html">gtirb/SymbolicExpression.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="version_8h.html">gtirb/version.h</a>&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // GTIRB_GTIRB_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_aux_data_schema_8hpp.html">gtirb/AuxDataSchema.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_byte_interval_8hpp.html">gtirb/ByteInterval.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_c_f_g_8hpp.html">gtirb/CFG.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_code_block_8hpp.html">gtirb/CodeBlock.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_data_block_8hpp.html">gtirb/DataBlock.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_export_8hpp.html">gtirb/Export.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_r_8hpp.html">gtirb/IR.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_module_8hpp.html">gtirb/Module.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_node_8hpp.html">gtirb/Node.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_section_8hpp.html">gtirb/Section.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_symbol_8hpp.html">gtirb/Symbol.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_symbolic_expression_8hpp.html">gtirb/SymbolicExpression.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="version_8h.html">gtirb/version.h</a>&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // GTIRB_GTIRB_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="a_c_f_g_8hpp_html"><div class="ttname"><a href="_c_f_g_8hpp.html">CFG.hpp</a></div><div class="ttdoc">Types and operations for interprocedural control flow graphs (CFGs).</div></div>
 <div class="ttc" id="a_node_8hpp_html"><div class="ttname"><a href="_node_8hpp.html">Node.hpp</a></div><div class="ttdoc">Class gtirb::Node.</div></div>
@@ -115,11 +116,12 @@ $(function() {
 <div class="ttc" id="a_data_block_8hpp_html"><div class="ttname"><a href="_data_block_8hpp.html">DataBlock.hpp</a></div><div class="ttdoc">Class gtirb::DataBlock.</div></div>
 <div class="ttc" id="a_export_8hpp_html"><div class="ttname"><a href="_export_8hpp.html">Export.hpp</a></div></div>
 <div class="ttc" id="a_byte_interval_8hpp_html"><div class="ttname"><a href="_byte_interval_8hpp.html">ByteInterval.hpp</a></div><div class="ttdoc">Class gtirb::ByteInterval.</div></div>
+<div class="ttc" id="a_aux_data_schema_8hpp_html"><div class="ttname"><a href="_aux_data_schema_8hpp.html">AuxDataSchema.hpp</a></div><div class="ttdoc">Type schema for sanctioned AuxData types.</div></div>
 <div class="ttc" id="a_symbol_8hpp_html"><div class="ttname"><a href="_symbol_8hpp.html">Symbol.hpp</a></div><div class="ttdoc">Class gtirb::Symbol.</div></div>
 <div class="ttc" id="a_section_8hpp_html"><div class="ttname"><a href="_section_8hpp.html">Section.hpp</a></div><div class="ttdoc">Class gtirb::Section.</div></div>
 <div class="ttc" id="a_module_8hpp_html"><div class="ttname"><a href="_module_8hpp.html">Module.hpp</a></div><div class="ttdoc">Class gtirb::Module and related functions and types.</div></div>
 <div class="ttc" id="a_code_block_8hpp_html"><div class="ttname"><a href="_code_block_8hpp.html">CodeBlock.hpp</a></div><div class="ttdoc">Classes gtirb::CodeBlock and gtirb::Offset.</div></div>
-<div class="ttc" id="a_aux_data_8hpp_html"><div class="ttname"><a href="_aux_data_8hpp.html">AuxData.hpp</a></div><div class="ttdoc">Types and operations for auxiliar data.</div></div>
+<div class="ttc" id="a_aux_data_8hpp_html"><div class="ttname"><a href="_aux_data_8hpp.html">AuxData.hpp</a></div><div class="ttdoc">Types and operations for auxiliary data.</div></div>
 <div class="ttc" id="a_symbolic_expression_8hpp_html"><div class="ttname"><a href="_symbolic_expression_8hpp.html">SymbolicExpression.hpp</a></div><div class="ttdoc">Types and operations for symbolic expressions.</div></div>
 <div class="ttc" id="a_addr_8hpp_html"><div class="ttname"><a href="_addr_8hpp.html">Addr.hpp</a></div><div class="ttdoc">Class gtirb::Addr and related functions.</div></div>
 <!-- start footer part -->

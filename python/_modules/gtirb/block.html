@@ -305,15 +305,17 @@
 
 
 <div class="viewcode-block" id="ProxyBlock"><a class="viewcode-back" href="../../gtirb.block.html#gtirb.ProxyBlock">[docs]</a><span class="k">class</span> <span class="nc">ProxyBlock</span><span class="p">(</span><span class="n">CfgNode</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;A placeholder to serve as the endpoint of a CFG edge.</span>
+    <span class="sd">&quot;&quot;&quot;A placeholder that serves as the endpoint (source or target) of a</span>
+<span class="sd">    :class:`gtirb.Edge`.</span>
 
-<span class="sd">    A ProxyBlock exists in the CFG so that edges to or from another</span>
-<span class="sd">    node may be constructed. For example, a call to a function in</span>
-<span class="sd">    another module may be represented by an edge that originates at</span>
-<span class="sd">    the calling block and targets a proxy. Another example would be an</span>
-<span class="sd">    edge to represent an indirect jump whose target is not known.</span>
+<span class="sd">    ProxyBlock objects allow the construction of CFG edges to or from</span>
+<span class="sd">    another node. For example, a call to a function in another module</span>
+<span class="sd">    may be represented by a :class:`gtirb.Edge` that originates at the</span>
+<span class="sd">    calling :class:`gtirb.CodeBlock` and targets a ProxyBlock. Another</span>
+<span class="sd">    example would be a :class:`gtirb.Edge` that represents an indirect</span>
+<span class="sd">    jump whose target is not known.</span>
 
-<span class="sd">    ProxyBlocks do not represent any instructions and so have neither</span>
+<span class="sd">    A ProxyBlock does not represent any instructions and so has neither</span>
 <span class="sd">    an address nor a size.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -431,7 +433,7 @@
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

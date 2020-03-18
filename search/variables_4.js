@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['scale_770',['Scale',['../../html/cpp/structgtirb_1_1_sym_addr_addr.html#ae2ad181340ed1a4ad67cb05bd352665c',1,'gtirb::SymAddrAddr']]],
-  ['sym_771',['Sym',['../../html/cpp/structgtirb_1_1_sym_addr_const.html#a9a634d924eef258e5e5de53cee3d99e6',1,'gtirb::SymAddrConst::Sym()'],['../../html/cpp/structgtirb_1_1_sym_stack_const.html#af95a1fb6520496ee3b4474a644d5617d',1,'gtirb::SymStackConst::Sym()']]],
-  ['sym1_772',['Sym1',['../../html/cpp/structgtirb_1_1_sym_addr_addr.html#a105684667fea6c454a5cccc183769fbc',1,'gtirb::SymAddrAddr']]],
-  ['sym2_773',['Sym2',['../../html/cpp/structgtirb_1_1_sym_addr_addr.html#a667b38e69b11a0fde5c4b0be90f4d83d',1,'gtirb::SymAddrAddr']]]
+  ['offset_750',['Offset',['../../html/cpp/structgtirb_1_1_sym_addr_addr.html#a86f17d7146a369d39f9514e1a7484388',1,'gtirb::SymAddrAddr::Offset()'],['../../html/cpp/structgtirb_1_1_sym_addr_const.html#a763f9b2eea15c0c1a1e407b090c6cf24',1,'gtirb::SymAddrConst::Offset()'],['../../html/cpp/structgtirb_1_1_sym_stack_const.html#add0779985661665ca4f0e8abd3c20131',1,'gtirb::SymStackConst::Offset()']]]
 ];

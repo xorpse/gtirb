@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['auxdatacontainer_766',['AuxDataContainer',['../../html/cpp/namespacegtirb.html#ab672fe5d54ea8faee60a779546aa710a',1,'gtirb']]]
+  ['displacement_746',['Displacement',['../../html/cpp/structgtirb_1_1_offset.html#a1cf7b6a500d2b9b97b72472c6dcf2b3d',1,'gtirb::Offset']]]
 ];

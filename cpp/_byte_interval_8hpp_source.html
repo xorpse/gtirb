@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -822,19 +822,19 @@ $(function() {
 <div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160; </div>
 <div class="line"><a name="l01285"></a><span class="lineno"><a class="line" href="classgtirb_1_1_byte_interval.html#a74e4791188ab46a92d1242f337eba656"> 1285</a></span>&#160;  <a class="code" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html#ga76c75a30283841464ab659824167b1b8">SymbolicExpression</a>&amp; <a class="code" href="classgtirb_1_1_byte_interval.html#a74e4791188ab46a92d1242f337eba656">addSymbolicExpression</a>(uint64_t Off,</div>
 <div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;                                            <span class="keyword">const</span> <a class="code" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html#ga76c75a30283841464ab659824167b1b8">SymbolicExpression</a>&amp; SymExpr) {</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;    this-&gt;mutateIndices([&amp;]() { SymbolicExpressions[Off] = SymExpr; });</div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;    SymbolicExpressions[Off] = SymExpr;</div>
 <div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;    <span class="keywordflow">return</span> SymbolicExpressions[Off];</div>
 <div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;  }</div>
 <div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160; </div>
 <div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class </span>ExprType, <span class="keyword">class</span>... Args&gt;</div>
 <div class="line"><a name="l01300"></a><span class="lineno"><a class="line" href="classgtirb_1_1_byte_interval.html#a75d01fa068e0484d58f374d2c128d0f2"> 1300</a></span>&#160;  <a class="code" href="group___s_y_m_b_o_l_i_c___e_x_p_r_e_s_s_i_o_n___g_r_o_u_p.html#ga76c75a30283841464ab659824167b1b8">SymbolicExpression</a>&amp; <a class="code" href="classgtirb_1_1_byte_interval.html#a75d01fa068e0484d58f374d2c128d0f2">addSymbolicExpression</a>(uint64_t Off, Args... A) {</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    this-&gt;mutateIndices([&amp;]() { SymbolicExpressions[Off] = ExprType{A...}; });</div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    SymbolicExpressions[Off] = ExprType{A...};</div>
 <div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;    <span class="keywordflow">return</span> SymbolicExpressions[Off];</div>
 <div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;  }</div>
 <div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160; </div>
 <div class="line"><a name="l01313"></a><span class="lineno"><a class="line" href="classgtirb_1_1_byte_interval.html#afc2d53d3934c8dd5c6db3869ed625c64"> 1313</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classgtirb_1_1_byte_interval.html#afc2d53d3934c8dd5c6db3869ed625c64">removeSymbolicExpression</a>(uint64_t Off) {</div>
 <div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;    std::size_t N;</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    this-&gt;mutateIndices([&amp;]() { N = SymbolicExpressions.erase(Off); });</div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;    N = SymbolicExpressions.erase(Off);</div>
 <div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;    <span class="keywordflow">return</span> N != 0;</div>
 <div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;  }</div>
 <div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
@@ -1303,7 +1303,7 @@ $(function() {
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_aec8ef982b7b2b4862e3fe569de719832"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#aec8ef982b7b2b4862e3fe569de719832">gtirb::ByteInterval::code_blocks</a></div><div class="ttdeci">code_block_range code_blocks()</div><div class="ttdoc">Return a range of the CodeBlock objects in this interval.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:524</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_af14cae5f422a97c9929b6ea987073033"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#af14cae5f422a97c9929b6ea987073033">gtirb::ByteInterval::insertBytes</a></div><div class="ttdeci">const_bytes_iterator&lt; T &gt; insertBytes(const const_bytes_iterator&lt; T &gt; Pos, const T &amp;X, boost::endian::order VectorOrder=boost::endian::order::native, boost::endian::order ElementOrder=boost::endian::order::native)</div><div class="ttdoc">Insert a single datum into this byte vector.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:1695</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_a9c8eb24a288635ba4bb5ff132b00e4c3"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#a9c8eb24a288635ba4bb5ff132b00e4c3">gtirb::ByteInterval::findCodeBlocksAtOffset</a></div><div class="ttdeci">const_code_block_range findCodeBlocksAtOffset(uint64_t Off) const</div><div class="ttdoc">Find all the code blocks that start at an offset.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:634</div></div>
-<div class="ttc" id="anamespacegtirb_html_acb4cb2e76f8bde62f9b449cc9e6c6023"><div class="ttname"><a href="namespacegtirb.html#acb4cb2e76f8bde62f9b449cc9e6c6023">gtirb::fromProtobuf</a></div><div class="ttdeci">T * fromProtobuf(Context &amp;C, const U &amp;Message)</div><div class="ttdef"><b>Definition:</b> Serialization.hpp:158</div></div>
+<div class="ttc" id="anamespacegtirb_html_acb4cb2e76f8bde62f9b449cc9e6c6023"><div class="ttname"><a href="namespacegtirb.html#acb4cb2e76f8bde62f9b449cc9e6c6023">gtirb::fromProtobuf</a></div><div class="ttdeci">T * fromProtobuf(Context &amp;C, const U &amp;Message)</div><div class="ttdef"><b>Definition:</b> Serialization.hpp:161</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_a148bf4089ffe8701c5ee3b8eacf97a38"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#a148bf4089ffe8701c5ee3b8eacf97a38">gtirb::ByteInterval::bytes_begin</a></div><div class="ttdeci">const_bytes_iterator&lt; T &gt; bytes_begin(boost::endian::order InputOrder=boost::endian::order::native, boost::endian::order OutputOrder=boost::endian::order::native) const</div><div class="ttdoc">Get an iterator to the beginning of this byte vector.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:1647</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_a06a2a39cab63acb536e44eb36ffd5278"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#a06a2a39cab63acb536e44eb36ffd5278">gtirb::ByteInterval::setAddress</a></div><div class="ttdeci">void setAddress(std::optional&lt; Addr &gt; A)</div><div class="ttdoc">Set or clear the address of this interval.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:1351</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_ac9d73a66820013d9d172acbb5af82469"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#ac9d73a66820013d9d172acbb5af82469">gtirb::ByteInterval::findDataBlocksAt</a></div><div class="ttdeci">data_block_range findDataBlocksAt(Addr Low, Addr High)</div><div class="ttdoc">Find all the data blocks that start between a range of addresses.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:857</div></div>

@@ -9,5 +9,5 @@
 <area shape="rect" id="node3" href="$classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module)." alt="" coords="405,5,478,32"/>
 <area shape="rect" id="node4" href="$classgtirb_1_1_module.html" title="Represents a single binary (library or executable)." alt="" coords="387,56,495,83"/>
 <area shape="rect" id="node7" href="$classgtirb_1_1_code_block.html" title="A basic block." alt="" coords="377,119,506,145"/>
-<area shape="rect" id="node8" href="$classgtirb_1_1_proxy_block.html" title="A placeholder to serve as the endpoint of a CFG edge." alt="" coords="375,169,508,196"/>
+<area shape="rect" id="node8" href="$classgtirb_1_1_proxy_block.html" title="A placeholder that serves as the endpoint (source or target) of a CFG edge." alt="" coords="375,169,508,196"/>
 </map>

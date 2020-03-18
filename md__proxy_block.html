@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.1.0</span>
+   &#160;<span id="projectnumber">v1.2.0</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -81,7 +81,9 @@ $(function() {
 <div class="textblock"><h1><a class="anchor" id="autotoc_md158"></a>
 ProxyBlock</h1>
 <p><a class="anchor" id="proxyblock"></a></p>
-<p>A <b>ProxyBlock</b> represents a basic block in the binary.</p>
+<p>A <b>ProxyBlock</b> is a placeholder that serves as the endpoint (source or target) of a <a class="el" href="md__cfg_edge.html">CfgEdge</a>.</p>
+<p><b>ProxyBlock</b> objects allow the construction of CFG edges to or from another node. For example, a call to a function in another module may be represented by an edge that originates at the calling <a class="el" href="md__code_block.html">CodeBlock</a> and targets a <b>ProxyBlock</b>. Another example would be an edge that represents an indirect jump whose target is not known.</p>
+<p>A <b>ProxyBlock</b> does not represent any instructions and so has neither an address nor a size.</p>
 <p>The corresponding Protobuf message type is <code>ProxyBlock</code>.</p>
 <h2><a class="anchor" id="autotoc_md159"></a>
 Guaranteed Properties</h2>
