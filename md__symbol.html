@@ -68,26 +68,26 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md175">Symbol</a><ul><li class="level2"><a href="#autotoc_md176">Guaranteed Properties</a></li>
-<li class="level2"><a href="#autotoc_md177">API Implementations</a><ul><li class="level3"><a href="#autotoc_md178">Symbol Classes</a></li>
-<li class="level3"><a href="#autotoc_md179">Required Field Getters/Setters</a><ul><li class="level4"><a href="#autotoc_md180">name</a></li>
-<li class="level4"><a href="#autotoc_md181">optional_payload (referent/value)</a></li>
+<ul><li class="level1"><a href="#autotoc_md180">Symbol</a><ul><li class="level2"><a href="#autotoc_md181">Guaranteed Properties</a></li>
+<li class="level2"><a href="#autotoc_md182">API Implementations</a><ul><li class="level3"><a href="#autotoc_md183">Symbol Classes</a></li>
+<li class="level3"><a href="#autotoc_md184">Required Field Getters/Setters</a><ul><li class="level4"><a href="#autotoc_md185">name</a></li>
+<li class="level4"><a href="#autotoc_md186">optional_payload (referent/value)</a></li>
 </ul>
 </li>
-<li class="level3"><a href="#autotoc_md182">Associated Module</a></li>
+<li class="level3"><a href="#autotoc_md187">Associated Module</a></li>
 </ul>
 </li>
-<li class="level2"><a href="#autotoc_md183">Links</a></li>
+<li class="level2"><a href="#autotoc_md188">Links</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><h1><a class="anchor" id="autotoc_md175"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md180"></a>
 Symbol</h1>
 <p><a class="anchor" id="symbol"></a></p>
 <p>A <b>Symbol</b> maps a name to an object in the <a class="el" href="md__i_r.html">IR</a>.</p>
 <p>The corresponding Protobuf message type is <code>Symbol</code>.</p>
-<h2><a class="anchor" id="autotoc_md176"></a>
+<h2><a class="anchor" id="autotoc_md181"></a>
 Guaranteed Properties</h2>
 <p><a class="anchor" id="guaranteed-properties"></a></p>
 <ul>
@@ -98,17 +98,17 @@ Guaranteed Properties</h2>
 </ul>
 </li>
 <li>Each <b>Symbol</b> must belong to either zero (0) or one (1) <a class="el" href="md__module.html">Module</a> objects. The owning <b>Module</b> must be stored as a reference.<ul>
-<li>This reference may be null, in which case the <b>ProxyBlock</b> is freestanding and does not belong to any <b>Module</b>.</li>
+<li>This reference may be null, in which case the <b>Symbol</b> is freestanding and does not belong to any <b>Module</b>.</li>
 <li>The reference must be readable.</li>
 <li>If the reference is writable, setting it must automatically update the <b>symbols</b> sets for the affected <b>Module</b> object or objects (there will be at most two).</li>
 </ul>
 </li>
 </ul>
-<h2><a class="anchor" id="autotoc_md177"></a>
+<h2><a class="anchor" id="autotoc_md182"></a>
 API Implementations</h2>
 <p><a class="anchor" id="api-implementations"></a></p>
 <p>The guaranteed functionality is provided as follows.</p>
-<h3><a class="anchor" id="autotoc_md178"></a>
+<h3><a class="anchor" id="autotoc_md183"></a>
 Symbol Classes</h3>
 <p><a class="anchor" id="symbol-classes"></a></p>
 <table class="markdownTable">
@@ -121,10 +121,10 @@ Symbol Classes</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Common Lisp </td><td class="markdownTableBodyLeft"><b>symbol</b>  </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md179"></a>
+<h3><a class="anchor" id="autotoc_md184"></a>
 Required Field Getters/Setters</h3>
 <p><a class="anchor" id="required-field-getterssetters"></a></p>
-<h4><a class="anchor" id="autotoc_md180"></a>
+<h4><a class="anchor" id="autotoc_md185"></a>
 name</h4>
 <p><a class="anchor" id="name"></a></p>
 <table class="markdownTable">
@@ -137,7 +137,7 @@ name</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Common Lisp </td><td class="markdownTableBodyLeft"><b>name</b> (<em>obj</em> <em>symbol</em>) =&gt; <em>result</em> </td><td class="markdownTableBodyLeft">(setf (<b>name</b> (<em>obj</em> <em>symbol</em>)) <em>new</em>)  </td></tr>
 </table>
-<h4><a class="anchor" id="autotoc_md181"></a>
+<h4><a class="anchor" id="autotoc_md186"></a>
 optional_payload (referent/value)</h4>
 <p><a class="anchor" id="optional_payload-(referentvalue)"></a></p>
 <table class="markdownTable">
@@ -150,7 +150,7 @@ optional_payload (referent/value)</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Common Lisp </td><td class="markdownTableBodyLeft"><b>payload</b> <em>symbol</em> =&gt; <em>result</em> </td><td class="markdownTableBodyLeft">(setf (<b>payload</b> <em>symbol</em>) <em>new</em>)  </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md182"></a>
+<h3><a class="anchor" id="autotoc_md187"></a>
 Associated Module</h3>
 <p><a class="anchor" id="associated-module"></a></p>
 <table class="markdownTable">
@@ -163,7 +163,7 @@ Associated Module</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">Common Lisp </td><td class="markdownTableBodyLeft"><b>module</b> (<em>object</em> <em>symbol</em>) =&gt; <em>result</em>  </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md183"></a>
+<h2><a class="anchor" id="autotoc_md188"></a>
 Links</h2>
 <p><a class="anchor" id="links"></a></p>
 <ul>

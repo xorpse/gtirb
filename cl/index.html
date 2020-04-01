@@ -189,6 +189,7 @@ At the command line.  A new executable may be created from the modified gtirb fi
       <li><a href="#gtirb-block"><code>gtirb-block</code></a></li>
       <li><a href="#gtirb-byte-block"><code>gtirb-byte-block</code></a></li>
       <li><a href="#gtirb-version"><code>gtirb-version</code></a></li>
+      <li><a href="#ir"><code>ir</code></a></li>
       <li><a href="#is-equal-p"><code>is-equal-p</code></a></li>
       <li><a href="#isa"><code>isa</code></a></li>
       <li><a href="#module"><code>module</code></a></li>
@@ -590,8 +591,7 @@ Byte-intervals holding all of the section's bytes.
 
 <!-- Entry for BYTES -->
 
-<p><br>[Generic accessor]<br><a class=none name='bytes'><b>bytes</b> <i>object</i> =&gt; <i>result</i></a>
-<br><a class=none><tt>(setf (</tt><b>bytes</b> <i>object</i><tt>)</tt> <i>new</i><tt>)</tt></a>
+<p><br>[Generic function]<br><a class=none name='bytes'><b>bytes</b> <i>object <tt>&amp;optional</tt> start end</i> =&gt; <i>result</i></a>
 <blockquote><br>
 
 Return the bytes held by OBJECT.
@@ -1011,6 +1011,227 @@ GTIRB Version as a string of "MAJOR.MINOR.PATCH".
 </blockquote>
 
 <!-- End of entry for GTIRB-VERSION -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Generic accessor]<br><a class=none name='ir'><b>ir</b> <i>object</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>object</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object aux-data)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object aux-data)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this AUX-DATA.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object proxy-block)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object proxy-block)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this PROXY-BLOCK.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object data-block)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object data-block)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this DATA-BLOCK.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object code-block)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object code-block)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this CODE-BLOCK.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object sym-addr-addr)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object sym-addr-addr)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this SYM-ADDR-ADDR.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object sym-addr-const)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object sym-addr-const)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this SYM-ADDR-CONST.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object sym-stack-const)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object sym-stack-const)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this SYM-STACK-CONST.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object byte-interval)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object byte-interval)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this BYTE-INTERVAL.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object section)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object section)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this SECTION.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object symbol)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object symbol)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this SYMBOL.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object edge-label)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object edge-label)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this EDGE-LABEL.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object module)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object module)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this MODULE.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
+
+
+<!-- Entry for IR -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object gtirb)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object gtirb)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+Access the top-level IR of this GTIRB.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for IR -->
 
 
 <!-- Entry for IS-EQUAL-P -->

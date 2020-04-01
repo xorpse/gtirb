@@ -241,7 +241,11 @@
         <span class="n">proto_interval</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
         <span class="n">proto_interval</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+        <span class="c1"># Cannot insert blocks using proto_interval.blocks.append() in a loop</span>
+        <span class="c1"># because append() isn&#39;t supported in older versions of protobuf. Use a</span>
+        <span class="c1"># comprehension and extend() instead.</span>
+
+        <span class="k">def</span> <span class="nf">to_proto_block</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
             <span class="n">proto_block</span> <span class="o">=</span> <span class="n">ByteInterval_pb2</span><span class="o">.</span><span class="n">Block</span><span class="p">()</span>
             <span class="n">proto_block</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">offset</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">CodeBlock</span><span class="p">):</span>
@@ -252,7 +256,8 @@
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                     <span class="s2">&quot;Unknown block type in interval: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
                 <span class="p">)</span>
-            <span class="n">proto_interval</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proto_block</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">proto_block</span>
+        <span class="n">proto_interval</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">to_proto_block</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_expressions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="n">sym_exp</span> <span class="o">=</span> <span class="n">SymbolicExpression_pb2</span><span class="o">.</span><span class="n">SymbolicExpression</span><span class="p">()</span>
