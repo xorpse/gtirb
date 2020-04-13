@@ -42,11 +42,12 @@
 <span class="sd">    &gt;&gt;&gt; ir.save_protobuf(&#39;filename.gtirb&#39;)</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">CFG_pb2</span>
-<span class="kn">import</span> <span class="nn">IR_pb2</span>
 <span class="kn">import</span> <span class="nn">typing</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
 <span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="n">UUID</span>
+
+<span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">CFG_pb2</span>
+<span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">IR_pb2</span>
 
 <span class="kn">from</span> <span class="nn">.auxdata</span> <span class="kn">import</span> <span class="n">AuxData</span><span class="p">,</span> <span class="n">AuxDataContainer</span>
 <span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">CodeBlock</span><span class="p">,</span> <span class="n">DataBlock</span><span class="p">,</span> <span class="n">ProxyBlock</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">,</span> <span class="n">ByteBlock</span>

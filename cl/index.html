@@ -161,6 +161,7 @@ At the command line.  A new executable may be created from the modified gtirb fi
       <li><a href="#address-range"><code>address-range</code></a></li>
       <li><a href="#addressp"><code>addressp</code></a></li>
       <li><a href="#at-address"><code>at-address</code></a></li>
+      <li><a href="#at-end"><code>at-end</code></a></li>
       <li><a href="#aux-data"><code>aux-data</code></a></li>
       <li><a href="#aux-data"><code>aux-data</code></a></li>
       <li><a href="#aux-data-data"><code>aux-data-data</code></a></li>
@@ -188,6 +189,7 @@ At the command line.  A new executable may be created from the modified gtirb fi
       <li><a href="#gtirb"><code>gtirb</code></a></li>
       <li><a href="#gtirb-block"><code>gtirb-block</code></a></li>
       <li><a href="#gtirb-byte-block"><code>gtirb-byte-block</code></a></li>
+      <li><a href="#gtirb-node"><code>gtirb-node</code></a></li>
       <li><a href="#gtirb-version"><code>gtirb-version</code></a></li>
       <li><a href="#ir"><code>ir</code></a></li>
       <li><a href="#is-equal-p"><code>is-equal-p</code></a></li>
@@ -279,6 +281,18 @@ comparison fails for a large object with many nested objects.
 <!-- End of entry for ADDRESS -->
 
 
+<!-- Entry for ADDRESS -->
+
+<p><br>[Method]<br><a class=none><b>address</b> <i>(obj section)</i> =&gt; <i>result</i></a>
+<blockquote><br>
+
+
+
+</blockquote>
+
+<!-- End of entry for ADDRESS -->
+
+
 <!-- Entry for ADDRESS-RANGE -->
 
 <p><br>[Generic function]<br><a class=none name='address-range'><b>address-range</b> <i>proto-backed-object</i> =&gt; <i>result</i></a>
@@ -336,6 +350,32 @@ Find all objects in OBJECT starting at ADDRESS.
 </blockquote>
 
 <!-- End of entry for AT-ADDRESS -->
+
+
+<!-- Entry for AT-END -->
+
+<p><br>[Generic accessor]<br><a class=none name='at-end'><b>at-end</b> <i>obj</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>at-end</b> <i>obj</i><tt>)</tt> <i>new</i><tt>)</tt></a>
+<blockquote><br>
+
+
+
+</blockquote>
+
+<!-- End of entry for AT-END -->
+
+
+<!-- Entry for AT-END -->
+
+<p><br>[Specialized accessor]<br><a class=none><b>at-end</b> <i>(obj symbol)</i> =&gt; <i>result</i></a>
+<br><a class=none><tt>(setf (</tt><b>at-end</b> <i>(obj symbol)</i><tt>)</tt> <i>new</i><tt>)</tt></a>
+<blockquote><br>
+
+
+
+</blockquote>
+
+<!-- End of entry for AT-END -->
 
 
 <!-- Entry for AUX-DATA -->
@@ -998,6 +1038,21 @@ This class abstracts over all GTIRB blocks which are able to hold bytes.
 <!-- End of entry for GTIRB-BYTE-BLOCK -->
 
 
+<!-- Entry for GTIRB-NODE -->
+
+<p><br>[Standard class]<br><a class=none name='gtirb-node'><b>gtirb-node</b></a>
+<blockquote><br>
+
+Objects with a UUID contained in a GTIRB instance.
+
+
+
+
+</blockquote>
+
+<!-- End of entry for GTIRB-NODE -->
+
+
 <!-- Entry for GTIRB-VERSION -->
 
 <p><br>[Constant]<br><a class=none name='gtirb-version'><b>gtirb-version</b></a>
@@ -1223,9 +1278,6 @@ Access the top-level IR of this MODULE.
 <p><br>[Specialized accessor]<br><a class=none><b>ir</b> <i>(object gtirb)</i> =&gt; <i>result</i></a>
 <br><a class=none><tt>(setf (</tt><b>ir</b> <i>(object gtirb)</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
 <blockquote><br>
-
-Access the top-level IR of this GTIRB.
-
 
 
 
@@ -1799,7 +1851,7 @@ List of the sections comprising this module.
 
 <!-- Entry for SIZE -->
 
-<p><br>[Generic accessor]<br><a class=none name='size'><b>size</b> <i>obj</i> =&gt; <i>result</i></a>
+<p><br>[Generic accessor]<br><a class=none name='size'><b>size</b> <i>it</i> =&gt; <i>result</i></a>
 <br><a class=none><tt>(setf (</tt><b>size</b> <i>obj</i><tt>)</tt> <i>new</i><tt>)</tt></a>
 <blockquote><br>
 
@@ -1812,7 +1864,7 @@ List of the sections comprising this module.
 
 <!-- Entry for SIZE -->
 
-<p><br>[Specialized accessor]<br><a class=none><b>size</b> <i>(obj data-block)</i> =&gt; <i>result</i></a>
+<p><br>[Specialized accessor]<br><a class=none><b>size</b> <i>(it data-block)</i> =&gt; <i>result</i></a>
 <br><a class=none><tt>(setf (</tt><b>size</b> <i>(obj data-block)</i><tt>)</tt> <i>new</i><tt>)</tt></a>
 <blockquote><br>
 
@@ -1828,7 +1880,7 @@ The length of the bytes held by this data block.
 
 <!-- Entry for SIZE -->
 
-<p><br>[Specialized accessor]<br><a class=none><b>size</b> <i>(obj code-block)</i> =&gt; <i>result</i></a>
+<p><br>[Specialized accessor]<br><a class=none><b>size</b> <i>(it code-block)</i> =&gt; <i>result</i></a>
 <br><a class=none><tt>(setf (</tt><b>size</b> <i>(obj code-block)</i><tt>)</tt> <i>new</i><tt>)</tt></a>
 <blockquote><br>
 
@@ -1844,7 +1896,7 @@ The length of the bytes held by this code block.
 
 <!-- Entry for SIZE -->
 
-<p><br>[Specialized accessor]<br><a class=none><b>size</b> <i>(obj byte-interval)</i> =&gt; <i>result</i></a>
+<p><br>[Specialized accessor]<br><a class=none><b>size</b> <i>(it byte-interval)</i> =&gt; <i>result</i></a>
 <br><a class=none><tt>(setf (</tt><b>size</b> <i>(obj byte-interval)</i><tt>)</tt> <i>new</i><tt>)</tt></a>
 <blockquote><br>
 
@@ -1854,6 +1906,18 @@ number of bytes in the byte interval's <code>contents</code> if portions of the
 byte-interval are not represented statically but are zero-initialized
 at runtime.
 
+
+
+
+</blockquote>
+
+<!-- End of entry for SIZE -->
+
+
+<!-- Entry for SIZE -->
+
+<p><br>[Method]<br><a class=none><b>size</b> <i>(it section)</i> =&gt; <i>result</i></a>
+<blockquote><br>
 
 
 
@@ -1917,6 +1981,18 @@ Symbol with it's NAME and an optional VALUE or REFERENT.
 
 <p><br>[Generic accessor]<br><a class=none name='symbolic-expressions'><b>symbolic-expressions</b> <i>object</i> =&gt; <i>result</i></a>
 <br><a class=none><tt>(setf (</tt><b>symbolic-expressions</b> <i>object</i><tt>)</tt> <i>new-value</i><tt>)</tt></a>
+<blockquote><br>
+
+
+
+</blockquote>
+
+<!-- End of entry for SYMBOLIC-EXPRESSIONS -->
+
+
+<!-- Entry for SYMBOLIC-EXPRESSIONS -->
+
+<p><br>[Method]<br><a class=none><b>symbolic-expressions</b> <i>(object gtirb-byte-block)</i> =&gt; <i>result</i></a>
 <blockquote><br>
 
 

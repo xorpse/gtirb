@@ -1,6 +1,13 @@
 gtirb package
 =============
 
+Subpackages
+-----------
+
+.. toctree::
+
+   gtirb.proto
+
 Submodules
 ----------
 

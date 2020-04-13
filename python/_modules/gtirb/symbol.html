@@ -34,7 +34,7 @@
 <span></span><span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="n">UUID</span>
 <span class="kn">import</span> <span class="nn">typing</span>
 
-<span class="kn">import</span> <span class="nn">Symbol_pb2</span>
+<span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">Symbol_pb2</span>
 
 <span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">Block</span>
 <span class="kn">from</span> <span class="nn">.node</span> <span class="kn">import</span> <span class="n">Node</span>
@@ -48,6 +48,8 @@
     <span class="sd">&quot;&quot;&quot;Represents a symbol, which maps a name to an object in the IR.</span>
 
 <span class="sd">    :ivar ~.name: The name of this symbol.</span>
+<span class="sd">    :ivar ~.at_end: True if this symbol is at the end of its referent, rather</span>
+<span class="sd">        than at the beginning. Has no meaning for integral symbols.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Symbol.__init__"><a class="viewcode-back" href="../../gtirb.symbol.html#gtirb.Symbol.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -55,6 +57,7 @@
         <span class="n">name</span><span class="p">,</span>  <span class="c1"># type: str</span>
         <span class="n">uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># type: typing.Optional[UUID]</span>
         <span class="n">payload</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># type: typing.Optional[Payload]</span>
+        <span class="n">at_end</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># type: bool</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :param name: The name of this symbol.</span>
@@ -63,10 +66,13 @@
 <span class="sd">            Defaults to None.</span>
 <span class="sd">        :param payload: The value this symbol points to.</span>
 <span class="sd">            May be an address, a Node, or None.</span>
+<span class="sd">        :param at_end: True if this symbol is at the end of its referent,</span>
+<span class="sd">            rather than at the beginning.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># type: str</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">at_end</span> <span class="o">=</span> <span class="n">at_end</span>  <span class="c1"># type: bool</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_payload</span> <span class="o">=</span> <span class="n">payload</span>  <span class="c1"># type: typing.Optional[Payload]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_module</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: &quot;Module&quot;</span></div>
 
@@ -105,7 +111,9 @@
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_symbol</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
         <span class="c1"># type: (Symbol_pb2.Symbol,UUID) -&gt; Symbol</span>
-        <span class="n">symbol</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">proto_symbol</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="n">symbol</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">proto_symbol</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">at_end</span><span class="o">=</span><span class="n">proto_symbol</span><span class="o">.</span><span class="n">at_end</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="n">proto_symbol</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">):</span>
             <span class="n">symbol</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">proto_symbol</span><span class="o">.</span><span class="n">value</span>
         <span class="k">if</span> <span class="n">proto_symbol</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;referent_uuid&quot;</span><span class="p">):</span>
@@ -125,6 +133,7 @@
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">referent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">proto_symbol</span><span class="o">.</span><span class="n">referent_uuid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">referent</span><span class="o">.</span><span class="n">uuid</span><span class="o">.</span><span class="n">bytes</span>
         <span class="n">proto_symbol</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">proto_symbol</span><span class="o">.</span><span class="n">at_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">at_end</span>
         <span class="k">return</span> <span class="n">proto_symbol</span>
 
 <div class="viewcode-block" id="Symbol.deep_eq"><a class="viewcode-back" href="../../gtirb.symbol.html#gtirb.Symbol.deep_eq">[docs]</a>    <span class="k">def</span> <span class="nf">deep_eq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
@@ -140,7 +149,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">referent</span><span class="o">.</span><span class="n">deep_eq</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">referent</span><span class="p">):</span>
                 <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">uuid</span></div>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">at_end</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">at_end</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">uuid</span>
+        <span class="p">)</span></div>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; str</span>
@@ -149,6 +162,7 @@
             <span class="s2">&quot;uuid=</span><span class="si">{uuid!r}</span><span class="s2">, &quot;</span>
             <span class="s2">&quot;name=</span><span class="si">{name!r}</span><span class="s2">, &quot;</span>
             <span class="s2">&quot;payload=</span><span class="si">{_payload!r}</span><span class="s2">, &quot;</span>
+            <span class="s2">&quot;at_end=</span><span class="si">{at_end!r}</span><span class="s2">, &quot;</span>
             <span class="s2">&quot;)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
         <span class="p">)</span>
 

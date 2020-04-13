@@ -14,7 +14,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="gtirb.auxdata module" href="gtirb.auxdata.html" />
+    <link rel="next" title="gtirb.proto package" href="gtirb.proto.html" />
     <link rel="prev" title="Welcome to gtirb’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -34,6 +34,32 @@
             
   <div class="section" id="gtirb-package">
 <h1>gtirb package<a class="headerlink" href="#gtirb-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gtirb.proto.html">gtirb.proto package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gtirb.proto.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.AuxData_pb2.html">gtirb.proto.AuxData_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.ByteInterval_pb2.html">gtirb.proto.ByteInterval_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.CFG_pb2.html">gtirb.proto.CFG_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.CodeBlock_pb2.html">gtirb.proto.CodeBlock_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.DataBlock_pb2.html">gtirb.proto.DataBlock_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.IR_pb2.html">gtirb.proto.IR_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.Module_pb2.html">gtirb.proto.Module_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.Offset_pb2.html">gtirb.proto.Offset_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.ProxyBlock_pb2.html">gtirb.proto.ProxyBlock_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.Section_pb2.html">gtirb.proto.Section_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.Symbol_pb2.html">gtirb.proto.Symbol_pb2 module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.SymbolicExpression_pb2.html">gtirb.proto.SymbolicExpression_pb2 module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gtirb.proto.html#module-gtirb.proto">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -2267,17 +2293,21 @@ by the <a class="reference internal" href="#gtirb.AuxData" title="gtirb.AuxData"
 
 <dl class="class">
 <dt id="gtirb.Symbol">
-<em class="property">class </em><code class="sig-prename descclassname">gtirb.</code><code class="sig-name descname">Symbol</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">uuid=None</em>, <em class="sig-param">payload=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/symbol.html#Symbol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Symbol" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">gtirb.</code><code class="sig-name descname">Symbol</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">uuid=None</em>, <em class="sig-param">payload=None</em>, <em class="sig-param">at_end=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/symbol.html#Symbol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Symbol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gtirb.node.html#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a></p>
 <p>Represents a symbol, which maps a name to an object in the IR.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
-<dd class="field-odd"><p><strong>name</strong> – The name of this symbol.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – The name of this symbol.</p></li>
+<li><p><strong>at_end</strong> – True if this symbol is at the end of its referent, rather
+than at the beginning. Has no meaning for integral symbols.</p></li>
+</ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="gtirb.Symbol.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">uuid=None</em>, <em class="sig-param">payload=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/symbol.html#Symbol.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Symbol.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">uuid=None</em>, <em class="sig-param">payload=None</em>, <em class="sig-param">at_end=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/symbol.html#Symbol.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Symbol.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2287,6 +2317,8 @@ or None if a new UUID needs generated via <code class="xref py py-func docutils 
 Defaults to None.</p></li>
 <li><p><strong>payload</strong> – The value this symbol points to.
 May be an address, a Node, or None.</p></li>
+<li><p><strong>at_end</strong> – True if this symbol is at the end of its referent,
+rather than at the beginning.</p></li>
 </ul>
 </dd>
 </dl>
@@ -2565,6 +2597,10 @@ representing an offset from a stack variable.</p>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">gtirb package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gtirb.proto.html">gtirb.proto package</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="gtirb.auxdata.html">gtirb.auxdata module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gtirb.block.html">gtirb.block module</a></li>
@@ -2592,7 +2628,7 @@ representing an offset from a stack variable.</p>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to gtirb’s documentation!</a></li>
-      <li>Next: <a href="gtirb.auxdata.html" title="next chapter">gtirb.auxdata module</a></li>
+      <li>Next: <a href="gtirb.proto.html" title="next chapter">gtirb.proto package</a></li>
   </ul></li>
 </ul>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.2.0</span>
+   &#160;<span id="projectnumber">v1.3.1</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -144,14 +144,14 @@ Ubuntu</h2>
 Ubuntu16</h3>
 <p><a class="anchor" id="ubuntu16"></a> </p><div class="fragment"><div class="line">sudo add-apt-repository ppa:maarten-fonville/protobuf</div>
 <div class="line">sudo add-apt-repository ppa:mhier/libboost-latest</div>
-<div class="line">sudo echo &quot;deb https://grammatech.github.io/gtirb/ppa/xenial ./&quot; &gt;&gt; /etc/apt/sources.list</div>
-<div class="line"> </div>
+<div class="line">echo &quot;deb https://grammatech.github.io/gtirb/ppa/xenial ./&quot; | sudo tee -a /etc/apt/sources.list.d/gtirb.list</div>
+<div class="line">sudo apt-get update</div>
 <div class="line">sudo apt-get install --allow-unauthenticated gtirb</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
 Ubuntu18</h3>
 <p><a class="anchor" id="ubuntu18"></a> </p><div class="fragment"><div class="line">sudo add-apt-repository ppa:mhier/libboost-latest</div>
-<div class="line">sudo echo &quot;deb [trusted=yes] https://grammatech.github.io/gtirb/ppa/bionic ./&quot; &gt;&gt; /etc/apt/sources.list</div>
-<div class="line"> </div>
+<div class="line">echo &quot;deb [trusted=yes] https://grammatech.github.io/gtirb/ppa/bionic ./&quot; | sudo tee -a /etc/apt/sources.list.d/gtirb.list</div>
+<div class="line">sudo apt-get update</div>
 <div class="line">sudo apt-get install gtirb</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
 Arch Linux</h2>
@@ -160,7 +160,7 @@ Arch Linux</h2>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Building</h1>
 <p><a class="anchor" id="building"></a></p>
-<p>GTIRB should successfully build in 64-bits with GCC, Clang, and Visual Studio compilers supporting at least C++17. GTIRB uses CMake which must be installed with at least version 3.9.</p>
+<p>GTIRB should successfully build in 64-bits with GCC, Clang, and Visual Studio compilers supporting at least C++17. GTIRB uses CMake which must be installed with at least version 3.10.</p>
 <p>The common build process looks like this: </p><div class="fragment"><div class="line">mkdir build</div>
 <div class="line">cd build</div>
 <div class="line"># Note: You may wish to add some -D arguments to the next command. See below.</div>
@@ -173,7 +173,7 @@ Requirements</h2>
 <p><a class="anchor" id="requirements"></a></p>
 <p>To build and install GTIRB, the following requirements should be installed:</p>
 <ul>
-<li><a href="https://cmake.org/">CMake</a>, version 3.9.0 or higher.<ul>
+<li><a href="https://cmake.org/">CMake</a>, version 3.10.0 or higher.<ul>
 <li>Ubuntu 18 provides this version via the APT package <code>cmake</code>.</li>
 <li>Ubuntu 16 and earlier provide out of date versions; build from source on those versions.</li>
 </ul>

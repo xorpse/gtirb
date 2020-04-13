@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.2.0</span>
+   &#160;<span id="projectnumber">v1.3.1</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -113,6 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad5dae57099dda87c8588543740d0fc2f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classgtirb_1_1_addr.html">Addr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#ad5dae57099dda87c8588543740d0fc2f">getAddress</a> () const</td></tr>
 <tr class="memdesc:ad5dae57099dda87c8588543740d0fc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the effective address.  <a href="classgtirb_1_1_symbol.html#ad5dae57099dda87c8588543740d0fc2f">More...</a><br /></td></tr>
 <tr class="separator:ad5dae57099dda87c8588543740d0fc2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226d23292306ca067a9302855048079f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a226d23292306ca067a9302855048079f">getAtEnd</a> () const</td></tr>
+<tr class="memdesc:a226d23292306ca067a9302855048079f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, this symbol is pointing to the end of the referent rather than at the beginning.  <a href="classgtirb_1_1_symbol.html#a226d23292306ca067a9302855048079f">More...</a><br /></td></tr>
+<tr class="separator:a226d23292306ca067a9302855048079f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acac77037671abaae2b815e5f3a2ad752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgtirb_1_1_module.html">Module</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#acac77037671abaae2b815e5f3a2ad752">getModule</a> ()</td></tr>
 <tr class="memdesc:acac77037671abaae2b815e5f3a2ad752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classgtirb_1_1_module.html">Module</a> this symbol belongs to.  <a href="classgtirb_1_1_symbol.html#acac77037671abaae2b815e5f3a2ad752">More...</a><br /></td></tr>
 <tr class="separator:acac77037671abaae2b815e5f3a2ad752"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a893813c29e5d80665d5f16fe0a3f96a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a893813c29e5d80665d5f16fe0a3f96a6">setAddress</a> (<a class="el" href="classgtirb_1_1_addr.html">Addr</a> A)</td></tr>
 <tr class="memdesc:a893813c29e5d80665d5f16fe0a3f96a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the address of a symbol.  <a href="classgtirb_1_1_symbol.html#a893813c29e5d80665d5f16fe0a3f96a6">More...</a><br /></td></tr>
 <tr class="separator:a893813c29e5d80665d5f16fe0a3f96a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4e5ad28c9e0cf45ae453a5cc350514"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aab4e5ad28c9e0cf45ae453a5cc350514">setAtEnd</a> (bool AE)</td></tr>
+<tr class="memdesc:aab4e5ad28c9e0cf45ae453a5cc350514"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets whether or not this symbol is pointing to the end of the referent rather than at the beginning.  <a href="classgtirb_1_1_symbol.html#aab4e5ad28c9e0cf45ae453a5cc350514">More...</a><br /></td></tr>
+<tr class="separator:aab4e5ad28c9e0cf45ae453a5cc350514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24e9bb87c96d45b0a1a42f86dabf0310"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a24e9bb87c96d45b0a1a42f86dabf0310">setName</a> (const std::string &amp;N)</td></tr>
 <tr class="memdesc:a24e9bb87c96d45b0a1a42f86dabf0310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of a symbol.  <a href="classgtirb_1_1_symbol.html#a24e9bb87c96d45b0a1a42f86dabf0310">More...</a><br /></td></tr>
 <tr class="separator:a24e9bb87c96d45b0a1a42f86dabf0310"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,16 +166,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acc479afbe5301e5210f7155104a46d0c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C)</td></tr>
 <tr class="memdesc:acc479afbe5301e5210f7155104a46d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an unitialized <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">More...</a><br /></td></tr>
 <tr class="separator:acc479afbe5301e5210f7155104a46d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf6fdff51d4c26916ca72e66f1e05c05"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aaf6fdff51d4c26916ca72e66f1e05c05">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, <a class="el" href="classgtirb_1_1_addr.html">Addr</a> X, const std::string &amp;Name)</td></tr>
-<tr class="memdesc:aaf6fdff51d4c26916ca72e66f1e05c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#aaf6fdff51d4c26916ca72e66f1e05c05">More...</a><br /></td></tr>
-<tr class="separator:aaf6fdff51d4c26916ca72e66f1e05c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae6bb5b637a1c4794e4355239f21bd9d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aae6bb5b637a1c4794e4355239f21bd9d">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const std::string &amp;Name)</td></tr>
-<tr class="memdesc:aae6bb5b637a1c4794e4355239f21bd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#aae6bb5b637a1c4794e4355239f21bd9d">More...</a><br /></td></tr>
-<tr class="separator:aae6bb5b637a1c4794e4355239f21bd9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac53276b7e3fba0df30b10603491e6962"><td class="memTemplParams" colspan="2">template&lt;typename NodeTy &gt; </td></tr>
-<tr class="memitem:ac53276b7e3fba0df30b10603491e6962"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#ac53276b7e3fba0df30b10603491e6962">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, NodeTy *Referent, const std::string &amp;Name)</td></tr>
-<tr class="memdesc:ac53276b7e3fba0df30b10603491e6962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#ac53276b7e3fba0df30b10603491e6962">More...</a><br /></td></tr>
-<tr class="separator:ac53276b7e3fba0df30b10603491e6962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01a0b5a84918ce55960cd022503c3de6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a01a0b5a84918ce55960cd022503c3de6">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, <a class="el" href="classgtirb_1_1_addr.html">Addr</a> X, const std::string &amp;Name, bool AtEnd=false)</td></tr>
+<tr class="memdesc:a01a0b5a84918ce55960cd022503c3de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#a01a0b5a84918ce55960cd022503c3de6">More...</a><br /></td></tr>
+<tr class="separator:a01a0b5a84918ce55960cd022503c3de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa408314cecbb0d081ec02585158cc85f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aa408314cecbb0d081ec02585158cc85f">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, const std::string &amp;Name, bool AtEnd=false)</td></tr>
+<tr class="memdesc:aa408314cecbb0d081ec02585158cc85f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#aa408314cecbb0d081ec02585158cc85f">More...</a><br /></td></tr>
+<tr class="separator:aa408314cecbb0d081ec02585158cc85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5100aa0b5f99e6a49ffbb41d389d0e7c"><td class="memTemplParams" colspan="2">template&lt;typename NodeTy &gt; </td></tr>
+<tr class="memitem:a5100aa0b5f99e6a49ffbb41d389d0e7c"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classgtirb_1_1_symbol.html">Symbol</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a5100aa0b5f99e6a49ffbb41d389d0e7c">Create</a> (<a class="el" href="classgtirb_1_1_context.html">Context</a> &amp;C, NodeTy *Referent, const std::string &amp;Name, bool AtEnd=false)</td></tr>
+<tr class="memdesc:a5100aa0b5f99e6a49ffbb41d389d0e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a> object.  <a href="classgtirb_1_1_symbol.html#a5100aa0b5f99e6a49ffbb41d389d0e7c">More...</a><br /></td></tr>
+<tr class="separator:a5100aa0b5f99e6a49ffbb41d389d0e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1f21c64e8ec0901a10aed2a5dbe7739"><td class="memTemplParams" colspan="2">template&lt;typename NodeTy &gt; </td></tr>
 <tr class="memitem:aa1f21c64e8ec0901a10aed2a5dbe7739"><td class="memTemplItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aa1f21c64e8ec0901a10aed2a5dbe7739">is_supported_type</a> ()</td></tr>
 <tr class="separator:aa1f21c64e8ec0901a10aed2a5dbe7739"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -246,8 +252,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aaf6fdff51d4c26916ca72e66f1e05c05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf6fdff51d4c26916ca72e66f1e05c05">&#9670;&nbsp;</a></span>Create() <span class="overload">[2/4]</span></h2>
+<a id="a01a0b5a84918ce55960cd022503c3de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a0b5a84918ce55960cd022503c3de6">&#9670;&nbsp;</a></span>Create() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +277,13 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>Name</em>&#160;</td>
+          <td class="paramname"><em>Name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>AtEnd</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -291,7 +303,8 @@ Friends</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which this object will be held. </td></tr>
     <tr><td class="paramname">X</td><td>The address of the symbol. </td></tr>
-    <tr><td class="paramname">Name</td><td>The name of the symbol.</td></tr>
+    <tr><td class="paramname">Name</td><td>The name of the symbol. </td></tr>
+    <tr><td class="paramname">AtEnd</td><td>If true, this symbol points to the end of its referent, rather than at the beginning. Defaults to false.</td></tr>
   </table>
   </dd>
 </dl>
@@ -299,8 +312,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aae6bb5b637a1c4794e4355239f21bd9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae6bb5b637a1c4794e4355239f21bd9d">&#9670;&nbsp;</a></span>Create() <span class="overload">[3/4]</span></h2>
+<a id="aa408314cecbb0d081ec02585158cc85f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa408314cecbb0d081ec02585158cc85f">&#9670;&nbsp;</a></span>Create() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -318,7 +331,13 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>Name</em>&#160;</td>
+          <td class="paramname"><em>Name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>AtEnd</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -337,7 +356,8 @@ Friends</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which this object will be held. </td></tr>
-    <tr><td class="paramname">Name</td><td>The name of the symbol.</td></tr>
+    <tr><td class="paramname">Name</td><td>The name of the symbol. </td></tr>
+    <tr><td class="paramname">AtEnd</td><td>If true, this symbol points to the end of its referent, rather than at the beginning. Defaults to false.</td></tr>
   </table>
   </dd>
 </dl>
@@ -345,8 +365,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ac53276b7e3fba0df30b10603491e6962"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac53276b7e3fba0df30b10603491e6962">&#9670;&nbsp;</a></span>Create() <span class="overload">[4/4]</span></h2>
+<a id="a5100aa0b5f99e6a49ffbb41d389d0e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5100aa0b5f99e6a49ffbb41d389d0e7c">&#9670;&nbsp;</a></span>Create() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +392,13 @@ template&lt;typename NodeTy &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>Name</em>&#160;</td>
+          <td class="paramname"><em>Name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>AtEnd</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -392,7 +418,8 @@ template&lt;typename NodeTy &gt; </div>
   <table class="params">
     <tr><td class="paramname">C</td><td>The <a class="el" href="classgtirb_1_1_context.html" title="The context under which GTIRB operations occur.">Context</a> in which this object will be held. </td></tr>
     <tr><td class="paramname">Referent</td><td>The <a class="el" href="classgtirb_1_1_data_block.html" title="Represents a data object, possibly symbolic.">DataBlock</a> this symbol refers to. </td></tr>
-    <tr><td class="paramname">Name</td><td>The name of the symbol.</td></tr>
+    <tr><td class="paramname">Name</td><td>The name of the symbol. </td></tr>
+    <tr><td class="paramname">AtEnd</td><td>If true, this symbol points to the end of its referent, rather than at the beginning. Defaults to false.</td></tr>
   </table>
   </dd>
 </dl>
@@ -417,6 +444,34 @@ template&lt;typename NodeTy &gt; </div>
 
 <p>Get the effective address. </p>
 <dl class="section return"><dt>Returns</dt><dd>The effective address. </dd></dl>
+
+</div>
+</div>
+<a id="a226d23292306ca067a9302855048079f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a226d23292306ca067a9302855048079f">&#9670;&nbsp;</a></span>getAtEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gtirb::Symbol::getAtEnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If true, this symbol is pointing to the end of the referent rather than at the beginning. </p>
+<p>This value has no meaning for integral symbols. </p>
 
 </div>
 </div>
@@ -657,6 +712,35 @@ template&lt;typename NodeTy &gt; </div>
 
 </div>
 </div>
+<a id="aab4e5ad28c9e0cf45ae453a5cc350514"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4e5ad28c9e0cf45ae453a5cc350514">&#9670;&nbsp;</a></span>setAtEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gtirb::Symbol::setAtEnd </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>AE</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>sets whether or not this symbol is pointing to the end of the referent rather than at the beginning. </p>
+<p>This value has no meaning for integral symbols. </p>
+
+</div>
+</div>
 <a id="a24e9bb87c96d45b0a1a42f86dabf0310"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24e9bb87c96d45b0a1a42f86dabf0310">&#9670;&nbsp;</a></span>setName()</h2>
 
@@ -826,7 +910,7 @@ template&lt;typename Callable &gt; </div>
 </div><!-- contents -->
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_a2be5c38fdd477e75c1ff8b0bafe89322"><div class="ttname"><a href="classgtirb_1_1_data_block.html#a2be5c38fdd477e75c1ff8b0bafe89322">gtirb::DataBlock::Create</a></div><div class="ttdeci">static DataBlock * Create(Context &amp;C)</div><div class="ttdoc">Create an unitialized DataBlock object.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:53</div></div>
 <div class="ttc" id="aclassgtirb_1_1_symbol_html_acc479afbe5301e5210f7155104a46d0c"><div class="ttname"><a href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">gtirb::Symbol::Create</a></div><div class="ttdeci">static Symbol * Create(Context &amp;C)</div><div class="ttdoc">Create an unitialized Symbol object.</div><div class="ttdef"><b>Definition:</b> Symbol.hpp:216</div></div>
-<div class="ttc" id="aclassgtirb_1_1_symbol_html_ac26c806e60ca4a0547680edb68f6e39b"><div class="ttname"><a href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">gtirb::Symbol::Context</a></div><div class="ttdeci">friend class Context</div><div class="ttdef"><b>Definition:</b> Symbol.hpp:404</div></div>
+<div class="ttc" id="aclassgtirb_1_1_symbol_html_ac26c806e60ca4a0547680edb68f6e39b"><div class="ttname"><a href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">gtirb::Symbol::Context</a></div><div class="ttdeci">friend class Context</div><div class="ttdef"><b>Definition:</b> Symbol.hpp:435</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
