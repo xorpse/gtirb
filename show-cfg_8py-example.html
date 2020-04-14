@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GTIRB: cfg-paths.py</title>
+<title>GTIRB: show-cfg.py</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,34 +64,34 @@ $(function() {
 
 <div class="header">
   <div class="headertitle">
-<div class="title">cfg-paths.py</div>  </div>
+<div class="title">show-cfg.py</div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>Open an IR and print every path from some point to some other point.</p>
+<p>Open an IR and draw the CFG to the screen.</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/python</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># An example program which opens an IR and prints all paths between</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"># two blocks.</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># To run this example, do the following.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"># 1. Install the gtirb package from Pypi.</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># 2. Run ddisasm to disassemble a binary to GTIRB.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">#    $ echo &#39;main(){puts(&quot;hello world&quot;);}&#39;|gcc -x c - -o /tmp/hello</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#    $ ddisasm /tmp/hello --ir /tmp/hello.gtirb</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># 3. Execute the following command to run the program on the</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">#    serialized GTIRB data.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">#</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">#    $ ./doc/examples/cfg-paths.py /tmp/hello.gtirb</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> sys</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> networkx <span class="keyword">as</span> nx</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># An example program which opens an IR and draws the CFG to the screen.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># To run this example, do the following.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"># 1. Install the gtirb package from Pypi.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># 2. Run ddisasm to disassemble a binary to GTIRB.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">#    $ echo &#39;main(){puts(&quot;hello world&quot;);}&#39;|gcc -x c - -o /tmp/hello</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">#    $ ddisasm /tmp/hello --ir /tmp/hello.gtirb</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"># 3. Execute the following command to run the program on the</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">#    serialized GTIRB data.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">#    $ ./doc/examples/show-cfg.py /tmp/hello.gtirb</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> networkx <span class="keyword">as</span> nx</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> gtirb</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordflow">if</span> len(sys.argv) &lt; 4:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    print(f<span class="stringliteral">&quot;Usage: {sys.argv[0]} /path/to/file.gtirb source target&quot;</span>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordflow">if</span> len(sys.argv) &lt; 2:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    print(f<span class="stringliteral">&quot;Usage: {sys.argv[0]} /path/to/file.gtirb&quot;</span>)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    quit(1)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;ir = gtirb.ir.IR.load_protobuf(sys.argv[1])</div>
@@ -104,8 +104,8 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        G.add_edge(edge.source.address, edge.target.address)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordflow">for</span> path <span class="keywordflow">in</span> nx.all_simple_paths(G, int(sys.argv[2]), int(sys.argv[3])):</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    print(path)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;nx.draw(G, with_labels=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;plt.show()</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

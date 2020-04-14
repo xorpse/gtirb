@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    gtirb.proto.AuxData_pb2
    gtirb.proto.ByteInterval_pb2

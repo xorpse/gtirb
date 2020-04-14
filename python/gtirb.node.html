@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>gtirb.node module &#8212; gtirb  documentation</title>
@@ -34,9 +34,9 @@
             
   <div class="section" id="module-gtirb.node">
 <span id="gtirb-node-module"></span><h1>gtirb.node module<a class="headerlink" href="#module-gtirb.node" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="gtirb.node.Node">
-<em class="property">class </em><code class="sig-prename descclassname">gtirb.node.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param">uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">gtirb.node.</code><code class="sig-name descname">Node</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A Node is any GTIRB object which can be referenced by UUID.</p>
 <dl class="field-list simple">
@@ -44,9 +44,9 @@
 <dd class="field-odd"><p><strong>uuid</strong> – The UUID of this Node.</p>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="gtirb.node.Node.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>uuid</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>]) – The UUID of this <code class="docutils literal notranslate"><span class="pre">Node</span></code>,
@@ -59,9 +59,9 @@ Defaults to None.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="gtirb.node.Node.deep_eq">
-<code class="sig-name descname">deep_eq</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.deep_eq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.deep_eq" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">deep_eq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.deep_eq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.deep_eq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check: is <code class="docutils literal notranslate"><span class="pre">self</span></code> structurally equal to <code class="docutils literal notranslate"><span class="pre">other</span></code>?</p>
 <p>This method should be used only when deep structural equality checks
 are actually needed, and not for all equality checks. Typically the
@@ -78,9 +78,9 @@ equality.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="gtirb.node.Node.from_uuid">
-<em class="property">classmethod </em><code class="sig-name descname">from_uuid</code><span class="sig-paren">(</span><em class="sig-param">uuid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.from_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.from_uuid" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">from_uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.from_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.from_uuid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the <code class="docutils literal notranslate"><span class="pre">Node</span></code> with the specified UUID,
 or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no such <code class="docutils literal notranslate"><span class="pre">Node</span></code> exists.</p>
 <dl class="field-list simple">
@@ -184,7 +184,7 @@ function from the desired subclass. For example, calling
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
