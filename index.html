@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.3.1</span>
+   &#160;<span id="projectnumber">v1.4.1</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -104,19 +104,12 @@ GTIRB</h1>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Structure</h1>
 <p><a class="anchor" id="structure"></a></p>
-<p>GTIRB has the following structure. Solid lines denote inheritance. Dotted lines denote reference by UUID. </p><pre class="fragment">   +--IPCFG--Edges...........................
-   |                 .                      .
-   |         +-ProxyBlocks             +-CodeBlocks
-   |         |                         |
-IR-+-Modules-+-Sections--ByteIntervals-+-DataBlocks
-   |    |    |                         |
-   |    |    +-Symbols.........        +-SymbolicExpressions
-   +-AuxData                  .              .
-    --------                  ................
-    ID0|DATA0
-    ID1|DATA1....*anything*
-    ID2|DATA2
-</pre><h2><a class="anchor" id="autotoc_md2"></a>
+<p>GTIRB has the following structure. Solid lines denote inheritance. Dotted lines denote reference by UUID.</p>
+<div class="image">
+<object type="image/svg+xml" data=".gtirb.svg" style="pointer-events: none;"></object>
+<div class="caption">
+GTIRB Data Structure</div></div>
+   <h2><a class="anchor" id="autotoc_md2"></a>
 IR</h2>
 <p><a class="anchor" id="ir"></a></p>
 <p>An instance of GTIRB may include multiple modules (<code>Module</code>) which represent loadable objects such as executables or libraries, an inter-procedural control flow graph (<code>IPCFG</code>), and Auxiliary Data tables (<code>AuxData</code>) which can hold arbitrary analysis results in user-defined formats which can easily reference other elements of the IR. Each module holds information such as symbols (<code>Symbol</code>) and sections which themselves hold the actual bytes and data and code blocks of the module. The CFG consists of basic blocks (<code>Block</code>) and control flow edges between these blocks. Each data or code block references a range of bytes in a byte interval (<code>ByteInterval</code>). A section may hold one large byte interval holding all blocks&mdash;if the relative positions of blocks in that section are defined&mdash;or may hold one byte interval per block&mdash;if the relative positions of blocks is not defined, e.g. for the code blocks in the <code>.text</code> section during program rewriting. Each symbol holds a pointer to the block or datum it references.</p>
