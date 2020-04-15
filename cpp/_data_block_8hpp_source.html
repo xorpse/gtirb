@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.1</span>
+   &#160;<span id="projectnumber">v1.4.2</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -197,35 +197,42 @@ $(function() {
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                      getOffset());</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  }</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keyword">using</span> MessageType = proto::DataBlock;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> classof(<span class="keyword">const</span> <a class="code" href="classgtirb_1_1_node.html">Node</a>* N) { <span class="keywordflow">return</span> N-&gt;getKind() == Kind::DataBlock; }</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="namespacegtirb.html#a1b6ddcbb1a06b1581009af7c6fb0bc6f">toProtobuf</a>(MessageType* Message) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <span class="keyword">static</span> <a class="code" href="classgtirb_1_1_data_block.html">DataBlock</a>* <a class="code" href="namespacegtirb.html#acb4cb2e76f8bde62f9b449cc9e6c6023">fromProtobuf</a>(<a class="code" href="classgtirb_1_1_context.html">Context</a>&amp; C, <a class="code" href="classgtirb_1_1_byte_interval.html">ByteInterval</a>* Parent,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                 <span class="keyword">const</span> MessageType&amp; Message);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> classof(<span class="keyword">const</span> <a class="code" href="classgtirb_1_1_node.html">Node</a>* N) { <span class="keywordflow">return</span> N-&gt;getKind() == Kind::DataBlock; }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  ByteInterval* Parent{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  uint64_t Size{0};</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  <span class="keywordtype">void</span> setByteInterval(ByteInterval* BI) { Parent = BI; }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">static</span> DataBlock* Create(Context&amp; C, ByteInterval* Parent, uint64_t Off,</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                           uint64_t Size) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keyword">auto</span>* DB = C.<a class="code" href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">Create</a>&lt;DataBlock&gt;(C, Parent, Size);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">if</span> (Parent)</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      Parent-&gt;Blocks.emplace(Off, DB);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">return</span> DB;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  ByteInterval* Parent{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  uint64_t Size{0};</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordtype">void</span> setByteInterval(ByteInterval* BI) { Parent = BI; }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <span class="keyword">static</span> DataBlock* Create(Context&amp; C, ByteInterval* Parent, uint64_t Off,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                           uint64_t Size) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keyword">auto</span>* DB = C.<a class="code" href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">Create</a>&lt;DataBlock&gt;(C, Parent, Size);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">if</span> (Parent)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      Parent-&gt;Blocks.emplace(Off, DB);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">return</span> DB;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keyword">using</span> MessageType = proto::DataBlock;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  <span class="keywordtype">void</span> toProtobuf(MessageType* Message) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="keyword">static</span> DataBlock* fromProtobuf(Context&amp; C, ByteInterval* Parent,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                                 <span class="keyword">const</span> MessageType&amp; Message);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="classgtirb_1_1_data_block.html#ac26c806e60ca4a0547680edb68f6e39b">  314</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgtirb_1_1_context.html">Context</a>;</div>
-<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="classgtirb_1_1_data_block.html#a2ed0265c4b443cda27a241352629170f">  315</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgtirb_1_1_byte_interval.html">ByteInterval</a>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;};</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;} <span class="comment">// namespace gtirb</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#endif // GTIRB_DataBlock_H</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="comment">// Present for testing purposes only.</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordtype">void</span> save(std::ostream&amp; Out) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  <span class="comment">// Present for testing purposes only.</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  <span class="keyword">static</span> DataBlock* load(Context&amp; C, std::istream&amp; In);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="classgtirb_1_1_data_block.html#ac26c806e60ca4a0547680edb68f6e39b">  320</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgtirb_1_1_context.html">Context</a>;      <span class="comment">// Enables Context::Create</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="classgtirb_1_1_data_block.html#a2ed0265c4b443cda27a241352629170f">  321</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgtirb_1_1_byte_interval.html">ByteInterval</a>; <span class="comment">// Enables to/fromProtobuf, setByteInterval</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="classgtirb_1_1_data_block.html#aca7995861301f2eefb390acea47c34a9">  322</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span>SerializationTestHarness; <span class="comment">// Testing support.</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;};</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;} <span class="comment">// namespace gtirb</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">#endif // GTIRB_DataBlock_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_ad66d6aed27c5b740b5e62c4bde21bb38"><div class="ttname"><a href="classgtirb_1_1_data_block.html#ad66d6aed27c5b740b5e62c4bde21bb38">gtirb::DataBlock::const_bytes_iterator</a></div><div class="ttdeci">ByteInterval::const_bytes_iterator&lt; T &gt; const_bytes_iterator</div><div class="ttdoc">Const iterator over bytes in this block.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:108</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_a21e0a4733ed217016369e4a56188947f"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#a21e0a4733ed217016369e4a56188947f">gtirb::ByteInterval::bytes_iterator</a></div><div class="ttdeci">BytesBaseIterator&lt; ByteInterval, T &gt; bytes_iterator</div><div class="ttdoc">Iterator over bytes.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:1576</div></div>
@@ -242,7 +249,7 @@ $(function() {
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_a336fa6e85522d894640e366e687ac899"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#a336fa6e85522d894640e366e687ac899">gtirb::ByteInterval::bytes_range</a></div><div class="ttdeci">boost::iterator_range&lt; bytes_iterator&lt; T &gt; &gt; bytes_range</div><div class="ttdoc">Range over bytes.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:1582</div></div>
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_a216f200e616783a23e7f2bab7b39c482"><div class="ttname"><a href="classgtirb_1_1_data_block.html#a216f200e616783a23e7f2bab7b39c482">gtirb::DataBlock::const_bytes_range</a></div><div class="ttdeci">ByteInterval::const_bytes_range&lt; T &gt; const_bytes_range</div><div class="ttdoc">Const range over bytes in this block.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:114</div></div>
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_ad7c714363704a93c8ef04c5b8c8803d0"><div class="ttname"><a href="classgtirb_1_1_data_block.html#ad7c714363704a93c8ef04c5b8c8803d0">gtirb::DataBlock::bytes_iterator</a></div><div class="ttdeci">ByteInterval::bytes_iterator&lt; T &gt; bytes_iterator</div><div class="ttdoc">Iterator over bytes in this block.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:97</div></div>
-<div class="ttc" id="a_export_8hpp_html_a54b10f85bcd66580e3756cef113b74d1"><div class="ttname"><a href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a></div><div class="ttdeci">#define GTIRB_EXPORT_API</div><div class="ttdoc">This macro controls the visibility of exported symbols (i.e. classes) in shared libraries....</div><div class="ttdef"><b>Definition:</b> Export.hpp:44</div></div>
+<div class="ttc" id="a_export_8hpp_html_a54b10f85bcd66580e3756cef113b74d1"><div class="ttname"><a href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a></div><div class="ttdeci">#define GTIRB_EXPORT_API</div><div class="ttdoc">This macro controls the visibility of exported symbols (i.e. classes) in shared libraries....</div><div class="ttdef"><b>Definition:</b> Export.hpp:52</div></div>
 <div class="ttc" id="anamespacegtirb_html"><div class="ttname"><a href="namespacegtirb.html">gtirb</a></div><div class="ttdoc">Main namespace for the GTIRB API.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:28</div></div>
 <div class="ttc" id="a_byte_interval_8hpp_html"><div class="ttname"><a href="_byte_interval_8hpp.html">ByteInterval.hpp</a></div><div class="ttdoc">Class gtirb::ByteInterval.</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html_ac56b387cd5cdb902b2ecb0bc1a85103f"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html#ac56b387cd5cdb902b2ecb0bc1a85103f">gtirb::ByteInterval::const_bytes_iterator</a></div><div class="ttdeci">BytesBaseIterator&lt; const ByteInterval, T &gt; const_bytes_iterator</div><div class="ttdoc">Const iterator over bytes.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:1588</div></div>
@@ -250,9 +257,7 @@ $(function() {
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_ab7b7f192ea2f9aba279141d6e75ddf89"><div class="ttname"><a href="classgtirb_1_1_data_block.html#ab7b7f192ea2f9aba279141d6e75ddf89">gtirb::DataBlock::bytes</a></div><div class="ttdeci">const_bytes_range&lt; T &gt; bytes(boost::endian::order InputOrder=boost::endian::order::native, boost::endian::order OutputOrder=boost::endian::order::native) const</div><div class="ttdoc">Get a range of the bytes in this block.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:219</div></div>
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_a026cb5b5b74d45a406cba89e8c469b6f"><div class="ttname"><a href="classgtirb_1_1_data_block.html#a026cb5b5b74d45a406cba89e8c469b6f">gtirb::DataBlock::getSize</a></div><div class="ttdeci">uint64_t getSize() const</div><div class="ttdoc">Get the size of a DataBlock.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:73</div></div>
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_a4fab19c211d789bde9641589cb242026"><div class="ttname"><a href="classgtirb_1_1_data_block.html#a4fab19c211d789bde9641589cb242026">gtirb::DataBlock::rawBytes</a></div><div class="ttdeci">const T * rawBytes() const</div><div class="ttdoc">Return the raw data underlying this block's byte vector.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:261</div></div>
-<div class="ttc" id="anamespacegtirb_html_acb4cb2e76f8bde62f9b449cc9e6c6023"><div class="ttname"><a href="namespacegtirb.html#acb4cb2e76f8bde62f9b449cc9e6c6023">gtirb::fromProtobuf</a></div><div class="ttdeci">T * fromProtobuf(Context &amp;C, const U &amp;Message)</div><div class="ttdef"><b>Definition:</b> Serialization.hpp:161</div></div>
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_adb2a8c5f9e07404f385710a33953541d"><div class="ttname"><a href="classgtirb_1_1_data_block.html#adb2a8c5f9e07404f385710a33953541d">gtirb::DataBlock::getByteInterval</a></div><div class="ttdeci">ByteInterval * getByteInterval()</div><div class="ttdoc">Get the ByteInterval this block belongs to.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:65</div></div>
-<div class="ttc" id="anamespacegtirb_html_a1b6ddcbb1a06b1581009af7c6fb0bc6f"><div class="ttname"><a href="namespacegtirb.html#a1b6ddcbb1a06b1581009af7c6fb0bc6f">gtirb::toProtobuf</a></div><div class="ttdeci">T::MessageType toProtobuf(const T &amp;Val)</div><div class="ttdef"><b>Definition:</b> Serialization.hpp:60</div></div>
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_ab7b9d976a282919b3a0fbbd35cd6a176"><div class="ttname"><a href="classgtirb_1_1_data_block.html#ab7b9d976a282919b3a0fbbd35cd6a176">gtirb::DataBlock::setSize</a></div><div class="ttdeci">void setSize(uint64_t S)</div><div class="ttdoc">Set the size of this block.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:89</div></div>
 <div class="ttc" id="aclassgtirb_1_1_node_html_ab34e75309d3cdbae6ae783483152bf1c"><div class="ttname"><a href="classgtirb_1_1_node.html#ab34e75309d3cdbae6ae783483152bf1c">gtirb::Node::Create</a></div><div class="ttdeci">static Node * Create(Context &amp;C)</div><div class="ttdoc">Create a Node object in its default state.</div><div class="ttdef"><b>Definition:</b> Node.hpp:82</div></div>
 <div class="ttc" id="aclassgtirb_1_1_byte_interval_html"><div class="ttname"><a href="classgtirb_1_1_byte_interval.html">gtirb::ByteInterval</a></div><div class="ttdoc">A contiguous region of bytes in a binary.</div><div class="ttdef"><b>Definition:</b> ByteInterval.hpp:69</div></div>

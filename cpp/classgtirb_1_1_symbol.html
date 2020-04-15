@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.1</span>
+   &#160;<span id="projectnumber">v1.4.2</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -196,6 +196,11 @@ Friends</h2></td></tr>
 <tr class="separator:ac26c806e60ca4a0547680edb68f6e39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21f639900c480510650969df9c74d17d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a21f639900c480510650969df9c74d17d">Module</a></td></tr>
 <tr class="separator:a21f639900c480510650969df9c74d17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca7995861301f2eefb390acea47c34a9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#aca7995861301f2eefb390acea47c34a9">SerializationTestHarness</a></td></tr>
+<tr class="separator:aca7995861301f2eefb390acea47c34a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1d8b9077f0c366aaae7069e7d03a3f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5b1d8b9077f0c366aaae7069e7d03a3f"><td class="memTemplItemLeft" align="right" valign="top">T::MessageType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgtirb_1_1_symbol.html#a5b1d8b9077f0c366aaae7069e7d03a3f">toProtobuf</a> (const T &amp;)</td></tr>
+<tr class="separator:a5b1d8b9077f0c366aaae7069e7d03a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a <a class="el" href="classgtirb_1_1_symbol.html" title="Represents a Symbol, which maps a name to an object in the IR.">Symbol</a>, which maps a name to an object in the <a class="el" href="classgtirb_1_1_i_r.html" title="A complete internal representation consisting of Modules (Module).">IR</a>. </p>
@@ -904,13 +909,63 @@ template&lt;typename Callable &gt; </div>
 
 </div>
 </div>
+<a id="aca7995861301f2eefb390acea47c34a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca7995861301f2eefb390acea47c34a9">&#9670;&nbsp;</a></span>SerializationTestHarness</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class SerializationTestHarness</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b1d8b9077f0c366aaae7069e7d03a3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1d8b9077f0c366aaae7069e7d03a3f">&#9670;&nbsp;</a></span>toProtobuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T::MessageType toProtobuf </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="_symbol_8hpp_source.html">Symbol.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassgtirb_1_1_data_block_html_a2be5c38fdd477e75c1ff8b0bafe89322"><div class="ttname"><a href="classgtirb_1_1_data_block.html#a2be5c38fdd477e75c1ff8b0bafe89322">gtirb::DataBlock::Create</a></div><div class="ttdeci">static DataBlock * Create(Context &amp;C)</div><div class="ttdoc">Create an unitialized DataBlock object.</div><div class="ttdef"><b>Definition:</b> DataBlock.hpp:53</div></div>
 <div class="ttc" id="aclassgtirb_1_1_symbol_html_acc479afbe5301e5210f7155104a46d0c"><div class="ttname"><a href="classgtirb_1_1_symbol.html#acc479afbe5301e5210f7155104a46d0c">gtirb::Symbol::Create</a></div><div class="ttdeci">static Symbol * Create(Context &amp;C)</div><div class="ttdoc">Create an unitialized Symbol object.</div><div class="ttdef"><b>Definition:</b> Symbol.hpp:216</div></div>
-<div class="ttc" id="aclassgtirb_1_1_symbol_html_ac26c806e60ca4a0547680edb68f6e39b"><div class="ttname"><a href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">gtirb::Symbol::Context</a></div><div class="ttdeci">friend class Context</div><div class="ttdef"><b>Definition:</b> Symbol.hpp:435</div></div>
+<div class="ttc" id="aclassgtirb_1_1_symbol_html_ac26c806e60ca4a0547680edb68f6e39b"><div class="ttname"><a href="classgtirb_1_1_symbol.html#ac26c806e60ca4a0547680edb68f6e39b">gtirb::Symbol::Context</a></div><div class="ttdeci">friend class Context</div><div class="ttdef"><b>Definition:</b> Symbol.hpp:441</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

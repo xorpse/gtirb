@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tobytes_683',['toBytes',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga4c875051607d50785fb572e6380da23e',1,'gtirb::auxdata_traits']]],
-  ['toprotobuf_684',['toProtobuf',['../namespacegtirb.html#a1b6ddcbb1a06b1581009af7c6fb0bc6f',1,'gtirb::toProtobuf(const T &amp;Val)'],['../namespacegtirb.html#a304740207f5c7e4e55cccfd28f591b01',1,'gtirb::toProtobuf(const Addr Val)'],['../namespacegtirb.html#a67970d2451717fced15f5e4d77915ac3',1,'gtirb::toProtobuf(const std::string &amp;Val)'],['../namespacegtirb.html#a5e6fe006691b1e9cbcc11fb1af43165e',1,'gtirb::toProtobuf(const int64_t &amp;Val)'],['../namespacegtirb.html#a83c05705a9dc6cdc7b3ce642ced9b1bb',1,'gtirb::toProtobuf(const uint64_t &amp;Val)'],['../namespacegtirb.html#a1876ea96086436f199412dc4d695ea92',1,'gtirb::toProtobuf(const UUID &amp;Val)'],['../namespacegtirb.html#af01325ffb52cd5e1b6ab6985ccfa32e8',1,'gtirb::toProtobuf(const std::pair&lt; T, U &gt; &amp;Val) -&gt; google::protobuf::MapPair&lt; decltype(toProtobuf(Val.first)), decltype(toProtobuf(deref_if_ptr(Val.second)))&gt;']]],
-  ['type_5fname_685',['type_name',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#gae9b8b6f7b8266b1a2fe7e3ca928bb10d',1,'gtirb::auxdata_traits']]]
+  ['tobytes_665',['toBytes',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#ga4c875051607d50785fb572e6380da23e',1,'gtirb::auxdata_traits']]],
+  ['type_5fname_666',['type_name',['../group___a_u_x_d_a_t_a___g_r_o_u_p.html#gae9b8b6f7b8266b1a2fe7e3ca928bb10d',1,'gtirb::auxdata_traits']]]
 ];

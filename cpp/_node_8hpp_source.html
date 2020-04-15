@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.1</span>
+   &#160;<span id="projectnumber">v1.4.2</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -163,14 +163,16 @@ $(function() {
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">// objects, as there are no constructors allowing the user to set the UUID on</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="comment">// construction.</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordtype">void</span> setUUID(<a class="code" href="namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">UUID</a> X);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keyword">friend</span> <span class="keywordtype">void</span> <a class="code" href="namespacegtirb.html#a7366e48342471d3d7529a6d2b69e3bfb">setNodeUUIDFromBytes</a>(Node* Node, <span class="keyword">const</span> std::string&amp; Bytes);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classgtirb_1_1_node.html#ac26c806e60ca4a0547680edb68f6e39b">  170</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgtirb_1_1_context.html">Context</a>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;} <span class="comment">// namespace gtirb</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="comment">// Allows unserialization in derived classes</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keyword">friend</span> <span class="keywordtype">void</span> setNodeUUIDFromBytes(Node* Node, <span class="keyword">const</span> std::string&amp; Bytes);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classgtirb_1_1_node.html#ac26c806e60ca4a0547680edb68f6e39b">  172</a></span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classgtirb_1_1_context.html">Context</a>; <span class="comment">// Enables Context::Create</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;};</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif // GTIRB_NODE_H</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;} <span class="comment">// namespace gtirb</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#endif // GTIRB_NODE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassgtirb_1_1_code_block_html"><div class="ttname"><a href="classgtirb_1_1_code_block.html">gtirb::CodeBlock</a></div><div class="ttdoc">A basic block.</div><div class="ttdef"><b>Definition:</b> CodeBlock.hpp:47</div></div>
 <div class="ttc" id="aclassgtirb_1_1_context_html_a097d32a5178babd1f999d46feb90de58"><div class="ttname"><a href="classgtirb_1_1_context.html#a097d32a5178babd1f999d46feb90de58">gtirb::Context::Create</a></div><div class="ttdeci">NodeTy * Create(Args &amp;&amp;... TheArgs)</div><div class="ttdoc">Create an object of type T.</div><div class="ttdef"><b>Definition:</b> Context.hpp:121</div></div>
@@ -182,9 +184,8 @@ $(function() {
 <div class="ttc" id="a_context_8hpp_html"><div class="ttname"><a href="_context_8hpp.html">Context.hpp</a></div><div class="ttdoc">Class gtirb::Context and related operators.</div></div>
 <div class="ttc" id="aclassgtirb_1_1_node_html_ad04cfa2271347cdeb3a547f829141380"><div class="ttname"><a href="classgtirb_1_1_node.html#ad04cfa2271347cdeb3a547f829141380">gtirb::Node::getByUUID</a></div><div class="ttdeci">static const Node * getByUUID(const Context &amp;C, const UUID &amp;Uuid)</div><div class="ttdoc">Retrieve a node by its UUID.</div><div class="ttdef"><b>Definition:</b> Node.hpp:73</div></div>
 <div class="ttc" id="aclassgtirb_1_1_section_html"><div class="ttname"><a href="classgtirb_1_1_section.html">gtirb::Section</a></div><div class="ttdoc">Represents a named section of the binary.</div><div class="ttdef"><b>Definition:</b> Section.hpp:64</div></div>
-<div class="ttc" id="a_export_8hpp_html_a54b10f85bcd66580e3756cef113b74d1"><div class="ttname"><a href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a></div><div class="ttdeci">#define GTIRB_EXPORT_API</div><div class="ttdoc">This macro controls the visibility of exported symbols (i.e. classes) in shared libraries....</div><div class="ttdef"><b>Definition:</b> Export.hpp:44</div></div>
+<div class="ttc" id="a_export_8hpp_html_a54b10f85bcd66580e3756cef113b74d1"><div class="ttname"><a href="_export_8hpp.html#a54b10f85bcd66580e3756cef113b74d1">GTIRB_EXPORT_API</a></div><div class="ttdeci">#define GTIRB_EXPORT_API</div><div class="ttdoc">This macro controls the visibility of exported symbols (i.e. classes) in shared libraries....</div><div class="ttdef"><b>Definition:</b> Export.hpp:52</div></div>
 <div class="ttc" id="aclassgtirb_1_1_node_html_abea06820c30b4b70b97b317877e86d17"><div class="ttname"><a href="classgtirb_1_1_node.html#abea06820c30b4b70b97b317877e86d17">gtirb::Node::getByUUID</a></div><div class="ttdeci">static Node * getByUUID(Context &amp;C, const UUID &amp;Uuid)</div><div class="ttdoc">Retrieve a node by its UUID.</div><div class="ttdef"><b>Definition:</b> Node.hpp:66</div></div>
-<div class="ttc" id="anamespacegtirb_html_a7366e48342471d3d7529a6d2b69e3bfb"><div class="ttname"><a href="namespacegtirb.html#a7366e48342471d3d7529a6d2b69e3bfb">gtirb::setNodeUUIDFromBytes</a></div><div class="ttdeci">void setNodeUUIDFromBytes(Node *Node, const std::string &amp;Bytes)</div><div class="ttdoc">Set Node's UUID from a string containing raw bytes.</div></div>
 <div class="ttc" id="anamespacegtirb_html"><div class="ttname"><a href="namespacegtirb.html">gtirb</a></div><div class="ttdoc">Main namespace for the GTIRB API.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:28</div></div>
 <div class="ttc" id="a_export_8hpp_html"><div class="ttname"><a href="_export_8hpp.html">Export.hpp</a></div></div>
 <div class="ttc" id="aclassgtirb_1_1_proxy_block_html"><div class="ttname"><a href="classgtirb_1_1_proxy_block.html">gtirb::ProxyBlock</a></div><div class="ttdoc">A placeholder that serves as the endpoint (source or target) of a CFG edge.</div><div class="ttdef"><b>Definition:</b> ProxyBlock.hpp:45</div></div>

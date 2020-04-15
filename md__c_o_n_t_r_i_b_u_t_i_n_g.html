@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.1</span>
+   &#160;<span id="projectnumber">v1.4.2</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -142,6 +142,7 @@ C++ Code Requirements</h2>
 </div><!-- fragment --></li>
 <li>Use <code>auto</code> to make code more readable, but prefer <code>auto &amp;</code> or <code>auto *</code> to avoid unexpected copies.</li>
 <li><code>#include</code> as little as possible to reduce compile times. Use forward declarations of classes when possible to avoid including their definitions.</li>
+<li>Do not introduce variables to the code that would require a client to dllimport them. <a class="elRef" href="../html/cpp/_export_8hpp.html">Export.hpp</a> does not setup dllimport declarations for clients. For example, do not add static function-local variables in inline functions in header files.</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md48"></a>
 Testing Development</h3>
