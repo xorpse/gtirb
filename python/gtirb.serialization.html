@@ -41,7 +41,7 @@
 <p>The base class for codecs.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.Codec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Codec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Codec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Codec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Codec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -49,7 +49,7 @@
 <li><p><strong>raw_bytes</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">typing.BinaryIO'&gt;</span></code>) – The BytesIO object to be decoded.</p></li>
 <li><p><strong>serialization</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="#gtirb.serialization.Serialization" title="gtirb.serialization.Serialization"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.serialization.Serialization</span></code></a>]) – A Serialization instance used to invoke
 other codecs if needed.</p></li>
-<li><p><strong>subtypes</strong> (<a class="reference internal" href="#gtirb.serialization.SubtypeTree" title="gtirb.serialization.SubtypeTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.serialization.SubtypeTree</span></code></a>) – The parsed type of this object.</p></li>
+<li><p><strong>subtypes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('SubtypeTree')</span></code>]]) – The parsed type of this object.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -63,7 +63,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.Codec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Codec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Codec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Codec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Codec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -72,7 +72,7 @@ other codecs if needed.</p></li>
 <li><p><strong>item</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Any</span></code>) – The arbitrary Python object to encode.</p></li>
 <li><p><strong>serialization</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="#gtirb.serialization.Serialization" title="gtirb.serialization.Serialization"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.serialization.Serialization</span></code></a>]) – A Serialization instance, used to invoke
 other codecs if needed.</p></li>
-<li><p><strong>subtypes</strong> (<a class="reference internal" href="#gtirb.serialization.SubtypeTree" title="gtirb.serialization.SubtypeTree"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.serialization.SubtypeTree</span></code></a>) – The parsed type of this object.</p></li>
+<li><p><strong>subtypes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('SubtypeTree')</span></code>]]) – The parsed type of this object.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -111,7 +111,7 @@ other codecs if needed.</p></li>
 <p>A Codec for 64-bit signed integers.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.Int64Codec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Int64Codec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Int64Codec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Int64Codec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Int64Codec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -130,7 +130,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.Int64Codec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Int64Codec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Int64Codec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Int64Codec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Int64Codec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -154,7 +154,7 @@ other codecs if needed.</p></li>
 <p>A Codec for mapping&lt;K,V&gt; entries. Implemented via <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.MappingCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#MappingCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.MappingCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#MappingCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.MappingCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -173,7 +173,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.MappingCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#MappingCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.MappingCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">mapping</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#MappingCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.MappingCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -198,7 +198,7 @@ other codecs if needed.</p></li>
 containing a UUID and a displacement.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.OffsetCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#OffsetCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.OffsetCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#OffsetCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.OffsetCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -217,7 +217,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.OffsetCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#OffsetCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.OffsetCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#OffsetCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.OffsetCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -241,7 +241,7 @@ other codecs if needed.</p></li>
 <p>A Codec for sequence&lt;T&gt; entries. Implemented via <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.SequenceCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SequenceCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SequenceCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SequenceCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SequenceCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -260,7 +260,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.SequenceCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">sequence</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SequenceCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SequenceCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">sequence</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SequenceCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SequenceCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -357,7 +357,7 @@ by the <a class="reference internal" href="gtirb.html#gtirb.AuxData" title="gtir
 <p>A Codec for set&lt;T&gt; entries. Implemented via <code class="docutils literal notranslate"><span class="pre">set</span></code>.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.SetCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SetCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SetCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SetCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SetCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -376,7 +376,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.SetCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">items</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SetCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SetCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">items</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#SetCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SetCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -400,7 +400,7 @@ other codecs if needed.</p></li>
 <p>A Codec for strings.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.StringCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#StringCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.StringCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#StringCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.StringCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -419,7 +419,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.StringCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#StringCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.StringCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#StringCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.StringCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -436,11 +436,10 @@ other codecs if needed.</p></li>
 
 </dd></dl>
 
-<dl class="py class">
+<dl class="py data">
 <dt id="gtirb.serialization.SubtypeTree">
-<em class="property">class </em><code class="sig-prename descclassname">gtirb.serialization.</code><code class="sig-name descname">SubtypeTree</code><a class="reference internal" href="_modules/gtirb/serialization.html#SubtypeTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.SubtypeTree" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Generic</span></code></p>
-<p>A type hint representing a parsed serialization type name.
+<code class="sig-prename descclassname">gtirb.serialization.</code><code class="sig-name descname">SubtypeTree</code><em class="property"> = typing.Tuple[str, typing.Iterable[ForwardRef('SubtypeTree')]]</em><a class="headerlink" href="#gtirb.serialization.SubtypeTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>A type hint representing a parsed serialization type name.
 A <code class="docutils literal notranslate"><span class="pre">SubtypeTree</span></code> is a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> with two items: A <code class="docutils literal notranslate"><span class="pre">str</span></code> giving
 the name of the type and a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> of type parameters
 (which are also <code class="docutils literal notranslate"><span class="pre">SubtypeTree</span></code>s). For example, the following are all
@@ -459,7 +458,7 @@ valid <code class="docutils literal notranslate"><span class="pre">SubtypeTree</
 <p>A Codec for tuple&lt;…&gt; entries. Implemented via <code class="docutils literal notranslate"><span class="pre">tuple</span></code>.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.TupleCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#TupleCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.TupleCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#TupleCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.TupleCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -478,7 +477,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.TupleCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">items</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#TupleCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.TupleCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">items</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span></em>, <em class="sig-param"><span class="n">subtypes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#TupleCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.TupleCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -523,7 +522,7 @@ corresponding UUID, and either returns the object it hits or a new
 raw UUID.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.UUIDCodec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#UUIDCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.UUIDCodec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#UUIDCodec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.UUIDCodec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -542,7 +541,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.UUIDCodec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#UUIDCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.UUIDCodec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#UUIDCodec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.UUIDCodec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -566,7 +565,7 @@ other codecs if needed.</p></li>
 <p>A Codec for 64-bit unsigned integers.</p>
 <dl class="py method">
 <dt id="gtirb.serialization.Uint64Codec.decode">
-<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Uint64Codec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Uint64Codec.decode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Uint64Codec.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Uint64Codec.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode the specified raw data into a Python object.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -585,7 +584,7 @@ other codecs if needed.</p></li>
 
 <dl class="py method">
 <dt id="gtirb.serialization.Uint64Codec.encode">
-<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value"></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Uint64Codec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Uint64Codec.encode" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">encode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out</span></em>, <em class="sig-param"><span class="n">val</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">serialization</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">subtypes</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Uint64Codec.encode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.serialization.Uint64Codec.encode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encode an item, writing the serialized object to <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -717,7 +716,7 @@ the name of an unknown codec. Use only at the top level of an auxdata.</p>
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -36,7 +36,7 @@
 <span id="gtirb-section-module"></span><h1>gtirb.section module<a class="headerlink" href="#module-gtirb.section" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="gtirb.section.Section">
-<em class="property">class </em><code class="sig-prename descclassname">gtirb.section.</code><code class="sig-name descname">Section</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">byte_intervals</span><span class="o">=</span><span class="default_value"></span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/section.html#Section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.section.Section" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">gtirb.section.</code><code class="sig-name descname">Section</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">byte_intervals</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/section.html#Section"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.section.Section" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gtirb.node.html#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a></p>
 <p>Represents a named section of the binary.</p>
 <p>Does not directly store the contents of the section, which are
@@ -101,7 +101,7 @@ kept in a <code class="xref py py-class docutils literal notranslate"><span clas
 
 <dl class="py method">
 <dt id="gtirb.section.Section.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">byte_intervals</span><span class="o">=</span><span class="default_value"></span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/section.html#Section.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.section.Section.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">byte_intervals</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/section.html#Section.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.section.Section.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -438,7 +438,7 @@ symbolic expression in the range.</p>
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

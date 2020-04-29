@@ -42,18 +42,16 @@
 <span class="sd">    &gt;&gt;&gt; ir.save_protobuf(&#39;filename.gtirb&#39;)</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">typing</span>
 <span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">typing</span>
 <span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="n">UUID</span>
 
-<span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">CFG_pb2</span>
-<span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">IR_pb2</span>
-
 <span class="kn">from</span> <span class="nn">.auxdata</span> <span class="kn">import</span> <span class="n">AuxData</span><span class="p">,</span> <span class="n">AuxDataContainer</span>
-<span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">CodeBlock</span><span class="p">,</span> <span class="n">DataBlock</span><span class="p">,</span> <span class="n">ProxyBlock</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">,</span> <span class="n">ByteBlock</span>
+<span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">ByteBlock</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">,</span> <span class="n">CodeBlock</span><span class="p">,</span> <span class="n">DataBlock</span><span class="p">,</span> <span class="n">ProxyBlock</span>
 <span class="kn">from</span> <span class="nn">.byteinterval</span> <span class="kn">import</span> <span class="n">ByteInterval</span><span class="p">,</span> <span class="n">SymbolicExpressionElement</span>
 <span class="kn">from</span> <span class="nn">.cfg</span> <span class="kn">import</span> <span class="n">Edge</span>
 <span class="kn">from</span> <span class="nn">.module</span> <span class="kn">import</span> <span class="n">Module</span>
+<span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">CFG_pb2</span><span class="p">,</span> <span class="n">IR_pb2</span>
 <span class="kn">from</span> <span class="nn">.section</span> <span class="kn">import</span> <span class="n">Section</span>
 <span class="kn">from</span> <span class="nn">.symbol</span> <span class="kn">import</span> <span class="n">Symbol</span>
 <span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="p">(</span>
@@ -506,7 +504,7 @@
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

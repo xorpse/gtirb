@@ -111,9 +111,22 @@ that is, a mapping or iterable yielding key-value tuples.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="gtirb.util.ListWrapper.append">
+<code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/util.html#ListWrapper.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.util.ListWrapper.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>S.append(value) – append value to the end of the sequence</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="gtirb.util.ListWrapper.insert">
 <code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/util.html#ListWrapper.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.util.ListWrapper.insert" title="Permalink to this definition">¶</a></dt>
 <dd><p>S.insert(index, value) – insert value before index</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.util.ListWrapper.remove">
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/util.html#ListWrapper.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.util.ListWrapper.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>S.remove(value) – remove first occurrence of value.
+Raise ValueError if the value is not present.</p>
 </dd></dl>
 
 </dd></dl>
@@ -144,9 +157,20 @@ that is, a mapping or iterable yielding key-value tuples.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="gtirb.util.SetWrapper.__or__">
+<code class="sig-name descname">__or__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/util.html#SetWrapper.__or__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.util.SetWrapper.__or__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="gtirb.util.SetWrapper.add">
 <code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/util.html#SetWrapper.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.util.SetWrapper.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.util.SetWrapper.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/util.html#SetWrapper.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.util.SetWrapper.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is slow (creates N new iterators!) but effective.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -279,7 +303,7 @@ that is, a mapping or iterable yielding key-value tuples.</p>
       &copy;2020, Grammatech, Inc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

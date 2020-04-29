@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.2</span>
+   &#160;<span id="projectnumber">v1.4.7</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -78,6 +78,14 @@ $(function() {
 <div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line">  <span class="comment">// BEGIN</span></div>
 <div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="comment">// ### Initialization for AuxData usage</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="comment">// To make use of the auxiliary data mechanism, each schema that is</span></div>
+<div class="line">  <span class="comment">// intended to be used must be registered with the API before doing</span></div>
+<div class="line">  <span class="comment">// anything else with GTIRB. Typically, this is easiest to do as one</span></div>
+<div class="line">  <span class="comment">// of the first steps in main().</span></div>
+<div class="line">  AuxDataContainer::registerAuxDataType&lt;gtirb::schema::Types&gt;();</div>
+<div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="comment">// ### Populating the IR</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="comment">// GTIRB representation objects have class `gtirb::IR`, and are created within</span></div>
@@ -131,7 +139,7 @@ $(function() {
 <div class="line">  <span class="comment">// Finally, auxiliary data can be used to store additional information at the</span></div>
 <div class="line">  <span class="comment">// IR and module level. A `gtirb::AuxData` object can store integers, strings,</span></div>
 <div class="line">  <span class="comment">// GTIRB types such as `gtirb::Addr` and `gtirb::UUID`, and various containers</span></div>
-<div class="line">  <span class="comment">// over these types. THere are predefined AuxData schema for you to use, but</span></div>
+<div class="line">  <span class="comment">// over these types. There are predefined AuxData schema for you to use, but</span></div>
 <div class="line">  <span class="comment">// you can also use your own custom AuxData schema. Here is use of a</span></div>
 <div class="line">  <span class="comment">// predefined schema, `gtirb::schema::Types`:</span></div>
 <div class="line">  M-&gt;addAuxData&lt;<a name="_a15"></a><a class="codeRef" href="../html/cpp/structgtirb_1_1schema_1_1_types.html">gtirb::schema::Types</a>&gt;(</div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.2</span>
+   &#160;<span id="projectnumber">v1.4.7</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_e519977d172a50dd75d37e936f451c89.html">eschulte</a></li><li class="navelem"><a class="el" href="dir_dd063d96d7732ea6e194c0d7123d173c.html">lisp</a></li><li class="navelem"><a class="el" href="dir_6bdea7c6087d6314bb940a518ad341d4.html">local-projects</a></li><li class="navelem"><a class="el" href="dir_9765814391fff3a088464557fd247e84.html">gtirb</a></li><li class="navelem"><a class="el" href="dir_e0b3c1ae499b542ed1bbd7cbb032676c.html">include</a></li><li class="navelem"><a class="el" href="dir_f35e76e31a1600b5ecc511c60b36b45e.html">gtirb</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_e519977d172a50dd75d37e936f451c89.html">eschulte</a></li><li class="navelem"><a class="el" href="dir_63c2dd51e646ea1318a31995c2d45f14.html">quicklisp</a></li><li class="navelem"><a class="el" href="dir_08ce05981e1e25c0a1f1f5ebd917b745.html">local-projects</a></li><li class="navelem"><a class="el" href="dir_a1f6a68cb7ad41179959c3c2f99b88b1.html">gtirb</a></li><li class="navelem"><a class="el" href="dir_12652b16ef8e45c85b49bc44c0cf8241.html">include</a></li><li class="navelem"><a class="el" href="dir_2dd471eec3827efd3a95e7353be2fb86.html">gtirb</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -155,8 +155,8 @@ $(function() {
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">// Use default move and copy constructors and assignment operators.</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  cfg_node_iter_base(<span class="keyword">const</span> cfg_node_iter_base&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  cfg_node_iter_base(cfg_node_iter_base&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  cfg_node_iter_base&amp; <a class="code" href="_aux_data_container_8hpp.html#a1a4465dba4d3398280f5fa56a647a187">operator=</a>(<span class="keyword">const</span> cfg_node_iter_base&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  cfg_node_iter_base&amp; <a class="code" href="_aux_data_container_8hpp.html#a1a4465dba4d3398280f5fa56a647a187">operator=</a>(cfg_node_iter_base&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  cfg_node_iter_base&amp; operator=(<span class="keyword">const</span> cfg_node_iter_base&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  cfg_node_iter_base&amp; operator=(cfg_node_iter_base&amp;&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">friend</span> <span class="keyword">class </span>boost::iterator_core_access;</div>
@@ -265,7 +265,6 @@ $(function() {
 <div class="ttc" id="anamespacegtirb_html"><div class="ttname"><a href="namespacegtirb.html">gtirb</a></div><div class="ttdoc">Main namespace for the GTIRB API.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:28</div></div>
 <div class="ttc" id="a_export_8hpp_html"><div class="ttname"><a href="_export_8hpp.html">Export.hpp</a></div></div>
 <div class="ttc" id="agroup___c_f_g___g_r_o_u_p_html_ga5cabebe153bdd1b9abe21cfdc10ed267"><div class="ttname"><a href="group___c_f_g___g_r_o_u_p.html#ga5cabebe153bdd1b9abe21cfdc10ed267">gtirb::block_iterator</a></div><div class="ttdeci">cfg_node_cast_iter&lt; CodeBlock &gt; block_iterator</div><div class="ttdoc">Iterator over blocks (Block).</div><div class="ttdef"><b>Definition:</b> CFG.hpp:189</div></div>
-<div class="ttc" id="a_aux_data_container_8hpp_html_a1a4465dba4d3398280f5fa56a647a187"><div class="ttname"><a href="_aux_data_container_8hpp.html#a1a4465dba4d3398280f5fa56a647a187">operator=</a></div><div class="ttdeci">AuxDataContainer &amp; operator=(const AuxDataContainer &amp;)=delete</div><div class="ttdoc">Explicitly deleted copy assignment operator. This is required to work around a bug in MSVC where the ...</div></div>
 <div class="ttc" id="agroup___c_f_g___g_r_o_u_p_html_ggae81a540637128cef60bdd90806d28063a9afa03f04e93fb31bfaab23cbeaa452d"><div class="ttname"><a href="group___c_f_g___g_r_o_u_p.html#ggae81a540637128cef60bdd90806d28063a9afa03f04e93fb31bfaab23cbeaa452d">gtirb::ConditionalEdge::OnTrue</a></div><div class="ttdeci">@ OnTrue</div><div class="ttdoc">Indicates a conditional edge that fires when the condition is true.</div></div>
 <div class="ttc" id="agroup___c_f_g___g_r_o_u_p_html_gga5f75f57b6145b26ece90283a7b524b9dadec3d8fd19c8e79b9acc0048aecbaa79"><div class="ttname"><a href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9dadec3d8fd19c8e79b9acc0048aecbaa79">gtirb::EdgeType::Sysret</a></div><div class="ttdeci">@ Sysret</div></div>
 <div class="ttc" id="agroup___c_f_g___g_r_o_u_p_html_gga5f75f57b6145b26ece90283a7b524b9da5d562a226f723ccf02b8c640f15f354b"><div class="ttname"><a href="group___c_f_g___g_r_o_u_p.html#gga5f75f57b6145b26ece90283a7b524b9da5d562a226f723ccf02b8c640f15f354b">gtirb::EdgeType::Fallthrough</a></div><div class="ttdeci">@ Fallthrough</div></div>

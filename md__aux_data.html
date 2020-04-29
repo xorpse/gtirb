@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.2</span>
+   &#160;<span id="projectnumber">v1.4.7</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries</div>
   </td>
@@ -86,7 +86,7 @@ $(function() {
 <div class="textblock"><h1><a class="anchor" id="autotoc_md32"></a>
 Standard AuxData Schemata</h1>
 <p><a class="anchor" id="standard-auxdata-schemata"></a></p>
-<p>The <a class="elRef" href="../html/cpp/group___a_u_x_d_a_t_a___g_r_o_u_p.html">AuxData</a> class provides generic storage for application-specific data.</p>
+<p>The <a class="elRef" href="../html/cpp/group___a_u_x_d_a_t_a___g_r_o_u_p.html">AuxData</a> class provides generic storage for application-specific data. This allows data to be attached to either the IR or Module classes in GTIRB.</p>
 <p>We specify a small number of standard gtirb::AuxData schemata to support interoperability. These are listed below, in two sets:</p>
 <ul>
 <li><a href="#sanctioned-auxdata-tables">Sanctioned</a> Recommended for GTIRB users. Individual schemata are unlikely to change in future, although the set of Sanctioned schemata may grow.</li>
@@ -94,23 +94,69 @@ Standard AuxData Schemata</h1>
 </ul>
 <p>For example, if you want to store alignment requirements for blocks and data objects, you can use an <a href="#alignment">alignment</a> table.</p>
 <div class="fragment"><div class="line"> {c++}</div>
+<div class="line">// Leverage definitions for the sanctioned AuxData tables.</div>
+<div class="line">#include &lt;gtirb/AuxDataSchema.hpp&gt;</div>
+<div class="line"> </div>
+<div class="line">// Define your own custom AuxData tables.</div>
+<div class="line">// By convention, we put these in the namespace gtirb::schema.</div>
+<div class="line">//</div>
+<div class="line">// Note that if the custom type requires custom serialization, a</div>
+<div class="line">// specialization of the auxdata_traits template also has to be</div>
+<div class="line">// provided. We provide default specializations for many standard</div>
+<div class="line">// types.</div>
+<div class="line">namespace gtirb {</div>
+<div class="line">namespace schema {</div>
+<div class="line">struct MyAuxDataFoo {</div>
+<div class="line">  static constexpr const char* Name = &quot;foo&quot;;</div>
+<div class="line">  typedef Foo Type;</div>
+<div class="line">};</div>
+<div class="line">}</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line">using namespace gtirb;</div>
-<div class="line">Context C;</div>
-<div class="line">IR&amp; ir = *IR::Create(C);</div>
+<div class="line">using namespace schema;</div>
 <div class="line"> </div>
-<div class="line">// Attach an empty alignment table to the internal representation</div>
-<div class="line">ir.addAuxData(&quot;alignment&quot;, std::map&lt;UUID, uint64_t&gt;{});</div>
-<div class="line">ir.addModule(Module::Create(C));</div>
-<div class="line">Module&amp; module = ir.modules()[0];</div>
+<div class="line">// Register AuxData types before using GTIRB.</div>
+<div class="line">void call_me_from_main()</div>
+<div class="line">{</div>
+<div class="line">  AuxDataContainer::registerAuxDataType&lt;Alignment&gt;();</div>
+<div class="line">  AuxDataContainer::registerAuxDataType&lt;MyAuxDataFoo&gt;();</div>
+<div class="line">}</div>
 <div class="line"> </div>
-<div class="line">//...</div>
+<div class="line">void do_stuff_with_gtirb()</div>
+<div class="line">{</div>
+<div class="line">  Context C;</div>
+<div class="line">  IR&amp; ir = *IR::Create(C);</div>
+<div class="line">  ir.addModule(Module::Create(C));</div>
+<div class="line">  Module&amp; module = *ir.modules_begin();</div>
 <div class="line"> </div>
-<div class="line">// Create a new block</div>
-<div class="line">CFG&amp; cfg = module.getCFG();</div>
-<div class="line">Block* b1 = emplaceBlock(cfg, C, Addr(464), 6);</div>
+<div class="line">  // Attach an empty alignment table to the internal representation</div>
+<div class="line">  module.addAuxData&lt;Alignment&gt;(std::map&lt;UUID, uint64_t&gt;{});</div>
 <div class="line"> </div>
-<div class="line">// Record that the block should be aligned to 8-byte boundaries.</div>
-<div class="line">ir.getAuxData(&quot;alignment&quot;)-&gt;get&lt;std::map&lt;UUID, uint64_t&gt;&gt;()[b1-&gt;getUUID()] = 8;</div>
+<div class="line">  //...</div>
+<div class="line"> </div>
+<div class="line">  // Create a new block</div>
+<div class="line">  Section* section = module.addSection(C, &quot;.text&quot;);</div>
+<div class="line">  ByteInterval* interval = section-&gt;addByteInterval(C, Addr(400), 1000);</div>
+<div class="line">  CodeBlock* b1 = interval-&gt;addBlock&lt;CodeBlock&gt;(C, 64, 6);</div>
+<div class="line"> </div>
+<div class="line">  // Record that the block should be aligned to 8-byte boundaries.</div>
+<div class="line">  // First fetch the map AuxData.</div>
+<div class="line">  auto* align_map = module.getAuxData&lt;Alignment&gt;();</div>
+<div class="line"> </div>
+<div class="line">  // Check for null if you don&#39;t know that the module definitely has</div>
+<div class="line">  // an existing Alignment AuxData attached.</div>
+<div class="line">  if (align_map)</div>
+<div class="line">    (*align_map)[b1-&gt;getUUID()] = 8;</div>
+<div class="line"> </div>
+<div class="line">  // Attach a custom &quot;Foo&quot; object.</div>
+<div class="line">  // Note that AuxData uses a move reference</div>
+<div class="line">  Foo my_foo = BuildAFoo();</div>
+<div class="line">  module.addAuxData&lt;MyAuxDataFoo&gt;(std::move(my_foo));</div>
+<div class="line"> </div>
+<div class="line">  // Subsequently access the Foo table through the AuxData interface.</div>
+<div class="line">  module.getAuxData&lt;MyAuxDataFoo&gt;()-&gt;some_member_function();</div>
+<div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
 Sanctioned AuxData Tables</h2>
 <p><a class="anchor" id="sanctioned-auxdata-tables"></a></p>
@@ -149,6 +195,8 @@ functionBlocks</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">Function UUID.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The set of UUIDs of all the blocks (gtirb::Block) in the function.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md35"></a>
 functionEntries</h3>
@@ -164,6 +212,8 @@ functionEntries</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">Function UUID.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The set of UUIDs of all the block (gtirb::Block) entry points for the function.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md36"></a>
 functionNames</h3>
@@ -179,6 +229,8 @@ functionNames</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">Function UUID.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The UUID of a Symbol whose <code>name</code> field contains the name of the function.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md37"></a>
 types</h3>
@@ -194,6 +246,8 @@ types</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">The <a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a> of a gtirb::DataObject.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The type of the data, expressed as a std::string containing a C++ type specifier.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md38"></a>
 alignment</h3>
@@ -209,6 +263,8 @@ alignment</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">The <a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a> of a gtirb::Block, gtirb::DataObject, or <a class="elRef" href="../html/cpp/classgtirb_1_1_section.html">gtirb::Section</a>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">Alignment requirements for the block/data object/section.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md39"></a>
 comments</h3>
@@ -224,6 +280,8 @@ comments</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">The <a class="elRef" href="../html/cpp/structgtirb_1_1_offset.html">gtirb::Offset</a> of a comment.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">A comment string relevant to the specified offset in the specified GTIRB entry.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md40"></a>
 symbolForwarding</h3>
@@ -239,6 +297,8 @@ symbolForwarding</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">The <a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a> of the "from" <a class="elRef" href="../html/cpp/classgtirb_1_1_symbol.html">gtirb::Symbol</a>.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The <a class="elRef" href="../html/cpp/namespacegtirb.html#a70b3d23477329aeb2a0d320d0c50e1e5">gtirb::UUID</a> of the "to" <a class="elRef" href="../html/cpp/classgtirb_1_1_symbol.html">gtirb::Symbol</a>.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h3><a class="anchor" id="autotoc_md41"></a>
 padding</h3>
@@ -254,6 +314,8 @@ padding</h3>
 <td class="markdownTableBodyNone">Key </td><td class="markdownTableBodyNone">An address at which padding has been inserted.  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Value </td><td class="markdownTableBodyNone">The length of the padding, in bytes.  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">AttachedTo </td><td class="markdownTableBodyNone">Module  </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md42"></a>
 Provisional AuxData Tables</h2>

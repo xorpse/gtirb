@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GTIRB
-   &#160;<span id="projectnumber">v1.4.2</span>
+   &#160;<span id="projectnumber">v1.4.7</span>
    </div>
    <div id="projectbrief">GrammaTech Intermediate Representation for Binaries: C++ API</div>
   </td>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_e519977d172a50dd75d37e936f451c89.html">eschulte</a></li><li class="navelem"><a class="el" href="dir_dd063d96d7732ea6e194c0d7123d173c.html">lisp</a></li><li class="navelem"><a class="el" href="dir_6bdea7c6087d6314bb940a518ad341d4.html">local-projects</a></li><li class="navelem"><a class="el" href="dir_9765814391fff3a088464557fd247e84.html">gtirb</a></li><li class="navelem"><a class="el" href="dir_e0b3c1ae499b542ed1bbd7cbb032676c.html">include</a></li><li class="navelem"><a class="el" href="dir_f35e76e31a1600b5ecc511c60b36b45e.html">gtirb</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_e519977d172a50dd75d37e936f451c89.html">eschulte</a></li><li class="navelem"><a class="el" href="dir_63c2dd51e646ea1318a31995c2d45f14.html">quicklisp</a></li><li class="navelem"><a class="el" href="dir_08ce05981e1e25c0a1f1f5ebd917b745.html">local-projects</a></li><li class="navelem"><a class="el" href="dir_a1f6a68cb7ad41179959c3c2f99b88b1.html">gtirb</a></li><li class="navelem"><a class="el" href="dir_12652b16ef8e45c85b49bc44c0cf8241.html">include</a></li><li class="navelem"><a class="el" href="dir_2dd471eec3827efd3a95e7353be2fb86.html">gtirb</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -232,7 +232,17 @@ $(function() {
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;} <span class="comment">// namespace gtirb</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#endif // GTIRB_ADDR_H</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="namespacestd.html">  290</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacestd.html">std</a> {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01gtirb_1_1_addr_01_4.html">  293</a></span>&#160;<span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span>hash&lt;<a class="code" href="namespacegtirb.html">gtirb</a>::Addr&gt; {</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01gtirb_1_1_addr_01_4.html#affabd3939b2279cc06be6fb4c942e732">  294</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="structstd_1_1hash_3_01gtirb_1_1_addr_01_4.html#affabd3939b2279cc06be6fb4c942e732">operator()</a>(<span class="keyword">const</span> <a class="code" href="classgtirb_1_1_addr.html">gtirb::Addr</a>&amp; A)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">return</span> std::hash&lt;uint64_t&gt;{}(<span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(A));</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;};</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;} <span class="comment">// namespace std</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="preprocessor">#endif // GTIRB_ADDR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassgtirb_1_1_addr_html_aea6b046df5639aa0d0d3d150d97a7c8b"><div class="ttname"><a href="classgtirb_1_1_addr.html#aea6b046df5639aa0d0d3d150d97a7c8b">gtirb::Addr::operator&lt;=</a></div><div class="ttdeci">constexpr friend bool operator&lt;=(const Addr &amp;LHS, const Addr &amp;RHS) noexcept</div><div class="ttdoc">Less-than-or-equal operator for Addr.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:191</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_ab71cf47517e8350df35b83ed7b53d5d8"><div class="ttname"><a href="classgtirb_1_1_addr.html#ab71cf47517e8350df35b83ed7b53d5d8">gtirb::Addr::addressLimit</a></div><div class="ttdeci">std::optional&lt; Addr &gt; addressLimit(const T &amp;Object)</div><div class="ttdoc">Exclusive upper limit of an object's address range.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:225</div></div>
@@ -260,9 +270,11 @@ $(function() {
 <div class="ttc" id="aclassgtirb_1_1_addr_html_aafa70d22c77c3029df06e6bae7bf203f"><div class="ttname"><a href="classgtirb_1_1_addr.html#aafa70d22c77c3029df06e6bae7bf203f">gtirb::Addr::operator&gt;</a></div><div class="ttdeci">constexpr friend bool operator&gt;(const Addr &amp;LHS, const Addr &amp;RHS) noexcept</div><div class="ttdoc">Greater-than operator for Addr.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:186</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_a0a1b9a244c2a4412f860b7c5862597fd"><div class="ttname"><a href="classgtirb_1_1_addr.html#a0a1b9a244c2a4412f860b7c5862597fd">gtirb::Addr::operator&lt;</a></div><div class="ttdeci">constexpr friend bool operator&lt;(const Addr &amp;LHS, const Addr &amp;RHS) noexcept</div><div class="ttdoc">Less-than operator for Addr.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:181</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_aa20f659a4258556c9943ef9d91db870e"><div class="ttname"><a href="classgtirb_1_1_addr.html#aa20f659a4258556c9943ef9d91db870e">gtirb::Addr::operator+=</a></div><div class="ttdeci">constexpr Addr &amp; operator+=(value_type Offset) noexcept</div><div class="ttdoc">Add-assign for Addr.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:130</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> Addr.hpp:290</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_ae383b8506983e0b2f8a77284e635684b"><div class="ttname"><a href="classgtirb_1_1_addr.html#ae383b8506983e0b2f8a77284e635684b">gtirb::Addr::containsAddr</a></div><div class="ttdeci">bool containsAddr(const T &amp;Object, Addr Ea)</div><div class="ttdoc">Check: Does the specified object contain the specified address?</div><div class="ttdef"><b>Definition:</b> Addr.hpp:245</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_a38b692990edd1fa56b395153af3b0f20"><div class="ttname"><a href="classgtirb_1_1_addr.html#a38b692990edd1fa56b395153af3b0f20">gtirb::Addr::operator++</a></div><div class="ttdeci">constexpr Addr &amp; operator++() noexcept</div><div class="ttdoc">Preincrement for Addr.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:72</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_a644be15d26f806e375d31f2432257a5c"><div class="ttname"><a href="classgtirb_1_1_addr.html#a644be15d26f806e375d31f2432257a5c">gtirb::Addr::operator==</a></div><div class="ttdeci">constexpr friend bool operator==(const Addr &amp;LHS, const Addr &amp;RHS) noexcept</div><div class="ttdoc">Equality operator for Addr.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:171</div></div>
+<div class="ttc" id="astructstd_1_1hash_3_01gtirb_1_1_addr_01_4_html_affabd3939b2279cc06be6fb4c942e732"><div class="ttname"><a href="structstd_1_1hash_3_01gtirb_1_1_addr_01_4.html#affabd3939b2279cc06be6fb4c942e732">std::hash&lt; gtirb::Addr &gt;::operator()</a></div><div class="ttdeci">size_t operator()(const gtirb::Addr &amp;A) const</div><div class="ttdef"><b>Definition:</b> Addr.hpp:294</div></div>
 <div class="ttc" id="aclassgtirb_1_1_addr_html_a30c1c37cc6487d3280c27e457500cb81"><div class="ttname"><a href="classgtirb_1_1_addr.html#a30c1c37cc6487d3280c27e457500cb81">gtirb::Addr::operator~</a></div><div class="ttdeci">constexpr Addr operator~() const noexcept</div><div class="ttdoc">Unary complement for Addr. Flips the value of all bits in the address.</div><div class="ttdef"><b>Definition:</b> Addr.hpp:67</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
