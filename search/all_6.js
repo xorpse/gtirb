@@ -32,7 +32,7 @@ var searchData=
   ['getversion_226',['getVersion',['../../html/cpp/classgtirb_1_1_i_r.html#a0102a895e0701c047c4373ef029e7ad3',1,'gtirb::IR']]],
   ['getvertex_227',['getVertex',['../../html/cpp/group___c_f_g___g_r_o_u_p.html#ga4c9fe2e2a58dcd46130c6ae15df7578e',1,'gtirb::getVertex()'],['../../html/cpp/group___c_f_g___g_r_o_u_p.html#ga4c9fe2e2a58dcd46130c6ae15df7578e',1,'getVertex()(Global Namespace)']]],
   ['gtirb_228',['gtirb',['../../html/cpp/namespacegtirb.html',1,'']]],
-  ['gtirb_2ehpp_229',['gtirb.hpp',['../../html/cpp/gtirb_8hpp.html.html',1,'']]],
+  ['gtirb_2ehpp_229',['gtirb.hpp',['../../html/cpp/gtirb_8hpp.html',1,'']]],
   ['schema_230',['schema',['../../html/cpp/namespacegtirb_1_1schema.html',1,'gtirb']]],
   ['symbolicexpressionelementbase_231',['SymbolicExpressionElementBase',['../../html/cpp/structgtirb_1_1_byte_interval_1_1_symbolic_expression_element_base_1_1_address_less.html',1,'gtirb::ByteInterval']]]
 ];

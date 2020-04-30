@@ -78,28 +78,6 @@ equality.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="gtirb.node.Node.from_uuid">
-<em class="property">classmethod </em><code class="sig-name descname">from_uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.from_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.node.Node.from_uuid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <code class="docutils literal notranslate"><span class="pre">Node</span></code> with the specified UUID,
-or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no such <code class="docutils literal notranslate"><span class="pre">Node</span></code> exists.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>uuid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>) – The UUID to look up.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – if the Node is not of the requested type.
-To request that the output be of a specific type, call this
-function from the desired subclass. For example, calling
-<code class="docutils literal notranslate"><span class="pre">gtirb.CodeBlock.from_uuid</span></code> will return a
-<a class="reference internal" href="gtirb.html#gtirb.CodeBlock" title="gtirb.CodeBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.CodeBlock</span></code></a> or raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </div>

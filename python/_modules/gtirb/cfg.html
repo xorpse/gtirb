@@ -198,26 +198,24 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>  <span class="c1"># type: typing.Optional[&quot;Edge.Label&quot;]</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_from_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">edge</span><span class="p">):</span>
-        <span class="c1"># type: (CFG_pb2.Edge) -&gt; Edge</span>
+    <span class="k">def</span> <span class="nf">_from_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">):</span>
+        <span class="c1"># type: (CFG_pb2.Edge, typing.Callable[[UUID], Node]) -&gt; Edge</span>
         <span class="n">source_uuid</span> <span class="o">=</span> <span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">edge</span><span class="o">.</span><span class="n">source_uuid</span><span class="p">)</span>
         <span class="n">target_uuid</span> <span class="o">=</span> <span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">edge</span><span class="o">.</span><span class="n">target_uuid</span><span class="p">)</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">source</span> <span class="o">=</span> <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="p">[</span><span class="n">source_uuid</span><span class="p">]</span>
-            <span class="n">target</span> <span class="o">=</span> <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="p">[</span><span class="n">target_uuid</span><span class="p">]</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;source UUID </span><span class="si">%s</span><span class="s2"> is not a CfgNode&quot;</span> <span class="o">%</span> <span class="n">source_uuid</span>
-                <span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                    <span class="s2">&quot;target UUID </span><span class="si">%s</span><span class="s2"> is not a CfgNode&quot;</span> <span class="o">%</span> <span class="n">target_uuid</span>
-                <span class="p">)</span>
-        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
-                <span class="s2">&quot;Could not find UUID </span><span class="si">%s</span><span class="s2"> when creating edge </span><span class="si">%s</span><span class="s2"> -&gt; </span><span class="si">%s</span><span class="s2">&quot;</span>
-                <span class="o">%</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">source_uuid</span><span class="p">,</span> <span class="n">target_uuid</span><span class="p">)</span>
+
+        <span class="n">source</span> <span class="o">=</span> <span class="n">get_by_uuid</span><span class="p">(</span><span class="n">source_uuid</span><span class="p">)</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">get_by_uuid</span><span class="p">(</span><span class="n">target_uuid</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;In CFG: source UUID </span><span class="si">%s</span><span class="s2"> is a </span><span class="si">%s</span><span class="s2">, not a CfgNode&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="n">source_uuid</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
             <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;In CFG: target UUID </span><span class="si">%s</span><span class="s2"> is a </span><span class="si">%s</span><span class="s2">, not a CfgNode&quot;</span>
+                <span class="o">%</span> <span class="p">(</span><span class="n">target_uuid</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="p">)</span>
+
         <span class="n">label</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">edge</span><span class="o">.</span><span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">label</span> <span class="o">=</span> <span class="n">Edge</span><span class="o">.</span><span class="n">Label</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">edge</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>

@@ -7,5 +7,5 @@ var searchData=
   ['erasebytes_164',['eraseBytes',['../../html/cpp/classgtirb_1_1_byte_interval.html#a0e87c4f2dc45ad83c3a035fb035585bb',1,'gtirb::ByteInterval']]],
   ['examples_2edox_165',['examples.dox',['../examples_8dox.html',1,'']]],
   ['executable_166',['Executable',['../../html/cpp/namespacegtirb.html#abcbde83fd8333cc5d219967b53e574bca38492e6b60e40c59a376e2151778e2c7',1,'gtirb']]],
-  ['export_2ehpp_167',['Export.hpp',['../../html/cpp/_export_8hpp.html.html',1,'']]]
+  ['export_2ehpp_167',['Export.hpp',['../../html/cpp/_export_8hpp.html',1,'']]]
 ];

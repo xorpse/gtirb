@@ -33,7 +33,6 @@
   <h1>Source code for gtirb.node</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">typing</span>
 <span class="kn">from</span> <span class="nn">uuid</span> <span class="kn">import</span> <span class="n">UUID</span><span class="p">,</span> <span class="n">uuid4</span>
-<span class="kn">from</span> <span class="nn">weakref</span> <span class="kn">import</span> <span class="n">WeakValueDictionary</span>
 
 
 <div class="viewcode-block" id="Node"><a class="viewcode-back" href="../../gtirb.node.html#gtirb.Node">[docs]</a><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
@@ -41,10 +40,6 @@
 
 <span class="sd">    :ivar ~.uuid: The UUID of this Node.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">_uuid_cache</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">WeakValueDictionary</span><span class="p">()</span>
-    <span class="p">)</span>  <span class="c1"># type: typing.ClassVar[typing.Mapping[UUID, &quot;Node&quot;]]</span>
 
 <div class="viewcode-block" id="Node.__init__"><a class="viewcode-back" href="../../gtirb.node.html#gtirb.Node.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="c1"># type: (typing.Optional[UUID]) -&gt; None</span>
@@ -56,35 +51,11 @@
 
         <span class="k">if</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">uuid</span> <span class="o">=</span> <span class="n">uuid4</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">uuid</span>  <span class="c1"># type: UUID</span>
-        <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span></div>
-
-<div class="viewcode-block" id="Node.from_uuid"><a class="viewcode-back" href="../../gtirb.node.html#gtirb.Node.from_uuid">[docs]</a>    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">from_uuid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (UUID) -&gt; typing.Optional[Node]</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Get the ``Node`` with the specified UUID,</span>
-<span class="sd">        or ``None`` if no such ``Node`` exists.</span>
-
-<span class="sd">        :param uuid: The UUID to look up.</span>
-<span class="sd">        :raises TypeError: if the Node is not of the requested type.</span>
-<span class="sd">            To request that the output be of a specific type, call this</span>
-<span class="sd">            function from the desired subclass. For example, calling</span>
-<span class="sd">            ``gtirb.CodeBlock.from_uuid`` will return a</span>
-<span class="sd">            :class:`gtirb.CodeBlock` or raise a ``TypeError``.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is node of type </span><span class="si">%s</span><span class="s2">, not </span><span class="si">%s</span><span class="s2">&quot;</span>
-                <span class="o">%</span> <span class="p">(</span><span class="n">uuid</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">node</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-            <span class="p">)</span>
-        <span class="k">return</span> <span class="n">node</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span> <span class="o">=</span> <span class="n">uuid</span>  <span class="c1"># type: UUID</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_object</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (typing.Any, UUID) -&gt; Node</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_object</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Any, UUID, typing.Optional[&quot;IR&quot;]) -&gt; Node</span>
         <span class="sd">&quot;&quot;&quot;Decode a Protobuf object to a Python GTIRB object.</span>
 <span class="sd">        Must be overridden by subclasses.</span>
 
@@ -95,8 +66,8 @@
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_from_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_object</span><span class="p">):</span>
-        <span class="c1"># type: (typing.Any) -&gt; Node</span>
+    <span class="k">def</span> <span class="nf">_from_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_object</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Any, typing.Optional[&quot;IR&quot;]) -&gt; Node</span>
         <span class="sd">&quot;&quot;&quot;Deserialize a Node from Protobuf.</span>
 
 <span class="sd">        Performs a cache lookup for the object&#39;s UUID in the cache, calling the</span>
@@ -104,9 +75,11 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">uuid</span> <span class="o">=</span> <span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">proto_object</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
-        <span class="n">node</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_uuid</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">ir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">node</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_decode_protobuf</span><span class="p">(</span><span class="n">proto_object</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_decode_protobuf</span><span class="p">(</span><span class="n">proto_object</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">node</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

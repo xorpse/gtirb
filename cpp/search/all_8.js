@@ -10,7 +10,7 @@ var searchData=
   ['is_5fmapping_226',['is_mapping',['../structgtirb_1_1is__mapping.html',1,'gtirb']]],
   ['is_5fsequence_227',['is_sequence',['../structgtirb_1_1is__sequence.html',1,'gtirb']]],
   ['is_5fsupported_5ftype_228',['is_supported_type',['../classgtirb_1_1_symbol.html#aa1f21c64e8ec0901a10aed2a5dbe7739',1,'gtirb::Symbol']]],
-  ['isa_229',['ISA',['../namespacegtirb.html#a3a3936a9fcf87b0ae27bca9ac7b91b85',1,'gtirb::ISA()'],['../_casting_8hpp.html#a49f3e34cd9882c06d9f9a1ef83b7ab60',1,'isa():&#160;Casting.hpp']]],
+  ['isa_229',['isa',['../_casting_8hpp.html#a49f3e34cd9882c06d9f9a1ef83b7ab60',1,'isa():&#160;Casting.hpp'],['../namespacegtirb.html#a3a3936a9fcf87b0ae27bca9ac7b91b85',1,'gtirb::ISA()']]],
   ['isdirect_230',['IsDirect',['../group___c_f_g___g_r_o_u_p.html#gga0d810e653d6ebffa07b66e0d16b7ffd1a944cb3659575565b21c0a3bbdde5eb5a',1,'gtirb']]],
   ['isflagset_231',['isFlagSet',['../classgtirb_1_1_section.html#a46396715d011fdd94e11b136258eb803',1,'gtirb::Section']]],
   ['isindirect_232',['IsIndirect',['../group___c_f_g___g_r_o_u_p.html#gga0d810e653d6ebffa07b66e0d16b7ffd1ad100ba83d130bef5ceb9ef2946b79a42',1,'gtirb']]],

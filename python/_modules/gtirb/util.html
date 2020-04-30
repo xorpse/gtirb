@@ -85,6 +85,12 @@
 <div class="viewcode-block" id="ListWrapper.remove"><a class="viewcode-back" href="../../gtirb.util.html#gtirb.util.ListWrapper.remove">[docs]</a>    <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">del</span> <span class="bp">self</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">v</span><span class="p">)]</span></div>
 
+    <span class="c1"># extend is not in every version of Python 3, so list wrapper adds it here</span>
+    <span class="c1"># itself.</span>
+<div class="viewcode-block" id="ListWrapper.extend"><a class="viewcode-back" href="../../gtirb.util.html#gtirb.util.ListWrapper.extend">[docs]</a>    <span class="k">def</span> <span class="nf">extend</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">other</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
+
     <span class="c1"># end functions for ABC</span>
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
@@ -115,6 +121,8 @@
 <div class="viewcode-block" id="SetWrapper.discard"><a class="viewcode-back" href="../../gtirb.util.html#gtirb.util.SetWrapper.discard">[docs]</a>    <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
 
+    <span class="c1"># end functions for ABC</span>
+
     <span class="c1"># The version of typing.py which comes with python 3.5.2 doesn&#39;t provide</span>
     <span class="c1"># definitions for __or__ or clear on MutableSet, so we have to do it</span>
     <span class="c1"># ourselves.</span>
@@ -124,7 +132,12 @@
 <div class="viewcode-block" id="SetWrapper.clear"><a class="viewcode-back" href="../../gtirb.util.html#gtirb.util.SetWrapper.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
 
-    <span class="c1"># end functions for ABC</span>
+    <span class="c1"># For whatever reason, update isn&#39;t included as part of abc.MutableSet.</span>
+<div class="viewcode-block" id="SetWrapper.update"><a class="viewcode-back" href="../../gtirb.util.html#gtirb.util.SetWrapper.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">others</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">other</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></div>
+
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
 

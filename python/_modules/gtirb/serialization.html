@@ -39,6 +39,11 @@
 <span class="kn">from</span> <span class="nn">.node</span> <span class="kn">import</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">.offset</span> <span class="kn">import</span> <span class="n">Offset</span>
 
+<span class="k">if</span> <span class="n">typing</span><span class="o">.</span><span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="n">CacheLookupFn</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span>
+        <span class="n">typing</span><span class="o">.</span><span class="n">Callable</span><span class="p">[[</span><span class="n">UUID</span><span class="p">],</span> <span class="n">typing</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="n">Node</span><span class="p">]]</span>
+    <span class="p">]</span>
+
 
 <div class="viewcode-block" id="CodecError"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.CodecError">[docs]</a><span class="k">class</span> <span class="nc">CodecError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Base class for codec exceptions.&quot;&quot;&quot;</span></div>
@@ -93,7 +98,8 @@
         <span class="n">raw_bytes</span><span class="p">,</span>  <span class="c1"># type: typing.BinaryIO</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># type: Serialization</span>
-        <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()</span>  <span class="c1"># type: SubtypeTree</span>
+        <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(),</span>  <span class="c1"># type: SubtypeTree</span>
+        <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span>  <span class="c1"># type: CacheLookupFn</span>
     <span class="p">):</span>
         <span class="c1"># type: (...) -&gt; typing.Any</span>
         <span class="sd">&quot;&quot;&quot;Decode the specified raw data into a Python object.</span>
@@ -102,6 +108,7 @@
 <span class="sd">        :param serialization: A Serialization instance used to invoke</span>
 <span class="sd">            other codecs if needed.</span>
 <span class="sd">        :param subtypes: The parsed type of this object.</span>
+<span class="sd">        :param get_by_uuid: A function to look up nodes by UUID.</span>
 <span class="sd">        :returns: A new Python object, as decoded from ``raw_bytes``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -132,7 +139,9 @@
     <span class="sd">&quot;&quot;&quot;A Codec for 64-bit signed integers.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Int64Codec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.Int64Codec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span>
+        <span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(),</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
         <span class="k">if</span> <span class="n">subtypes</span> <span class="o">!=</span> <span class="p">():</span>
             <span class="k">raise</span> <span class="n">DecodeError</span><span class="p">(</span><span class="s2">&quot;int64_t should have no subtypes&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
@@ -150,7 +159,7 @@
     <span class="sd">&quot;&quot;&quot;A Codec for mapping&lt;K,V&gt; entries. Implemented via ``dict``.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="MappingCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.MappingCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">key_type</span><span class="p">,</span> <span class="n">val_type</span> <span class="o">=</span> <span class="n">subtypes</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
@@ -160,8 +169,8 @@
         <span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
         <span class="n">mapping_len</span> <span class="o">=</span> <span class="n">Uint64Codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">mapping_len</span><span class="p">):</span>
-            <span class="n">key</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">key_type</span><span class="p">)</span>
-            <span class="n">val</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">val_type</span><span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">key_type</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">)</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">val_type</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">)</span>
             <span class="n">mapping</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
         <span class="k">return</span> <span class="n">mapping</span></div>
 
@@ -185,10 +194,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="OffsetCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.OffsetCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span>
+        <span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(),</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
         <span class="k">if</span> <span class="n">subtypes</span> <span class="o">!=</span> <span class="p">():</span>
             <span class="k">raise</span> <span class="n">DecodeError</span><span class="p">(</span><span class="s2">&quot;Offset should have no subtypes&quot;</span><span class="p">)</span>
-        <span class="n">element_uuid</span> <span class="o">=</span> <span class="n">UUIDCodec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">)</span>
+        <span class="n">element_uuid</span> <span class="o">=</span> <span class="n">UUIDCodec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="n">get_by_uuid</span><span class="p">)</span>
         <span class="n">displacement</span> <span class="o">=</span> <span class="n">Uint64Codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">Offset</span><span class="p">(</span><span class="n">element_uuid</span><span class="p">,</span> <span class="n">displacement</span><span class="p">)</span></div>
@@ -205,7 +216,7 @@
     <span class="sd">&quot;&quot;&quot;A Codec for sequence&lt;T&gt; entries. Implemented via ``list``.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="SequenceCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.SequenceCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="p">(</span><span class="n">subtype</span><span class="p">,)</span> <span class="o">=</span> <span class="n">subtypes</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -213,7 +224,9 @@
         <span class="n">sequence</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">sequence_len</span> <span class="o">=</span> <span class="n">Uint64Codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">sequence_len</span><span class="p">):</span>
-            <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">subtype</span><span class="p">))</span>
+            <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="n">sequence</span></div>
 
 <div class="viewcode-block" id="SequenceCodec.encode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.SequenceCodec.encode">[docs]</a>    <span class="nd">@staticmethod</span>
@@ -231,7 +244,7 @@
     <span class="sd">&quot;&quot;&quot;A Codec for set&lt;T&gt; entries. Implemented via ``set``.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="SetCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.SetCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="p">(</span><span class="n">subtype</span><span class="p">,)</span> <span class="o">=</span> <span class="n">subtypes</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -239,7 +252,9 @@
         <span class="n">decoded_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="n">set_len</span> <span class="o">=</span> <span class="n">Uint64Codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">set_len</span><span class="p">):</span>
-            <span class="n">decoded_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">subtype</span><span class="p">))</span>
+            <span class="n">decoded_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+                <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="n">decoded_set</span></div>
 
 <div class="viewcode-block" id="SetCodec.encode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.SetCodec.encode">[docs]</a>    <span class="nd">@staticmethod</span>
@@ -257,12 +272,14 @@
     <span class="sd">&quot;&quot;&quot;A Codec for tuple&lt;...&gt; entries. Implemented via ``tuple``.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="TupleCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.TupleCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="p">,</span> <span class="n">subtypes</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="c1"># The length of a tuple is not contained in the Protobuf</span>
         <span class="c1"># representation, so error checking cannot be done here.</span>
         <span class="n">decoded_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">subtype</span> <span class="ow">in</span> <span class="n">subtypes</span><span class="p">:</span>
-            <span class="n">decoded_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">subtype</span><span class="p">))</span>
+            <span class="n">decoded_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">serialization</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">subtype</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">decoded_list</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="TupleCodec.encode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.TupleCodec.encode">[docs]</a>    <span class="nd">@staticmethod</span>
@@ -277,7 +294,9 @@
     <span class="sd">&quot;&quot;&quot;A Codec for strings.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="StringCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.StringCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span>
+        <span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(),</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
         <span class="k">if</span> <span class="n">subtypes</span> <span class="o">!=</span> <span class="nb">tuple</span><span class="p">():</span>
             <span class="k">raise</span> <span class="n">DecodeError</span><span class="p">(</span><span class="s2">&quot;string should have no subtypes&quot;</span><span class="p">)</span>
         <span class="n">size</span> <span class="o">=</span> <span class="n">Uint64Codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">)</span>
@@ -295,7 +314,9 @@
     <span class="sd">&quot;&quot;&quot;A Codec for 64-bit unsigned integers.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Uint64Codec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.Uint64Codec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span>
+        <span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(),</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
         <span class="k">if</span> <span class="n">subtypes</span> <span class="o">!=</span> <span class="p">():</span>
             <span class="k">raise</span> <span class="n">DecodeError</span><span class="p">(</span><span class="s2">&quot;uint64_t should have no subtypes&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span>
@@ -318,13 +339,14 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="UUIDCodec.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.UUIDCodec.decode">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()):</span>
+    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span>
+        <span class="n">raw_bytes</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(),</span> <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
         <span class="k">if</span> <span class="n">subtypes</span> <span class="o">!=</span> <span class="p">():</span>
             <span class="k">raise</span> <span class="n">DecodeError</span><span class="p">(</span><span class="s2">&quot;UUID should have no subtypes&quot;</span><span class="p">)</span>
         <span class="n">uuid</span> <span class="o">=</span> <span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">raw_bytes</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">uuid</span> <span class="ow">in</span> <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">uuid</span></div>
+        <span class="n">existing_node</span> <span class="o">=</span> <span class="n">get_by_uuid</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">uuid</span> <span class="k">if</span> <span class="n">existing_node</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">existing_node</span></div>
 
 <div class="viewcode-block" id="UUIDCodec.encode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.UUIDCodec.encode">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">()):</span>
@@ -384,8 +406,8 @@
             <span class="s2">&quot;UUID&quot;</span><span class="p">:</span> <span class="n">UUIDCodec</span><span class="p">,</span>
         <span class="p">}</span>  <span class="c1"># type: typing.Dict[str, Codec]</span></div>
 
-    <span class="k">def</span> <span class="nf">_decode_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_bytes</span><span class="p">,</span> <span class="n">type_tree</span><span class="p">):</span>
-        <span class="c1"># type: (typing.BinaryIO,SubtypeTree) -&gt; typing.Any</span>
+    <span class="k">def</span> <span class="nf">_decode_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_bytes</span><span class="p">,</span> <span class="n">type_tree</span><span class="p">,</span> <span class="n">get_by_uuid</span><span class="p">):</span>
+        <span class="c1"># type: (typing.BinaryIO, SubtypeTree, CacheLookupFn) -&gt; typing.Any</span>
         <span class="sd">&quot;&quot;&quot;Decode the data in ``raw_bytes`` given a parsed type tree.</span>
 
 <span class="sd">        :param raw_bytes: The binary stream to read bytes from.</span>
@@ -400,7 +422,12 @@
         <span class="k">if</span> <span class="n">type_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">codecs</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">UnknownCodecError</span><span class="p">(</span><span class="n">type_name</span><span class="p">)</span>
         <span class="n">codec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">codecs</span><span class="p">[</span><span class="n">type_name</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">raw_bytes</span><span class="p">,</span> <span class="n">serialization</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">subtypes</span><span class="o">=</span><span class="n">subtypes</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">codec</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
+            <span class="n">raw_bytes</span><span class="p">,</span>
+            <span class="n">serialization</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">subtypes</span><span class="o">=</span><span class="n">subtypes</span><span class="p">,</span>
+            <span class="n">get_by_uuid</span><span class="o">=</span><span class="n">get_by_uuid</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_encode_tree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">type_tree</span><span class="p">):</span>
         <span class="c1"># type: (typing.BinaryIO, typing.Any, SubtypeTree) -&gt; None</span>
@@ -500,13 +527,19 @@
             <span class="k">raise</span> <span class="n">TypeNameError</span><span class="p">(</span><span class="n">type_name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">parse_tree</span>
 
-<div class="viewcode-block" id="Serialization.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.Serialization.decode">[docs]</a>    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_bytes</span><span class="p">,</span> <span class="n">type_name</span><span class="p">):</span>
-        <span class="c1"># type: (typing.BinaryIO,str) -&gt; typing.Any</span>
+<div class="viewcode-block" id="Serialization.decode"><a class="viewcode-back" href="../../gtirb.serialization.html#gtirb.Serialization.decode">[docs]</a>    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">raw_bytes</span><span class="p">,</span>  <span class="c1"># type: typing.BinaryIO</span>
+        <span class="n">type_name</span><span class="p">,</span>  <span class="c1"># type: str</span>
+        <span class="n">get_by_uuid</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># type: CacheLookupFn</span>
+    <span class="p">):</span>
+        <span class="c1"># type: (...) -&gt; typing.Any</span>
         <span class="sd">&quot;&quot;&quot;Decode a :class:`gtirb.AuxData` of the specified type</span>
 <span class="sd">        from the specified byte stream.</span>
 
 <span class="sd">        :param raw_bytes: The byte stream from which to read the encoded value.</span>
 <span class="sd">        :param type_name: The type name of the object encoded by ``raw_bytes``.</span>
+<span class="sd">        :param get_by_uuid: A function to look up nodes by UUID.</span>
 <span class="sd">        :returns: The object encoded by ``raw_bytes``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
@@ -517,7 +550,9 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">all_bytes</span> <span class="o">=</span> <span class="n">raw_bytes</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">all_bytes</span><span class="p">),</span> <span class="n">parse_tree</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode_tree</span><span class="p">(</span>
+                <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">all_bytes</span><span class="p">),</span> <span class="n">parse_tree</span><span class="p">,</span> <span class="n">get_by_uuid</span>
+            <span class="p">)</span>
         <span class="k">except</span> <span class="n">UnknownCodecError</span><span class="p">:</span>
             <span class="c1"># we found an unknwon codec; the entire data structure can&#39;t be</span>
             <span class="c1"># parsed; return a blob of bytes</span>

@@ -48,7 +48,19 @@
         <span class="c1"># type: () -&gt; typing.Iterable[&quot;Symbol&quot;]</span>
         <span class="sd">&quot;&quot;&quot;Get all the symbols that refer to this block.&quot;&quot;&quot;</span>
 
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">_add_to_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is added.&quot;&quot;&quot;</span>
+
+        <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">_remove_from_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is removed.&quot;&quot;&quot;</span>
+
+        <span class="k">del</span> <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span></div>
 
 
 <div class="viewcode-block" id="ByteBlock"><a class="viewcode-back" href="../../gtirb.block.html#gtirb.ByteBlock">[docs]</a><span class="k">class</span> <span class="nc">ByteBlock</span><span class="p">(</span><span class="n">Block</span><span class="p">):</span>
@@ -140,7 +152,31 @@
             <span class="n">s</span>
             <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">byte_interval</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">symbols</span>
             <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">referent</span> <span class="o">==</span> <span class="bp">self</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">section</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;Section&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the section this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">byte_interval</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">byte_interval</span><span class="o">.</span><span class="n">section</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;Module&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the module this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">module</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;IR&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the IR this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span></div>
 
 
 <div class="viewcode-block" id="CfgNode"><a class="viewcode-back" href="../../gtirb.block.html#gtirb.CfgNode">[docs]</a><span class="k">class</span> <span class="nc">CfgNode</span><span class="p">(</span><span class="n">Block</span><span class="p">):</span>
@@ -178,9 +214,16 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_dataobject</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (DataBlock_pb2.DataBlock, uuid.UUID) -&gt; DataBlock</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">proto_dataobject</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">proto_dataobject</span><span class="p">,</span>  <span class="c1"># type: DataBlock_pb2.DataBlock</span>
+        <span class="n">uuid</span><span class="p">,</span>  <span class="c1"># type: uuid.UUID</span>
+        <span class="n">ir</span><span class="p">,</span>  <span class="c1"># type: typing.Optional[&quot;IR&quot;]</span>
+    <span class="p">):</span>
+        <span class="c1"># type: (...) -&gt; DataBlock</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">proto_dataobject</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">b</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; DataBlock_pb2.DataBlock</span>
@@ -237,13 +280,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">decode_mode</span> <span class="o">=</span> <span class="n">decode_mode</span>  <span class="c1"># type: int</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_block</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (CodeBlock_pb2.CodeBlock, UUID) -&gt; CodeBlock</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">proto_block</span><span class="p">,</span>  <span class="c1"># type: CodeBlock_pb2.CodeBlock</span>
+        <span class="n">uuid</span><span class="p">,</span>  <span class="c1"># type: UUID</span>
+        <span class="n">ir</span><span class="p">,</span>  <span class="c1"># type: typing.Optional[&quot;IR&quot;]</span>
+    <span class="p">):</span>
+        <span class="c1"># type: (...) -&gt; CodeBlock</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">decode_mode</span><span class="o">=</span><span class="n">proto_block</span><span class="o">.</span><span class="n">decode_mode</span><span class="p">,</span>
             <span class="n">size</span><span class="o">=</span><span class="n">proto_block</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
             <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">b</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; CodeBlock_pb2.CodeBlock</span>
@@ -322,9 +372,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_module</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: &quot;Module&quot;</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_proxy</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (ProxyBlock_pb2.ProxyBlock, UUID) -&gt; ProxyBlock</span>
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">proto_proxy</span><span class="p">,</span>  <span class="c1"># type: ProxyBlock_pb2.ProxyBlock</span>
+        <span class="n">uuid</span><span class="p">,</span>  <span class="c1"># type: UUID</span>
+        <span class="n">ir</span><span class="p">,</span>  <span class="c1"># type: typing.Optional[&quot;IR&quot;]</span>
+    <span class="p">):</span>
+        <span class="c1"># type: (...) -&gt; ProxyBlock</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="n">b</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">b</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; ProxyBlock_pb2.ProxyBlock</span>
@@ -372,7 +429,15 @@
     <span class="k">def</span> <span class="nf">outgoing_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">()</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span><span class="o">.</span><span class="n">cfg</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="bp">self</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="p">(</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span><span class="o">.</span><span class="n">cfg</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;IR&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the IR this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span></div>
 </pre></div>
 
           </div>

@@ -5,7 +5,7 @@ var searchData=
   ['mips32_263',['MIPS32',['../../html/cpp/namespacegtirb.html#a3a3936a9fcf87b0ae27bca9ac7b91b85a1c52667bd9c03dd7d98cc688ea6850c2',1,'gtirb']]],
   ['mips64_264',['MIPS64',['../../html/cpp/namespacegtirb.html#a3a3936a9fcf87b0ae27bca9ac7b91b85abdbcfa239156e837f8f83b0b18f1bb4f',1,'gtirb']]],
   ['module_265',['Module',['../../html/cpp/classgtirb_1_1_module.html',1,'gtirb::Module'],['../../html/cpp/classgtirb_1_1_byte_interval.html#a21f639900c480510650969df9c74d17d',1,'gtirb::ByteInterval::Module()'],['../../html/cpp/classgtirb_1_1_proxy_block.html#a21f639900c480510650969df9c74d17d',1,'gtirb::ProxyBlock::Module()'],['../../html/cpp/classgtirb_1_1_section.html#a21f639900c480510650969df9c74d17d',1,'gtirb::Section::Module()'],['../../html/cpp/classgtirb_1_1_symbol.html#a21f639900c480510650969df9c74d17d',1,'gtirb::Symbol::Module()']]],
-  ['module_2ehpp_266',['Module.hpp',['../../html/cpp/_module_8hpp.html.html',1,'']]],
+  ['module_2ehpp_266',['Module.hpp',['../../html/cpp/_module_8hpp.html',1,'']]],
   ['module_2emd_267',['Module.md',['../_module_8md.html',1,'']]],
   ['module_5fiterator_268',['module_iterator',['../../html/cpp/classgtirb_1_1_i_r.html#a710dce0c7aa4b80b8fcab3a52b286ee3',1,'gtirb::IR']]],
   ['module_5frange_269',['module_range',['../../html/cpp/classgtirb_1_1_i_r.html#a68e04c198d64bb9d1d3ff6df47164e2d',1,'gtirb::IR']]],

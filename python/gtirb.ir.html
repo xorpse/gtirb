@@ -274,6 +274,27 @@ they are considered to be equal if their sets of keys are equal.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="gtirb.ir.IR.get_by_uuid">
+<code class="sig-name descname">get_by_uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/ir.html#IR.get_by_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.ir.IR.get_by_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up a node by its UUID.</p>
+<p>This method will find any node currently attached to this IR.
+It will not find any nodes attached to other IRs, or not attached to
+any IR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uuid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>) – The UUID to look up.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="gtirb.node.html#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Node this UUID corresponds to, or None if no node exists
+with that UUID.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="gtirb.ir.IR.load_protobuf">
 <em class="property">static </em><code class="sig-name descname">load_protobuf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/ir.html#IR.load_protobuf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.ir.IR.load_protobuf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load IR from a Protobuf file at the specified path.</p>

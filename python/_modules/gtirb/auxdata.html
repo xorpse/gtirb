@@ -77,15 +77,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">type_name</span> <span class="o">=</span> <span class="n">type_name</span>  <span class="c1"># type: str</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_from_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">aux_data</span><span class="p">):</span>
-        <span class="c1"># type: (AuxData_pb2.AuxData) -&gt; AuxData</span>
+    <span class="k">def</span> <span class="nf">_from_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">aux_data</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
+        <span class="c1"># type: (AuxData_pb2.AuxData, typing.Optional[&quot;IR&quot;]) -&gt; AuxData</span>
         <span class="sd">&quot;&quot;&quot;Deserialize AuxData from Protobuf.</span>
 
 <span class="sd">        :param aux_data: The Protobuf AuxData object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">data</span> <span class="o">=</span> <span class="n">AuxData</span><span class="o">.</span><span class="n">serializer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span>
-            <span class="n">BytesIO</span><span class="p">(</span><span class="n">aux_data</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">aux_data</span><span class="o">.</span><span class="n">type_name</span>
+            <span class="n">BytesIO</span><span class="p">(</span><span class="n">aux_data</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">aux_data</span><span class="o">.</span><span class="n">type_name</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">type_name</span><span class="o">=</span><span class="n">aux_data</span><span class="o">.</span><span class="n">type_name</span><span class="p">)</span>
 
@@ -137,8 +137,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">aux_data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">aux_data</span><span class="p">)</span>  <span class="c1"># type: typing.Dict[str, AuxData]</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_read_protobuf_aux_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_container</span><span class="p">):</span>
-        <span class="c1"># type: (typing.Any) -&gt; typing.Dict[str, AuxData]</span>
+    <span class="k">def</span> <span class="nf">_read_protobuf_aux_data</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_container</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Any,typing.Optional[&quot;IR&quot;]) -&gt; typing.Dict[str, AuxData]</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Instead of the overrided _decode_protobuf, this method requires the</span>
 <span class="sd">        Protobuf message to read from. AuxDataContainers need to call this</span>
@@ -148,7 +148,7 @@
 <span class="sd">            ``aux_data``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="n">key</span><span class="p">:</span> <span class="n">AuxData</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">key</span><span class="p">:</span> <span class="n">AuxData</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">proto_container</span><span class="o">.</span><span class="n">aux_data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
         <span class="p">}</span>
 

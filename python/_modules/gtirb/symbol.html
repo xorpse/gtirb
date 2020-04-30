@@ -107,8 +107,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_payload</span> <span class="o">=</span> <span class="n">referent</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_symbol</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (Symbol_pb2.Symbol,UUID) -&gt; Symbol</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_symbol</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
+        <span class="c1"># type: (Symbol_pb2.Symbol,UUID, typing.Optional[&quot;IR&quot;]) -&gt; Symbol</span>
         <span class="n">symbol</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="n">proto_symbol</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">at_end</span><span class="o">=</span><span class="n">proto_symbol</span><span class="o">.</span><span class="n">at_end</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span>
         <span class="p">)</span>
@@ -117,9 +117,10 @@
         <span class="k">if</span> <span class="n">proto_symbol</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;referent_uuid&quot;</span><span class="p">):</span>
             <span class="n">referent_uuid</span> <span class="o">=</span> <span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">proto_symbol</span><span class="o">.</span><span class="n">referent_uuid</span><span class="p">)</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">symbol</span><span class="o">.</span><span class="n">referent</span> <span class="o">=</span> <span class="n">Node</span><span class="o">.</span><span class="n">_uuid_cache</span><span class="p">[</span><span class="n">referent_uuid</span><span class="p">]</span>
+                <span class="n">symbol</span><span class="o">.</span><span class="n">referent</span> <span class="o">=</span> <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span><span class="p">(</span><span class="n">referent_uuid</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Could not find referent UUID </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">e</span><span class="p">)</span>
+        <span class="n">symbol</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">symbol</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -175,7 +176,27 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_module</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_module</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">value</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+            <span class="n">value</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_add_to_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is added.&quot;&quot;&quot;</span>
+
+        <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">_remove_from_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is removed.&quot;&quot;&quot;</span>
+
+        <span class="k">del</span> <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;IR&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the IR this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span></div>
 </pre></div>
 
           </div>

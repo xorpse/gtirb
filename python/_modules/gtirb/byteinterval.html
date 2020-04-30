@@ -89,10 +89,14 @@
             <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">_byte_interval</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">v</span><span class="o">.</span><span class="n">_byte_interval</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
             <span class="n">v</span><span class="o">.</span><span class="n">_byte_interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
             <span class="n">v</span><span class="o">.</span><span class="n">_byte_interval</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">_remove_from_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ByteInterval.__init__"><a class="viewcode-back" href="../../gtirb.byteinterval.html#gtirb.ByteInterval.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -128,6 +132,7 @@
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;initialized_size must be &lt;= size!&quot;</span><span class="p">)</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_section</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: typing.Optional[&quot;Section&quot;]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>  <span class="c1"># type: typing.Optional[int]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>  <span class="c1"># type: int</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>  <span class="c1"># type: bytearray</span>
@@ -138,7 +143,6 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_expressions</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">symbolic_expressions</span>
         <span class="p">)</span>  <span class="c1"># type: typing.Dict[int, SymbolicExpression]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_section</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: typing.Optional[&quot;Section&quot;]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_proto_interval</span> <span class="o">=</span> <span class="p">(</span>
             <span class="kc">None</span>
         <span class="p">)</span>  <span class="c1"># type: typing.Optional[ByteInterval_pb2.ByteInterval]</span></div>
@@ -169,14 +173,19 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="p">[:</span><span class="n">value</span><span class="p">]</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_interval</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (ByteInterval_pb2.ByteInterval, UUID) -&gt; ByteInterval</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">proto_interval</span><span class="p">,</span>  <span class="c1"># type: ByteInterval_pb2.ByteInterval</span>
+        <span class="n">uuid</span><span class="p">,</span>  <span class="c1"># type: UUID</span>
+        <span class="n">ir</span><span class="p">,</span>  <span class="c1"># type: typing.Optional[&quot;IR&quot;]</span>
+    <span class="p">):</span>
+        <span class="c1"># type: (...) -&gt; ByteInterval</span>
 
         <span class="k">def</span> <span class="nf">decode_block</span><span class="p">(</span><span class="n">proto_block</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">proto_block</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;code&quot;</span><span class="p">):</span>
-                <span class="n">block</span> <span class="o">=</span> <span class="n">CodeBlock</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_block</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+                <span class="n">block</span> <span class="o">=</span> <span class="n">CodeBlock</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_block</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">proto_block</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">):</span>
-                <span class="n">block</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_block</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+                <span class="n">block</span> <span class="o">=</span> <span class="n">DataBlock</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_block</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                     <span class="s2">&quot;Unknown type inside proto block: </span><span class="si">%s</span><span class="s2">&quot;</span>
@@ -194,26 +203,34 @@
             <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">size</span><span class="o">=</span><span class="n">proto_interval</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
             <span class="n">contents</span><span class="o">=</span><span class="n">proto_interval</span><span class="o">.</span><span class="n">contents</span><span class="p">,</span>
-            <span class="n">blocks</span><span class="o">=</span><span class="p">(</span><span class="n">decode_block</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">proto_interval</span><span class="o">.</span><span class="n">blocks</span><span class="p">),</span>
             <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="c1"># we store the interval here so we can use it later, when</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">blocks</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">decode_block</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">proto_interval</span><span class="o">.</span><span class="n">blocks</span><span class="p">)</span>
+        <span class="c1"># We store the interval and IR here so we can use it later, when</span>
         <span class="c1"># _decode_symbolic_expressions is called.</span>
         <span class="n">result</span><span class="o">.</span><span class="n">_proto_interval</span> <span class="o">=</span> <span class="n">proto_interval</span>
+        <span class="c1"># Return the new BI.</span>
         <span class="k">return</span> <span class="n">result</span>
 
-    <span class="k">def</span> <span class="nf">_decode_symbolic_expressions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_decode_symbolic_expressions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Called by modules after symbols are decoded, but before the module</span>
 <span class="sd">        is done decoding.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">def</span> <span class="nf">decode_symbolic_expression</span><span class="p">(</span><span class="n">proto_expr</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">proto_expr</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;stack_const&quot;</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">SymStackConst</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_expr</span><span class="o">.</span><span class="n">stack_const</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">SymStackConst</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span>
+                    <span class="n">proto_expr</span><span class="o">.</span><span class="n">stack_const</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span>
+                <span class="p">)</span>
             <span class="k">elif</span> <span class="n">proto_expr</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;addr_const&quot;</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">SymAddrConst</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_expr</span><span class="o">.</span><span class="n">addr_const</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">SymAddrConst</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span>
+                    <span class="n">proto_expr</span><span class="o">.</span><span class="n">addr_const</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span>
+                <span class="p">)</span>
             <span class="k">elif</span> <span class="n">proto_expr</span><span class="o">.</span><span class="n">HasField</span><span class="p">(</span><span class="s2">&quot;addr_addr&quot;</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">SymAddrAddr</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">proto_expr</span><span class="o">.</span><span class="n">addr_addr</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">SymAddrAddr</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span>
+                    <span class="n">proto_expr</span><span class="o">.</span><span class="n">addr_addr</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span>
+                <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                     <span class="s2">&quot;Unknown type inside proto sym expr: </span><span class="si">%s</span><span class="s2">&quot;</span>
@@ -224,7 +241,8 @@
             <span class="n">i</span><span class="p">:</span> <span class="n">decode_symbolic_expression</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proto_interval</span><span class="o">.</span><span class="n">symbolic_expressions</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
         <span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_proto_interval</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_proto_interval</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; ByteInterval_pb2.ByteInterval</span>
@@ -414,7 +432,39 @@
         <span class="n">addrs</span> <span class="o">=</span> <span class="n">get_desired_range</span><span class="p">(</span><span class="n">addrs</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbolic_expressions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">+</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">addrs</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div></div>
+                <span class="k">yield</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_add_to_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is added.&quot;&quot;&quot;</span>
+
+        <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+            <span class="n">block</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_remove_from_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is removed.&quot;&quot;&quot;</span>
+
+        <span class="k">del</span> <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+            <span class="n">block</span><span class="o">.</span><span class="n">_remove_from_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">module</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;Module&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the module this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">section</span><span class="o">.</span><span class="n">module</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># type: () -&gt; &quot;IR&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Get the IR this node ultimately belongs to.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">module</span><span class="o">.</span><span class="n">ir</span></div>
 </pre></div>
 
           </div>

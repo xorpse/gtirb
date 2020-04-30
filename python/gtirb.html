@@ -289,9 +289,42 @@ equality.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="gtirb.ByteBlock.ir">
+<em class="property">property </em><code class="sig-name descname">ir</code><a class="headerlink" href="#gtirb.ByteBlock.ir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the IR this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('IR')</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.ByteBlock.module">
+<em class="property">property </em><code class="sig-name descname">module</code><a class="headerlink" href="#gtirb.ByteBlock.module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the module this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('Module')</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="gtirb.ByteBlock.references">
 <em class="property">property </em><code class="sig-name descname">references</code><a class="headerlink" href="#gtirb.ByteBlock.references" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all the symbols that refer to this block.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.ByteBlock.section">
+<em class="property">property </em><code class="sig-name descname">section</code><a class="headerlink" href="#gtirb.ByteBlock.section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the section this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('Section')</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -476,6 +509,28 @@ when saving to file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.ByteInterval.ir">
+<em class="property">property </em><code class="sig-name descname">ir</code><a class="headerlink" href="#gtirb.ByteInterval.ir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the IR this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('IR')</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.ByteInterval.module">
+<em class="property">property </em><code class="sig-name descname">module</code><a class="headerlink" href="#gtirb.ByteInterval.module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the module this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('Module')</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1064,6 +1119,27 @@ they are considered to be equal if their sets of keys are equal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.IR.get_by_uuid">
+<code class="sig-name descname">get_by_uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/ir.html#IR.get_by_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.IR.get_by_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up a node by its UUID.</p>
+<p>This method will find any node currently attached to this IR.
+It will not find any nodes attached to other IRs, or not attached to
+any IR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>uuid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>) – The UUID to look up.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="gtirb.node.html#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The Node this UUID corresponds to, or None if no node exists
+with that UUID.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1788,28 +1864,6 @@ equality.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="gtirb.Node.from_uuid">
-<em class="property">classmethod </em><code class="sig-name descname">from_uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">uuid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/node.html#Node.from_uuid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Node.from_uuid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the <code class="docutils literal notranslate"><span class="pre">Node</span></code> with the specified UUID,
-or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no such <code class="docutils literal notranslate"><span class="pre">Node</span></code> exists.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>uuid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>) – The UUID to look up.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><strong>TypeError</strong> – if the Node is not of the requested type.
-To request that the output be of a specific type, call this
-function from the desired subclass. For example, calling
-<code class="docutils literal notranslate"><span class="pre">gtirb.CodeBlock.from_uuid</span></code> will return a
-<a class="reference internal" href="#gtirb.CodeBlock" title="gtirb.CodeBlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.CodeBlock</span></code></a> or raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="gtirb.node.html#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
@@ -1895,6 +1949,17 @@ equality.</p>
 <dt id="gtirb.ProxyBlock.incoming_edges">
 <em class="property">property </em><code class="sig-name descname">incoming_edges</code><a class="headerlink" href="#gtirb.ProxyBlock.incoming_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the edges that point to this CFG node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.ProxyBlock.ir">
+<em class="property">property </em><code class="sig-name descname">ir</code><a class="headerlink" href="#gtirb.ProxyBlock.ir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the IR this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('IR')</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -2194,6 +2259,17 @@ equality.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="gtirb.Section.ir">
+<em class="property">property </em><code class="sig-name descname">ir</code><a class="headerlink" href="#gtirb.Section.ir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the IR this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('IR')</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="gtirb.Section.module">
 <em class="property">property </em><code class="sig-name descname">module</code><a class="headerlink" href="#gtirb.Section.module" title="Permalink to this definition">¶</a></dt>
 <dd><p>The <a class="reference internal" href="#gtirb.Module" title="gtirb.Module"><code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></a> this section belongs to.</p>
@@ -2276,7 +2352,7 @@ or overridden using this dictionary.</p>
 
 <dl class="py method">
 <dt id="gtirb.Serialization.decode">
-<code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="n">type_name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Serialization.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Serialization.decode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">raw_bytes</span></em>, <em class="sig-param"><span class="n">type_name</span></em>, <em class="sig-param"><span class="n">get_by_uuid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gtirb/serialization.html#Serialization.decode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gtirb.Serialization.decode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Decode a <a class="reference internal" href="#gtirb.AuxData" title="gtirb.AuxData"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.AuxData</span></code></a> of the specified type
 from the specified byte stream.</p>
 <dl class="field-list simple">
@@ -2284,6 +2360,7 @@ from the specified byte stream.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>raw_bytes</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">typing.BinaryIO'&gt;</span></code>) – The byte stream from which to read the encoded value.</p></li>
 <li><p><strong>type_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – The type name of the object encoded by <code class="docutils literal notranslate"><span class="pre">raw_bytes</span></code>.</p></li>
+<li><p><strong>get_by_uuid</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Callable</span></code>[[<code class="xref py py-class docutils literal notranslate"><span class="pre">uuid.UUID</span></code>], <code class="xref py py-data docutils literal notranslate"><span class="pre">typing.Optional</span></code>[<a class="reference internal" href="gtirb.node.html#gtirb.node.Node" title="gtirb.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gtirb.node.Node</span></code></a>]]]) – A function to look up nodes by UUID.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -2364,6 +2441,17 @@ equality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gtirb.Symbol.ir">
+<em class="property">property </em><code class="sig-name descname">ir</code><a class="headerlink" href="#gtirb.Symbol.ir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the IR this node ultimately belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.ForwardRef('IR')</span></code></p>
 </dd>
 </dl>
 </dd></dl>

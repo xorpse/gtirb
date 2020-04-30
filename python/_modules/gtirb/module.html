@@ -39,6 +39,7 @@
 <span class="kn">from</span> <span class="nn">.auxdata</span> <span class="kn">import</span> <span class="n">AuxData</span><span class="p">,</span> <span class="n">AuxDataContainer</span>
 <span class="kn">from</span> <span class="nn">.block</span> <span class="kn">import</span> <span class="n">ByteBlock</span><span class="p">,</span> <span class="n">CfgNode</span><span class="p">,</span> <span class="n">CodeBlock</span><span class="p">,</span> <span class="n">DataBlock</span><span class="p">,</span> <span class="n">ProxyBlock</span>
 <span class="kn">from</span> <span class="nn">.byteinterval</span> <span class="kn">import</span> <span class="n">ByteInterval</span><span class="p">,</span> <span class="n">SymbolicExpressionElement</span>
+<span class="kn">from</span> <span class="nn">.node</span> <span class="kn">import</span> <span class="n">Node</span>
 <span class="kn">from</span> <span class="nn">.proto</span> <span class="kn">import</span> <span class="n">Module_pb2</span>
 <span class="kn">from</span> <span class="nn">.section</span> <span class="kn">import</span> <span class="n">Section</span>
 <span class="kn">from</span> <span class="nn">.symbol</span> <span class="kn">import</span> <span class="n">Symbol</span>
@@ -164,10 +165,14 @@
             <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">_module</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">_module</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_field</span><span class="p">)</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
             <span class="n">v</span><span class="o">.</span><span class="n">_module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">discard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
             <span class="n">v</span><span class="o">.</span><span class="n">_module</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">v</span><span class="o">.</span><span class="n">_remove_from_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_node</span><span class="o">.</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Module.__init__"><a class="viewcode-back" href="../../gtirb.module.html#gtirb.Module.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -211,6 +216,7 @@
 <span class="sd">            Defaults to None.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ir</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: &quot;IR&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">binary_path</span> <span class="o">=</span> <span class="n">binary_path</span>  <span class="c1"># type: str</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">isa</span> <span class="o">=</span> <span class="n">isa</span>  <span class="c1"># type: Module.ISA</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">file_format</span> <span class="o">=</span> <span class="n">file_format</span>  <span class="c1"># type: Module.FileFormat</span>
@@ -227,48 +233,52 @@
             <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;symbols&quot;</span><span class="p">,</span> <span class="n">symbols</span>
         <span class="p">)</span>  <span class="c1"># type: typing.Set[Symbol]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">entry_point</span> <span class="o">=</span> <span class="n">entry_point</span>  <span class="c1"># type: typing.Optional[CodeBlock]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_ir</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: &quot;IR&quot;</span>
         <span class="c1"># Initialize the aux data last so that the cache is populated</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">aux_data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)</span></div>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_module</span><span class="p">,</span> <span class="n">uuid</span><span class="p">):</span>
-        <span class="c1"># type: (Module_pb2.Module. UUID) -&gt; Module</span>
-
-        <span class="c1"># proxies depend on nothing</span>
-        <span class="n">proxies</span> <span class="o">=</span> <span class="p">[</span><span class="n">ProxyBlock</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">proxies</span><span class="p">]</span>
-        <span class="c1"># sections depend on symbolic expressions, so that step is split out</span>
-        <span class="c1"># from _decode_protobuf into _decode_symbolic_expressions</span>
-        <span class="n">sections</span> <span class="o">=</span> <span class="p">[</span><span class="n">Section</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">sections</span><span class="p">]</span>
-        <span class="c1"># entry point is a code block, which depends on sections</span>
-        <span class="n">entry_point</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">CodeBlock</span><span class="o">.</span><span class="n">from_uuid</span><span class="p">(</span><span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">proto_module</span><span class="o">.</span><span class="n">entry_point</span><span class="p">))</span>
-            <span class="k">if</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">entry_point</span>
-            <span class="k">else</span> <span class="kc">None</span>
-        <span class="p">)</span>
-        <span class="c1"># symbols depend on blocks</span>
-        <span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="n">Symbol</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">symbols</span><span class="p">]</span>
-        <span class="c1"># symbolic expressions depend on symbols</span>
-        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">sections</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">byte_intervals</span><span class="p">:</span>
-                <span class="n">interval</span><span class="o">.</span><span class="n">_decode_symbolic_expressions</span><span class="p">()</span>
-        <span class="c1"># aux data may depend on any node</span>
-        <span class="n">aux_data</span> <span class="o">=</span> <span class="n">AuxDataContainer</span><span class="o">.</span><span class="n">_read_protobuf_aux_data</span><span class="p">(</span><span class="n">proto_module</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
-            <span class="n">aux_data</span><span class="o">=</span><span class="n">aux_data</span><span class="p">,</span>
+    <span class="k">def</span> <span class="nf">_decode_protobuf</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">proto_module</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">ir</span><span class="p">):</span>
+        <span class="c1"># type: (Module_pb2.Module. UUID, typing.Optiona[&quot;IR&quot;]) -&gt; Module</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
             <span class="n">binary_path</span><span class="o">=</span><span class="n">proto_module</span><span class="o">.</span><span class="n">binary_path</span><span class="p">,</span>
             <span class="n">isa</span><span class="o">=</span><span class="n">Module</span><span class="o">.</span><span class="n">ISA</span><span class="p">(</span><span class="n">proto_module</span><span class="o">.</span><span class="n">isa</span><span class="p">),</span>
             <span class="n">file_format</span><span class="o">=</span><span class="n">Module</span><span class="o">.</span><span class="n">FileFormat</span><span class="p">(</span><span class="n">proto_module</span><span class="o">.</span><span class="n">file_format</span><span class="p">),</span>
             <span class="n">name</span><span class="o">=</span><span class="n">proto_module</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
             <span class="n">preferred_addr</span><span class="o">=</span><span class="n">proto_module</span><span class="o">.</span><span class="n">preferred_addr</span><span class="p">,</span>
-            <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
             <span class="n">rebase_delta</span><span class="o">=</span><span class="n">proto_module</span><span class="o">.</span><span class="n">rebase_delta</span><span class="p">,</span>
-            <span class="n">sections</span><span class="o">=</span><span class="n">sections</span><span class="p">,</span>
-            <span class="n">symbols</span><span class="o">=</span><span class="n">symbols</span><span class="p">,</span>
-            <span class="n">entry_point</span><span class="o">=</span><span class="n">entry_point</span><span class="p">,</span>
             <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">,</span>
         <span class="p">)</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">ir</span><span class="o">.</span><span class="n">_local_uuid_cache</span><span class="p">)</span>
+
+        <span class="c1"># proxies depend on nothing</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">proxies</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">ProxyBlock</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">proxies</span>
+        <span class="p">)</span>
+        <span class="c1"># sections depend on symbolic expressions, so that step is split out</span>
+        <span class="c1"># from _decode_protobuf into _decode_symbolic_expressions</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">Section</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">sections</span>
+        <span class="p">)</span>
+        <span class="c1"># entry point is a code block, which depends on sections</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">entry_point</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">ir</span><span class="o">.</span><span class="n">get_by_uuid</span><span class="p">(</span><span class="n">UUID</span><span class="p">(</span><span class="nb">bytes</span><span class="o">=</span><span class="n">proto_module</span><span class="o">.</span><span class="n">entry_point</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">entry_point</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="c1"># symbols depend on blocks</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">Symbol</span><span class="o">.</span><span class="n">_from_protobuf</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">proto_module</span><span class="o">.</span><span class="n">symbols</span>
+        <span class="p">)</span>
+        <span class="c1"># symbolic expressions depend on symbols</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">sections</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">interval</span> <span class="ow">in</span> <span class="n">section</span><span class="o">.</span><span class="n">byte_intervals</span><span class="p">:</span>
+                <span class="n">interval</span><span class="o">.</span><span class="n">_decode_symbolic_expressions</span><span class="p">(</span><span class="n">ir</span><span class="p">)</span>
+        <span class="c1"># aux data may depend on any node</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">aux_data</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">AuxDataContainer</span><span class="o">.</span><span class="n">_read_protobuf_aux_data</span><span class="p">(</span><span class="n">proto_module</span><span class="p">,</span> <span class="n">ir</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">m</span>
 
     <span class="k">def</span> <span class="nf">_to_protobuf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># type: () -&gt; Module_pb2.Module</span>
@@ -561,7 +571,31 @@
 <span class="sd">            symbolic expression in the range.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">return</span> <span class="n">symbolic_expressions_at</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span> <span class="n">addrs</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">symbolic_expressions_at</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">,</span> <span class="n">addrs</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_add_to_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is added.&quot;&quot;&quot;</span>
+
+        <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">for</span> <span class="n">proxy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxies</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">:</span>
+            <span class="n">section</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbols</span><span class="p">:</span>
+            <span class="n">symbol</span><span class="o">.</span><span class="n">_add_to_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_remove_from_uuid_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+        <span class="c1"># type: (typing.Dict[UUID, Node]) -&gt; None</span>
+        <span class="sd">&quot;&quot;&quot;Update the UUID cache when this node is removed.&quot;&quot;&quot;</span>
+
+        <span class="k">del</span> <span class="n">cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">proxy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxies</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">_remove_from_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="p">:</span>
+            <span class="n">section</span><span class="o">.</span><span class="n">_remove_from_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">symbols</span><span class="p">:</span>
+            <span class="n">symbol</span><span class="o">.</span><span class="n">_remove_from_uuid_cache</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span></div>
 </pre></div>
 
           </div>
