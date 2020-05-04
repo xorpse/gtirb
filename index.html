@@ -135,19 +135,20 @@ Ubuntu</h2>
 Ubuntu16</h3>
 <p><a class="anchor" id="ubuntu16"></a> </p><div class="fragment"><div class="line">sudo add-apt-repository ppa:maarten-fonville/protobuf</div>
 <div class="line">sudo add-apt-repository ppa:mhier/libboost-latest</div>
-<div class="line">echo &quot;deb https://grammatech.github.io/gtirb/ppa/xenial ./&quot; | sudo tee -a /etc/apt/sources.list.d/gtirb.list</div>
+<div class="line">echo &quot;deb https://grammatech.github.io/gtirb/pkgs/xenial ./&quot; | sudo tee -a /etc/apt/sources.list.d/gtirb.list</div>
 <div class="line">sudo apt-get update</div>
 <div class="line">sudo apt-get install --allow-unauthenticated gtirb</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
 Ubuntu18</h3>
 <p><a class="anchor" id="ubuntu18"></a> </p><div class="fragment"><div class="line">sudo add-apt-repository ppa:mhier/libboost-latest</div>
-<div class="line">echo &quot;deb [trusted=yes] https://grammatech.github.io/gtirb/ppa/bionic ./&quot; | sudo tee -a /etc/apt/sources.list.d/gtirb.list</div>
+<div class="line">echo &quot;deb [trusted=yes] https://grammatech.github.io/gtirb/pkgs/bionic ./&quot; | sudo tee -a /etc/apt/sources.list.d/gtirb.list</div>
 <div class="line">sudo apt-get update</div>
 <div class="line">sudo apt-get install gtirb</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
 Arch Linux</h2>
-<p><a class="anchor" id="arch-linux"></a> The Arch User Repository (AUR) <a href="https://aur.archlinux.org/">https://aur.archlinux.org/</a> has packages for GTIRB (<code>gtirb-git</code>) the GTIRB Pretty Printer (<code>gtirb-pprinter-git</code>) and the datalog disassembler (<code>ddisasm-git</code>). Note that installing <code>ddisasm-git</code> will cause the other two packages to be installed as well given that they are both dependencies.</p>
-<p>The following command will install GTIRB using the popular <a href="https://wiki.archlinux.org/index.php/AUR_helpers">aur helper</a> <a href="https://github.com/Jguer/yay">yay</a>. </p><div class="fragment"><div class="line">yay gtirb-git</div>
+<p><a class="anchor" id="arch-linux"></a> Arch packages are available for download from <a href="https://grammatech.github.io/gtirb/pkgs/arch/">https://grammatech.github.io/gtirb/pkgs/arch/</a> and may be directly installed with <code>pacman</code>.</p>
+<p>Additionally, the Arch User Repository (AUR) <a href="https://aur.archlinux.org/">https://aur.archlinux.org/</a> has packages for GTIRB (<code>gtirb-git</code>) the GTIRB Pretty Printer (<code>gtirb-pprinter-git</code>) and the datalog disassembler (<code>ddisasm-git</code>). Note that installing <code>ddisasm-git</code> will cause the other two packages to be installed as well given that they are both dependencies.</p>
+<p>The following command will build and install GTIRB using the popular <a href="https://wiki.archlinux.org/index.php/AUR_helpers">aur helper</a> <a href="https://github.com/Jguer/yay">yay</a>. </p><div class="fragment"><div class="line">yay gtirb-git</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Building</h1>
 <p><a class="anchor" id="building"></a></p>
